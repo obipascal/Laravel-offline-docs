@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Database: Getting Started - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Database: Getting Started";
+    var mkdocs_page_input_path = "database.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Database: Getting Started</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sqlite-configuration">SQLite Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#microsoft-sql-server-configuration">Microsoft SQL Server Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuration-using-urls">Configuration Using URLs</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#read-write-connections">Read &amp; Write Connections</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-sticky-option">The sticky Option</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-sql-queries">Running SQL Queries</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#running-a-select-query">Running A Select Query</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-named-bindings">Using Named Bindings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#running-an-insert-statement">Running An Insert Statement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#running-an-update-statement">Running An Update Statement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#running-a-delete-statement">Running A Delete Statement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#running-a-general-statement">Running A General Statement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#running-an-unprepared-statement">Running An Unprepared Statement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#implicit-commits">Implicit Commits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-multiple-database-connections">Using Multiple Database Connections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#listening-for-query-events">Listening For Query Events</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#database-transactions">Database Transactions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#handling-deadlocks">Handling Deadlocks</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#manually-using-transactions">Manually Using Transactions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connecting-to-the-database-cli">Connecting To The Database CLI</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Database: Getting Started</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="database-getting-started">Database: Getting Started</h1>
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#read-and-write-connections">Read &amp; Write Connections</a></li>
+</ul>
+</li>
+<li><a href="#running-queries">Running SQL Queries</a><ul>
+<li><a href="#using-multiple-database-connections">Using Multiple Database Connections</a></li>
+<li><a href="#listening-for-query-events">Listening For Query Events</a></li>
+</ul>
+</li>
+<li><a href="#database-transactions">Database Transactions</a></li>
+<li><a href="#connecting-to-the-database-cli">Connecting To The Database CLI</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Almost every modern web application interacts with a database. Laravel makes interacting with databases extremely simple across a variety of supported databases using raw SQL, a <a href="/docs/{{version}}/queries">fluent query builder</a>, and the <a href="/docs/{{version}}/eloquent">Eloquent ORM</a>. Currently, Laravel provides first-party support for four databases:</p>
+<div class="content-list" markdown="1">
+- MySQL 5.7+ ([Version Policy](https://en.wikipedia.org/wiki/MySQL#Release_history))
+- PostgreSQL 9.6+ ([Version Policy](https://www.postgresql.org/support/versioning/))
+- SQLite 3.8.8+
+- SQL Server 2017+ ([Version Policy](https://docs.microsoft.com/en-us/lifecycle/products/?products=sql-server))
+</div>
+
+<p><a name="configuration"></a></p>
+<h3 id="configuration">Configuration</h3>
+<p>The configuration for Laravel's database services is located in your application's <code>config/database.php</code> configuration file. In this file, you may define all of your database connections, as well as specify which connection should be used by default. Most of the configuration options within this file are driven by the values of your application's environment variables. Examples for most of Laravel's supported database systems are provided in this file.</p>
+<p>By default, Laravel's sample <a href="/docs/{{version}}/configuration#environment-configuration">environment configuration</a> is ready to use with <a href="/docs/{{version}}/sail">Laravel Sail</a>, which is a Docker configuration for developing Laravel applications on your local machine. However, you are free to modify your database configuration as needed for your local database.</p>
+<p><a name="sqlite-configuration"></a></p>
+<h4 id="sqlite-configuration">SQLite Configuration</h4>
+<p>SQLite databases are contained within a single file on your filesystem. You can create a new SQLite database using the <code>touch</code> command in your terminal: <code>touch database/database.sqlite</code>. After the database has been created, you may easily configure your environment variables to point to this database by placing the absolute path to the database in the <code>DB_DATABASE</code> environment variable:</p>
+<pre><code>DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/database.sqlite
+</code></pre>
+<p>To enable foreign key constraints for SQLite connections, you should set the <code>DB_FOREIGN_KEYS</code> environment variable to <code>true</code>:</p>
+<pre><code>DB_FOREIGN_KEYS=true
+</code></pre>
+<p><a name="mssql-configuration"></a></p>
+<h4 id="microsoft-sql-server-configuration">Microsoft SQL Server Configuration</h4>
+<p>To use a Microsoft SQL Server database, you should ensure that you have the <code>sqlsrv</code> and <code>pdo_sqlsrv</code> PHP extensions installed as well as any dependencies they may require such as the Microsoft SQL ODBC driver.</p>
+<p><a name="configuration-using-urls"></a></p>
+<h4 id="configuration-using-urls">Configuration Using URLs</h4>
+<p>Typically, database connections are configured using multiple configuration values such as <code>host</code>, <code>database</code>, <code>username</code>, <code>password</code>, etc. Each of these configuration values has its own corresponding environment variable. This means that when configuring your database connection information on a production server, you need to manage several environment variables.</p>
+<p>Some managed database providers such as AWS and Heroku provide a single database "URL" that contains all of the connection information for the database in a single string. An example database URL may look something like the following:</p>
+<pre><code class="language-html">mysql://root:password@127.0.0.1/forge?charset=UTF-8
+</code></pre>
+<p>These URLs typically follow a standard schema convention:</p>
+<pre><code class="language-html">driver://username:password@host:port/database?options
+</code></pre>
+<p>For convenience, Laravel supports these URLs as an alternative to configuring your database with multiple configuration options. If the <code>url</code> (or corresponding <code>DATABASE_URL</code> environment variable) configuration option is present, it will be used to extract the database connection and credential information.</p>
+<p><a name="read-and-write-connections"></a></p>
+<h3 id="read-write-connections">Read &amp; Write Connections</h3>
+<p>Sometimes you may wish to use one database connection for SELECT statements, and another for INSERT, UPDATE, and DELETE statements. Laravel makes this a breeze, and the proper connections will always be used whether you are using raw queries, the query builder, or the Eloquent ORM.</p>
+<p>To see how read / write connections should be configured, let's look at this example:</p>
+<pre><code>'mysql' =&gt; [
+    'read' =&gt; [
+        'host' =&gt; [
+            '192.168.1.1',
+            '196.168.1.2',
+        ],
+    ],
+    'write' =&gt; [
+        'host' =&gt; [
+            '196.168.1.3',
+        ],
+    ],
+    'sticky' =&gt; true,
+    'driver' =&gt; 'mysql',
+    'database' =&gt; 'database',
+    'username' =&gt; 'root',
+    'password' =&gt; '',
+    'charset' =&gt; 'utf8mb4',
+    'collation' =&gt; 'utf8mb4_unicode_ci',
+    'prefix' =&gt; '',
+],
+</code></pre>
+<p>Note that three keys have been added to the configuration array: <code>read</code>, <code>write</code> and <code>sticky</code>. The <code>read</code> and <code>write</code> keys have array values containing a single key: <code>host</code>. The rest of the database options for the <code>read</code> and <code>write</code> connections will be merged from the main <code>mysql</code> configuration array.</p>
+<p>You only need to place items in the <code>read</code> and <code>write</code> arrays if you wish to override the values from the main <code>mysql</code> array. So, in this case, <code>192.168.1.1</code> will be used as the host for the "read" connection, while <code>192.168.1.3</code> will be used for the "write" connection. The database credentials, prefix, character set, and all other options in the main <code>mysql</code> array will be shared across both connections. When multiple values exist in the <code>host</code> configuration array, a database host will be randomly chosen for each request.</p>
+<p><a name="the-sticky-option"></a></p>
+<h4 id="the-sticky-option">The <code>sticky</code> Option</h4>
+<p>The <code>sticky</code> option is an <em>optional</em> value that can be used to allow the immediate reading of records that have been written to the database during the current request cycle. If the <code>sticky</code> option is enabled and a "write" operation has been performed against the database during the current request cycle, any further "read" operations will use the "write" connection. This ensures that any data written during the request cycle can be immediately read back from the database during that same request. It is up to you to decide if this is the desired behavior for your application.</p>
+<p><a name="running-queries"></a></p>
+<h2 id="running-sql-queries">Running SQL Queries</h2>
+<p>Once you have configured your database connection, you may run queries using the <code>DB</code> facade. The <code>DB</code> facade provides methods for each type of query: <code>select</code>, <code>update</code>, <code>insert</code>, <code>delete</code>, and <code>statement</code>.</p>
+<p><a name="running-a-select-query"></a></p>
+<h4 id="running-a-select-query">Running A Select Query</h4>
+<p>To run a basic SELECT query, you may use the <code>select</code> method on the <code>DB</code> facade:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+
+class UserController extends Controller
+{
+    /**
+     * Show a list of all of the application's users.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = DB::select('select * from users where active = ?', [1]);
+
+        return view('user.index', ['users' =&gt; $users]);
+    }
+}
+</code></pre>
+<p>The first argument passed to the <code>select</code> method is the SQL query, while the second argument is any parameter bindings that need to be bound to the query. Typically, these are the values of the <code>where</code> clause constraints. Parameter binding provides protection against SQL injection.</p>
+<p>The <code>select</code> method will always return an <code>array</code> of results. Each result within the array will be a PHP <code>stdClass</code> object representing a record from the database:</p>
+<pre><code>use Illuminate\Support\Facades\DB;
+
+$users = DB::select('select * from users');
+
+foreach ($users as $user) {
+    echo $user-&gt;name;
+}
+</code></pre>
+<p><a name="using-named-bindings"></a></p>
+<h4 id="using-named-bindings">Using Named Bindings</h4>
+<p>Instead of using <code>?</code> to represent your parameter bindings, you may execute a query using named bindings:</p>
+<pre><code>$results = DB::select('select * from users where id = :id', ['id' =&gt; 1]);
+</code></pre>
+<p><a name="running-an-insert-statement"></a></p>
+<h4 id="running-an-insert-statement">Running An Insert Statement</h4>
+<p>To execute an <code>insert</code> statement, you may use the <code>insert</code> method on the <code>DB</code> facade. Like <code>select</code>, this method accepts the SQL query as its first argument and bindings as its second argument:</p>
+<pre><code>use Illuminate\Support\Facades\DB;
+
+DB::insert('insert into users (id, name) values (?, ?)', [1, 'Marc']);
+</code></pre>
+<p><a name="running-an-update-statement"></a></p>
+<h4 id="running-an-update-statement">Running An Update Statement</h4>
+<p>The <code>update</code> method should be used to update existing records in the database. The number of rows affected by the statement is returned by the method:</p>
+<pre><code>use Illuminate\Support\Facades\DB;
+
+$affected = DB::update(
+    'update users set votes = 100 where name = ?',
+    ['Anita']
+);
+</code></pre>
+<p><a name="running-a-delete-statement"></a></p>
+<h4 id="running-a-delete-statement">Running A Delete Statement</h4>
+<p>The <code>delete</code> method should be used to delete records from the database. Like <code>update</code>, the number of rows affected will be returned by the method:</p>
+<pre><code>use Illuminate\Support\Facades\DB;
+
+$deleted = DB::delete('delete from users');
+</code></pre>
+<p><a name="running-a-general-statement"></a></p>
+<h4 id="running-a-general-statement">Running A General Statement</h4>
+<p>Some database statements do not return any value. For these types of operations, you may use the <code>statement</code> method on the <code>DB</code> facade:</p>
+<pre><code>DB::statement('drop table users');
+</code></pre>
+<p><a name="running-an-unprepared-statement"></a></p>
+<h4 id="running-an-unprepared-statement">Running An Unprepared Statement</h4>
+<p>Sometimes you may want to execute an SQL statement without binding any values. You may use the <code>DB</code> facade's <code>unprepared</code> method to accomplish this:</p>
+<pre><code>DB::unprepared('update users set votes = 100 where name = "Dries"');
+</code></pre>
+<blockquote>
+<p>{note} Since unprepared statements do not bind parameters, they may be vulnerable to SQL injection. You should never allow user controlled values within an unprepared statement.</p>
+</blockquote>
+<p><a name="implicit-commits-in-transactions"></a></p>
+<h4 id="implicit-commits">Implicit Commits</h4>
+<p>When using the <code>DB</code> facade's <code>statement</code> and <code>unprepared</code> methods within transactions you must be careful to avoid statements that cause <a href="https://dev.mysql.com/doc/refman/8.0/en/implicit-commit.html">implicit commits</a>. These statements will cause the database engine to indirectly commit the entire transaction, leaving Laravel unaware of the database's transaction level. An example of such a statement is creating a database table:</p>
+<pre><code>DB::unprepared('create table a (col varchar(1) null)');
+</code></pre>
+<p>Please refer to the MySQL manual for <a href="https://dev.mysql.com/doc/refman/8.0/en/implicit-commit.html">a list of all statements</a> that trigger implicit commits.</p>
+<p><a name="using-multiple-database-connections"></a></p>
+<h3 id="using-multiple-database-connections">Using Multiple Database Connections</h3>
+<p>If your application defines multiple connections in your <code>config/database.php</code> configuration file, you may access each connection via the <code>connection</code> method provided by the <code>DB</code> facade. The connection name passed to the <code>connection</code> method should correspond to one of the connections listed in your <code>config/database.php</code> configuration file or configured at runtime using the <code>config</code> helper:</p>
+<pre><code>use Illuminate\Support\Facades\DB;
+
+$users = DB::connection('sqlite')-&gt;select(...);
+</code></pre>
+<p>You may access the raw, underlying PDO instance of a connection using the <code>getPdo</code> method on a connection instance:</p>
+<pre><code>$pdo = DB::connection()-&gt;getPdo();
+</code></pre>
+<p><a name="listening-for-query-events"></a></p>
+<h3 id="listening-for-query-events">Listening For Query Events</h3>
+<p>If you would like to specify a closure that is invoked for each SQL query executed by your application, you may use the <code>DB</code> facade's <code>listen</code> method. This method can be useful for logging queries or debugging. You may register your query listener closure in the <code>boot</code> method of a <a href="/docs/{{version}}/providers">service provider</a>:</p>
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        DB::listen(function ($query) {
+            // $query-&gt;sql;
+            // $query-&gt;bindings;
+            // $query-&gt;time;
+        });
+    }
+}
+</code></pre>
+<p><a name="database-transactions"></a></p>
+<h2 id="database-transactions">Database Transactions</h2>
+<p>You may use the <code>transaction</code> method provided by the <code>DB</code> facade to run a set of operations within a database transaction. If an exception is thrown within the transaction closure, the transaction will automatically be rolled back. If the closure executes successfully, the transaction will automatically be committed. You don't need to worry about manually rolling back or committing while using the <code>transaction</code> method:</p>
+<pre><code>use Illuminate\Support\Facades\DB;
+
+DB::transaction(function () {
+    DB::update('update users set votes = 1');
+
+    DB::delete('delete from posts');
+});
+</code></pre>
+<p><a name="handling-deadlocks"></a></p>
+<h4 id="handling-deadlocks">Handling Deadlocks</h4>
+<p>The <code>transaction</code> method accepts an optional second argument which defines the number of times a transaction should be retried when a deadlock occurs. Once these attempts have been exhausted, an exception will be thrown:</p>
+<pre><code>use Illuminate\Support\Facades\DB;
+
+DB::transaction(function () {
+    DB::update('update users set votes = 1');
+
+    DB::delete('delete from posts');
+}, 5);
+</code></pre>
+<p><a name="manually-using-transactions"></a></p>
+<h4 id="manually-using-transactions">Manually Using Transactions</h4>
+<p>If you would like to begin a transaction manually and have complete control over rollbacks and commits, you may use the <code>beginTransaction</code> method provided by the <code>DB</code> facade:</p>
+<pre><code>use Illuminate\Support\Facades\DB;
+
+DB::beginTransaction();
+</code></pre>
+<p>You can rollback the transaction via the <code>rollBack</code> method:</p>
+<pre><code>DB::rollBack();
+</code></pre>
+<p>Lastly, you can commit a transaction via the <code>commit</code> method:</p>
+<pre><code>DB::commit();
+</code></pre>
+<blockquote>
+<p>{tip} The <code>DB</code> facade's transaction methods control the transactions for both the <a href="/docs/{{version}}/queries">query builder</a> and <a href="/docs/{{version}}/eloquent">Eloquent ORM</a>.</p>
+</blockquote>
+<p><a name="connecting-to-the-database-cli"></a></p>
+<h2 id="connecting-to-the-database-cli">Connecting To The Database CLI</h2>
+<p>If you would like to connect to your database's CLI, you may use the <code>db</code> Artisan command:</p>
+<pre><code>php artisan db
+</code></pre>
+<p>If needed, you may specify a database connection name to connect to a database connection that is not the default connection:</p>
+<pre><code>php artisan db mysql
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../deployment/" class="btn btn-neutral float-right" title="Deployment">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../database-testing/" class="btn btn-neutral" title="Database Testing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../database-testing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../deployment/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

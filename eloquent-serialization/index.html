@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Eloquent: Serialization - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Eloquent: Serialization";
+    var mkdocs_page_input_path = "eloquent-serialization.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Eloquent: Serialization</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#serializing-models-collections">Serializing Models &amp; Collections</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#serializing-to-arrays">Serializing To Arrays</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#serializing-to-json">Serializing To JSON</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#relationships">Relationships</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#hiding-attributes-from-json">Hiding Attributes From JSON</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#temporarily-modifying-attribute-visibility">Temporarily Modifying Attribute Visibility</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#appending-values-to-json">Appending Values To JSON</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#appending-at-run-time">Appending At Run Time</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#date-serialization">Date Serialization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#customizing-the-default-date-format">Customizing The Default Date Format</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#customizing-the-date-format-per-attribute">Customizing The Date Format Per Attribute</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Eloquent: Serialization</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="eloquent-serialization">Eloquent: Serialization</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#serializing-models-and-collections">Serializing Models &amp; Collections</a><ul>
+<li><a href="#serializing-to-arrays">Serializing To Arrays</a></li>
+<li><a href="#serializing-to-json">Serializing To JSON</a></li>
+</ul>
+</li>
+<li><a href="#hiding-attributes-from-json">Hiding Attributes From JSON</a></li>
+<li><a href="#appending-values-to-json">Appending Values To JSON</a></li>
+<li><a href="#date-serialization">Date Serialization</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>When building APIs using Laravel, you will often need to convert your models and relationships to arrays or JSON. Eloquent includes convenient methods for making these conversions, as well as controlling which attributes are included in the serialized representation of your models.</p>
+<blockquote>
+<p>{tip} For an even more robust way of handling Eloquent model and collection JSON serialization, check out the documentation on <a href="/docs/{{version}}/eloquent-resources">Eloquent API resources</a>.</p>
+</blockquote>
+<p><a name="serializing-models-and-collections"></a></p>
+<h2 id="serializing-models-collections">Serializing Models &amp; Collections</h2>
+<p><a name="serializing-to-arrays"></a></p>
+<h3 id="serializing-to-arrays">Serializing To Arrays</h3>
+<p>To convert a model and its loaded <a href="/docs/{{version}}/eloquent-relationships">relationships</a> to an array, you should use the <code>toArray</code> method. This method is recursive, so all attributes and all relations (including the relations of relations) will be converted to arrays:</p>
+<pre><code>use App\Models\User;
+
+$user = User::with('roles')-&gt;first();
+
+return $user-&gt;toArray();
+</code></pre>
+<p>The <code>attributesToArray</code> method may be used to convert a model's attributes to an array but not its relationships:</p>
+<pre><code>$user = User::first();
+
+return $user-&gt;attributesToArray();
+</code></pre>
+<p>You may also convert entire <a href="/docs/{{version}}/eloquent-collections">collections</a> of models to arrays by calling the <code>toArray</code> method on the collection instance:</p>
+<pre><code>$users = User::all();
+
+return $users-&gt;toArray();
+</code></pre>
+<p><a name="serializing-to-json"></a></p>
+<h3 id="serializing-to-json">Serializing To JSON</h3>
+<p>To convert a model to JSON, you should use the <code>toJson</code> method. Like <code>toArray</code>, the <code>toJson</code> method is recursive, so all attributes and relations will be converted to JSON. You may also specify any JSON encoding options that are <a href="https://secure.php.net/manual/en/function.json-encode.php">supported by PHP</a>:</p>
+<pre><code>use App\Models\User;
+
+$user = User::find(1);
+
+return $user-&gt;toJson();
+
+return $user-&gt;toJson(JSON_PRETTY_PRINT);
+</code></pre>
+<p>Alternatively, you may cast a model or collection to a string, which will automatically call the <code>toJson</code> method on the model or collection:</p>
+<pre><code>return (string) User::find(1);
+</code></pre>
+<p>Since models and collections are converted to JSON when cast to a string, you can return Eloquent objects directly from your application's routes or controllers. Laravel will automatically serialize your Eloquent models and collections to JSON when they are returned from routes or controllers:</p>
+<pre><code>Route::get('users', function () {
+    return User::all();
+});
+</code></pre>
+<p><a name="relationships"></a></p>
+<h4 id="relationships">Relationships</h4>
+<p>When an Eloquent model is converted to JSON, its loaded relationships will automatically be included as attributes on the JSON object. Also, though Eloquent relationship methods are defined using "camel case" method names, a relationship's JSON attribute will be "snake case".</p>
+<p><a name="hiding-attributes-from-json"></a></p>
+<h2 id="hiding-attributes-from-json">Hiding Attributes From JSON</h2>
+<p>Sometimes you may wish to limit the attributes, such as passwords, that are included in your model's array or JSON representation. To do so, add a <code>$hidden</code> property to your model. In attributes that are listed in the <code>$hidden</code> property's array will not be included in the serialized representation of your model:</p>
+<pre><code>&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
+{
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = ['password'];
+}
+</code></pre>
+<blockquote>
+<p>{tip} To hide relationships, add the relationship's method name to your Eloquent model's <code>$hidden</code> property.</p>
+</blockquote>
+<p>Alternatively, you may use the <code>visible</code> property to define an "allow list" of attributes that should be included in your model's array and JSON representation. All attributes that are not present in the <code>$visible</code> array will be hidden when the model is converted to an array or JSON:</p>
+<pre><code>&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
+{
+    /**
+     * The attributes that should be visible in arrays.
+     *
+     * @var array
+     */
+    protected $visible = ['first_name', 'last_name'];
+}
+</code></pre>
+<p><a name="temporarily-modifying-attribute-visibility"></a></p>
+<h4 id="temporarily-modifying-attribute-visibility">Temporarily Modifying Attribute Visibility</h4>
+<p>If you would like to make some typically hidden attributes visible on a given model instance, you may use the <code>makeVisible</code> method. The <code>makeVisible</code> method returns the model instance:</p>
+<pre><code>return $user-&gt;makeVisible('attribute')-&gt;toArray();
+</code></pre>
+<p>Likewise, if you would like to hide some attributes that are typically visible, you may use the <code>makeHidden</code> method.</p>
+<pre><code>return $user-&gt;makeHidden('attribute')-&gt;toArray();
+</code></pre>
+<p><a name="appending-values-to-json"></a></p>
+<h2 id="appending-values-to-json">Appending Values To JSON</h2>
+<p>Occasionally, when converting models to arrays or JSON, you may wish to add attributes that do not have a corresponding column in your database. To do so, first define an <a href="/docs/{{version}}/eloquent-mutators">accessor</a> for the value:</p>
+<pre><code>&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
+{
+    /**
+     * Determine if the user is an administrator.
+     *
+     * @return bool
+     */
+    public function getIsAdminAttribute()
+    {
+        return $this-&gt;attributes['admin'] === 'yes';
+    }
+}
+</code></pre>
+<p>After creating the accessor, add the attribute name to the <code>appends</code> property of your model. Note that attribute names are typically referenced using their "snake case" serialized representation, even though the accessor's PHP method is defined using "camel case":</p>
+<pre><code>&lt;?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model
+{
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['is_admin'];
+}
+</code></pre>
+<p>Once the attribute has been added to the <code>appends</code> list, it will be included in both the model's array and JSON representations. Attributes in the <code>appends</code> array will also respect the <code>visible</code> and <code>hidden</code> settings configured on the model.</p>
+<p><a name="appending-at-run-time"></a></p>
+<h4 id="appending-at-run-time">Appending At Run Time</h4>
+<p>At runtime, you may instruct a model instance to append additional attributes using the <code>append</code> method. Or, you may use the <code>setAppends</code> method to override the entire array of appended properties for a given model instance:</p>
+<pre><code>return $user-&gt;append('is_admin')-&gt;toArray();
+
+return $user-&gt;setAppends(['is_admin'])-&gt;toArray();
+</code></pre>
+<p><a name="date-serialization"></a></p>
+<h2 id="date-serialization">Date Serialization</h2>
+<p><a name="customizing-the-default-date-format"></a></p>
+<h4 id="customizing-the-default-date-format">Customizing The Default Date Format</h4>
+<p>You may customize the default serialization format by overriding the <code>serializeDate</code> method. This method does not affect how your dates are formatted for storage in the database:</p>
+<pre><code>/**
+ * Prepare a date for array / JSON serialization.
+ *
+ * @param  \DateTimeInterface  $date
+ * @return string
+ */
+protected function serializeDate(DateTimeInterface $date)
+{
+    return $date-&gt;format('Y-m-d');
+}
+</code></pre>
+<p><a name="customizing-the-date-format-per-attribute"></a></p>
+<h4 id="customizing-the-date-format-per-attribute">Customizing The Date Format Per Attribute</h4>
+<p>You may customize the serialization format of individual Eloquent date attributes by specifying the date format in the model's <a href="/docs/{{version}}/eloquent-mutators#attribute-casting">cast declarations</a>:</p>
+<pre><code>protected $casts = [
+    'birthday' =&gt; 'date:Y-m-d',
+    'joined_at' =&gt; 'datetime:Y-m-d H:00',
+];
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../eloquent/" class="btn btn-neutral float-right" title="Eloquent: Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../eloquent-resources/" class="btn btn-neutral" title="Eloquent: API Resources"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../eloquent-resources/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../eloquent/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

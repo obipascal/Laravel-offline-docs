@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Controllers - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Controllers";
+    var mkdocs_page_input_path = "controllers.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Controllers</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#writing-controllers">Writing Controllers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-controllers">Basic Controllers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#single-action-controllers">Single Action Controllers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#controller-middleware">Controller Middleware</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resource-controllers">Resource Controllers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#actions-handled-by-resource-controller">Actions Handled By Resource Controller</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#customizing-missing-model-behavior">Customizing Missing Model Behavior</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#specifying-the-resource-model">Specifying The Resource Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#partial-resource-routes">Partial Resource Routes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#api-resource-routes">API Resource Routes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nested-resources">Nested Resources</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#scoping-nested-resources">Scoping Nested Resources</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#shallow-nesting">Shallow Nesting</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#naming-resource-routes">Naming Resource Routes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#naming-resource-route-parameters">Naming Resource Route Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scoping-resource-routes">Scoping Resource Routes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#localizing-resource-uris">Localizing Resource URIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#supplementing-resource-controllers">Supplementing Resource Controllers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dependency-injection-controllers">Dependency Injection &amp; Controllers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constructor-injection">Constructor Injection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#method-injection">Method Injection</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Controllers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="controllers">Controllers</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#writing-controllers">Writing Controllers</a><ul>
+<li><a href="#basic-controllers">Basic Controllers</a></li>
+<li><a href="#single-action-controllers">Single Action Controllers</a></li>
+</ul>
+</li>
+<li><a href="#controller-middleware">Controller Middleware</a></li>
+<li><a href="#resource-controllers">Resource Controllers</a><ul>
+<li><a href="#restful-partial-resource-routes">Partial Resource Routes</a></li>
+<li><a href="#restful-nested-resources">Nested Resources</a></li>
+<li><a href="#restful-naming-resource-routes">Naming Resource Routes</a></li>
+<li><a href="#restful-naming-resource-route-parameters">Naming Resource Route Parameters</a></li>
+<li><a href="#restful-scoping-resource-routes">Scoping Resource Routes</a></li>
+<li><a href="#restful-localizing-resource-uris">Localizing Resource URIs</a></li>
+<li><a href="#restful-supplementing-resource-controllers">Supplementing Resource Controllers</a></li>
+</ul>
+</li>
+<li><a href="#dependency-injection-and-controllers">Dependency Injection &amp; Controllers</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Instead of defining all of your request handling logic as closures in your route files, you may wish to organize this behavior using "controller" classes. Controllers can group related request handling logic into a single class. For example, a <code>UserController</code> class might handle all incoming requests related to users, including showing, creating, updating, and deleting users. By default, controllers are stored in the <code>app/Http/Controllers</code> directory.</p>
+<p><a name="writing-controllers"></a></p>
+<h2 id="writing-controllers">Writing Controllers</h2>
+<p><a name="basic-controllers"></a></p>
+<h3 id="basic-controllers">Basic Controllers</h3>
+<p>Let's take a look at an example of a basic controller. Note that the controller extends the base controller class included with Laravel: <code>App\Http\Controllers\Controller</code>:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+
+class UserController extends Controller
+{
+    /**
+     * Show the profile for a given user.
+     *
+     * @param  int  $id
+     * @return \Illuminate\View\View
+     */
+    public function show($id)
+    {
+        return view('user.profile', [
+            'user' =&gt; User::findOrFail($id)
+        ]);
+    }
+}
+</code></pre>
+<p>You can define a route to this controller method like so:</p>
+<pre><code>use App\Http\Controllers\UserController;
+
+Route::get('/user/{id}', [UserController::class, 'show']);
+</code></pre>
+<p>When an incoming request matches the specified route URI, the <code>show</code> method on the <code>App\Http\Controllers\UserController</code> class will be invoked and the route parameters will be passed to the method.</p>
+<blockquote>
+<p>{tip} Controllers are not <strong>required</strong> to extend a base class. However, you will not have access to convenient features such as the <code>middleware</code> and <code>authorize</code> methods.</p>
+</blockquote>
+<p><a name="single-action-controllers"></a></p>
+<h3 id="single-action-controllers">Single Action Controllers</h3>
+<p>If a controller action is particularly complex, you might find it convenient to dedicate an entire controller class to that single action. To accomplish this, you may define a single <code>__invoke</code> method within the controller:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+
+class ProvisionServer extends Controller
+{
+    /**
+     * Provision a new web server.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function __invoke()
+    {
+        // ...
+    }
+}
+</code></pre>
+<p>When registering routes for single action controllers, you do not need to specify a controller method. Instead, you may simply pass the name of the controller to the router:</p>
+<pre><code>use App\Http\Controllers\ProvisionServer;
+
+Route::post('/server', ProvisionServer::class);
+</code></pre>
+<p>You may generate an invokable controller by using the <code>--invokable</code> option of the <code>make:controller</code> Artisan command:</p>
+<pre><code>php artisan make:controller ProvisionServer --invokable
+</code></pre>
+<blockquote>
+<p>{tip} Controller stubs may be customized using <a href="/docs/{{version}}/artisan#stub-customization">stub publishing</a>.</p>
+</blockquote>
+<p><a name="controller-middleware"></a></p>
+<h2 id="controller-middleware">Controller Middleware</h2>
+<p><a href="/docs/{{version}}/middleware">Middleware</a> may be assigned to the controller's routes in your route files:</p>
+<pre><code>Route::get('profile', [UserController::class, 'show'])-&gt;middleware('auth');
+</code></pre>
+<p>Or, you may find it convenient to specify middleware within your controller's constructor. Using the <code>middleware</code> method within your controller's constructor, you can assign middleware to the controller's actions:</p>
+<pre><code>class UserController extends Controller
+{
+    /**
+     * Instantiate a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this-&gt;middleware('auth');
+        $this-&gt;middleware('log')-&gt;only('index');
+        $this-&gt;middleware('subscribed')-&gt;except('store');
+    }
+}
+</code></pre>
+<p>Controllers also allow you to register middleware using a closure. This provides a convenient way to define an inline middleware for a single controller without defining an entire middleware class:</p>
+<pre><code>$this-&gt;middleware(function ($request, $next) {
+    return $next($request);
+});
+</code></pre>
+<p><a name="resource-controllers"></a></p>
+<h2 id="resource-controllers">Resource Controllers</h2>
+<p>If you think of each Eloquent model in your application as a "resource", it is typical to perform the same sets of actions against each resource in your application. For example, imagine your application contains a <code>Photo</code> model and a <code>Movie</code> model. It is likely that users can create, read, update, or delete these resources.</p>
+<p>Because of this common use case, Laravel resource routing assigns the typical create, read, update, and delete ("CRUD") routes to a controller with a single line of code. To get started, we can use the <code>make:controller</code> Artisan command's <code>--resource</code> option to quickly create a controller to handle these actions:</p>
+<pre><code>php artisan make:controller PhotoController --resource
+</code></pre>
+<p>This command will generate a controller at <code>app/Http/Controllers/PhotoController.php</code>. The controller will contain a method for each of the available resource operations. Next, you may register a resource route that points to the controller:</p>
+<pre><code>use App\Http\Controllers\PhotoController;
+
+Route::resource('photos', PhotoController::class);
+</code></pre>
+<p>This single route declaration creates multiple routes to handle a variety of actions on the resource. The generated controller will already have methods stubbed for each of these actions. Remember, you can always get a quick overview of your application's routes by running the <code>route:list</code> Artisan command.</p>
+<p>You may even register many resource controllers at once by passing an array to the <code>resources</code> method:</p>
+<pre><code>Route::resources([
+    'photos' =&gt; PhotoController::class,
+    'posts' =&gt; PostController::class,
+]);
+</code></pre>
+<p><a name="actions-handled-by-resource-controller"></a></p>
+<h4 id="actions-handled-by-resource-controller">Actions Handled By Resource Controller</h4>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>URI</th>
+<th>Action</th>
+<th>Route Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/photos</code></td>
+<td>index</td>
+<td>photos.index</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/photos/create</code></td>
+<td>create</td>
+<td>photos.create</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/photos</code></td>
+<td>store</td>
+<td>photos.store</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/photos/{photo}</code></td>
+<td>show</td>
+<td>photos.show</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/photos/{photo}/edit</code></td>
+<td>edit</td>
+<td>photos.edit</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+<td><code>/photos/{photo}</code></td>
+<td>update</td>
+<td>photos.update</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/photos/{photo}</code></td>
+<td>destroy</td>
+<td>photos.destroy</td>
+</tr>
+</tbody>
+</table>
+<p><a name="customizing-missing-model-behavior"></a></p>
+<h4 id="customizing-missing-model-behavior">Customizing Missing Model Behavior</h4>
+<p>Typically, a 404 HTTP response will be generated if an implicitly bound resource model is not found. However, you may customize this behavior by calling the <code>missing</code> method when defining your resource route. The <code>missing</code> method accepts a closure that will be invoked if an implicitly bound model can not be found for any of the resource's routes:</p>
+<pre><code>use App\Http\Controllers\PhotoController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+
+Route::resource('photos', PhotoController::class)
+        -&gt;missing(function (Request $request) {
+            return Redirect::route('photos.index');
+        });
+</code></pre>
+<p><a name="specifying-the-resource-model"></a></p>
+<h4 id="specifying-the-resource-model">Specifying The Resource Model</h4>
+<p>If you are using <a href="/docs/{{version}}/routing#route-model-binding">route model binding</a> and would like the resource controller's methods to type-hint a model instance, you may use the <code>--model</code> option when generating the controller:</p>
+<pre><code>php artisan make:controller PhotoController --resource --model=Photo
+</code></pre>
+<p><a name="restful-partial-resource-routes"></a></p>
+<h3 id="partial-resource-routes">Partial Resource Routes</h3>
+<p>When declaring a resource route, you may specify a subset of actions the controller should handle instead of the full set of default actions:</p>
+<pre><code>use App\Http\Controllers\PhotoController;
+
+Route::resource('photos', PhotoController::class)-&gt;only([
+    'index', 'show'
+]);
+
+Route::resource('photos', PhotoController::class)-&gt;except([
+    'create', 'store', 'update', 'destroy'
+]);
+</code></pre>
+<p><a name="api-resource-routes"></a></p>
+<h4 id="api-resource-routes">API Resource Routes</h4>
+<p>When declaring resource routes that will be consumed by APIs, you will commonly want to exclude routes that present HTML templates such as <code>create</code> and <code>edit</code>. For convenience, you may use the <code>apiResource</code> method to automatically exclude these two routes:</p>
+<pre><code>use App\Http\Controllers\PhotoController;
+
+Route::apiResource('photos', PhotoController::class);
+</code></pre>
+<p>You may register many API resource controllers at once by passing an array to the <code>apiResources</code> method:</p>
+<pre><code>use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\PostController;
+
+Route::apiResources([
+    'photos' =&gt; PhotoController::class,
+    'posts' =&gt; PostController::class,
+]);
+</code></pre>
+<p>To quickly generate an API resource controller that does not include the <code>create</code> or <code>edit</code> methods, use the <code>--api</code> switch when executing the <code>make:controller</code> command:</p>
+<pre><code>php artisan make:controller PhotoController --api
+</code></pre>
+<p><a name="restful-nested-resources"></a></p>
+<h3 id="nested-resources">Nested Resources</h3>
+<p>Sometimes you may need to define routes to a nested resource. For example, a photo resource may have multiple comments that may be attached to the photo. To nest the resource controllers, you may use "dot" notation in your route declaration:</p>
+<pre><code>use App\Http\Controllers\PhotoCommentController;
+
+Route::resource('photos.comments', PhotoCommentController::class);
+</code></pre>
+<p>This route will register a nested resource that may be accessed with URIs like the following:</p>
+<pre><code>/photos/{photo}/comments/{comment}
+</code></pre>
+<p><a name="scoping-nested-resources"></a></p>
+<h4 id="scoping-nested-resources">Scoping Nested Resources</h4>
+<p>Laravel's <a href="/docs/{{version}}/routing#implicit-model-binding-scoping">implicit model binding</a> feature can automatically scope nested bindings such that the resolved child model is confirmed to belong to the parent model. By using the <code>scoped</code> method when defining your nested resource, you may enable automatic scoping as well as instruct Laravel which field the child resource should be retrieved by. For more information on how to accomplish this, please see the documentation on <a href="#restful-scoping-resource-routes">scoping resource routes</a>.</p>
+<p><a name="shallow-nesting"></a></p>
+<h4 id="shallow-nesting">Shallow Nesting</h4>
+<p>Often, it is not entirely necessary to have both the parent and the child IDs within a URI since the child ID is already a unique identifier. When using unique identifiers such as auto-incrementing primary keys to identify your models in URI segments, you may choose to use "shallow nesting":</p>
+<pre><code>use App\Http\Controllers\CommentController;
+
+Route::resource('photos.comments', CommentController::class)-&gt;shallow();
+</code></pre>
+<p>This route definition will define the following routes:</p>
+<table>
+<thead>
+<tr>
+<th>Verb</th>
+<th>URI</th>
+<th>Action</th>
+<th>Route Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/photos/{photo}/comments</code></td>
+<td>index</td>
+<td>photos.comments.index</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/photos/{photo}/comments/create</code></td>
+<td>create</td>
+<td>photos.comments.create</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/photos/{photo}/comments</code></td>
+<td>store</td>
+<td>photos.comments.store</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/comments/{comment}</code></td>
+<td>show</td>
+<td>comments.show</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/comments/{comment}/edit</code></td>
+<td>edit</td>
+<td>comments.edit</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+<td><code>/comments/{comment}</code></td>
+<td>update</td>
+<td>comments.update</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/comments/{comment}</code></td>
+<td>destroy</td>
+<td>comments.destroy</td>
+</tr>
+</tbody>
+</table>
+<p><a name="restful-naming-resource-routes"></a></p>
+<h3 id="naming-resource-routes">Naming Resource Routes</h3>
+<p>By default, all resource controller actions have a route name; however, you can override these names by passing a <code>names</code> array with your desired route names:</p>
+<pre><code>use App\Http\Controllers\PhotoController;
+
+Route::resource('photos', PhotoController::class)-&gt;names([
+    'create' =&gt; 'photos.build'
+]);
+</code></pre>
+<p><a name="restful-naming-resource-route-parameters"></a></p>
+<h3 id="naming-resource-route-parameters">Naming Resource Route Parameters</h3>
+<p>By default, <code>Route::resource</code> will create the route parameters for your resource routes based on the "singularized" version of the resource name. You can easily override this on a per resource basis using the <code>parameters</code> method. The array passed into the <code>parameters</code> method should be an associative array of resource names and parameter names:</p>
+<pre><code>use App\Http\Controllers\AdminUserController;
+
+Route::resource('users', AdminUserController::class)-&gt;parameters([
+    'users' =&gt; 'admin_user'
+]);
+</code></pre>
+<p>The example above generates the following URI for the resource's <code>show</code> route:</p>
+<pre><code>/users/{admin_user}
+</code></pre>
+<p><a name="restful-scoping-resource-routes"></a></p>
+<h3 id="scoping-resource-routes">Scoping Resource Routes</h3>
+<p>Laravel's <a href="/docs/{{version}}/routing#implicit-model-binding-scoping">scoped implicit model binding</a> feature can automatically scope nested bindings such that the resolved child model is confirmed to belong to the parent model. By using the <code>scoped</code> method when defining your nested resource, you may enable automatic scoping as well as instruct Laravel which field the child resource should be retrieved by:</p>
+<pre><code>use App\Http\Controllers\PhotoCommentController;
+
+Route::resource('photos.comments', PhotoCommentController::class)-&gt;scoped([
+    'comment' =&gt; 'slug',
+]);
+</code></pre>
+<p>This route will register a scoped nested resource that may be accessed with URIs like the following:</p>
+<pre><code>/photos/{photo}/comments/{comment:slug}
+</code></pre>
+<p>When using a custom keyed implicit binding as a nested route parameter, Laravel will automatically scope the query to retrieve the nested model by its parent using conventions to guess the relationship name on the parent. In this case, it will be assumed that the <code>Photo</code> model has a relationship named <code>comments</code> (the plural of the route parameter name) which can be used to retrieve the <code>Comment</code> model.</p>
+<p><a name="restful-localizing-resource-uris"></a></p>
+<h3 id="localizing-resource-uris">Localizing Resource URIs</h3>
+<p>By default, <code>Route::resource</code> will create resource URIs using English verbs. If you need to localize the <code>create</code> and <code>edit</code> action verbs, you may use the <code>Route::resourceVerbs</code> method. This may be done at the beginning of the <code>boot</code> method within your application's <code>App\Providers\RouteServiceProvider</code>:</p>
+<pre><code>/**
+ * Define your route model bindings, pattern filters, etc.
+ *
+ * @return void
+ */
+public function boot()
+{
+    Route::resourceVerbs([
+        'create' =&gt; 'crear',
+        'edit' =&gt; 'editar',
+    ]);
+
+    // ...
+}
+</code></pre>
+<p>Once the verbs have been customized, a resource route registration such as <code>Route::resource('fotos', PhotoController::class)</code> will produce the following URIs:</p>
+<pre><code>/fotos/crear
+
+/fotos/{foto}/editar
+</code></pre>
+<p><a name="restful-supplementing-resource-controllers"></a></p>
+<h3 id="supplementing-resource-controllers">Supplementing Resource Controllers</h3>
+<p>If you need to add additional routes to a resource controller beyond the default set of resource routes, you should define those routes before your call to the <code>Route::resource</code> method; otherwise, the routes defined by the <code>resource</code> method may unintentionally take precedence over your supplemental routes:</p>
+<pre><code>use App\Http\Controller\PhotoController;
+
+Route::get('/photos/popular', [PhotoController::class, 'popular']);
+Route::resource('photos', PhotoController::class);
+</code></pre>
+<blockquote>
+<p>{tip} Remember to keep your controllers focused. If you find yourself routinely needing methods outside of the typical set of resource actions, consider splitting your controller into two, smaller controllers.</p>
+</blockquote>
+<p><a name="dependency-injection-and-controllers"></a></p>
+<h2 id="dependency-injection-controllers">Dependency Injection &amp; Controllers</h2>
+<p><a name="constructor-injection"></a></p>
+<h4 id="constructor-injection">Constructor Injection</h4>
+<p>The Laravel <a href="/docs/{{version}}/container">service container</a> is used to resolve all Laravel controllers. As a result, you are able to type-hint any dependencies your controller may need in its constructor. The declared dependencies will automatically be resolved and injected into the controller instance:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Repositories\UserRepository;
+
+class UserController extends Controller
+{
+    /**
+     * The user repository instance.
+     */
+    protected $users;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @param  \App\Repositories\UserRepository  $users
+     * @return void
+     */
+    public function __construct(UserRepository $users)
+    {
+        $this-&gt;users = $users;
+    }
+}
+</code></pre>
+<p><a name="method-injection"></a></p>
+<h4 id="method-injection">Method Injection</h4>
+<p>In addition to constructor injection, you may also type-hint dependencies on your controller's methods. A common use-case for method injection is injecting the <code>Illuminate\Http\Request</code> instance into your controller methods:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    /**
+     * Store a new user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $name = $request-&gt;name;
+
+        //
+    }
+}
+</code></pre>
+<p>If your controller method is also expecting input from a route parameter, list your route arguments after your other dependencies. For example, if your route is defined like so:</p>
+<pre><code>use App\Http\Controllers\UserController;
+
+Route::put('/user/{id}', [UserController::class, 'update']);
+</code></pre>
+<p>You may still type-hint the <code>Illuminate\Http\Request</code> and access your <code>id</code> parameter by defining your controller method as follows:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    /**
+     * Update the given user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../csrf/" class="btn btn-neutral float-right" title="CSRF Protection">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../contributions/" class="btn btn-neutral" title="Contribution Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../contributions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../csrf/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

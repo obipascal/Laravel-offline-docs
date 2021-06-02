@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Database: Migrations - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Database: Migrations";
+    var mkdocs_page_input_path = "migrations.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Database: Migrations</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#generating-migrations">Generating Migrations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#squashing-migrations">Squashing Migrations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#migration-structure">Migration Structure</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#anonymous-migrations">Anonymous Migrations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-the-migration-connection">Setting The Migration Connection</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-migrations">Running Migrations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#forcing-migrations-to-run-in-production">Forcing Migrations To Run In Production</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rolling-back-migrations">Rolling Back Migrations</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#roll-back-migrate-using-a-single-command">Roll Back &amp; Migrate Using A Single Command</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#drop-all-tables-migrate">Drop All Tables &amp; Migrate</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tables">Tables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-tables">Creating Tables</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#checking-for-table-column-existence">Checking For Table / Column Existence</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#database-connection-table-options">Database Connection &amp; Table Options</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#updating-tables">Updating Tables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#renaming-dropping-tables">Renaming / Dropping Tables</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#renaming-tables-with-foreign-keys">Renaming Tables With Foreign Keys</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#columns">Columns</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-columns">Creating Columns</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#available-column-types">Available Column Types</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#bigincrements-collection-method">bigIncrements() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#biginteger-collection-method">bigInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#binary-collection-method">binary() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#boolean-collection-method">boolean() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#char-collection-method">char() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#datetimetz-collection-method">dateTimeTz() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#datetime-collection-method">dateTime() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#date-collection-method">date() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decimal-collection-method">decimal() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#double-collection-method">double() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#enum-collection-method">enum() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#float-collection-method">float() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#foreignid-collection-method">foreignId() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#geometrycollection-collection-method">geometryCollection() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#geometry-collection-method">geometry() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#id-collection-method">id() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#increments-collection-method">increments() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#integer-collection-method">integer() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ipaddress-collection-method">ipAddress() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#json-collection-method">json() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#jsonb-collection-method">jsonb() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#linestring-collection-method">lineString() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#longtext-collection-method">longText() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#macaddress-collection-method">macAddress() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mediumincrements-collection-method">mediumIncrements() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mediuminteger-collection-method">mediumInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mediumtext-collection-method">mediumText() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#morphs-collection-method">morphs() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#multilinestring-collection-method">multiLineString() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#multipoint-collection-method">multiPoint() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#multipolygon-collection-method">multiPolygon() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nullabletimestamps-collection-method">nullableTimestamps() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nullablemorphs-collection-method">nullableMorphs() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nullableuuidmorphs-collection-method">nullableUuidMorphs() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#point-collection-method">point() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#polygon-collection-method">polygon() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#remembertoken-collection-method">rememberToken() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#set-collection-method">set() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#smallincrements-collection-method">smallIncrements() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#smallinteger-collection-method">smallInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#softdeletestz-collection-method">softDeletesTz() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#softdeletes-collection-method">softDeletes() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#string-collection-method">string() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#text-collection-method">text() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#timetz-collection-method">timeTz() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#time-collection-method">time() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#timestamptz-collection-method">timestampTz() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#timestamp-collection-method">timestamp() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#timestampstz-collection-method">timestampsTz() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#timestamps-collection-method">timestamps() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tinyincrements-collection-method">tinyIncrements() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tinyinteger-collection-method">tinyInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tinytext-collection-method">tinyText() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unsignedbiginteger-collection-method">unsignedBigInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unsigneddecimal-collection-method">unsignedDecimal() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unsignedinteger-collection-method">unsignedInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unsignedmediuminteger-collection-method">unsignedMediumInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unsignedsmallinteger-collection-method">unsignedSmallInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#unsignedtinyinteger-collection-method">unsignedTinyInteger() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#uuidmorphs-collection-method">uuidMorphs() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#uuid-collection-method">uuid() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#year-collection-method">year() {#collection-method}</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#column-modifiers">Column Modifiers</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#default-expressions">Default Expressions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#column-order">Column Order</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modifying-columns">Modifying Columns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#updating-column-attributes">Updating Column Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#renaming-columns">Renaming Columns</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dropping-columns">Dropping Columns</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#available-command-aliases">Available Command Aliases</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#indexes">Indexes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-indexes">Creating Indexes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#available-index-types">Available Index Types</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#index-lengths-mysql-mariadb">Index Lengths &amp; MySQL / MariaDB</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#renaming-indexes">Renaming Indexes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dropping-indexes">Dropping Indexes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#foreign-key-constraints">Foreign Key Constraints</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#dropping-foreign-keys">Dropping Foreign Keys</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#toggling-foreign-key-constraints">Toggling Foreign Key Constraints</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Database: Migrations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="database-migrations">Database: Migrations</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#generating-migrations">Generating Migrations</a><ul>
+<li><a href="#squashing-migrations">Squashing Migrations</a></li>
+</ul>
+</li>
+<li><a href="#migration-structure">Migration Structure</a></li>
+<li><a href="#running-migrations">Running Migrations</a><ul>
+<li><a href="#rolling-back-migrations">Rolling Back Migrations</a></li>
+</ul>
+</li>
+<li><a href="#tables">Tables</a><ul>
+<li><a href="#creating-tables">Creating Tables</a></li>
+<li><a href="#updating-tables">Updating Tables</a></li>
+<li><a href="#renaming-and-dropping-tables">Renaming / Dropping Tables</a></li>
+</ul>
+</li>
+<li><a href="#columns">Columns</a><ul>
+<li><a href="#creating-columns">Creating Columns</a></li>
+<li><a href="#available-column-types">Available Column Types</a></li>
+<li><a href="#column-modifiers">Column Modifiers</a></li>
+<li><a href="#modifying-columns">Modifying Columns</a></li>
+<li><a href="#dropping-columns">Dropping Columns</a></li>
+</ul>
+</li>
+<li><a href="#indexes">Indexes</a><ul>
+<li><a href="#creating-indexes">Creating Indexes</a></li>
+<li><a href="#renaming-indexes">Renaming Indexes</a></li>
+<li><a href="#dropping-indexes">Dropping Indexes</a></li>
+<li><a href="#foreign-key-constraints">Foreign Key Constraints</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Migrations are like version control for your database, allowing your team to define and share the application's database schema definition. If you have ever had to tell a teammate to manually add a column to their local database schema after pulling in your changes from source control, you've faced the problem that database migrations solve.</p>
+<p>The Laravel <code>Schema</code> <a href="/docs/{{version}}/facades">facade</a> provides database agnostic support for creating and manipulating tables across all of Laravel's supported database systems. Typically, migrations will use this facade to create and modify database tables and columns.</p>
+<p><a name="generating-migrations"></a></p>
+<h2 id="generating-migrations">Generating Migrations</h2>
+<p>You may use the <code>make:migration</code> <a href="/docs/{{version}}/artisan">Artisan command</a> to generate a database migration. The new migration will be placed in your <code>database/migrations</code> directory. Each migration filename contains a timestamp that allows Laravel to determine the order of the migrations:</p>
+<pre><code>php artisan make:migration create_flights_table
+</code></pre>
+<p>Laravel will use the name of the migration to attempt to guess the name of the table and whether or not the migration will be creating a new table. If Laravel is able to determine the table name from the migration name, Laravel will pre-fill the generated migration file with the specified table. Otherwise, you may simply specify the table in the migration file manually.</p>
+<p>If you would like to specify a custom path for the generated migration, you may use the <code>--path</code> option when executing the <code>make:migration</code> command. The given path should be relative to your application's base path.</p>
+<blockquote>
+<p>{tip} Migration stubs may be customized using <a href="/docs/{{version}}/artisan#stub-customization">stub publishing</a>.</p>
+</blockquote>
+<p><a name="squashing-migrations"></a></p>
+<h3 id="squashing-migrations">Squashing Migrations</h3>
+<p>As you build your application, you may accumulate more and more migrations over time. This can lead to your <code>database/migrations</code> directory becoming bloated with potentially hundreds of migrations. If you would like, you may "squash" your migrations into a single SQL file. To get started, execute the <code>schema:dump</code> command:</p>
+<pre><code>php artisan schema:dump
+
+// Dump the current database schema and prune all existing migrations...
+php artisan schema:dump --prune
+</code></pre>
+<p>When you execute this command, Laravel will write a "schema" file to your application's <code>database/schema</code> directory. Now, when you attempt to migrate your database and no other migrations have been executed, Laravel will execute the schema file's SQL statements first. After executing the schema file's statements, Laravel will execute any remaining migrations that were not part of the schema dump.</p>
+<p>You should commit your database schema file to source control so that other new developers on your team may quickly create your application's initial database structure.</p>
+<blockquote>
+<p>{note} Migration squashing is only available for the MySQL, PostgreSQL, and SQLite databases and utilizes the database's command-line client. Schema dumps may not be restored to in-memory SQLite databases.</p>
+</blockquote>
+<p><a name="migration-structure"></a></p>
+<h2 id="migration-structure">Migration Structure</h2>
+<p>A migration class contains two methods: <code>up</code> and <code>down</code>. The <code>up</code> method is used to add new tables, columns, or indexes to your database, while the <code>down</code> method should reverse the operations performed by the <code>up</code> method.</p>
+<p>Within both of these methods, you may use the Laravel schema builder to expressively create and modify tables. To learn about all of the methods available on the <code>Schema</code> builder, <a href="#creating-tables">check out its documentation</a>. For example, the following migration creates a <code>flights</code> table:</p>
+<pre><code>&lt;?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateFlightsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('flights', function (Blueprint $table) {
+            $table-&gt;id();
+            $table-&gt;string('name');
+            $table-&gt;string('airline');
+            $table-&gt;timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('flights');
+    }
+}
+</code></pre>
+<p><a name="anonymous-migrations"></a></p>
+<h4 id="anonymous-migrations">Anonymous Migrations</h4>
+<p>As you may have noticed in the example above, Laravel will automatically assign a class name to all of the migrations that you generate using the <code>make:migration</code> command. However, if you wish, you may return an anonymous class from your migration file. This is primarily useful if your application accumulates many migrations and two of them have a class name collision:</p>
+<pre><code>&lt;?php
+
+use Illuminate\Database\Migrations\Migration;
+
+return new class extends Migration
+{
+    //
+};
+</code></pre>
+<p><a name="setting-the-migration-connection"></a></p>
+<h4 id="setting-the-migration-connection">Setting The Migration Connection</h4>
+<p>If your migration will be interacting with a database connection other than your application's default database connection, you should set the <code>$connection</code> property of your migration:</p>
+<pre><code>/**
+ * The database connection that should be used by the migration.
+ *
+ * @var string
+ */
+protected $connection = 'pgsql';
+
+/**
+ * Run the migrations.
+ *
+ * @return void
+ */
+public function up()
+{
+    //
+}
+</code></pre>
+<p><a name="running-migrations"></a></p>
+<h2 id="running-migrations">Running Migrations</h2>
+<p>To run all of your outstanding migrations, execute the <code>migrate</code> Artisan command:</p>
+<pre><code>php artisan migrate
+</code></pre>
+<p>If you would like to see which migrations have run thus far, you may use the <code>migrate:status</code> Artisan command:</p>
+<pre><code>php artisan migrate:status
+</code></pre>
+<p><a name="forcing-migrations-to-run-in-production"></a></p>
+<h4 id="forcing-migrations-to-run-in-production">Forcing Migrations To Run In Production</h4>
+<p>Some migration operations are destructive, which means they may cause you to lose data. In order to protect you from running these commands against your production database, you will be prompted for confirmation before the commands are executed. To force the commands to run without a prompt, use the <code>--force</code> flag:</p>
+<pre><code>php artisan migrate --force
+</code></pre>
+<p><a name="rolling-back-migrations"></a></p>
+<h3 id="rolling-back-migrations">Rolling Back Migrations</h3>
+<p>To roll back the latest migration operation, you may use the <code>rollback</code> Artisan command. This command rolls back the last "batch" of migrations, which may include multiple migration files:</p>
+<pre><code>php artisan migrate:rollback
+</code></pre>
+<p>You may roll back a limited number of migrations by providing the <code>step</code> option to the <code>rollback</code> command. For example, the following command will roll back the last five migrations:</p>
+<pre><code>php artisan migrate:rollback --step=5
+</code></pre>
+<p>The <code>migrate:reset</code> command will roll back all of your application's migrations:</p>
+<pre><code>php artisan migrate:reset
+</code></pre>
+<p><a name="roll-back-migrate-using-a-single-command"></a></p>
+<h4 id="roll-back-migrate-using-a-single-command">Roll Back &amp; Migrate Using A Single Command</h4>
+<p>The <code>migrate:refresh</code> command will roll back all of your migrations and then execute the <code>migrate</code> command. This command effectively re-creates your entire database:</p>
+<pre><code>php artisan migrate:refresh
+
+// Refresh the database and run all database seeds...
+php artisan migrate:refresh --seed
+</code></pre>
+<p>You may roll back and re-migrate a limited number of migrations by providing the <code>step</code> option to the <code>refresh</code> command. For example, the following command will roll back and re-migrate the last five migrations:</p>
+<pre><code>php artisan migrate:refresh --step=5
+</code></pre>
+<p><a name="drop-all-tables-migrate"></a></p>
+<h4 id="drop-all-tables-migrate">Drop All Tables &amp; Migrate</h4>
+<p>The <code>migrate:fresh</code> command will drop all tables from the database and then execute the <code>migrate</code> command:</p>
+<pre><code>php artisan migrate:fresh
+
+php artisan migrate:fresh --seed
+</code></pre>
+<blockquote>
+<p>{note} The <code>migrate:fresh</code> command will drop all database tables regardless of their prefix. This command should be used with caution when developing on a database that is shared with other applications.</p>
+</blockquote>
+<p><a name="tables"></a></p>
+<h2 id="tables">Tables</h2>
+<p><a name="creating-tables"></a></p>
+<h3 id="creating-tables">Creating Tables</h3>
+<p>To create a new database table, use the <code>create</code> method on the <code>Schema</code> facade. The <code>create</code> method accepts two arguments: the first is the name of the table, while the second is a closure which receives a <code>Blueprint</code> object that may be used to define the new table:</p>
+<pre><code>use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+Schema::create('users', function (Blueprint $table) {
+    $table-&gt;id();
+    $table-&gt;string('name');
+    $table-&gt;string('email');
+    $table-&gt;timestamps();
+});
+</code></pre>
+<p>When creating the table, you may use any of the schema builder's <a href="#creating-columns">column methods</a> to define the table's columns.</p>
+<p><a name="checking-for-table-column-existence"></a></p>
+<h4 id="checking-for-table-column-existence">Checking For Table / Column Existence</h4>
+<p>You may check for the existence of a table or column using the <code>hasTable</code> and <code>hasColumn</code> methods:</p>
+<pre><code>if (Schema::hasTable('users')) {
+    // The "users" table exists...
+}
+
+if (Schema::hasColumn('users', 'email')) {
+    // The "users" table exists and has an "email" column...
+}
+</code></pre>
+<p><a name="database-connection-table-options"></a></p>
+<h4 id="database-connection-table-options">Database Connection &amp; Table Options</h4>
+<p>If you want to perform a schema operation on a database connection that is not your application's default connection, use the <code>connection</code> method:</p>
+<pre><code>Schema::connection('sqlite')-&gt;create('users', function (Blueprint $table) {
+    $table-&gt;id();
+});
+</code></pre>
+<p>In addition, a few other properties and methods may be used to define other aspects of the table's creation. The <code>engine</code> property may be used to specify the table's storage engine when using MySQL:</p>
+<pre><code>Schema::create('users', function (Blueprint $table) {
+    $table-&gt;engine = 'InnoDB';
+
+    // ...
+});
+</code></pre>
+<p>The <code>charset</code> and <code>collation</code> properties may be used to specify the character set and collation for the created table when using MySQL:</p>
+<pre><code>Schema::create('users', function (Blueprint $table) {
+    $table-&gt;charset = 'utf8mb4';
+    $table-&gt;collation = 'utf8mb4_unicode_ci';
+
+    // ...
+});
+</code></pre>
+<p>The <code>temporary</code> method may be used to indicate that the table should be "temporary". Temporary tables are only visible to the current connection's database session and are dropped automatically when the connection is closed:</p>
+<pre><code>Schema::create('calculations', function (Blueprint $table) {
+    $table-&gt;temporary();
+
+    // ...
+});
+</code></pre>
+<p><a name="updating-tables"></a></p>
+<h3 id="updating-tables">Updating Tables</h3>
+<p>The <code>table</code> method on the <code>Schema</code> facade may be used to update existing tables. Like the <code>create</code> method, the <code>table</code> method accepts two arguments: the name of the table and a closure that receives a <code>Blueprint</code> instance you may use to add columns or indexes to the table:</p>
+<pre><code>use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+Schema::table('users', function (Blueprint $table) {
+    $table-&gt;integer('votes');
+});
+</code></pre>
+<p><a name="renaming-and-dropping-tables"></a></p>
+<h3 id="renaming-dropping-tables">Renaming / Dropping Tables</h3>
+<p>To rename an existing database table, use the <code>rename</code> method:</p>
+<pre><code>use Illuminate\Support\Facades\Schema;
+
+Schema::rename($from, $to);
+</code></pre>
+<p>To drop an existing table, you may use the <code>drop</code> or <code>dropIfExists</code> methods:</p>
+<pre><code>Schema::drop('users');
+
+Schema::dropIfExists('users');
+</code></pre>
+<p><a name="renaming-tables-with-foreign-keys"></a></p>
+<h4 id="renaming-tables-with-foreign-keys">Renaming Tables With Foreign Keys</h4>
+<p>Before renaming a table, you should verify that any foreign key constraints on the table have an explicit name in your migration files instead of letting Laravel assign a convention based name. Otherwise, the foreign key constraint name will refer to the old table name.</p>
+<p><a name="columns"></a></p>
+<h2 id="columns">Columns</h2>
+<p><a name="creating-columns"></a></p>
+<h3 id="creating-columns">Creating Columns</h3>
+<p>The <code>table</code> method on the <code>Schema</code> facade may be used to update existing tables. Like the <code>create</code> method, the <code>table</code> method accepts two arguments: the name of the table and a closure that receives an <code>Illuminate\Database\Schema\Blueprint</code> instance you may use to add columns to the table:</p>
+<pre><code>use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+Schema::table('users', function (Blueprint $table) {
+    $table-&gt;integer('votes');
+});
+</code></pre>
+<p><a name="available-column-types"></a></p>
+<h3 id="available-column-types">Available Column Types</h3>
+<p>The schema builder blueprint offers a variety of methods that correspond to the different types of columns you can add to your database tables. Each of the available methods are listed in the table below:</p>
+<style>
+    #collection-method-list > p {
+        column-count: 3; -moz-column-count: 3; -webkit-column-count: 3;
+        column-gap: 2em; -moz-column-gap: 2em; -webkit-column-gap: 2em;
+    }
+
+    #collection-method-list a {
+        display: block;
+    }
+</style>
+
+<div id="collection-method-list" markdown="1">
+[bigIncrements](#column-method-bigIncrements)
+[bigInteger](#column-method-bigInteger)
+[binary](#column-method-binary)
+[boolean](#column-method-boolean)
+[char](#column-method-char)
+[dateTimeTz](#column-method-dateTimeTz)
+[dateTime](#column-method-dateTime)
+[date](#column-method-date)
+[decimal](#column-method-decimal)
+[double](#column-method-double)
+[enum](#column-method-enum)
+[float](#column-method-float)
+[foreignId](#column-method-foreignId)
+[geometryCollection](#column-method-geometryCollection)
+[geometry](#column-method-geometry)
+[id](#column-method-id)
+[increments](#column-method-increments)
+[integer](#column-method-integer)
+[ipAddress](#column-method-ipAddress)
+[json](#column-method-json)
+[jsonb](#column-method-jsonb)
+[lineString](#column-method-lineString)
+[longText](#column-method-longText)
+[macAddress](#column-method-macAddress)
+[mediumIncrements](#column-method-mediumIncrements)
+[mediumInteger](#column-method-mediumInteger)
+[mediumText](#column-method-mediumText)
+[morphs](#column-method-morphs)
+[multiLineString](#column-method-multiLineString)
+[multiPoint](#column-method-multiPoint)
+[multiPolygon](#column-method-multiPolygon)
+[nullableMorphs](#column-method-nullableMorphs)
+[nullableTimestamps](#column-method-nullableTimestamps)
+[nullableUuidMorphs](#column-method-nullableUuidMorphs)
+[point](#column-method-point)
+[polygon](#column-method-polygon)
+[rememberToken](#column-method-rememberToken)
+[set](#column-method-set)
+[smallIncrements](#column-method-smallIncrements)
+[smallInteger](#column-method-smallInteger)
+[softDeletesTz](#column-method-softDeletesTz)
+[softDeletes](#column-method-softDeletes)
+[string](#column-method-string)
+[text](#column-method-text)
+[timeTz](#column-method-timeTz)
+[time](#column-method-time)
+[timestampTz](#column-method-timestampTz)
+[timestamp](#column-method-timestamp)
+[timestampsTz](#column-method-timestampsTz)
+[timestamps](#column-method-timestamps)
+[tinyIncrements](#column-method-tinyIncrements)
+[tinyInteger](#column-method-tinyInteger)
+[tinyText](#column-method-tinyText)
+[unsignedBigInteger](#column-method-unsignedBigInteger)
+[unsignedDecimal](#column-method-unsignedDecimal)
+[unsignedInteger](#column-method-unsignedInteger)
+[unsignedMediumInteger](#column-method-unsignedMediumInteger)
+[unsignedSmallInteger](#column-method-unsignedSmallInteger)
+[unsignedTinyInteger](#column-method-unsignedTinyInteger)
+[uuidMorphs](#column-method-uuidMorphs)
+[uuid](#column-method-uuid)
+[year](#column-method-year)
+</div>
+
+<p><a name="column-method-bigIncrements"></a></p>
+<h4 id="bigincrements-collection-method"><code>bigIncrements()</code> {#collection-method}</h4>
+<p>The <code>bigIncrements</code> method creates an auto-incrementing <code>UNSIGNED BIGINT</code> (primary key) equivalent column:</p>
+<pre><code>$table-&gt;bigIncrements('id');
+</code></pre>
+<p><a name="column-method-bigInteger"></a></p>
+<h4 id="biginteger-collection-method"><code>bigInteger()</code> {#collection-method}</h4>
+<p>The <code>bigInteger</code> method creates a <code>BIGINT</code> equivalent column:</p>
+<pre><code>$table-&gt;bigInteger('votes');
+</code></pre>
+<p><a name="column-method-binary"></a></p>
+<h4 id="binary-collection-method"><code>binary()</code> {#collection-method}</h4>
+<p>The <code>binary</code> method creates a <code>BLOB</code> equivalent column:</p>
+<pre><code>$table-&gt;binary('photo');
+</code></pre>
+<p><a name="column-method-boolean"></a></p>
+<h4 id="boolean-collection-method"><code>boolean()</code> {#collection-method}</h4>
+<p>The <code>boolean</code> method creates a <code>BOOLEAN</code> equivalent column:</p>
+<pre><code>$table-&gt;boolean('confirmed');
+</code></pre>
+<p><a name="column-method-char"></a></p>
+<h4 id="char-collection-method"><code>char()</code> {#collection-method}</h4>
+<p>The <code>char</code> method creates a <code>CHAR</code> equivalent column with of a given length:</p>
+<pre><code>$table-&gt;char('name', 100);
+</code></pre>
+<p><a name="column-method-dateTimeTz"></a></p>
+<h4 id="datetimetz-collection-method"><code>dateTimeTz()</code> {#collection-method}</h4>
+<p>The <code>dateTimeTz</code> method creates a <code>DATETIME</code> (with timezone) equivalent column with an optional precision (total digits):</p>
+<pre><code>$table-&gt;dateTimeTz('created_at', $precision = 0);
+</code></pre>
+<p><a name="column-method-dateTime"></a></p>
+<h4 id="datetime-collection-method"><code>dateTime()</code> {#collection-method}</h4>
+<p>The <code>dateTime</code> method creates a <code>DATETIME</code> equivalent column with an optional precision (total digits):</p>
+<pre><code>$table-&gt;dateTime('created_at', $precision = 0);
+</code></pre>
+<p><a name="column-method-date"></a></p>
+<h4 id="date-collection-method"><code>date()</code> {#collection-method}</h4>
+<p>The <code>date</code> method creates a <code>DATE</code> equivalent column:</p>
+<pre><code>$table-&gt;date('created_at');
+</code></pre>
+<p><a name="column-method-decimal"></a></p>
+<h4 id="decimal-collection-method"><code>decimal()</code> {#collection-method}</h4>
+<p>The <code>decimal</code> method creates a <code>DECIMAL</code> equivalent column with the given precision (total digits) and scale (decimal digits):</p>
+<pre><code>$table-&gt;decimal('amount', $precision = 8, $scale = 2);
+</code></pre>
+<p><a name="column-method-double"></a></p>
+<h4 id="double-collection-method"><code>double()</code> {#collection-method}</h4>
+<p>The <code>double</code> method creates a <code>DOUBLE</code> equivalent column with the given precision (total digits) and scale (decimal digits):</p>
+<pre><code>$table-&gt;double('amount', 8, 2);
+</code></pre>
+<p><a name="column-method-enum"></a></p>
+<h4 id="enum-collection-method"><code>enum()</code> {#collection-method}</h4>
+<p>The <code>enum</code> method creates a <code>ENUM</code> equivalent column with the given valid values:</p>
+<pre><code>$table-&gt;enum('difficulty', ['easy', 'hard']);
+</code></pre>
+<p><a name="column-method-float"></a></p>
+<h4 id="float-collection-method"><code>float()</code> {#collection-method}</h4>
+<p>The <code>float</code> method creates a <code>FLOAT</code> equivalent column with the given precision (total digits) and scale (decimal digits):</p>
+<pre><code>$table-&gt;float('amount', 8, 2);
+</code></pre>
+<p><a name="column-method-foreignId"></a></p>
+<h4 id="foreignid-collection-method"><code>foreignId()</code> {#collection-method}</h4>
+<p>The <code>foreignId</code> method is an alias of the <code>unsignedBigInteger</code> method:</p>
+<pre><code>$table-&gt;foreignId('user_id');
+</code></pre>
+<p><a name="column-method-geometryCollection"></a></p>
+<h4 id="geometrycollection-collection-method"><code>geometryCollection()</code> {#collection-method}</h4>
+<p>The <code>geometryCollection</code> method creates a <code>GEOMETRYCOLLECTION</code> equivalent column:</p>
+<pre><code>$table-&gt;geometryCollection('positions');
+</code></pre>
+<p><a name="column-method-geometry"></a></p>
+<h4 id="geometry-collection-method"><code>geometry()</code> {#collection-method}</h4>
+<p>The <code>geometry</code> method creates a <code>GEOMETRY</code> equivalent column:</p>
+<pre><code>$table-&gt;geometry('positions');
+</code></pre>
+<p><a name="column-method-id"></a></p>
+<h4 id="id-collection-method"><code>id()</code> {#collection-method}</h4>
+<p>The <code>id</code> method is an alias of the <code>bigIncrements</code> method. By default, the method will create an <code>id</code> column; however, you may pass a column name if you would like to assign a different name to the column:</p>
+<pre><code>$table-&gt;id();
+</code></pre>
+<p><a name="column-method-increments"></a></p>
+<h4 id="increments-collection-method"><code>increments()</code> {#collection-method}</h4>
+<p>The <code>increments</code> method creates an auto-incrementing <code>UNSIGNED INTEGER</code> equivalent column as a primary key:</p>
+<pre><code>$table-&gt;increments('id');
+</code></pre>
+<p><a name="column-method-integer"></a></p>
+<h4 id="integer-collection-method"><code>integer()</code> {#collection-method}</h4>
+<p>The <code>integer</code> method creates an <code>INTEGER</code> equivalent column:</p>
+<pre><code>$table-&gt;integer('votes');
+</code></pre>
+<p><a name="column-method-ipAddress"></a></p>
+<h4 id="ipaddress-collection-method"><code>ipAddress()</code> {#collection-method}</h4>
+<p>The <code>ipAddress</code> method creates a <code>VARCHAR</code> equivalent column:</p>
+<pre><code>$table-&gt;ipAddress('visitor');
+</code></pre>
+<p><a name="column-method-json"></a></p>
+<h4 id="json-collection-method"><code>json()</code> {#collection-method}</h4>
+<p>The <code>json</code> method creates a <code>JSON</code> equivalent column:</p>
+<pre><code>$table-&gt;json('options');
+</code></pre>
+<p><a name="column-method-jsonb"></a></p>
+<h4 id="jsonb-collection-method"><code>jsonb()</code> {#collection-method}</h4>
+<p>The <code>jsonb</code> method creates a <code>JSONB</code> equivalent column:</p>
+<pre><code>$table-&gt;jsonb('options');
+</code></pre>
+<p><a name="column-method-lineString"></a></p>
+<h4 id="linestring-collection-method"><code>lineString()</code> {#collection-method}</h4>
+<p>The <code>lineString</code> method creates a <code>LINESTRING</code> equivalent column:</p>
+<pre><code>$table-&gt;lineString('positions');
+</code></pre>
+<p><a name="column-method-longText"></a></p>
+<h4 id="longtext-collection-method"><code>longText()</code> {#collection-method}</h4>
+<p>The <code>longText</code> method creates a <code>LONGTEXT</code> equivalent column:</p>
+<pre><code>$table-&gt;longText('description');
+</code></pre>
+<p><a name="column-method-macAddress"></a></p>
+<h4 id="macaddress-collection-method"><code>macAddress()</code> {#collection-method}</h4>
+<p>The <code>macAddress</code> method creates a column that is intended to hold a MAC address. Some database systems, such as PostgreSQL, have a dedicated column type for this type of data. Other database systems will use a string equivalent column:</p>
+<pre><code>$table-&gt;macAddress('device');
+</code></pre>
+<p><a name="column-method-mediumIncrements"></a></p>
+<h4 id="mediumincrements-collection-method"><code>mediumIncrements()</code> {#collection-method}</h4>
+<p>The <code>mediumIncrements</code> method creates an auto-incrementing <code>UNSIGNED MEDIUMINT</code> equivalent column as a primary key:</p>
+<pre><code>$table-&gt;mediumIncrements('id');
+</code></pre>
+<p><a name="column-method-mediumInteger"></a></p>
+<h4 id="mediuminteger-collection-method"><code>mediumInteger()</code> {#collection-method}</h4>
+<p>The <code>mediumInteger</code> method creates a <code>MEDIUMINT</code> equivalent column:</p>
+<pre><code>$table-&gt;mediumInteger('votes');
+</code></pre>
+<p><a name="column-method-mediumText"></a></p>
+<h4 id="mediumtext-collection-method"><code>mediumText()</code> {#collection-method}</h4>
+<p>The <code>mediumText</code> method creates a <code>MEDIUMTEXT</code> equivalent column:</p>
+<pre><code>$table-&gt;mediumText('description');
+</code></pre>
+<p><a name="column-method-morphs"></a></p>
+<h4 id="morphs-collection-method"><code>morphs()</code> {#collection-method}</h4>
+<p>The <code>morphs</code> method is a convenience method that adds a <code>{column}_id</code> <code>UNSIGNED BIGINT</code> equivalent column and a <code>{column}_type</code> <code>VARCHAR</code> equivalent column.</p>
+<p>This method is intended to be used when defining the columns necessary for a polymorphic <a href="/docs/{{version}}/eloquent-relationships">Eloquent relationship</a>. In the following example, <code>taggable_id</code> and <code>taggable_type</code> columns would be created:</p>
+<pre><code>$table-&gt;morphs('taggable');
+</code></pre>
+<p><a name="column-method-multiLineString"></a></p>
+<h4 id="multilinestring-collection-method"><code>multiLineString()</code> {#collection-method}</h4>
+<p>The <code>multiLineString</code> method creates a <code>MULTILINESTRING</code> equivalent column:</p>
+<pre><code>$table-&gt;multiLineString('positions');
+</code></pre>
+<p><a name="column-method-multiPoint"></a></p>
+<h4 id="multipoint-collection-method"><code>multiPoint()</code> {#collection-method}</h4>
+<p>The <code>multiPoint</code> method creates a <code>MULTIPOINT</code> equivalent column:</p>
+<pre><code>$table-&gt;multiPoint('positions');
+</code></pre>
+<p><a name="column-method-multiPolygon"></a></p>
+<h4 id="multipolygon-collection-method"><code>multiPolygon()</code> {#collection-method}</h4>
+<p>The <code>multiPolygon</code> method creates a <code>MULTIPOLYGON</code> equivalent column:</p>
+<pre><code>$table-&gt;multiPolygon('positions');
+</code></pre>
+<p><a name="column-method-nullableTimestamps"></a></p>
+<h4 id="nullabletimestamps-collection-method"><code>nullableTimestamps()</code> {#collection-method}</h4>
+<p>The method is similar to the <a href="#column-method-timestamps">timestamps</a> method; however, the column that is created will be "nullable":</p>
+<pre><code>$table-&gt;nullableTimestamps(0);
+</code></pre>
+<p><a name="column-method-nullableMorphs"></a></p>
+<h4 id="nullablemorphs-collection-method"><code>nullableMorphs()</code> {#collection-method}</h4>
+<p>The method is similar to the <a href="#column-method-morphs">morphs</a> method; however, the columns that are created will be "nullable":</p>
+<pre><code>$table-&gt;nullableMorphs('taggable');
+</code></pre>
+<p><a name="column-method-nullableUuidMorphs"></a></p>
+<h4 id="nullableuuidmorphs-collection-method"><code>nullableUuidMorphs()</code> {#collection-method}</h4>
+<p>The method is similar to the <a href="#column-method-uuidMorphs">uuidMorphs</a> method; however, the columns that are created will be "nullable":</p>
+<pre><code>$table-&gt;nullableUuidMorphs('taggable');
+</code></pre>
+<p><a name="column-method-point"></a></p>
+<h4 id="point-collection-method"><code>point()</code> {#collection-method}</h4>
+<p>The <code>point</code> method creates a <code>POINT</code> equivalent column:</p>
+<pre><code>$table-&gt;point('position');
+</code></pre>
+<p><a name="column-method-polygon"></a></p>
+<h4 id="polygon-collection-method"><code>polygon()</code> {#collection-method}</h4>
+<p>The <code>polygon</code> method creates a <code>POLYGON</code> equivalent column:</p>
+<pre><code>$table-&gt;polygon('position');
+</code></pre>
+<p><a name="column-method-rememberToken"></a></p>
+<h4 id="remembertoken-collection-method"><code>rememberToken()</code> {#collection-method}</h4>
+<p>The <code>rememberToken</code> method creates a nullable, <code>VARCHAR(100)</code> equivalent column that is intended to store the current "remember me" <a href="/docs/{{version}}/authentication#remembering-users">authentication token</a>:</p>
+<pre><code>$table-&gt;rememberToken();
+</code></pre>
+<p><a name="column-method-set"></a></p>
+<h4 id="set-collection-method"><code>set()</code> {#collection-method}</h4>
+<p>The <code>set</code> method creates a <code>SET</code> equivalent column with the given list of valid values:</p>
+<pre><code>$table-&gt;set('flavors', ['strawberry', 'vanilla']);
+</code></pre>
+<p><a name="column-method-smallIncrements"></a></p>
+<h4 id="smallincrements-collection-method"><code>smallIncrements()</code> {#collection-method}</h4>
+<p>The <code>smallIncrements</code> method creates an auto-incrementing <code>UNSIGNED SMALLINT</code> equivalent column as a primary key:</p>
+<pre><code>$table-&gt;smallIncrements('id');
+</code></pre>
+<p><a name="column-method-smallInteger"></a></p>
+<h4 id="smallinteger-collection-method"><code>smallInteger()</code> {#collection-method}</h4>
+<p>The <code>smallInteger</code> method creates a <code>SMALLINT</code> equivalent column:</p>
+<pre><code>$table-&gt;smallInteger('votes');
+</code></pre>
+<p><a name="column-method-softDeletesTz"></a></p>
+<h4 id="softdeletestz-collection-method"><code>softDeletesTz()</code> {#collection-method}</h4>
+<p>The <code>softDeletesTz</code> method adds a nullable <code>deleted_at</code> <code>TIMESTAMP</code> (with timezone) equivalent column with an optional precision (total digits). This column is intended to store the <code>deleted_at</code> timestamp needed for Eloquent's "soft delete" functionality:</p>
+<pre><code>$table-&gt;softDeletesTz($column = 'deleted_at', $precision = 0);
+</code></pre>
+<p><a name="column-method-softDeletes"></a></p>
+<h4 id="softdeletes-collection-method"><code>softDeletes()</code> {#collection-method}</h4>
+<p>The <code>softDeletes</code> method adds a nullable <code>deleted_at</code> <code>TIMESTAMP</code> equivalent column with an optional precision (total digits). This column is intended to store the <code>deleted_at</code> timestamp needed for Eloquent's "soft delete" functionality:</p>
+<pre><code>$table-&gt;softDeletes($column = 'deleted_at', $precision = 0);
+</code></pre>
+<p><a name="column-method-string"></a></p>
+<h4 id="string-collection-method"><code>string()</code> {#collection-method}</h4>
+<p>The <code>string</code> method creates a <code>VARCHAR</code> equivalent column of the given length:</p>
+<pre><code>$table-&gt;string('name', 100);
+</code></pre>
+<p><a name="column-method-text"></a></p>
+<h4 id="text-collection-method"><code>text()</code> {#collection-method}</h4>
+<p>The <code>text</code> method creates a <code>TEXT</code> equivalent column:</p>
+<pre><code>$table-&gt;text('description');
+</code></pre>
+<p><a name="column-method-timeTz"></a></p>
+<h4 id="timetz-collection-method"><code>timeTz()</code> {#collection-method}</h4>
+<p>The <code>timeTz</code> method creates a <code>TIME</code> (with timezone) equivalent column with an optional precision (total digits):</p>
+<pre><code>$table-&gt;timeTz('sunrise', $precision = 0);
+</code></pre>
+<p><a name="column-method-time"></a></p>
+<h4 id="time-collection-method"><code>time()</code> {#collection-method}</h4>
+<p>The <code>time</code> method creates a <code>TIME</code> equivalent column with an optional precision (total digits):</p>
+<pre><code>$table-&gt;time('sunrise', $precision = 0);
+</code></pre>
+<p><a name="column-method-timestampTz"></a></p>
+<h4 id="timestamptz-collection-method"><code>timestampTz()</code> {#collection-method}</h4>
+<p>The <code>timestampTz</code> method creates a <code>TIMESTAMP</code> (with timezone) equivalent column with an optional precision (total digits):</p>
+<pre><code>$table-&gt;timestampTz('added_at', $precision = 0);
+</code></pre>
+<p><a name="column-method-timestamp"></a></p>
+<h4 id="timestamp-collection-method"><code>timestamp()</code> {#collection-method}</h4>
+<p>The <code>timestamp</code> method creates a <code>TIMESTAMP</code> equivalent column with an optional precision (total digits):</p>
+<pre><code>$table-&gt;timestamp('added_at', $precision = 0);
+</code></pre>
+<p><a name="column-method-timestampsTz"></a></p>
+<h4 id="timestampstz-collection-method"><code>timestampsTz()</code> {#collection-method}</h4>
+<p>The <code>timestampsTz</code> method creates <code>created_at</code> and <code>updated_at</code> <code>TIMESTAMP</code> (with timezone) equivalent columns with an optional precision (total digits):</p>
+<pre><code>$table-&gt;timestampsTz($precision = 0);
+</code></pre>
+<p><a name="column-method-timestamps"></a></p>
+<h4 id="timestamps-collection-method"><code>timestamps()</code> {#collection-method}</h4>
+<p>The <code>timestamps</code> method creates <code>created_at</code> and <code>updated_at</code> <code>TIMESTAMP</code> equivalent columns with an optional precision (total digits):</p>
+<pre><code>$table-&gt;timestamps($precision = 0);
+</code></pre>
+<p><a name="column-method-tinyIncrements"></a></p>
+<h4 id="tinyincrements-collection-method"><code>tinyIncrements()</code> {#collection-method}</h4>
+<p>The <code>tinyIncrements</code> method creates an auto-incrementing <code>UNSIGNED TINYINT</code> equivalent column as a primary key:</p>
+<pre><code>$table-&gt;tinyIncrements('id');
+</code></pre>
+<p><a name="column-method-tinyInteger"></a></p>
+<h4 id="tinyinteger-collection-method"><code>tinyInteger()</code> {#collection-method}</h4>
+<p>The <code>tinyInteger</code> method creates a <code>TINYINT</code> equivalent column:</p>
+<pre><code>$table-&gt;tinyInteger('votes');
+</code></pre>
+<p><a name="column-method-tinyText"></a></p>
+<h4 id="tinytext-collection-method"><code>tinyText()</code> {#collection-method}</h4>
+<p>The <code>tinyText</code> method creates a <code>TINYTEXT</code> equivalent column:</p>
+<pre><code>$table-&gt;tinyText('notes');
+</code></pre>
+<p><a name="column-method-unsignedBigInteger"></a></p>
+<h4 id="unsignedbiginteger-collection-method"><code>unsignedBigInteger()</code> {#collection-method}</h4>
+<p>The <code>unsignedBigInteger</code> method creates an <code>UNSIGNED BIGINT</code> equivalent column:</p>
+<pre><code>$table-&gt;unsignedBigInteger('votes');
+</code></pre>
+<p><a name="column-method-unsignedDecimal"></a></p>
+<h4 id="unsigneddecimal-collection-method"><code>unsignedDecimal()</code> {#collection-method}</h4>
+<p>The <code>unsignedDecimal</code> method creates an <code>UNSIGNED DECIMAL</code> equivalent column with an optional precision (total digits) and scale (decimal digits):</p>
+<pre><code>$table-&gt;unsignedDecimal('amount', $precision = 8, $scale = 2);
+</code></pre>
+<p><a name="column-method-unsignedInteger"></a></p>
+<h4 id="unsignedinteger-collection-method"><code>unsignedInteger()</code> {#collection-method}</h4>
+<p>The <code>unsignedInteger</code> method creates an <code>UNSIGNED INTEGER</code> equivalent column:</p>
+<pre><code>$table-&gt;unsignedInteger('votes');
+</code></pre>
+<p><a name="column-method-unsignedMediumInteger"></a></p>
+<h4 id="unsignedmediuminteger-collection-method"><code>unsignedMediumInteger()</code> {#collection-method}</h4>
+<p>The <code>unsignedMediumInteger</code> method creates an <code>UNSIGNED MEDIUMINT</code> equivalent column:</p>
+<pre><code>$table-&gt;unsignedMediumInteger('votes');
+</code></pre>
+<p><a name="column-method-unsignedSmallInteger"></a></p>
+<h4 id="unsignedsmallinteger-collection-method"><code>unsignedSmallInteger()</code> {#collection-method}</h4>
+<p>The <code>unsignedSmallInteger</code> method creates an <code>UNSIGNED SMALLINT</code> equivalent column:</p>
+<pre><code>$table-&gt;unsignedSmallInteger('votes');
+</code></pre>
+<p><a name="column-method-unsignedTinyInteger"></a></p>
+<h4 id="unsignedtinyinteger-collection-method"><code>unsignedTinyInteger()</code> {#collection-method}</h4>
+<p>The <code>unsignedTinyInteger</code> method creates an <code>UNSIGNED TINYINT</code> equivalent column:</p>
+<pre><code>$table-&gt;unsignedTinyInteger('votes');
+</code></pre>
+<p><a name="column-method-uuidMorphs"></a></p>
+<h4 id="uuidmorphs-collection-method"><code>uuidMorphs()</code> {#collection-method}</h4>
+<p>The <code>uuidMorphs</code> method is a convenience method that adds a <code>{column}_id</code> <code>CHAR(36)</code> equivalent column and a <code>{column}_type</code> <code>VARCHAR</code> equivalent column.</p>
+<p>This method is intended to be used when defining the columns necessary for a polymorphic <a href="/docs/{{version}}/eloquent-relationships">Eloquent relationship</a> that use UUID identifiers. In the following example, <code>taggable_id</code> and <code>taggable_type</code> columns would be created:</p>
+<pre><code>$table-&gt;uuidMorphs('taggable');
+</code></pre>
+<p><a name="column-method-uuid"></a></p>
+<h4 id="uuid-collection-method"><code>uuid()</code> {#collection-method}</h4>
+<p>The <code>uuid</code> method creates a <code>UUID</code> equivalent column:</p>
+<pre><code>$table-&gt;uuid('id');
+</code></pre>
+<p><a name="column-method-year"></a></p>
+<h4 id="year-collection-method"><code>year()</code> {#collection-method}</h4>
+<p>The <code>year</code> method creates a <code>YEAR</code> equivalent column:</p>
+<pre><code>$table-&gt;year('birth_year');
+</code></pre>
+<p><a name="column-modifiers"></a></p>
+<h3 id="column-modifiers">Column Modifiers</h3>
+<p>In addition to the column types listed above, there are several column "modifiers" you may use when adding a column to a database table. For example, to make the column "nullable", you may use the <code>nullable</code> method:</p>
+<pre><code>use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+Schema::table('users', function (Blueprint $table) {
+    $table-&gt;string('email')-&gt;nullable();
+});
+</code></pre>
+<p>The following table contains all of the available column modifiers. This list does not include <a href="#creating-indexes">index modifiers</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-&gt;after('column')</code></td>
+<td>Place the column "after" another column (MySQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;autoIncrement()</code></td>
+<td>Set INTEGER columns as auto-incrementing (primary key).</td>
+</tr>
+<tr>
+<td><code>-&gt;charset('utf8mb4')</code></td>
+<td>Specify a character set for the column (MySQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;collation('utf8mb4_unicode_ci')</code></td>
+<td>Specify a collation for the column (MySQL/PostgreSQL/SQL Server).</td>
+</tr>
+<tr>
+<td><code>-&gt;comment('my comment')</code></td>
+<td>Add a comment to a column (MySQL/PostgreSQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;default($value)</code></td>
+<td>Specify a "default" value for the column.</td>
+</tr>
+<tr>
+<td><code>-&gt;first()</code></td>
+<td>Place the column "first" in the table (MySQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;from($integer)</code></td>
+<td>Set the starting value of an auto-incrementing field (MySQL / PostgreSQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;nullable($value = true)</code></td>
+<td>Allow NULL values to be inserted into the column.</td>
+</tr>
+<tr>
+<td><code>-&gt;storedAs($expression)</code></td>
+<td>Create a stored generated column (MySQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;unsigned()</code></td>
+<td>Set INTEGER columns as UNSIGNED (MySQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;useCurrent()</code></td>
+<td>Set TIMESTAMP columns to use CURRENT_TIMESTAMP as default value.</td>
+</tr>
+<tr>
+<td><code>-&gt;useCurrentOnUpdate()</code></td>
+<td>Set TIMESTAMP columns to use CURRENT_TIMESTAMP when a record is updated.</td>
+</tr>
+<tr>
+<td><code>-&gt;virtualAs($expression)</code></td>
+<td>Create a virtual generated column (MySQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;generatedAs($expression)</code></td>
+<td>Create an identity column with specified sequence options (PostgreSQL).</td>
+</tr>
+<tr>
+<td><code>-&gt;always()</code></td>
+<td>Defines the precedence of sequence values over input for an identity column (PostgreSQL).</td>
+</tr>
+</tbody>
+</table>
+<p><a name="default-expressions"></a></p>
+<h4 id="default-expressions">Default Expressions</h4>
+<p>The <code>default</code> modifier accepts a value or an <code>Illuminate\Database\Query\Expression</code> instance. Using an <code>Expression</code> instance will prevent Laravel from wrapping the value in quotes and allow you to use database specific functions. One situation where this is particularly useful is when you need to assign default values to JSON columns:</p>
+<pre><code>&lt;?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Query\Expression;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateFlightsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('flights', function (Blueprint $table) {
+            $table-&gt;id();
+            $table-&gt;json('movies')-&gt;default(new Expression('(JSON_ARRAY())'));
+            $table-&gt;timestamps();
+        });
+    }
+}
+</code></pre>
+<blockquote>
+<p>{note} Support for default expressions depends on your database driver, database version, and the field type. Please refer to your database's documentation.</p>
+</blockquote>
+<p><a name="column-order"></a></p>
+<h4 id="column-order">Column Order</h4>
+<p>When using the MySQL database, the <code>after</code> method may be used to add columns after an existing column in the schema:</p>
+<pre><code>$table-&gt;after('password', function ($table) {
+    $table-&gt;string('address_line1');
+    $table-&gt;string('address_line2');
+    $table-&gt;string('city');
+});
+</code></pre>
+<p><a name="modifying-columns"></a></p>
+<h3 id="modifying-columns">Modifying Columns</h3>
+<p><a name="prerequisites"></a></p>
+<h4 id="prerequisites">Prerequisites</h4>
+<p>Before modifying a column, you must install the <code>doctrine/dbal</code> package using the Composer package manager. The Doctrine DBAL library is used to determine the current state of the column and to create the SQL queries needed to make the requested changes to your column:</p>
+<pre><code>composer require doctrine/dbal
+</code></pre>
+<p>If you plan to modify columns created using the <code>timestamp</code> method, you must also add the following configuration to your application's <code>config/database.php</code> configuration file:</p>
+<pre><code class="language-php">use Illuminate\Database\DBAL\TimestampType;
+
+'dbal' =&gt; [
+    'types' =&gt; [
+        'timestamp' =&gt; TimestampType::class,
+    ],
+],
+</code></pre>
+<blockquote>
+<p>{note} If your application is using Microsoft SQL Server, please ensure that you install <code>doctrine/dbal:^3.0</code>.</p>
+</blockquote>
+<p><a name="updating-column-attributes"></a></p>
+<h4 id="updating-column-attributes">Updating Column Attributes</h4>
+<p>The <code>change</code> method allows you to modify the type and attributes of existing columns. For example, you may wish to increase the size of a <code>string</code> column. To see the <code>change</code> method in action, let's increase the size of the <code>name</code> column from 25 to 50. To accomplish this, we simply define the new state of the column and then call the <code>change</code> method:</p>
+<pre><code>Schema::table('users', function (Blueprint $table) {
+    $table-&gt;string('name', 50)-&gt;change();
+});
+</code></pre>
+<p>We could also modify a column to be nullable:</p>
+<pre><code>Schema::table('users', function (Blueprint $table) {
+    $table-&gt;string('name', 50)-&gt;nullable()-&gt;change();
+});
+</code></pre>
+<blockquote>
+<p>{note} The following column types can be modified: <code>bigInteger</code>, <code>binary</code>, <code>boolean</code>, <code>date</code>, <code>dateTime</code>, <code>dateTimeTz</code>, <code>decimal</code>, <code>integer</code>, <code>json</code>, <code>longText</code>, <code>mediumText</code>, <code>smallInteger</code>, <code>string</code>, <code>text</code>, <code>time</code>, <code>unsignedBigInteger</code>, <code>unsignedInteger</code>, <code>unsignedSmallInteger</code>, and <code>uuid</code>.  To modify a <code>timestamp</code> column type a <a href="#prerequisites">Doctrine type must be registered</a>.</p>
+</blockquote>
+<p><a name="renaming-columns"></a></p>
+<h4 id="renaming-columns">Renaming Columns</h4>
+<p>To rename a column, you may use the <code>renameColumn</code> method provided by the schema builder blueprint. Before renaming a column, ensure that you have installed the <code>doctrine/dbal</code> library via the Composer package manager:</p>
+<pre><code>Schema::table('users', function (Blueprint $table) {
+    $table-&gt;renameColumn('from', 'to');
+});
+</code></pre>
+<blockquote>
+<p>{note} Renaming an <code>enum</code> column is not currently supported.</p>
+</blockquote>
+<p><a name="dropping-columns"></a></p>
+<h3 id="dropping-columns">Dropping Columns</h3>
+<p>To drop a column, you may use the <code>dropColumn</code> method on the schema builder blueprint. If your application is utilizing an SQLite database, you must install the <code>doctrine/dbal</code> package via the Composer package manager before the <code>dropColumn</code> method may be used:</p>
+<pre><code>Schema::table('users', function (Blueprint $table) {
+    $table-&gt;dropColumn('votes');
+});
+</code></pre>
+<p>You may drop multiple columns from a table by passing an array of column names to the <code>dropColumn</code> method:</p>
+<pre><code>Schema::table('users', function (Blueprint $table) {
+    $table-&gt;dropColumn(['votes', 'avatar', 'location']);
+});
+</code></pre>
+<blockquote>
+<p>{note} Dropping or modifying multiple columns within a single migration while using an SQLite database is not supported.</p>
+</blockquote>
+<p><a name="available-command-aliases"></a></p>
+<h4 id="available-command-aliases">Available Command Aliases</h4>
+<p>Laravel provides several convenient methods related to dropping common types of columns. Each of these methods is described in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$table-&gt;dropMorphs('morphable');</code></td>
+<td>Drop the <code>morphable_id</code> and <code>morphable_type</code> columns.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropRememberToken();</code></td>
+<td>Drop the <code>remember_token</code> column.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropSoftDeletes();</code></td>
+<td>Drop the <code>deleted_at</code> column.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropSoftDeletesTz();</code></td>
+<td>Alias of <code>dropSoftDeletes()</code> method.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropTimestamps();</code></td>
+<td>Drop the <code>created_at</code> and <code>updated_at</code> columns.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropTimestampsTz();</code></td>
+<td>Alias of <code>dropTimestamps()</code> method.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="indexes"></a></p>
+<h2 id="indexes">Indexes</h2>
+<p><a name="creating-indexes"></a></p>
+<h3 id="creating-indexes">Creating Indexes</h3>
+<p>The Laravel schema builder supports several types of indexes. The following example creates a new <code>email</code> column and specifies that its values should be unique. To create the index, we can chain the <code>unique</code> method onto the column definition:</p>
+<pre><code>use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+Schema::table('users', function (Blueprint $table) {
+    $table-&gt;string('email')-&gt;unique();
+});
+</code></pre>
+<p>Alternatively, you may create the index after defining the column. To do so, you should call the <code>unique</code> method on the schema builder blueprint. This method accepts the name of the column that should receive a unique index:</p>
+<pre><code>$table-&gt;unique('email');
+</code></pre>
+<p>You may even pass an array of columns to an index method to create a compound (or composite) index:</p>
+<pre><code>$table-&gt;index(['account_id', 'created_at']);
+</code></pre>
+<p>When creating an index, Laravel will automatically generate an index name based on the table, column names, and the index type, but you may pass a second argument to the method to specify the index name yourself:</p>
+<pre><code>$table-&gt;unique('email', 'unique_email');
+</code></pre>
+<p><a name="available-index-types"></a></p>
+<h4 id="available-index-types">Available Index Types</h4>
+<p>Laravel's schema builder blueprint class provides methods for creating each type of index supported by Laravel. Each index method accepts an optional second argument to specify the name of the index. If omitted, the name will be derived from the names of the table and column(s) used for the index, as well as the index type. Each of the available index methods is described in the table below:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$table-&gt;primary('id');</code></td>
+<td>Adds a primary key.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;primary(['id', 'parent_id']);</code></td>
+<td>Adds composite keys.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;unique('email');</code></td>
+<td>Adds a unique index.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;index('state');</code></td>
+<td>Adds an index.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;spatialIndex('location');</code></td>
+<td>Adds a spatial index (except SQLite).</td>
+</tr>
+</tbody>
+</table>
+<p><a name="index-lengths-mysql-mariadb"></a></p>
+<h4 id="index-lengths-mysql-mariadb">Index Lengths &amp; MySQL / MariaDB</h4>
+<p>By default, Laravel uses the <code>utf8mb4</code> character set. If you are running a version of MySQL older than the 5.7.7 release or MariaDB older than the 10.2.2 release, you may need to manually configure the default string length generated by migrations in order for MySQL to create indexes for them. You may configure the default string length by calling the <code>Schema::defaultStringLength</code> method within the <code>boot</code> method of your <code>App\Providers\AppServiceProvider</code> class:</p>
+<pre><code>use Illuminate\Support\Facades\Schema;
+
+/**
+ * Bootstrap any application services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    Schema::defaultStringLength(191);
+}
+</code></pre>
+<p>Alternatively, you may enable the <code>innodb_large_prefix</code> option for your database. Refer to your database's documentation for instructions on how to properly enable this option.</p>
+<p><a name="renaming-indexes"></a></p>
+<h3 id="renaming-indexes">Renaming Indexes</h3>
+<p>To rename an index, you may use the <code>renameIndex</code> method provided by the schema builder blueprint. This method accepts the current index name as its first argument and the desired name as its second argument:</p>
+<pre><code>$table-&gt;renameIndex('from', 'to')
+</code></pre>
+<p><a name="dropping-indexes"></a></p>
+<h3 id="dropping-indexes">Dropping Indexes</h3>
+<p>To drop an index, you must specify the index's name. By default, Laravel automatically assigns an index name based on the table name, the name of the indexed column, and the index type. Here are some examples:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$table-&gt;dropPrimary('users_id_primary');</code></td>
+<td>Drop a primary key from the "users" table.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropUnique('users_email_unique');</code></td>
+<td>Drop a unique index from the "users" table.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropIndex('geo_state_index');</code></td>
+<td>Drop a basic index from the "geo" table.</td>
+</tr>
+<tr>
+<td><code>$table-&gt;dropSpatialIndex('geo_location_spatialindex');</code></td>
+<td>Drop a spatial index from the "geo" table  (except SQLite).</td>
+</tr>
+</tbody>
+</table>
+<p>If you pass an array of columns into a method that drops indexes, the conventional index name will be generated based on the table name, columns, and index type:</p>
+<pre><code>Schema::table('geo', function (Blueprint $table) {
+    $table-&gt;dropIndex(['state']); // Drops index 'geo_state_index'
+});
+</code></pre>
+<p><a name="foreign-key-constraints"></a></p>
+<h3 id="foreign-key-constraints">Foreign Key Constraints</h3>
+<p>Laravel also provides support for creating foreign key constraints, which are used to force referential integrity at the database level. For example, let's define a <code>user_id</code> column on the <code>posts</code> table that references the <code>id</code> column on a <code>users</code> table:</p>
+<pre><code>use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+Schema::table('posts', function (Blueprint $table) {
+    $table-&gt;unsignedBigInteger('user_id');
+
+    $table-&gt;foreign('user_id')-&gt;references('id')-&gt;on('users');
+});
+</code></pre>
+<p>Since this syntax is rather verbose, Laravel provides additional, terser methods that use conventions to provide a better developer experience. The example above can be rewritten like so:</p>
+<pre><code>Schema::table('posts', function (Blueprint $table) {
+    $table-&gt;foreignId('user_id')-&gt;constrained();
+});
+</code></pre>
+<p>The <code>foreignId</code> method is an alias for <code>unsignedBigInteger</code> while the <code>constrained</code> method will use conventions to determine the table and column name being referenced. If your table name does not match Laravel's conventions, you may specify the table name by passing it as an argument to the <code>constrained</code> method:</p>
+<pre><code>Schema::table('posts', function (Blueprint $table) {
+    $table-&gt;foreignId('user_id')-&gt;constrained('users');
+});
+</code></pre>
+<p>You may also specify the desired action for the "on delete" and "on update" properties of the constraint:</p>
+<pre><code>$table-&gt;foreignId('user_id')
+      -&gt;constrained()
+      -&gt;onUpdate('cascade')
+      -&gt;onDelete('cascade');
+</code></pre>
+<p>Any additional <a href="#column-modifiers">column modifiers</a> must be called before the <code>constrained</code> method:</p>
+<pre><code>$table-&gt;foreignId('user_id')
+      -&gt;nullable()
+      -&gt;constrained();
+</code></pre>
+<p><a name="dropping-foreign-keys"></a></p>
+<h4 id="dropping-foreign-keys">Dropping Foreign Keys</h4>
+<p>To drop a foreign key, you may use the <code>dropForeign</code> method, passing the name of the foreign key constraint to be deleted as an argument. Foreign key constraints use the same naming convention as indexes. In other words, the foreign key constraint name is based on the name of the table and the columns in the constraint, followed by a "_foreign" suffix:</p>
+<pre><code>$table-&gt;dropForeign('posts_user_id_foreign');
+</code></pre>
+<p>Alternatively, you may pass an array containing the column name that holds the foreign key to the <code>dropForeign</code> method. The array will be converted to a foreign key constraint name using Laravel's constraint naming conventions:</p>
+<pre><code>$table-&gt;dropForeign(['user_id']);
+</code></pre>
+<p><a name="toggling-foreign-key-constraints"></a></p>
+<h4 id="toggling-foreign-key-constraints">Toggling Foreign Key Constraints</h4>
+<p>You may enable or disable foreign key constraints within your migrations by using the following methods:</p>
+<pre><code>Schema::enableForeignKeyConstraints();
+
+Schema::disableForeignKeyConstraints();
+</code></pre>
+<blockquote>
+<p>{note} SQLite disables foreign key constraints by default. When using SQLite, make sure to <a href="/docs/{{version}}/database#configuration">enable foreign key support</a> in your database configuration before attempting to create them in your migrations. In addition, SQLite only supports foreign keys upon creation of the table and <a href="https://www.sqlite.org/omitted.html">not when tables are altered</a>.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mix/" class="btn btn-neutral float-right" title="Compiling Assets (Mix)">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../middleware/" class="btn btn-neutral" title="Middleware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../middleware/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mix/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

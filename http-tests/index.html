@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>HTTP Tests - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "HTTP Tests";
+    var mkdocs_page_input_path = "http-tests.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">HTTP Tests</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#making-requests">Making Requests</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#customizing-request-headers">Customizing Request Headers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cookies">Cookies</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#session-authentication">Session / Authentication</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#debugging-responses">Debugging Responses</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testing-json-apis">Testing JSON APIs</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#asserting-exact-json-matches">Asserting Exact JSON Matches</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asserting-on-json-paths">Asserting On JSON Paths</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fluent-json-testing">Fluent JSON Testing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#understanding-the-etc-method">Understanding The etc Method</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#asserting-against-json-collections">Asserting Against JSON Collections</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#scoping-json-collection-assertions">Scoping JSON Collection Assertions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#asserting-json-types">Asserting JSON Types</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testing-file-uploads">Testing File Uploads</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#fake-file-customization">Fake File Customization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#testing-views">Testing Views</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sharing-errors">Sharing Errors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rendering-blade-components">Rendering Blade &amp; Components</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#available-assertions">Available Assertions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#response-assertions">Response Assertions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#assertcookie">assertCookie</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertcookieexpired">assertCookieExpired</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertcookienotexpired">assertCookieNotExpired</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertcookiemissing">assertCookieMissing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertcreated">assertCreated</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertdontsee">assertDontSee</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertdontseetext">assertDontSeeText</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertexactjson">assertExactJson</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertforbidden">assertForbidden</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertheader">assertHeader</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertheadermissing">assertHeaderMissing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjson">assertJson</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjsoncount">assertJsonCount</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjsonfragment">assertJsonFragment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjsonmissing">assertJsonMissing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjsonmissingexact">assertJsonMissingExact</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjsonmissingvalidationerrors">assertJsonMissingValidationErrors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjsonpath">assertJsonPath</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjsonstructure">assertJsonStructure</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertjsonvalidationerrors">assertJsonValidationErrors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertlocation">assertLocation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertnocontent">assertNoContent</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertnotfound">assertNotFound</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertok">assertOk</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertplaincookie">assertPlainCookie</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertredirect">assertRedirect</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsee">assertSee</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertseeinorder">assertSeeInOrder</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertseetext">assertSeeText</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertseetextinorder">assertSeeTextInOrder</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsessionhas">assertSessionHas</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsessionhasinput">assertSessionHasInput</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsessionhasall">assertSessionHasAll</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsessionhaserrors">assertSessionHasErrors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsessionhaserrorsin">assertSessionHasErrorsIn</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsessionhasnoerrors">assertSessionHasNoErrors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsessiondoesnthaveerrors">assertSessionDoesntHaveErrors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsessionmissing">assertSessionMissing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertstatus">assertStatus</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertsuccessful">assertSuccessful</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertunauthorized">assertUnauthorized</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertviewhas">assertViewHas</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertviewhasall">assertViewHasAll</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertviewis">assertViewIs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertviewmissing">assertViewMissing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authentication-assertions">Authentication Assertions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#assertauthenticated">assertAuthenticated</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertguest">assertGuest</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assertauthenticatedas">assertAuthenticatedAs</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>HTTP Tests</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="http-tests">HTTP Tests</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#making-requests">Making Requests</a><ul>
+<li><a href="#customizing-request-headers">Customizing Request Headers</a></li>
+<li><a href="#cookies">Cookies</a></li>
+<li><a href="#session-and-authentication">Session / Authentication</a></li>
+<li><a href="#debugging-responses">Debugging Responses</a></li>
+</ul>
+</li>
+<li><a href="#testing-json-apis">Testing JSON APIs</a><ul>
+<li><a href="#fluent-json-testing">Fluent JSON Testing</a></li>
+</ul>
+</li>
+<li><a href="#testing-file-uploads">Testing File Uploads</a></li>
+<li><a href="#testing-views">Testing Views</a><ul>
+<li><a href="#rendering-blade-and-components">Rendering Blade &amp; Components</a></li>
+</ul>
+</li>
+<li><a href="#available-assertions">Available Assertions</a><ul>
+<li><a href="#response-assertions">Response Assertions</a></li>
+<li><a href="#authentication-assertions">Authentication Assertions</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Laravel provides a very fluent API for making HTTP requests to your application and examining the responses. For example, take a look at the feature test defined below:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function test_a_basic_request()
+    {
+        $response = $this-&gt;get('/');
+
+        $response-&gt;assertStatus(200);
+    }
+}
+</code></pre>
+<p>The <code>get</code> method makes a <code>GET</code> request into the application, while the <code>assertStatus</code> method asserts that the returned response should have the given HTTP status code. In addition to this simple assertion, Laravel also contains a variety of assertions for inspecting the response headers, content, JSON structure, and more.</p>
+<p><a name="making-requests"></a></p>
+<h2 id="making-requests">Making Requests</h2>
+<p>To make a request to your application, you may invoke the <code>get</code>, <code>post</code>, <code>put</code>, <code>patch</code>, or <code>delete</code> methods within your test. These methods do not actually issue a "real" HTTP request to your application. Instead, the entire network request is simulated internally.</p>
+<p>Instead of returning an <code>Illuminate\Http\Response</code> instance, test request methods return an instance of <code>Illuminate\Testing\TestResponse</code>, which provides a <a href="#available-assertions">variety of helpful assertions</a> that allow you to inspect your application's responses:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function test_a_basic_request()
+    {
+        $response = $this-&gt;get('/');
+
+        $response-&gt;assertStatus(200);
+    }
+}
+</code></pre>
+<blockquote>
+<p>{tip} For convenience, the CSRF middleware is automatically disabled when running tests.</p>
+</blockquote>
+<p><a name="customizing-request-headers"></a></p>
+<h3 id="customizing-request-headers">Customizing Request Headers</h3>
+<p>You may use the <code>withHeaders</code> method to customize the request's headers before it is sent to the application. This method allows you to add any custom headers you would like to the request:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic functional test example.
+     *
+     * @return void
+     */
+    public function test_interacting_with_headers()
+    {
+        $response = $this-&gt;withHeaders([
+            'X-Header' =&gt; 'Value',
+        ])-&gt;post('/user', ['name' =&gt; 'Sally']);
+
+        $response-&gt;assertStatus(201);
+    }
+}
+</code></pre>
+<p><a name="cookies"></a></p>
+<h3 id="cookies">Cookies</h3>
+<p>You may use the <code>withCookie</code> or <code>withCookies</code> methods to set cookie values before making a request. The <code>withCookie</code> method accepts a cookie name and value as its two arguments, while the <code>withCookies</code> method accepts an array of name / value pairs:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    public function test_interacting_with_cookies()
+    {
+        $response = $this-&gt;withCookie('color', 'blue')-&gt;get('/');
+
+        $response = $this-&gt;withCookies([
+            'color' =&gt; 'blue',
+            'name' =&gt; 'Taylor',
+        ])-&gt;get('/');
+    }
+}
+</code></pre>
+<p><a name="session-and-authentication"></a></p>
+<h3 id="session-authentication">Session / Authentication</h3>
+<p>Laravel provides several helpers for interacting with the session during HTTP testing. First, you may set the session data to a given array using the <code>withSession</code> method. This is useful for loading the session with data before issuing a request to your application:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    public function test_interacting_with_the_session()
+    {
+        $response = $this-&gt;withSession(['banned' =&gt; false])-&gt;get('/');
+    }
+}
+</code></pre>
+<p>Laravel's session is typically used to maintain state for the currently authenticated user. Therefore, the <code>actingAs</code> helper method provides a simple way to authenticate a given user as the current user. For example, we may use a <a href="/docs/{{version}}/database-testing#writing-factories">model factory</a> to generate and authenticate a user:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use App\Models\User;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    public function test_an_action_that_requires_authentication()
+    {
+        $user = User::factory()-&gt;create();
+
+        $response = $this-&gt;actingAs($user)
+                         -&gt;withSession(['banned' =&gt; false])
+                         -&gt;get('/');
+    }
+}
+</code></pre>
+<p>You may also specify which guard should be used to authenticate the given user by passing the guard name as the second argument to the <code>actingAs</code> method:</p>
+<pre><code>$this-&gt;actingAs($user, 'api')
+</code></pre>
+<p><a name="debugging-responses"></a></p>
+<h3 id="debugging-responses">Debugging Responses</h3>
+<p>After making a test request to your application, the <code>dump</code>, <code>dumpHeaders</code>, and <code>dumpSession</code> methods may be used to examine and debug the response contents:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function test_basic_test()
+    {
+        $response = $this-&gt;get('/');
+
+        $response-&gt;dumpHeaders();
+
+        $response-&gt;dumpSession();
+
+        $response-&gt;dump();
+    }
+}
+</code></pre>
+<p><a name="testing-json-apis"></a></p>
+<h2 id="testing-json-apis">Testing JSON APIs</h2>
+<p>Laravel also provides several helpers for testing JSON APIs and their responses. For example, the <code>json</code>, <code>getJson</code>, <code>postJson</code>, <code>putJson</code>, <code>patchJson</code>, <code>deleteJson</code>, and <code>optionsJson</code> methods may be used to issue JSON requests with various HTTP verbs. You may also easily pass data and headers to these methods. To get started, let's write a test to make a <code>POST</code> request to <code>/api/user</code> and assert that the expected JSON data was returned:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic functional test example.
+     *
+     * @return void
+     */
+    public function test_making_an_api_request()
+    {
+        $response = $this-&gt;postJson('/api/user', ['name' =&gt; 'Sally']);
+
+        $response
+            -&gt;assertStatus(201)
+            -&gt;assertJson([
+                'created' =&gt; true,
+            ]);
+    }
+}
+</code></pre>
+<p>In addition, JSON response data may be accessed as array variables on the response, making it convenient for you to inspect the individual values returned within a JSON response:</p>
+<pre><code>$this-&gt;assertTrue($response['created']);
+</code></pre>
+<blockquote>
+<p>{tip} The <code>assertJson</code> method converts the response to an array and utilizes <code>PHPUnit::assertArraySubset</code> to verify that the given array exists within the JSON response returned by the application. So, if there are other properties in the JSON response, this test will still pass as long as the given fragment is present.</p>
+</blockquote>
+<p><a name="verifying-exact-match"></a></p>
+<h4 id="asserting-exact-json-matches">Asserting Exact JSON Matches</h4>
+<p>As previously mentioned, the <code>assertJson</code> method may be used to assert that a fragment of JSON exists within the JSON response. If you would like to verify that a given array <strong>exactly matches</strong> the JSON returned by your application, you should use the <code>assertExactJson</code> method:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic functional test example.
+     *
+     * @return void
+     */
+    public function test_asserting_an_exact_json_match()
+    {
+        $response = $this-&gt;json('POST', '/user', ['name' =&gt; 'Sally']);
+
+        $response
+            -&gt;assertStatus(201)
+            -&gt;assertExactJson([
+                'created' =&gt; true,
+            ]);
+    }
+}
+</code></pre>
+<p><a name="verifying-json-paths"></a></p>
+<h4 id="asserting-on-json-paths">Asserting On JSON Paths</h4>
+<p>If you would like to verify that the JSON response contains the given data at a specified path, you should use the <code>assertJsonPath</code> method:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    /**
+     * A basic functional test example.
+     *
+     * @return void
+     */
+    public function test_asserting_a_json_paths_value()
+    {
+        $response = $this-&gt;json('POST', '/user', ['name' =&gt; 'Sally']);
+
+        $response
+            -&gt;assertStatus(201)
+            -&gt;assertJsonPath('team.owner.name', 'Darian');
+    }
+}
+</code></pre>
+<p><a name="fluent-json-testing"></a></p>
+<h3 id="fluent-json-testing">Fluent JSON Testing</h3>
+<p>Laravel also offers a beautiful way to fluently test your application's JSON responses. To get started, pass a closure to the <code>assertJson</code> method. This closure will be invoked with an instance of <code>Illuminate\Testing\Fluent\AssertableJson</code> which can be used to make assertions against the JSON that was returned by your application. The <code>where</code> method may be used to make assertions against a particular attribute of the JSON, while the <code>missing</code> method may be used to assert that a particular attribute is missing from the JSON:</p>
+<pre><code>use Illuminate\Testing\Fluent\AssertableJson;
+
+/**
+ * A basic functional test example.
+ *
+ * @return void
+ */
+public function test_fluent_json()
+{
+    $response = $this-&gt;json('GET', '/users/1');
+
+    $response
+        -&gt;assertJson(fn (AssertableJson $json) =&gt;
+            $json-&gt;where('id', 1)
+                 -&gt;where('name', 'Victoria Faith')
+                 -&gt;missing('password')
+                 -&gt;etc()
+        );
+}
+</code></pre>
+<h4 id="understanding-the-etc-method">Understanding The <code>etc</code> Method</h4>
+<p>In the example above, you may have noticed we invoked the <code>etc</code> method at the end of our assertion chain. This method informs Laravel that there may be other attributes present on the JSON object. If the <code>etc</code> method is not used, the test will fail if other attributes that you did not make assertions against exist on the JSON object.</p>
+<p>The intention behind this behavior is to protect you from unintentionally exposing sensitive information in your JSON responses by forcing you to either explicitly make an assertion against the attribute or explicitly allow additional attributes via the <code>etc</code> method.</p>
+<p><a name="asserting-against-json-collections"></a></p>
+<h4 id="asserting-against-json-collections">Asserting Against JSON Collections</h4>
+<p>Often, your route will return a JSON response that contains multiple items, such as multiple users:</p>
+<pre><code>Route::get('/users', function () {
+    return User::all();
+});
+</code></pre>
+<p>In these situations, we may use the fluent JSON object's <code>has</code> method to make assertions against the users included in the response. For example, let's assert that the JSON response contains three users. Next, we'll make some assertions about the first user in the collection using the <code>first</code> method. The <code>first</code> method accepts a closure which receives another assertable JSON string that we can use to make assertions about the first object in the JSON collection:</p>
+<pre><code>$response
+    -&gt;assertJson(fn (AssertableJson $json) =&gt;
+        $json-&gt;has(3)
+             -&gt;first(fn ($json) =&gt;
+                $json-&gt;where('id', 1)
+                     -&gt;where('name', 'Victoria Faith')
+                     -&gt;missing('password')
+                     -&gt;etc()
+             )
+    );
+</code></pre>
+<p><a name="scoping-json-collection-assertions"></a></p>
+<h4 id="scoping-json-collection-assertions">Scoping JSON Collection Assertions</h4>
+<p>Sometimes, your application's routes will return JSON collections that are assigned named keys:</p>
+<pre><code>Route::get('/users', function () {
+    return [
+        'meta' =&gt; [...],
+        'users' =&gt; User::all(),
+    ];
+})
+</code></pre>
+<p>When testing these routes, you may use the <code>has</code> method to assert against the number of items in the collection. In addition, you may use the <code>has</code> method to scope a chain of assertions:</p>
+<pre><code>$response
+    -&gt;assertJson(fn (AssertableJson $json) =&gt;
+        $json-&gt;has('meta')
+             -&gt;has('users', 3)
+             -&gt;has('users.0', fn ($json) =&gt;
+                $json-&gt;where('id', 1)
+                     -&gt;where('name', 'Victoria Faith')
+                     -&gt;missing('password')
+                     -&gt;etc()
+             )
+    );
+</code></pre>
+<p>However, instead of making two separate calls to the <code>has</code> method to assert against the <code>users</code> collection, you may make a single call which provides a closure as its third parameter. When doing so, the closure will automatically be invoked and scoped to the first item in the collection:</p>
+<pre><code>$response
+    -&gt;assertJson(fn (AssertableJson $json) =&gt;
+        $json-&gt;has('meta')
+             -&gt;has('users', 3, fn ($json) =&gt;
+                $json-&gt;where('id', 1)
+                     -&gt;where('name', 'Victoria Faith')
+                     -&gt;missing('password')
+                     -&gt;etc()
+             )
+    );
+</code></pre>
+<p><a name="asserting-json-types"></a></p>
+<h4 id="asserting-json-types">Asserting JSON Types</h4>
+<p>You may only want to assert that the properties in the JSON response are of a certain type. The <code>Illuminate\Testing\Fluent\AssertableJson</code> class provides the <code>whereType</code> and <code>whereAllType</code> methods for doing just that:</p>
+<pre><code>$response-&gt;assertJson(fn (AssertableJson $json) =&gt;
+    $json-&gt;whereType('id', 'integer')
+         -&gt;whereAllType([
+            'users.0.name' =&gt; 'string',
+            'meta' =&gt; 'array'
+        ])
+);
+</code></pre>
+<p>You may specify multiple types using the <code>|</code> character, or passing an array of types as the second parameter to the <code>whereType</code> method. The assertion will be successful if the response value is any of the listed types:</p>
+<pre><code>$response-&gt;assertJson(fn (AssertableJson $json) =&gt;
+    $json-&gt;whereType('name', 'string|null')
+         -&gt;whereType('id', ['string', 'integer'])
+);
+</code></pre>
+<p>The <code>whereType</code> and <code>whereTypeAll</code> methods recognize the following types: <code>string</code>, <code>integer</code>, <code>double</code>, <code>boolean</code>, <code>array</code>, and <code>null</code>.</p>
+<p><a name="testing-file-uploads"></a></p>
+<h2 id="testing-file-uploads">Testing File Uploads</h2>
+<p>The <code>Illuminate\Http\UploadedFile</code> class provides a <code>fake</code> method which may be used to generate dummy files or images for testing. This, combined with the <code>Storage</code> facade's <code>fake</code> method, greatly simplifies the testing of file uploads. For example, you may combine these two features to easily test an avatar upload form:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    public function test_avatars_can_be_uploaded()
+    {
+        Storage::fake('avatars');
+
+        $file = UploadedFile::fake()-&gt;image('avatar.jpg');
+
+        $response = $this-&gt;post('/avatar', [
+            'avatar' =&gt; $file,
+        ]);
+
+        Storage::disk('avatars')-&gt;assertExists($file-&gt;hashName());
+    }
+}
+</code></pre>
+<p>If you would like to assert that a given file does not exist, you may use the <code>assertMissing</code> method provided by the <code>Storage</code> facade:</p>
+<pre><code>Storage::fake('avatars');
+
+// ...
+
+Storage::disk('avatars')-&gt;assertMissing('missing.jpg');
+</code></pre>
+<p><a name="fake-file-customization"></a></p>
+<h4 id="fake-file-customization">Fake File Customization</h4>
+<p>When creating files using the <code>fake</code> method provided by the <code>UploadedFile</code> class, you may specify the width, height, and size of the image (in kilobytes) in order to better test your application's validation rules:</p>
+<pre><code>UploadedFile::fake()-&gt;image('avatar.jpg', $width, $height)-&gt;size(100);
+</code></pre>
+<p>In addition to creating images, you may create files of any other type using the <code>create</code> method:</p>
+<pre><code>UploadedFile::fake()-&gt;create('document.pdf', $sizeInKilobytes);
+</code></pre>
+<p>If needed, you may pass a <code>$mimeType</code> argument to the method to explicitly define the MIME type that should be returned by the file:</p>
+<pre><code>UploadedFile::fake()-&gt;create(
+    'document.pdf', $sizeInKilobytes, 'application/pdf'
+);
+</code></pre>
+<p><a name="testing-views"></a></p>
+<h2 id="testing-views">Testing Views</h2>
+<p>Laravel also allows you to render a view without making a simulated HTTP request to the application. To accomplish this, you may call the <code>view</code> method within your test. The <code>view</code> method accepts the view name and an optional array of data. The method returns an instance of <code>Illuminate\Testing\TestView</code>, which offers several methods to conveniently make assertions about the view's contents:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    public function test_a_welcome_view_can_be_rendered()
+    {
+        $view = $this-&gt;view('welcome', ['name' =&gt; 'Taylor']);
+
+        $view-&gt;assertSee('Taylor');
+    }
+}
+</code></pre>
+<p>The <code>TestView</code> class provides the following assertion methods: <code>assertSee</code>, <code>assertSeeInOrder</code>, <code>assertSeeText</code>, <code>assertSeeTextInOrder</code>, <code>assertDontSee</code>, and <code>assertDontSeeText</code>.</p>
+<p>If needed, you may get the raw, rendered view contents by casting the <code>TestView</code> instance to a string:</p>
+<pre><code>$contents = (string) $this-&gt;view('welcome');
+</code></pre>
+<p><a name="sharing-errors"></a></p>
+<h4 id="sharing-errors">Sharing Errors</h4>
+<p>Some views may depend on errors shared in the <a href="/docs/{{version}}/validation#quick-displaying-the-validation-errors">global error bag provided by Laravel</a>. To hydrate the error bag with error messages, you may use the <code>withViewErrors</code> method:</p>
+<pre><code>$view = $this-&gt;withViewErrors([
+    'name' =&gt; ['Please provide a valid name.']
+])-&gt;view('form');
+
+$view-&gt;assertSee('Please provide a valid name.');
+</code></pre>
+<p><a name="rendering-blade-and-components"></a></p>
+<h3 id="rendering-blade-components">Rendering Blade &amp; Components</h3>
+<p>If necessary, you may use the <code>blade</code> method to evaluate and render a raw <a href="/docs/{{version}}/blade">Blade</a> string. Like the <code>view</code> method, the <code>blade</code> method returns an instance of <code>Illuminate\Testing\TestView</code>:</p>
+<pre><code>$view = $this-&gt;blade(
+    '&lt;x-component :name="$name" /&gt;',
+    ['name' =&gt; 'Taylor']
+);
+
+$view-&gt;assertSee('Taylor');
+</code></pre>
+<p>You may use the <code>component</code> method to evaluate and render a <a href="/docs/{{version}}/blade#components">Blade component</a>. Like the <code>view</code> method, the <code>component</code> method returns an instance of <code>Illuminate\Testing\TestView</code>:</p>
+<pre><code>$view = $this-&gt;component(Profile::class, ['name' =&gt; 'Taylor']);
+
+$view-&gt;assertSee('Taylor');
+</code></pre>
+<p><a name="available-assertions"></a></p>
+<h2 id="available-assertions">Available Assertions</h2>
+<p><a name="response-assertions"></a></p>
+<h3 id="response-assertions">Response Assertions</h3>
+<p>Laravel's <code>Illuminate\Testing\TestResponse</code> class provides a variety of custom assertion methods that you may utilize when testing your application. These assertions may be accessed on the response that is returned by the <code>json</code>, <code>get</code>, <code>post</code>, <code>put</code>, and <code>delete</code> test methods:</p>
+<style>
+    .collection-method-list > p {
+        column-count: 2; -moz-column-count: 2; -webkit-column-count: 2;
+        column-gap: 2em; -moz-column-gap: 2em; -webkit-column-gap: 2em;
+    }
+
+    .collection-method-list a {
+        display: block;
+    }
+</style>
+
+<div class="collection-method-list" markdown="1">
+
+[assertCookie](#assert-cookie)
+[assertCookieExpired](#assert-cookie-expired)
+[assertCookieNotExpired](#assert-cookie-not-expired)
+[assertCookieMissing](#assert-cookie-missing)
+[assertCreated](#assert-created)
+[assertDontSee](#assert-dont-see)
+[assertDontSeeText](#assert-dont-see-text)
+[assertExactJson](#assert-exact-json)
+[assertForbidden](#assert-forbidden)
+[assertHeader](#assert-header)
+[assertHeaderMissing](#assert-header-missing)
+[assertJson](#assert-json)
+[assertJsonCount](#assert-json-count)
+[assertJsonFragment](#assert-json-fragment)
+[assertJsonMissing](#assert-json-missing)
+[assertJsonMissingExact](#assert-json-missing-exact)
+[assertJsonMissingValidationErrors](#assert-json-missing-validation-errors)
+[assertJsonPath](#assert-json-path)
+[assertJsonStructure](#assert-json-structure)
+[assertJsonValidationErrors](#assert-json-validation-errors)
+[assertLocation](#assert-location)
+[assertNoContent](#assert-no-content)
+[assertNotFound](#assert-not-found)
+[assertOk](#assert-ok)
+[assertPlainCookie](#assert-plain-cookie)
+[assertRedirect](#assert-redirect)
+[assertSee](#assert-see)
+[assertSeeInOrder](#assert-see-in-order)
+[assertSeeText](#assert-see-text)
+[assertSeeTextInOrder](#assert-see-text-in-order)
+[assertSessionHas](#assert-session-has)
+[assertSessionHasInput](#assert-session-has-input)
+[assertSessionHasAll](#assert-session-has-all)
+[assertSessionHasErrors](#assert-session-has-errors)
+[assertSessionHasErrorsIn](#assert-session-has-errors-in)
+[assertSessionHasNoErrors](#assert-session-has-no-errors)
+[assertSessionDoesntHaveErrors](#assert-session-doesnt-have-errors)
+[assertSessionMissing](#assert-session-missing)
+[assertStatus](#assert-status)
+[assertSuccessful](#assert-successful)
+[assertUnauthorized](#assert-unauthorized)
+[assertViewHas](#assert-view-has)
+[assertViewHasAll](#assert-view-has-all)
+[assertViewIs](#assert-view-is)
+[assertViewMissing](#assert-view-missing)
+
+</div>
+
+<p><a name="assert-cookie"></a></p>
+<h4 id="assertcookie">assertCookie</h4>
+<p>Assert that the response contains the given cookie:</p>
+<pre><code>$response-&gt;assertCookie($cookieName, $value = null);
+</code></pre>
+<p><a name="assert-cookie-expired"></a></p>
+<h4 id="assertcookieexpired">assertCookieExpired</h4>
+<p>Assert that the response contains the given cookie and it is expired:</p>
+<pre><code>$response-&gt;assertCookieExpired($cookieName);
+</code></pre>
+<p><a name="assert-cookie-not-expired"></a></p>
+<h4 id="assertcookienotexpired">assertCookieNotExpired</h4>
+<p>Assert that the response contains the given cookie and it is not expired:</p>
+<pre><code>$response-&gt;assertCookieNotExpired($cookieName);
+</code></pre>
+<p><a name="assert-cookie-missing"></a></p>
+<h4 id="assertcookiemissing">assertCookieMissing</h4>
+<p>Assert that the response does not contains the given cookie:</p>
+<pre><code>$response-&gt;assertCookieMissing($cookieName);
+</code></pre>
+<p><a name="assert-created"></a></p>
+<h4 id="assertcreated">assertCreated</h4>
+<p>Assert that the response has a 201 HTTP status code:</p>
+<pre><code>$response-&gt;assertCreated();
+</code></pre>
+<p><a name="assert-dont-see"></a></p>
+<h4 id="assertdontsee">assertDontSee</h4>
+<p>Assert that the given string is not contained within the response returned by the application. This assertion will automatically escape the given string unless you pass a second argument of <code>false</code>:</p>
+<pre><code>$response-&gt;assertDontSee($value, $escaped = true);
+</code></pre>
+<p><a name="assert-dont-see-text"></a></p>
+<h4 id="assertdontseetext">assertDontSeeText</h4>
+<p>Assert that the given string is not contained within the response text. This assertion will automatically escape the given string unless you pass a second argument of <code>false</code>. This method will pass the response content to the <code>strip_tags</code> PHP function before making the assertion:</p>
+<pre><code>$response-&gt;assertDontSeeText($value, $escaped = true);
+</code></pre>
+<p><a name="assert-exact-json"></a></p>
+<h4 id="assertexactjson">assertExactJson</h4>
+<p>Assert that the response contains an exact match of the given JSON data:</p>
+<pre><code>$response-&gt;assertExactJson(array $data);
+</code></pre>
+<p><a name="assert-forbidden"></a></p>
+<h4 id="assertforbidden">assertForbidden</h4>
+<p>Assert that the response has a forbidden (403) HTTP status code:</p>
+<pre><code>$response-&gt;assertForbidden();
+</code></pre>
+<p><a name="assert-header"></a></p>
+<h4 id="assertheader">assertHeader</h4>
+<p>Assert that the given header and value is present on the response:</p>
+<pre><code>$response-&gt;assertHeader($headerName, $value = null);
+</code></pre>
+<p><a name="assert-header-missing"></a></p>
+<h4 id="assertheadermissing">assertHeaderMissing</h4>
+<p>Assert that the given header is not present on the response:</p>
+<pre><code>$response-&gt;assertHeaderMissing($headerName);
+</code></pre>
+<p><a name="assert-json"></a></p>
+<h4 id="assertjson">assertJson</h4>
+<p>Assert that the response contains the given JSON data:</p>
+<pre><code>$response-&gt;assertJson(array $data, $strict = false);
+</code></pre>
+<p>The <code>assertJson</code> method converts the response to an array and utilizes <code>PHPUnit::assertArraySubset</code> to verify that the given array exists within the JSON response returned by the application. So, if there are other properties in the JSON response, this test will still pass as long as the given fragment is present.</p>
+<p><a name="assert-json-count"></a></p>
+<h4 id="assertjsoncount">assertJsonCount</h4>
+<p>Assert that the response JSON has an array with the expected number of items at the given key:</p>
+<pre><code>$response-&gt;assertJsonCount($count, $key = null);
+</code></pre>
+<p><a name="assert-json-fragment"></a></p>
+<h4 id="assertjsonfragment">assertJsonFragment</h4>
+<p>Assert that the response contains the given JSON data anywhere in the response:</p>
+<pre><code>Route::get('/users', function () {
+    return [
+        'users' =&gt; [
+            [
+                'name' =&gt; 'Taylor Otwell',
+            ],
+        ],
+    ];
+});
+
+$response-&gt;assertJsonFragment(['name' =&gt; 'Taylor Otwell']);
+</code></pre>
+<p><a name="assert-json-missing"></a></p>
+<h4 id="assertjsonmissing">assertJsonMissing</h4>
+<p>Assert that the response does not contain the given JSON data:</p>
+<pre><code>$response-&gt;assertJsonMissing(array $data);
+</code></pre>
+<p><a name="assert-json-missing-exact"></a></p>
+<h4 id="assertjsonmissingexact">assertJsonMissingExact</h4>
+<p>Assert that the response does not contain the exact JSON data:</p>
+<pre><code>$response-&gt;assertJsonMissingExact(array $data);
+</code></pre>
+<p><a name="assert-json-missing-validation-errors"></a></p>
+<h4 id="assertjsonmissingvalidationerrors">assertJsonMissingValidationErrors</h4>
+<p>Assert that the response has no JSON validation errors for the given keys:</p>
+<pre><code>$response-&gt;assertJsonMissingValidationErrors($keys);
+</code></pre>
+<p><a name="assert-json-path"></a></p>
+<h4 id="assertjsonpath">assertJsonPath</h4>
+<p>Assert that the response contains the given data at the specified path:</p>
+<pre><code>$response-&gt;assertJsonPath($path, $expectedValue);
+</code></pre>
+<p>For example, if the JSON response returned by your application contains the following data:</p>
+<pre><code class="language-js">{
+    &quot;user&quot;: {
+        &quot;name&quot;: &quot;Steve Schoger&quot;
+    }
+}
+</code></pre>
+<p>You may assert that the <code>name</code> property of the <code>user</code> object matches a given value like so:</p>
+<pre><code>$response-&gt;assertJsonPath('user.name', 'Steve Schoger');
+</code></pre>
+<p><a name="assert-json-structure"></a></p>
+<h4 id="assertjsonstructure">assertJsonStructure</h4>
+<p>Assert that the response has a given JSON structure:</p>
+<pre><code>$response-&gt;assertJsonStructure(array $structure);
+</code></pre>
+<p>For example, if the JSON response returned by your application contains the following data:</p>
+<pre><code class="language-js">{
+    &quot;user&quot;: {
+        &quot;name&quot;: &quot;Steve Schoger&quot;
+    }
+}
+</code></pre>
+<p>You may assert that the JSON structure matches your expectations like so:</p>
+<pre><code>$response-&gt;assertJsonStructure([
+    'user' =&gt; [
+        'name',
+    ]
+]);
+</code></pre>
+<p>Sometimes, JSON responses returned by your application may contain arrays of objects:</p>
+<pre><code class="language-js">{
+    &quot;user&quot;: [
+        {
+            &quot;name&quot;: &quot;Steve Schoger&quot;,
+            &quot;age&quot;: 55,
+            &quot;location&quot;: &quot;Earth&quot;
+        },  
+        {
+            &quot;name&quot;: &quot;Mary Schoger&quot;,
+            &quot;age&quot;: 60,
+            &quot;location&quot;: &quot;Earth&quot;
+        }
+    ]
+}
+</code></pre>
+<p>In this situation, you may use the <code>*</code> character to assert against the structure of all of the objects in the array:</p>
+<pre><code>$response-&gt;assertJsonStructure([
+    'user' =&gt; [
+        '*' =&gt; [
+             'name',
+             'age',
+             'location'
+        ]
+    ]
+]);
+</code></pre>
+<p><a name="assert-json-validation-errors"></a></p>
+<h4 id="assertjsonvalidationerrors">assertJsonValidationErrors</h4>
+<p>Assert that the response has the given JSON validation errors for the given keys. This method should be used when asserting against responses where the validation errors are returned as a JSON structure instead of being flashed to the session:</p>
+<pre><code>$response-&gt;assertJsonValidationErrors(array $data);
+</code></pre>
+<p><a name="assert-location"></a></p>
+<h4 id="assertlocation">assertLocation</h4>
+<p>Assert that the response has the given URI value in the <code>Location</code> header:</p>
+<pre><code>$response-&gt;assertLocation($uri);
+</code></pre>
+<p><a name="assert-no-content"></a></p>
+<h4 id="assertnocontent">assertNoContent</h4>
+<p>Assert that the response has the given HTTP status code and no content:</p>
+<pre><code>$response-&gt;assertNoContent($status = 204);
+</code></pre>
+<p><a name="assert-not-found"></a></p>
+<h4 id="assertnotfound">assertNotFound</h4>
+<p>Assert that the response has a not found (404) HTTP status code:</p>
+<pre><code>$response-&gt;assertNotFound();
+</code></pre>
+<p><a name="assert-ok"></a></p>
+<h4 id="assertok">assertOk</h4>
+<p>Assert that the response has a 200 HTTP status code:</p>
+<pre><code>$response-&gt;assertOk();
+</code></pre>
+<p><a name="assert-plain-cookie"></a></p>
+<h4 id="assertplaincookie">assertPlainCookie</h4>
+<p>Assert that the response contains the given unencrypted cookie:</p>
+<pre><code>$response-&gt;assertPlainCookie($cookieName, $value = null);
+</code></pre>
+<p><a name="assert-redirect"></a></p>
+<h4 id="assertredirect">assertRedirect</h4>
+<p>Assert that the response is a redirect to the given URI:</p>
+<pre><code>$response-&gt;assertRedirect($uri);
+</code></pre>
+<p><a name="assert-see"></a></p>
+<h4 id="assertsee">assertSee</h4>
+<p>Assert that the given string is contained within the response. This assertion will automatically escape the given string unless you pass a second argument of <code>false</code>:</p>
+<pre><code>$response-&gt;assertSee($value, $escaped = true);
+</code></pre>
+<p><a name="assert-see-in-order"></a></p>
+<h4 id="assertseeinorder">assertSeeInOrder</h4>
+<p>Assert that the given strings are contained in order within the response. This assertion will automatically escape the given strings unless you pass a second argument of <code>false</code>:</p>
+<pre><code>$response-&gt;assertSeeInOrder(array $values, $escaped = true);
+</code></pre>
+<p><a name="assert-see-text"></a></p>
+<h4 id="assertseetext">assertSeeText</h4>
+<p>Assert that the given string is contained within the response text. This assertion will automatically escape the given string unless you pass a second argument of <code>false</code>. The response content will be passed to the <code>strip_tags</code> PHP function before the assertion is made:</p>
+<pre><code>$response-&gt;assertSeeText($value, $escaped = true);
+</code></pre>
+<p><a name="assert-see-text-in-order"></a></p>
+<h4 id="assertseetextinorder">assertSeeTextInOrder</h4>
+<p>Assert that the given strings are contained in order within the response text. This assertion will automatically escape the given strings unless you pass a second argument of <code>false</code>. The response content will be passed to the <code>strip_tags</code> PHP function before the assertion is made:</p>
+<pre><code>$response-&gt;assertSeeTextInOrder(array $values, $escaped = true);
+</code></pre>
+<p><a name="assert-session-has"></a></p>
+<h4 id="assertsessionhas">assertSessionHas</h4>
+<p>Assert that the session contains the given piece of data:</p>
+<pre><code>$response-&gt;assertSessionHas($key, $value = null);
+</code></pre>
+<p><a name="assert-session-has-input"></a></p>
+<h4 id="assertsessionhasinput">assertSessionHasInput</h4>
+<p>Assert that the session has a given value in the <a href="/docs/{{version}}/responses#redirecting-with-flashed-session-data">flashed input array</a>:</p>
+<pre><code>$response-&gt;assertSessionHasInput($key, $value = null);
+</code></pre>
+<p><a name="assert-session-has-all"></a></p>
+<h4 id="assertsessionhasall">assertSessionHasAll</h4>
+<p>Assert that the session contains a given array of key / value pairs:</p>
+<pre><code>$response-&gt;assertSessionHasAll(array $data);
+</code></pre>
+<p>For example, if your application's session contains <code>name</code> and <code>status</code> keys, you may assert that both exist and have the specified values like so:</p>
+<pre><code>$response-&gt;assertSessionHasAll([
+    'name' =&gt; 'Taylor Otwell',
+    'status' =&gt; 'active',
+]);
+</code></pre>
+<p><a name="assert-session-has-errors"></a></p>
+<h4 id="assertsessionhaserrors">assertSessionHasErrors</h4>
+<p>Assert that the session contains an error for the given <code>$keys</code>. If <code>$keys</code> is an associative array, assert that the session contains a specific error message (value) for each field (key). This method should be used when testing routes that flash validation errors to the session instead of returning them as a JSON structure:</p>
+<pre><code>$response-&gt;assertSessionHasErrors(
+    array $keys, $format = null, $errorBag = 'default'
+);
+</code></pre>
+<p>For example, to assert that the <code>name</code> and <code>email</code> fields have validation error messages that were flashed to the session, you may invoke the <code>assertSessionHasErrors</code> method like so:</p>
+<pre><code>$response-&gt;assertSessionHasErrors(['name', 'email']);
+</code></pre>
+<p>Or, you may assert that a given field has a particular validation error message:</p>
+<pre><code>$response-&gt;assertSessionHasErrors([
+    'name' =&gt; 'The given name was invalid.'
+]);
+</code></pre>
+<p><a name="assert-session-has-errors-in"></a></p>
+<h4 id="assertsessionhaserrorsin">assertSessionHasErrorsIn</h4>
+<p>Assert that the session contains an error for the given <code>$keys</code> within a specific <a href="/docs/{{version}}/validation#named-error-bags">error bag</a>. If <code>$keys</code> is an associative array, assert that the session contains a specific error message (value) for each field (key), within the error bag:</p>
+<pre><code>$response-&gt;assertSessionHasErrorsIn($errorBag, $keys = [], $format = null);
+</code></pre>
+<p><a name="assert-session-has-no-errors"></a></p>
+<h4 id="assertsessionhasnoerrors">assertSessionHasNoErrors</h4>
+<p>Assert that the session has no validation errors:</p>
+<pre><code>$response-&gt;assertSessionHasNoErrors();
+</code></pre>
+<p><a name="assert-session-doesnt-have-errors"></a></p>
+<h4 id="assertsessiondoesnthaveerrors">assertSessionDoesntHaveErrors</h4>
+<p>Assert that the session has no validation errors for the given keys:</p>
+<pre><code>$response-&gt;assertSessionDoesntHaveErrors($keys = [], $format = null, $errorBag = 'default');
+</code></pre>
+<p><a name="assert-session-missing"></a></p>
+<h4 id="assertsessionmissing">assertSessionMissing</h4>
+<p>Assert that the session does not contain the given key:</p>
+<pre><code>$response-&gt;assertSessionMissing($key);
+</code></pre>
+<p><a name="assert-status"></a></p>
+<h4 id="assertstatus">assertStatus</h4>
+<p>Assert that the response has a given HTTP status code:</p>
+<pre><code>$response-&gt;assertStatus($code);
+</code></pre>
+<p><a name="assert-successful"></a></p>
+<h4 id="assertsuccessful">assertSuccessful</h4>
+<p>Assert that the response has a successful (&gt;= 200 and &lt; 300) HTTP status code:</p>
+<pre><code>$response-&gt;assertSuccessful();
+</code></pre>
+<p><a name="assert-unauthorized"></a></p>
+<h4 id="assertunauthorized">assertUnauthorized</h4>
+<p>Assert that the response has an unauthorized (401) HTTP status code:</p>
+<pre><code>$response-&gt;assertUnauthorized();
+</code></pre>
+<p><a name="assert-view-has"></a></p>
+<h4 id="assertviewhas">assertViewHas</h4>
+<p>Assert that the response view contains given a piece of data:</p>
+<pre><code>$response-&gt;assertViewHas($key, $value = null);
+</code></pre>
+<p>In addition, view data may be accessed as array variables on the response, allowing you to convenient inspect it:</p>
+<pre><code>$this-&gt;assertEquals('Taylor', $response['name']);
+</code></pre>
+<p><a name="assert-view-has-all"></a></p>
+<h4 id="assertviewhasall">assertViewHasAll</h4>
+<p>Assert that the response view has a given list of data:</p>
+<pre><code>$response-&gt;assertViewHasAll(array $data);
+</code></pre>
+<p>This method may be used to assert that the view simply contains data matching the given keys:</p>
+<pre><code>$response-&gt;assertViewHasAll([
+    'name',
+    'email',
+]);
+</code></pre>
+<p>Or, you may assert that the view data is present and has specific values:</p>
+<pre><code>$response-&gt;assertViewHasAll([
+    'name' =&gt; 'Taylor Otwell',
+    'email' =&gt; 'taylor@example.com,',
+]);
+</code></pre>
+<p><a name="assert-view-is"></a></p>
+<h4 id="assertviewis">assertViewIs</h4>
+<p>Assert that the given view was returned by the route:</p>
+<pre><code>$response-&gt;assertViewIs($value);
+</code></pre>
+<p><a name="assert-view-missing"></a></p>
+<h4 id="assertviewmissing">assertViewMissing</h4>
+<p>Assert that the given data key was not made available to the view returned in the application's response:</p>
+<pre><code>$response-&gt;assertViewMissing($key);
+</code></pre>
+<p><a name="authentication-assertions"></a></p>
+<h3 id="authentication-assertions">Authentication Assertions</h3>
+<p>Laravel also provides a variety of authentication related assertions that you may utilize within your application's feature tests. Note that these methods are invoked on the test class itself and not the <code>Illuminate\Testing\TestResponse</code> instance returned by methods such as <code>get</code> and <code>post</code>.</p>
+<p><a name="assert-authenticated"></a></p>
+<h4 id="assertauthenticated">assertAuthenticated</h4>
+<p>Assert that a user is authenticated:</p>
+<pre><code>$this-&gt;assertAuthenticated($guard = null);
+</code></pre>
+<p><a name="assert-guest"></a></p>
+<h4 id="assertguest">assertGuest</h4>
+<p>Assert that a user is not authenticated:</p>
+<pre><code>$this-&gt;assertGuest($guard = null);
+</code></pre>
+<p><a name="assert-authenticated-as"></a></p>
+<h4 id="assertauthenticatedas">assertAuthenticatedAs</h4>
+<p>Assert that a specific user is authenticated:</p>
+<pre><code>$this-&gt;assertAuthenticatedAs($user, $guard = null);
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href=".." class="btn btn-neutral float-right" title="Welcome to Laravel Tutorials">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../http-client/" class="btn btn-neutral" title="HTTP Client"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../http-client/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href=".." style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Resetting Passwords - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Resetting Passwords";
+    var mkdocs_page_input_path = "passwords.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Resetting Passwords</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#model-preparation">Model Preparation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#database-preparation">Database Preparation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuring-trusted-hosts">Configuring Trusted Hosts</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#routing">Routing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#requesting-the-password-reset-link">Requesting The Password Reset Link</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-password-reset-link-request-form">The Password Reset Link Request Form</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#handling-the-form-submission">Handling The Form Submission</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#resetting-the-password">Resetting The Password</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-password-reset-form">The Password Reset Form</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#handling-the-form-submission_1">Handling The Form Submission</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#customization">Customization</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reset-link-customization">Reset Link Customization</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reset-email-customization">Reset Email Customization</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Resetting Passwords</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="resetting-passwords">Resetting Passwords</h1>
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#model-preparation">Model Preparation</a></li>
+<li><a href="#database-preparation">Database Preparation</a></li>
+<li><a href="#configuring-trusted-hosts">Configuring Trusted Hosts</a></li>
+</ul>
+</li>
+<li><a href="#routing">Routing</a><ul>
+<li><a href="#requesting-the-password-reset-link">Requesting The Password Reset Link</a></li>
+<li><a href="#resetting-the-password">Resetting The Password</a></li>
+</ul>
+</li>
+<li><a href="#password-customization">Customization</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Most web applications provide a way for users to reset their forgotten passwords. Rather than forcing you to re-implement this by hand for every application you create, Laravel provides convenient services for sending password reset links and secure resetting passwords.</p>
+<blockquote>
+<p>{tip} Want to get started fast? Install a Laravel <a href="/docs/{{version}}/starter-kits">application starter kit</a> in a fresh Laravel application. Laravel's starter kits will take care of scaffolding your entire authentication system, including resetting forgotten passwords.</p>
+</blockquote>
+<p><a name="model-preparation"></a></p>
+<h3 id="model-preparation">Model Preparation</h3>
+<p>Before using the password reset features of Laravel, your application's <code>App\Models\User</code> model must use the <code>Illuminate\Notifications\Notifiable</code> trait. Typically, this trait is already included on the default <code>App\Models\User</code> model that is created with new Laravel applications.</p>
+<p>Next, verify that your <code>App\Models\User</code> model implements the <code>Illuminate\Contracts\Auth\CanResetPassword</code> contract. The <code>App\Models\User</code> model included with the framework already implements this interface, and uses the <code>Illuminate\Auth\Passwords\CanResetPassword</code> trait to include the methods needed to implement the interface.</p>
+<p><a name="database-preparation"></a></p>
+<h3 id="database-preparation">Database Preparation</h3>
+<p>A table must be created to store your application's password reset tokens. The migration for this table is included in the default Laravel application, so you only need to migrate your database to create this table:</p>
+<pre><code>php artisan migrate
+</code></pre>
+<p><a name="configuring-trusted-hosts"></a></p>
+<h3 id="configuring-trusted-hosts">Configuring Trusted Hosts</h3>
+<p>By default, Laravel will respond to all requests it receives regardless of the content of the HTTP request's <code>Host</code> header. In addition, the <code>Host</code> header's value will be used when generating absolute URLs to your application during a web request.</p>
+<p>Typically, you should configure your web server, such as Nginx or Apache, to only send requests to your application that match a given host name. However, if you do not have the ability to customize your web server directly and need to instruct Laravel to only respond to certain host names, you may do so by enabling the <code>App\Http\Middleware\TrustHosts</code> middleware for your application. This is particular important when your application offers password reset functionality.</p>
+<p>To learn more about this middleware, please consult the <a href="/docs/{{version}}/requests#configuring-trusted-hosts"><code>TrustHosts</code> middleware documentation</a>.</p>
+<p><a name="routing"></a></p>
+<h2 id="routing">Routing</h2>
+<p>To properly implement support for allowing users to reset their passwords, we will need to define several routes. First, we will need a pair of routes to handle allowing the user to request a password reset link via their email address. Second, we will need a pair of routes to handle actually resetting the password once the user visits the password reset link that is emailed to them and completes the password reset form.</p>
+<p><a name="requesting-the-password-reset-link"></a></p>
+<h3 id="requesting-the-password-reset-link">Requesting The Password Reset Link</h3>
+<p><a name="the-password-reset-link-request-form"></a></p>
+<h4 id="the-password-reset-link-request-form">The Password Reset Link Request Form</h4>
+<p>First, we will define the routes that are needed to request password reset links. To get started, we will define a route that returns a view with the password reset link request form:</p>
+<pre><code>Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+})-&gt;middleware('guest')-&gt;name('password.request');
+</code></pre>
+<p>The view that is returned by this route should have a form containing an <code>email</code> field, which will allow the user to request a password reset link for a given email address.</p>
+<p><a name="password-reset-link-handling-the-form-submission"></a></p>
+<h4 id="handling-the-form-submission">Handling The Form Submission</h4>
+<p>Next, we will define a route that handles the form submission request from the "forgot password" view. This route will be responsible for validating the email address and sending the password reset request to the corresponding user:</p>
+<pre><code>use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
+
+Route::post('/forgot-password', function (Request $request) {
+    $request-&gt;validate(['email' =&gt; 'required|email']);
+
+    $status = Password::sendResetLink(
+        $request-&gt;only('email')
+    );
+
+    return $status === Password::RESET_LINK_SENT
+                ? back()-&gt;with(['status' =&gt; __($status)])
+                : back()-&gt;withErrors(['email' =&gt; __($status)]);
+})-&gt;middleware('guest')-&gt;name('password.email');
+</code></pre>
+<p>Before moving on, let's examine this route in more detail. First, the request's <code>email</code> attribute is validated. Next, we will use Laravel's built-in "password broker" (via the <code>Password</code> facade) to send a password reset link to the user. The password broker will take care of retrieving the user by the given field (in this case, the email address) and sending the user a password reset link via Laravel's built-in <a href="/docs/{{version}}/notifications">notification system</a>.</p>
+<p>The <code>sendResetLink</code> method returns a "status" slug. This status may be translated using Laravel's <a href="/docs/{{version}}/localization">localization</a> helpers in order to display a user-friendly message to the user regarding the status of their request. The translation of the password reset status is determined by your application's <code>resources/lang/{lang}/passwords.php</code> language file. An entry for each possible value of the status slug is located within the <code>passwords</code> language file.</p>
+<p>You may be wondering how Laravel knows how to retrieve the user record from your application's database when calling the <code>Password</code> facade's <code>sendResetLink</code> method. The Laravel password broker utilizes your authentication system's "user providers" to retrieve database records. The user provider used by the password broker is configured within the <code>passwords</code> configuration array of your <code>config/auth.php</code> configuration file. To learn more about writing custom user providers, consult the <a href="/docs/{{version}}/authentication#adding-custom-user-providers">authentication documentation</a>.</p>
+<blockquote>
+<p>{tip} When manually implementing password resets, you are required to define the contents of the views and routes yourself. If you would like scaffolding that includes all necessary authentication and verification logic, check out the <a href="/docs/{{version}}/starter-kits">Laravel application starter kits</a>.</p>
+</blockquote>
+<p><a name="resetting-the-password"></a></p>
+<h3 id="resetting-the-password">Resetting The Password</h3>
+<p><a name="the-password-reset-form"></a></p>
+<h4 id="the-password-reset-form">The Password Reset Form</h4>
+<p>Next, we will define the routes necessary to actually reset the password once the user clicks on the password reset link that has been emailed to them and provides a new password. First, let's define the route that will display the reset password form that is displayed when the user clicks the reset password link. This route will receive a <code>token</code> parameter that we will use later to verify the password reset request:</p>
+<pre><code>Route::get('/reset-password/{token}', function ($token) {
+    return view('auth.reset-password', ['token' =&gt; $token]);
+})-&gt;middleware('guest')-&gt;name('password.reset');
+</code></pre>
+<p>The view that is returned by this route should display a form containing an <code>email</code> field, a <code>password</code> field, a <code>password_confirmation</code> field, and a hidden <code>token</code> field, which should contain the value of the secret <code>$token</code> received by our route.</p>
+<p><a name="password-reset-handling-the-form-submission"></a></p>
+<h4 id="handling-the-form-submission_1">Handling The Form Submission</h4>
+<p>Of course, we need to define a route to actually handle the password reset form submission. This route will be responsible for validating the incoming request and updating the user's password in the database:</p>
+<pre><code>use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Str;
+
+Route::post('/reset-password', function (Request $request) {
+    $request-&gt;validate([
+        'token' =&gt; 'required',
+        'email' =&gt; 'required|email',
+        'password' =&gt; 'required|min:8|confirmed',
+    ]);
+
+    $status = Password::reset(
+        $request-&gt;only('email', 'password', 'password_confirmation', 'token'),
+        function ($user, $password) use ($request) {
+            $user-&gt;forceFill([
+                'password' =&gt; Hash::make($password)
+            ])-&gt;setRememberToken(Str::random(60));
+
+            $user-&gt;save();
+
+            event(new PasswordReset($user));
+        }
+    );
+
+    return $status == Password::PASSWORD_RESET
+                ? redirect()-&gt;route('login')-&gt;with('status', __($status))
+                : back()-&gt;withErrors(['email' =&gt; [__($status)]]);
+})-&gt;middleware('guest')-&gt;name('password.update');
+</code></pre>
+<p>Before moving on, let's examine this route in more detail. First, the request's <code>token</code>, <code>email</code>, and <code>password</code> attributes are validated. Next, we will use Laravel's built-in "password broker" (via the <code>Password</code> facade) to validate the password reset request credentials.</p>
+<p>If the token, email address, and password given to the password broker are valid, the closure passed to the <code>reset</code> method will be invoked. Within this closure, which receives the user instance and the plain-text password provided to the password reset form, we may update the user's password in the database.</p>
+<p>The <code>reset</code> method returns a "status" slug. This status may be translated using Laravel's <a href="/docs/{{version}}/localization">localization</a> helpers in order to display a user-friendly message to the user regarding the status of their request. The translation of the password reset status is determined by your application's <code>resources/lang/{lang}/passwords.php</code> language file. An entry for each possible value of the status slug is located within the <code>passwords</code> language file.</p>
+<p>Before moving on, you may be wondering how Laravel knows how to retrieve the user record from your application's database when calling the <code>Password</code> facade's <code>reset</code> method. The Laravel password broker utilizes your authentication system's "user providers" to retrieve database records. The user provider used by the password broker is configured within the <code>passwords</code> configuration array of your <code>config/auth.php</code> configuration file. To learn more about writing custom user providers, consult the <a href="/docs/{{version}}/authentication#adding-custom-user-providers">authentication documentation</a>.</p>
+<p><a name="password-customization"></a></p>
+<h2 id="customization">Customization</h2>
+<p><a name="reset-link-customization"></a></p>
+<h4 id="reset-link-customization">Reset Link Customization</h4>
+<p>You may customize the password reset link URL using the <code>createUrlUsing</code> method provided by the <code>ResetPassword</code> notification class. This method accepts a closure which receives the user instance that is receiving the notification as well as the password reset link token. Typically, you should call this method from your <code>App\Providers\AuthServiceProvider</code> service provider's <code>boot</code> method:</p>
+<pre><code>use Illuminate\Auth\Notifications\ResetPassword;
+
+/**
+ * Register any authentication / authorization services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    $this-&gt;registerPolicies();
+
+    ResetPassword::createUrlUsing(function ($user, string $token) {
+        return 'https://example.com/reset-password?token='.$token;
+    });
+}
+</code></pre>
+<p><a name="reset-email-customization"></a></p>
+<h4 id="reset-email-customization">Reset Email Customization</h4>
+<p>You may easily modify the notification class used to send the password reset link to the user. To get started, override the <code>sendPasswordResetNotification</code> method on your <code>App\Models\User</code> model. Within this method, you may send the notification using any <a href="/docs/{{version}}/notifications">notification class</a> of your own creation. The password reset <code>$token</code> is the first argument received by the method. You may use this <code>$token</code> to build the password reset URL of your choice and send your notification to the user:</p>
+<pre><code>use App\Notifications\ResetPasswordNotification;
+
+/**
+ * Send a password reset notification to the user.
+ *
+ * @param  string  $token
+ * @return void
+ */
+public function sendPasswordResetNotification($token)
+{
+    $url = 'https://example.com/reset-password?token='.$token;
+
+    $this-&gt;notify(new ResetPasswordNotification($url));
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../providers/" class="btn btn-neutral float-right" title="Service Providers">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../passport/" class="btn btn-neutral" title="Laravel Passport"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../passport/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../providers/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

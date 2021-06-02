@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Release Notes - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Release Notes";
+    var mkdocs_page_input_path = "releases.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Release Notes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#versioning-scheme">Versioning Scheme</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exceptions">Exceptions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#named-arguments">Named Arguments</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#support-policy">Support Policy</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#laravel-8">Laravel 8</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#laravel-jetstream">Laravel Jetstream</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#models-directory">Models Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#model-factory-classes">Model Factory Classes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#migration-squashing">Migration Squashing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#job-batching">Job Batching</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#improved-rate-limiting">Improved Rate Limiting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#improved-maintenance-mode">Improved Maintenance Mode</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pre-rendering-the-maintenance-mode-view">Pre-Rendering The Maintenance Mode View</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#closure-dispatch-chain-catch">Closure Dispatch / Chain catch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dynamic-blade-components">Dynamic Blade Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#event-listener-improvements">Event Listener Improvements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#time-testing-helpers">Time Testing Helpers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#artisan-serve-improvements">Artisan serve Improvements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tailwind-pagination-views">Tailwind Pagination Views</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#routing-namespace-updates">Routing Namespace Updates</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Release Notes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="release-notes">Release Notes</h1>
+<ul>
+<li><a href="#versioning-scheme">Versioning Scheme</a><ul>
+<li><a href="#exceptions">Exceptions</a></li>
+</ul>
+</li>
+<li><a href="#support-policy">Support Policy</a></li>
+<li><a href="#laravel-8">Laravel 8</a></li>
+</ul>
+<p><a name="versioning-scheme"></a></p>
+<h2 id="versioning-scheme">Versioning Scheme</h2>
+<p>Laravel and its other first-party packages follow <a href="https://semver.org">Semantic Versioning</a>. Major framework releases are released every year (~September), while minor and patch releases may be released as often as every week. Minor and patch releases should <strong>never</strong> contain breaking changes.</p>
+<p>When referencing the Laravel framework or its components from your application or package, you should always use a version constraint such as <code>^8.0</code>, since major releases of Laravel do include breaking changes. However, we strive to always ensure you may update to a new major release in one day or less.</p>
+<p><a name="exceptions"></a></p>
+<h3 id="exceptions">Exceptions</h3>
+<p><a name="named-arguments"></a></p>
+<h4 id="named-arguments">Named Arguments</h4>
+<p>At this time, PHP's <a href="https://www.php.net/manual/en/functions.arguments.php#functions.named-arguments">named arguments</a> functionality are not covered by Laravel's backwards compatibility guidelines. We may choose to rename function parameters when necessary in order to improve the Laravel codebase. Therefore, using named arguments when calling Laravel methods should be done cautiously and with the understanding that the parameter names may change in the future.</p>
+<p><a name="support-policy"></a></p>
+<h2 id="support-policy">Support Policy</h2>
+<p>For LTS releases, such as Laravel 6, bug fixes are provided for 2 years and security fixes are provided for 3 years. These releases provide the longest window of support and maintenance. For general releases, bug fixes are provided for 18 months and security fixes are provided for 2 years. For all additional libraries, including Lumen, only the latest release receives bug fixes. In addition, please review the database versions <a href="/docs/{{version}}/database#introduction">supported by Laravel</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Release</th>
+<th>Bug Fixes Until</th>
+<th>Security Fixes Until</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6 (LTS)</td>
+<td>September 3rd, 2019</td>
+<td>September 7th, 2021</td>
+<td>September 6th, 2022</td>
+</tr>
+<tr>
+<td>7</td>
+<td>March 3rd, 2020</td>
+<td>October 6th, 2020</td>
+<td>March 3rd, 2021</td>
+</tr>
+<tr>
+<td>8</td>
+<td>September 8th, 2020</td>
+<td>March 1st, 2022</td>
+<td>September 6th, 2022</td>
+</tr>
+<tr>
+<td>9 (LTS)</td>
+<td>September, 2021</td>
+<td>September, 2023</td>
+<td>September, 2024</td>
+</tr>
+<tr>
+<td>10</td>
+<td>September, 2022</td>
+<td>March, 2024</td>
+<td>September, 2024</td>
+</tr>
+</tbody>
+</table>
+<p><a name="laravel-8"></a></p>
+<h2 id="laravel-8">Laravel 8</h2>
+<p>Laravel 8 continues the improvements made in Laravel 7.x by introducing Laravel Jetstream, model factory classes, migration squashing, job batching, improved rate limiting, queue improvements, dynamic Blade components, Tailwind pagination views, time testing helpers, improvements to <code>artisan serve</code>, event listener improvements, and a variety of other bug fixes and usability improvements.</p>
+<p><a name="laravel-jetstream"></a></p>
+<h3 id="laravel-jetstream">Laravel Jetstream</h3>
+<p><em>Laravel Jetstream was written by <a href="https://github.com/taylorotwell">Taylor Otwell</a></em>.</p>
+<p><a href="https://jetstream.laravel.com">Laravel Jetstream</a> is a beautifully designed application scaffolding for Laravel. Jetstream provides the perfect starting point for your next project and includes login, registration, email verification, two-factor authentication, session management, API support via Laravel Sanctum, and optional team management. Laravel Jetstream replaces and improves upon the legacy authentication UI scaffolding available for previous versions of Laravel.</p>
+<p>Jetstream is designed using <a href="https://tailwindcss.com">Tailwind CSS</a> and offers your choice of <a href="https://laravel-livewire.com">Livewire</a> or <a href="https://inertiajs.com">Inertia</a> scaffolding.</p>
+<p><a name="models-directory"></a></p>
+<h3 id="models-directory">Models Directory</h3>
+<p>By overwhelming community demand, the default Laravel application skeleton now contains an <code>app/Models</code> directory. We hope you enjoy this new home for your Eloquent models! All relevant generator commands have been updated to assume models exist within the <code>app/Models</code> directory if it exists. If the directory does not exist, the framework will assume your models should be placed within the <code>app</code> directory.</p>
+<p><a name="model-factory-classes"></a></p>
+<h3 id="model-factory-classes">Model Factory Classes</h3>
+<p><em>Model factory classes were contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a></em>.</p>
+<p>Eloquent <a href="/docs/{{version}}/database-testing#defining-model-factories">model factories</a> have been entirely re-written as class based factories and improved to have first-class relationship support. For example, the <code>UserFactory</code> included with Laravel is written like so:</p>
+<pre><code>&lt;?php
+
+namespace Database\Factories;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+class UserFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = User::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' =&gt; $this-&gt;faker-&gt;name(),
+            'email' =&gt; $this-&gt;faker-&gt;unique()-&gt;safeEmail(),
+            'email_verified_at' =&gt; now(),
+            'password' =&gt; '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' =&gt; Str::random(10),
+        ];
+    }
+}
+</code></pre>
+<p>Thanks to the new <code>HasFactory</code> trait available on generated models, the model factory may be used like so:</p>
+<pre><code>use App\Models\User;
+
+User::factory()-&gt;count(50)-&gt;create();
+</code></pre>
+<p>Since model factories are now simple PHP classes, state transformations may be written as class methods. In addition, you may add any other helper classes to your Eloquent model factory as needed.</p>
+<p>For example, your <code>User</code> model might have a <code>suspended</code> state that modifies one of its default attribute values. You may define your state transformations using the base factory's <code>state</code> method. You may name your state method anything you like. After all, it's just a typical PHP method:</p>
+<pre><code>/**
+ * Indicate that the user is suspended.
+ *
+ * @return \Illuminate\Database\Eloquent\Factories\Factory
+ */
+public function suspended()
+{
+    return $this-&gt;state([
+        'account_status' =&gt; 'suspended',
+    ]);
+}
+</code></pre>
+<p>After defining the state transformation method, we may use it like so:</p>
+<pre><code>use App\Models\User;
+
+User::factory()-&gt;count(5)-&gt;suspended()-&gt;create();
+</code></pre>
+<p>As mentioned, Laravel 8's model factories contain first class support for relationships. So, assuming our <code>User</code> model has a <code>posts</code> relationship method, we may simply run the following code to generate a user with three posts:</p>
+<pre><code>$users = User::factory()
+            -&gt;hasPosts(3, [
+                'published' =&gt; false,
+            ])
+            -&gt;create();
+</code></pre>
+<p>To ease the upgrade process, the <a href="https://github.com/laravel/legacy-factories">laravel/legacy-factories</a> package has been released to provide support for the previous iteration of model factories within Laravel 8.x.</p>
+<p>Laravel's re-written factories contain many more features that we think you will love. To learn more about model factories, please consult the <a href="/docs/{{version}}/database-testing#defining-model-factories">database testing documentation</a>.</p>
+<p><a name="migration-squashing"></a></p>
+<h3 id="migration-squashing">Migration Squashing</h3>
+<p><em>Migration squashing was contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a></em>.</p>
+<p>As you build your application, you may accumulate more and more migrations over time. This can lead to your migration directory becoming bloated with potentially hundreds of migrations. If you're using MySQL or PostgreSQL, you may now "squash" your migrations into a single SQL file. To get started, execute the <code>schema:dump</code> command:</p>
+<pre><code>php artisan schema:dump
+
+// Dump the current database schema and prune all existing migrations...
+php artisan schema:dump --prune
+</code></pre>
+<p>When you execute this command, Laravel will write a "schema" file to your <code>database/schema</code> directory. Now, when you attempt to migrate your database and no other migrations have been executed, Laravel will execute the schema file's SQL first. After executing the schema file's commands, Laravel will execute any remaining migrations that were not part of the schema dump.</p>
+<p><a name="job-batching"></a></p>
+<h3 id="job-batching">Job Batching</h3>
+<p><em>Job batching was contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a> &amp; <a href="https://github.com/themsaid">Mohamed Said</a></em>.</p>
+<p>Laravel's job batching feature allows you to easily execute a batch of jobs and then perform some action when the batch of jobs has completed executing.</p>
+<p>The new <code>batch</code> method of the <code>Bus</code> facade may be used to dispatch a batch of jobs. Of course, batching is primarily useful when combined with completion callbacks. So, you may use the <code>then</code>, <code>catch</code>, and <code>finally</code> methods to define completion callbacks for the batch. Each of these callbacks will receive an <code>Illuminate\Bus\Batch</code> instance when they are invoked:</p>
+<pre><code>use App\Jobs\ProcessPodcast;
+use App\Podcast;
+use Illuminate\Bus\Batch;
+use Illuminate\Support\Facades\Bus;
+use Throwable;
+
+$batch = Bus::batch([
+    new ProcessPodcast(Podcast::find(1)),
+    new ProcessPodcast(Podcast::find(2)),
+    new ProcessPodcast(Podcast::find(3)),
+    new ProcessPodcast(Podcast::find(4)),
+    new ProcessPodcast(Podcast::find(5)),
+])-&gt;then(function (Batch $batch) {
+    // All jobs completed successfully...
+})-&gt;catch(function (Batch $batch, Throwable $e) {
+    // First batch job failure detected...
+})-&gt;finally(function (Batch $batch) {
+    // The batch has finished executing...
+})-&gt;dispatch();
+
+return $batch-&gt;id;
+</code></pre>
+<p>To learn more about job batching, please consult the <a href="/docs/{{version}}/queues#job-batching">queue documentation</a>.</p>
+<p><a name="improved-rate-limiting"></a></p>
+<h3 id="improved-rate-limiting">Improved Rate Limiting</h3>
+<p><em>Rate limiting improvements were contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a></em>.</p>
+<p>Laravel's request rate limiter feature has been augmented with more flexibility and power, while still maintaining backwards compatibility with previous release's <code>throttle</code> middleware API.</p>
+<p>Rate limiters are defined using the <code>RateLimiter</code> facade's <code>for</code> method. The <code>for</code> method accepts a rate limiter name and a closure that returns the limit configuration that should apply to routes that are assigned this rate limiter:</p>
+<pre><code>use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
+
+RateLimiter::for('global', function (Request $request) {
+    return Limit::perMinute(1000);
+});
+</code></pre>
+<p>Since rate limiter callbacks receive the incoming HTTP request instance, you may build the appropriate rate limit dynamically based on the incoming request or authenticated user:</p>
+<pre><code>RateLimiter::for('uploads', function (Request $request) {
+    return $request-&gt;user()-&gt;vipCustomer()
+                ? Limit::none()
+                : Limit::perMinute(100);
+});
+</code></pre>
+<p>Sometimes you may wish to segment rate limits by some arbitrary value. For example, you may wish to allow users to access a given route 100 times per minute per IP address. To accomplish this, you may use the <code>by</code> method when building your rate limit:</p>
+<pre><code>RateLimiter::for('uploads', function (Request $request) {
+    return $request-&gt;user()-&gt;vipCustomer()
+                ? Limit::none()
+                : Limit::perMinute(100)-&gt;by($request-&gt;ip());
+});
+</code></pre>
+<p>Rate limiters may be attached to routes or route groups using the <code>throttle</code> <a href="/docs/{{version}}/middleware">middleware</a>. The throttle middleware accepts the name of the rate limiter you wish to assign to the route:</p>
+<pre><code>Route::middleware(['throttle:uploads'])-&gt;group(function () {
+    Route::post('/audio', function () {
+        //
+    });
+
+    Route::post('/video', function () {
+        //
+    });
+});
+</code></pre>
+<p>To learn more about rate limiting, please consult the <a href="/docs/{{version}}/routing#rate-limiting">routing documentation</a>.</p>
+<p><a name="improved-maintenance-mode"></a></p>
+<h3 id="improved-maintenance-mode">Improved Maintenance Mode</h3>
+<p><em>Maintenance mode improvements were contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a> with inspiration from <a href="https://spatie.be">Spatie</a></em>.</p>
+<p>In previous releases of Laravel, the <code>php artisan down</code> maintenance mode feature may be bypassed using an "allow list" of IP addresses that were allowed to access the application. This feature has been removed in favor of a simpler "secret" / token solution.</p>
+<p>While in maintenance mode, you may use the <code>secret</code> option to specify a maintenance mode bypass token:</p>
+<pre><code>php artisan down --secret="1630542a-246b-4b66-afa1-dd72a4c43515"
+</code></pre>
+<p>After placing the application in maintenance mode, you may navigate to the application URL matching this token and Laravel will issue a maintenance mode bypass cookie to your browser:</p>
+<pre><code>https://example.com/1630542a-246b-4b66-afa1-dd72a4c43515
+</code></pre>
+<p>When accessing this hidden route, you will then be redirected to the <code>/</code> route of the application. Once the cookie has been issued to your browser, you will be able to browse the application normally as if it was not in maintenance mode.</p>
+<p><a name="pre-rendering-the-maintenance-mode-view"></a></p>
+<h4 id="pre-rendering-the-maintenance-mode-view">Pre-Rendering The Maintenance Mode View</h4>
+<p>If you utilize the <code>php artisan down</code> command during deployment, your users may still occasionally encounter errors if they access the application while your Composer dependencies or other infrastructure components are updating. This occurs because a significant part of the Laravel framework must boot in order to determine your application is in maintenance mode and render the maintenance mode view using the templating engine.</p>
+<p>For this reason, Laravel now allows you to pre-render a maintenance mode view that will be returned at the very beginning of the request cycle. This view is rendered before any of your application's dependencies have loaded. You may pre-render a template of your choice using the <code>down</code> command's <code>render</code> option:</p>
+<pre><code>php artisan down --render="errors::503"
+</code></pre>
+<p><a name="closure-dispatch-chain-catch"></a></p>
+<h3 id="closure-dispatch-chain-catch">Closure Dispatch / Chain <code>catch</code></h3>
+<p><em>Catch improvements were contributed by <a href="https://github.com/themsaid">Mohamed Said</a></em>.</p>
+<p>Using the new <code>catch</code> method, you may now provide a closure that should be executed if a queued closure fails to complete successfully after exhausting all of your queue's configured retry attempts:</p>
+<pre><code>use Throwable;
+
+dispatch(function () use ($podcast) {
+    $podcast-&gt;publish();
+})-&gt;catch(function (Throwable $e) {
+    // This job has failed...
+});
+</code></pre>
+<p><a name="dynamic-blade-components"></a></p>
+<h3 id="dynamic-blade-components">Dynamic Blade Components</h3>
+<p><em>Dynamic Blade components were contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a></em>.</p>
+<p>Sometimes you may need to render a component but not know which component should be rendered until runtime. In this situation, you may now use Laravel's built-in <code>dynamic-component</code> component to render the component based on a runtime value or variable:</p>
+<pre><code>&lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;
+</code></pre>
+<p>To learn more about Blade components, please consult the <a href="/docs/{{version}}/blade#components">Blade documentation</a>.</p>
+<p><a name="event-listener-improvements"></a></p>
+<h3 id="event-listener-improvements">Event Listener Improvements</h3>
+<p><em>Event listener improvements were contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a></em>.</p>
+<p>Closure based event listeners may now be registered by only passing the closure to the <code>Event::listen</code> method. Laravel will inspect the closure to determine which type of event the listener handles:</p>
+<pre><code>use App\Events\PodcastProcessed;
+use Illuminate\Support\Facades\Event;
+
+Event::listen(function (PodcastProcessed $event) {
+    //
+});
+</code></pre>
+<p>In addition, closure based event listeners may now be marked as queueable using the <code>Illuminate\Events\queueable</code> function:</p>
+<pre><code>use App\Events\PodcastProcessed;
+use function Illuminate\Events\queueable;
+use Illuminate\Support\Facades\Event;
+
+Event::listen(queueable(function (PodcastProcessed $event) {
+    //
+}));
+</code></pre>
+<p>Like queued jobs, you may use the <code>onConnection</code>, <code>onQueue</code>, and <code>delay</code> methods to customize the execution of the queued listener:</p>
+<pre><code>Event::listen(queueable(function (PodcastProcessed $event) {
+    //
+})-&gt;onConnection('redis')-&gt;onQueue('podcasts')-&gt;delay(now()-&gt;addSeconds(10)));
+</code></pre>
+<p>If you would like to handle anonymous queued listener failures, you may provide a closure to the <code>catch</code> method while defining the <code>queueable</code> listener:</p>
+<pre><code>use App\Events\PodcastProcessed;
+use function Illuminate\Events\queueable;
+use Illuminate\Support\Facades\Event;
+use Throwable;
+
+Event::listen(queueable(function (PodcastProcessed $event) {
+    //
+})-&gt;catch(function (PodcastProcessed $event, Throwable $e) {
+    // The queued listener failed...
+}));
+</code></pre>
+<p><a name="time-testing-helpers"></a></p>
+<h3 id="time-testing-helpers">Time Testing Helpers</h3>
+<p><em>Time testing helpers were contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a> with inspiration from Ruby on Rails</em>.</p>
+<p>When testing, you may occasionally need to modify the time returned by helpers such as <code>now</code> or <code>Illuminate\Support\Carbon::now()</code>. Laravel's base feature test class now includes helpers that allow you to manipulate the current time:</p>
+<pre><code>public function testTimeCanBeManipulated()
+{
+    // Travel into the future...
+    $this-&gt;travel(5)-&gt;milliseconds();
+    $this-&gt;travel(5)-&gt;seconds();
+    $this-&gt;travel(5)-&gt;minutes();
+    $this-&gt;travel(5)-&gt;hours();
+    $this-&gt;travel(5)-&gt;days();
+    $this-&gt;travel(5)-&gt;weeks();
+    $this-&gt;travel(5)-&gt;years();
+
+    // Travel into the past...
+    $this-&gt;travel(-5)-&gt;hours();
+
+    // Travel to an explicit time...
+    $this-&gt;travelTo(now()-&gt;subHours(6));
+
+    // Return back to the present time...
+    $this-&gt;travelBack();
+}
+</code></pre>
+<p><a name="artisan-serve-improvements"></a></p>
+<h3 id="artisan-serve-improvements">Artisan <code>serve</code> Improvements</h3>
+<p><em>Artisan <code>serve</code> improvements were contributed by <a href="https://github.com/taylorotwell">Taylor Otwell</a></em>.</p>
+<p>The Artisan <code>serve</code> command has been improved with automatic reloading when environment variable changes are detected within your local <code>.env</code> file. Previously, the command had to be manually stopped and restarted.</p>
+<p><a name="tailwind-pagination-views"></a></p>
+<h3 id="tailwind-pagination-views">Tailwind Pagination Views</h3>
+<p>The Laravel paginator has been updated to use the <a href="https://tailwindcss.com">Tailwind CSS</a> framework by default. Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override. Of course, Bootstrap 3 and 4 views remain available as well.</p>
+<p><a name="routing-namespace-updates"></a></p>
+<h3 id="routing-namespace-updates">Routing Namespace Updates</h3>
+<p>In previous releases of Laravel, the <code>RouteServiceProvider</code> contained a <code>$namespace</code> property. This property's value would automatically be prefixed onto controller route definitions and calls to the <code>action</code> helper / <code>URL::action</code> method. In Laravel 8.x, this property is <code>null</code> by default. This means that no automatic namespace prefixing will be done by Laravel. Therefore, in new Laravel 8.x applications, controller route definitions should be defined using standard PHP callable syntax:</p>
+<pre><code>use App\Http\Controllers\UserController;
+
+Route::get('/users', [UserController::class, 'index']);
+</code></pre>
+<p>Calls to the <code>action</code> related methods should use the same callable syntax:</p>
+<pre><code>action([UserController::class, 'index']);
+
+return Redirect::action([UserController::class, 'index']);
+</code></pre>
+<p>If you prefer Laravel 7.x style controller route prefixing, you may simply add the <code>$namespace</code> property into your application's <code>RouteServiceProvider</code>.</p>
+<blockquote>
+<p>{note} This change only affects new Laravel 8.x applications. Applications upgrading from Laravel 7.x will still have the <code>$namespace</code> property in their <code>RouteServiceProvider</code>.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../requests/" class="btn btn-neutral float-right" title="HTTP Requests">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../redis/" class="btn btn-neutral" title="Redis"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../redis/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../requests/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

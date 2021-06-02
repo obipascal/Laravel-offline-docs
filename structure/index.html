@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Directory Structure - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Directory Structure";
+    var mkdocs_page_input_path = "structure.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Directory Structure</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-root-directory">The Root Directory</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-app-directory">The App Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-bootstrap-directory">The Bootstrap Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-config-directory">The Config Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-database-directory">The Database Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-public-directory">The Public Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-resources-directory">The Resources Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-routes-directory">The Routes Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-storage-directory">The Storage Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-tests-directory">The Tests Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-vendor-directory">The Vendor Directory</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-app-directory_1">The App Directory</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-broadcasting-directory">The Broadcasting Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-console-directory">The Console Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-events-directory">The Events Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-exceptions-directory">The Exceptions Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-http-directory">The Http Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-jobs-directory">The Jobs Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-listeners-directory">The Listeners Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-mail-directory">The Mail Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-models-directory">The Models Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-notifications-directory">The Notifications Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-policies-directory">The Policies Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-providers-directory">The Providers Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-rules-directory">The Rules Directory</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Directory Structure</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="directory-structure">Directory Structure</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-root-directory">The Root Directory</a><ul>
+<li><a href="#the-root-app-directory">The <code>app</code> Directory</a></li>
+<li><a href="#the-bootstrap-directory">The <code>bootstrap</code> Directory</a></li>
+<li><a href="#the-config-directory">The <code>config</code> Directory</a></li>
+<li><a href="#the-database-directory">The <code>database</code> Directory</a></li>
+<li><a href="#the-public-directory">The <code>public</code> Directory</a></li>
+<li><a href="#the-resources-directory">The <code>resources</code> Directory</a></li>
+<li><a href="#the-routes-directory">The <code>routes</code> Directory</a></li>
+<li><a href="#the-storage-directory">The <code>storage</code> Directory</a></li>
+<li><a href="#the-tests-directory">The <code>tests</code> Directory</a></li>
+<li><a href="#the-vendor-directory">The <code>vendor</code> Directory</a></li>
+</ul>
+</li>
+<li><a href="#the-app-directory">The App Directory</a><ul>
+<li><a href="#the-broadcasting-directory">The <code>Broadcasting</code> Directory</a></li>
+<li><a href="#the-console-directory">The <code>Console</code> Directory</a></li>
+<li><a href="#the-events-directory">The <code>Events</code> Directory</a></li>
+<li><a href="#the-exceptions-directory">The <code>Exceptions</code> Directory</a></li>
+<li><a href="#the-http-directory">The <code>Http</code> Directory</a></li>
+<li><a href="#the-jobs-directory">The <code>Jobs</code> Directory</a></li>
+<li><a href="#the-listeners-directory">The <code>Listeners</code> Directory</a></li>
+<li><a href="#the-mail-directory">The <code>Mail</code> Directory</a></li>
+<li><a href="#the-models-directory">The <code>Models</code> Directory</a></li>
+<li><a href="#the-notifications-directory">The <code>Notifications</code> Directory</a></li>
+<li><a href="#the-policies-directory">The <code>Policies</code> Directory</a></li>
+<li><a href="#the-providers-directory">The <code>Providers</code> Directory</a></li>
+<li><a href="#the-rules-directory">The <code>Rules</code> Directory</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>The default Laravel application structure is intended to provide a great starting point for both large and small applications. But you are free to organize your application however you like. Laravel imposes almost no restrictions on where any given class is located - as long as Composer can autoload the class.</p>
+<p><a name="the-root-directory"></a></p>
+<h2 id="the-root-directory">The Root Directory</h2>
+<p><a name="the-root-app-directory"></a></p>
+<h4 id="the-app-directory">The App Directory</h4>
+<p>The <code>app</code> directory contains the core code of your application. We'll explore this directory in more detail soon; however, almost all of the classes in your application will be in this directory.</p>
+<p><a name="the-bootstrap-directory"></a></p>
+<h4 id="the-bootstrap-directory">The Bootstrap Directory</h4>
+<p>The <code>bootstrap</code> directory contains the <code>app.php</code> file which bootstraps the framework. This directory also houses a <code>cache</code> directory which contains framework generated files for performance optimization such as the route and services cache files. You should not typically need to modify any files within this directory.</p>
+<p><a name="the-config-directory"></a></p>
+<h4 id="the-config-directory">The Config Directory</h4>
+<p>The <code>config</code> directory, as the name implies, contains all of your application's configuration files. It's a great idea to read through all of these files and familiarize yourself with all of the options available to you.</p>
+<p><a name="the-database-directory"></a></p>
+<h4 id="the-database-directory">The Database Directory</h4>
+<p>The <code>database</code> directory contains your database migrations, model factories, and seeds. If you wish, you may also use this directory to hold an SQLite database.</p>
+<p><a name="the-public-directory"></a></p>
+<h4 id="the-public-directory">The Public Directory</h4>
+<p>The <code>public</code> directory contains the <code>index.php</code> file, which is the entry point for all requests entering your application and configures autoloading. This directory also houses your assets such as images, JavaScript, and CSS.</p>
+<p><a name="the-resources-directory"></a></p>
+<h4 id="the-resources-directory">The Resources Directory</h4>
+<p>The <code>resources</code> directory contains your <a href="/docs/{{version}}/views">views</a> as well as your raw, un-compiled assets such as CSS or JavaScript. This directory also houses all of your language files.</p>
+<p><a name="the-routes-directory"></a></p>
+<h4 id="the-routes-directory">The Routes Directory</h4>
+<p>The <code>routes</code> directory contains all of the route definitions for your application. By default, several route files are included with Laravel: <code>web.php</code>, <code>api.php</code>, <code>console.php</code>, and <code>channels.php</code>.</p>
+<p>The <code>web.php</code> file contains routes that the <code>RouteServiceProvider</code> places in the <code>web</code> middleware group, which provides session state, CSRF protection, and cookie encryption. If your application does not offer a stateless, RESTful API then it is likely that all of your routes will most likely be defined in the <code>web.php</code> file.</p>
+<p>The <code>api.php</code> file contains routes that the <code>RouteServiceProvider</code> places in the <code>api</code> middleware group. These routes are intended to be stateless, so requests entering the application through these routes are intended to be authenticated <a href="/docs/{{version}}/sanctum">via tokens</a> and will not have access to session state.</p>
+<p>The <code>console.php</code> file is where you may define all of your closure based console commands. Each closure is bound to a command instance allowing a simple approach to interacting with each command's IO methods. Even though this file does not define HTTP routes, it defines console based entry points (routes) into your application.</p>
+<p>The <code>channels.php</code> file is where you may register all of the <a href="/docs/{{version}}/broadcasting">event broadcasting</a> channels that your application supports.</p>
+<p><a name="the-storage-directory"></a></p>
+<h4 id="the-storage-directory">The Storage Directory</h4>
+<p>The <code>storage</code> directory contains your logs, compiled Blade templates, file based sessions, file caches, and other files generated by the framework. This directory is segregated into <code>app</code>, <code>framework</code>, and <code>logs</code> directories. The <code>app</code> directory may be used to store any files generated by your application. The <code>framework</code> directory is used to store framework generated files and caches. Finally, the <code>logs</code> directory contains your application's log files.</p>
+<p>The <code>storage/app/public</code> directory may be used to store user-generated files, such as profile avatars, that should be publicly accessible. You should create a symbolic link at <code>public/storage</code> which points to this directory. You may create the link using the <code>php artisan storage:link</code> Artisan command.</p>
+<p><a name="the-tests-directory"></a></p>
+<h4 id="the-tests-directory">The Tests Directory</h4>
+<p>The <code>tests</code> directory contains your automated tests. Example <a href="https://phpunit.de/">PHPUnit</a> unit tests and feature tests are provided out of the box. Each test class should be suffixed with the word <code>Test</code>. You may run your tests using the <code>phpunit</code> or <code>php vendor/bin/phpunit</code> commands. Or, if you would like a more detailed and beautiful representation of your test results, you may run your tests using the <code>php artisan test</code> Artisan command.</p>
+<p><a name="the-vendor-directory"></a></p>
+<h4 id="the-vendor-directory">The Vendor Directory</h4>
+<p>The <code>vendor</code> directory contains your <a href="https://getcomposer.org">Composer</a> dependencies.</p>
+<p><a name="the-app-directory"></a></p>
+<h2 id="the-app-directory_1">The App Directory</h2>
+<p>The majority of your application is housed in the <code>app</code> directory. By default, this directory is namespaced under <code>App</code> and is autoloaded by Composer using the <a href="https://www.php-fig.org/psr/psr-4/">PSR-4 autoloading standard</a>.</p>
+<p>The <code>app</code> directory contains a variety of additional directories such as <code>Console</code>, <code>Http</code>, and <code>Providers</code>. Think of the <code>Console</code> and <code>Http</code> directories as providing an API into the core of your application. The HTTP protocol and CLI are both mechanisms to interact with your application, but do not actually contain application logic. In other words, they are two ways of issuing commands to your application. The <code>Console</code> directory contains all of your Artisan commands, while the <code>Http</code> directory contains your controllers, middleware, and requests.</p>
+<p>A variety of other directories will be generated inside the <code>app</code> directory as you use the <code>make</code> Artisan commands to generate classes. So, for example, the <code>app/Jobs</code> directory will not exist until you execute the <code>make:job</code> Artisan command to generate a job class.</p>
+<blockquote>
+<p>{tip} Many of the classes in the <code>app</code> directory can be generated by Artisan via commands. To review the available commands, run the <code>php artisan list make</code> command in your terminal.</p>
+</blockquote>
+<p><a name="the-broadcasting-directory"></a></p>
+<h4 id="the-broadcasting-directory">The Broadcasting Directory</h4>
+<p>The <code>Broadcasting</code> directory contains all of the broadcast channel classes for your application. These classes are generated using the <code>make:channel</code> command. This directory does not exist by default, but will be created for you when you create your first channel. To learn more about channels, check out the documentation on <a href="/docs/{{version}}/broadcasting">event broadcasting</a>.</p>
+<p><a name="the-console-directory"></a></p>
+<h4 id="the-console-directory">The Console Directory</h4>
+<p>The <code>Console</code> directory contains all of the custom Artisan commands for your application. These commands may be generated using the <code>make:command</code> command. This directory also houses your console kernel, which is where your custom Artisan commands are registered and your <a href="/docs/{{version}}/scheduling">scheduled tasks</a> are defined.</p>
+<p><a name="the-events-directory"></a></p>
+<h4 id="the-events-directory">The Events Directory</h4>
+<p>This directory does not exist by default, but will be created for you by the <code>event:generate</code> and <code>make:event</code> Artisan commands. The <code>Events</code> directory houses <a href="/docs/{{version}}/events">event classes</a>. Events may be used to alert other parts of your application that a given action has occurred, providing a great deal of flexibility and decoupling.</p>
+<p><a name="the-exceptions-directory"></a></p>
+<h4 id="the-exceptions-directory">The Exceptions Directory</h4>
+<p>The <code>Exceptions</code> directory contains your application's exception handler and is also a good place to place any exceptions thrown by your application. If you would like to customize how your exceptions are logged or rendered, you should modify the <code>Handler</code> class in this directory.</p>
+<p><a name="the-http-directory"></a></p>
+<h4 id="the-http-directory">The Http Directory</h4>
+<p>The <code>Http</code> directory contains your controllers, middleware, and form requests. Almost all of the logic to handle requests entering your application will be placed in this directory.</p>
+<p><a name="the-jobs-directory"></a></p>
+<h4 id="the-jobs-directory">The Jobs Directory</h4>
+<p>This directory does not exist by default, but will be created for you if you execute the <code>make:job</code> Artisan command. The <code>Jobs</code> directory houses the <a href="/docs/{{version}}/queues">queueable jobs</a> for your application. Jobs may be queued by your application or run synchronously within the current request lifecycle. Jobs that run synchronously during the current request are sometimes referred to as "commands" since they are an implementation of the <a href="https://en.wikipedia.org/wiki/Command_pattern">command pattern</a>.</p>
+<p><a name="the-listeners-directory"></a></p>
+<h4 id="the-listeners-directory">The Listeners Directory</h4>
+<p>This directory does not exist by default, but will be created for you if you execute the <code>event:generate</code> or <code>make:listener</code> Artisan commands. The <code>Listeners</code> directory contains the classes that handle your <a href="/docs/{{version}}/events">events</a>. Event listeners receive an event instance and perform logic in response to the event being fired. For example, a <code>UserRegistered</code> event might be handled by a <code>SendWelcomeEmail</code> listener.</p>
+<p><a name="the-mail-directory"></a></p>
+<h4 id="the-mail-directory">The Mail Directory</h4>
+<p>This directory does not exist by default, but will be created for you if you execute the <code>make:mail</code> Artisan command. The <code>Mail</code> directory contains all of your <a href="/docs/{{version}}/mail">classes that represent emails</a> sent by your application. Mail objects allow you to encapsulate all of the logic of building an email in a single, simple class that may be sent using the <code>Mail::send</code> method.</p>
+<p><a name="the-models-directory"></a></p>
+<h4 id="the-models-directory">The Models Directory</h4>
+<p>The <code>Models</code> directory contains all of your <a href="/docs/{{version}}/eloquent">Eloquent model classes</a>. The Eloquent ORM included with Laravel provides a beautiful, simple ActiveRecord implementation for working with your database. Each database table has a corresponding "Model" which is used to interact with that table. Models allow you to query for data in your tables, as well as insert new records into the table.</p>
+<p><a name="the-notifications-directory"></a></p>
+<h4 id="the-notifications-directory">The Notifications Directory</h4>
+<p>This directory does not exist by default, but will be created for you if you execute the <code>make:notification</code> Artisan command. The <code>Notifications</code> directory contains all of the "transactional" <a href="/docs/{{version}}/notifications">notifications</a> that are sent by your application, such as simple notifications about events that happen within your application. Laravel's notification feature abstracts sending notifications over a variety of drivers such as email, Slack, SMS, or stored in a database.</p>
+<p><a name="the-policies-directory"></a></p>
+<h4 id="the-policies-directory">The Policies Directory</h4>
+<p>This directory does not exist by default, but will be created for you if you execute the <code>make:policy</code> Artisan command. The <code>Policies</code> directory contains the <a href="/docs/{{version}}/authorization">authorization policy classes</a> for your application. Policies are used to determine if a user can perform a given action against a resource.</p>
+<p><a name="the-providers-directory"></a></p>
+<h4 id="the-providers-directory">The Providers Directory</h4>
+<p>The <code>Providers</code> directory contains all of the <a href="/docs/{{version}}/providers">service providers</a> for your application. Service providers bootstrap your application by binding services in the service container, registering events, or performing any other tasks to prepare your application for incoming requests.</p>
+<p>In a fresh Laravel application, this directory will already contain several providers. You are free to add your own providers to this directory as needed.</p>
+<p><a name="the-rules-directory"></a></p>
+<h4 id="the-rules-directory">The Rules Directory</h4>
+<p>This directory does not exist by default, but will be created for you if you execute the <code>make:rule</code> Artisan command. The <code>Rules</code> directory contains the custom validation rule objects for your application. Rules are used to encapsulate complicated validation logic in a simple object. For more information, check out the <a href="/docs/{{version}}/validation">validation documentation</a>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../telescope/" class="btn btn-neutral float-right" title="Laravel Telescope">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../starter-kits/" class="btn btn-neutral" title="Starter Kits"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../starter-kits/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../telescope/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

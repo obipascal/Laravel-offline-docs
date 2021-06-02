@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>HTTP Responses - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "HTTP Responses";
+    var mkdocs_page_input_path = "responses.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">HTTP Responses</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#creating-responses">Creating Responses</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#strings-arrays">Strings &amp; Arrays</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#response-objects">Response Objects</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#eloquent-models-collections">Eloquent Models &amp; Collections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#attaching-headers-to-responses">Attaching Headers To Responses</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cache-control-middleware">Cache Control Middleware</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#attaching-cookies-to-responses">Attaching Cookies To Responses</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#generating-cookie-instances">Generating Cookie Instances</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#expiring-cookies-early">Expiring Cookies Early</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cookies-encryption">Cookies &amp; Encryption</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#redirects">Redirects</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#redirecting-to-named-routes">Redirecting To Named Routes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#populating-parameters-via-eloquent-models">Populating Parameters Via Eloquent Models</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#redirecting-to-controller-actions">Redirecting To Controller Actions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#redirecting-to-external-domains">Redirecting To External Domains</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#redirecting-with-flashed-session-data">Redirecting With Flashed Session Data</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#redirecting-with-input">Redirecting With Input</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#other-response-types">Other Response Types</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#view-responses">View Responses</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#json-responses">JSON Responses</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-downloads">File Downloads</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#streamed-downloads">Streamed Downloads</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-responses">File Responses</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#response-macros">Response Macros</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>HTTP Responses</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="http-responses">HTTP Responses</h1>
+<ul>
+<li><a href="#creating-responses">Creating Responses</a><ul>
+<li><a href="#attaching-headers-to-responses">Attaching Headers To Responses</a></li>
+<li><a href="#attaching-cookies-to-responses">Attaching Cookies To Responses</a></li>
+<li><a href="#cookies-and-encryption">Cookies &amp; Encryption</a></li>
+</ul>
+</li>
+<li><a href="#redirects">Redirects</a><ul>
+<li><a href="#redirecting-named-routes">Redirecting To Named Routes</a></li>
+<li><a href="#redirecting-controller-actions">Redirecting To Controller Actions</a></li>
+<li><a href="#redirecting-external-domains">Redirecting To External Domains</a></li>
+<li><a href="#redirecting-with-flashed-session-data">Redirecting With Flashed Session Data</a></li>
+</ul>
+</li>
+<li><a href="#other-response-types">Other Response Types</a><ul>
+<li><a href="#view-responses">View Responses</a></li>
+<li><a href="#json-responses">JSON Responses</a></li>
+<li><a href="#file-downloads">File Downloads</a></li>
+<li><a href="#file-responses">File Responses</a></li>
+</ul>
+</li>
+<li><a href="#response-macros">Response Macros</a></li>
+</ul>
+<p><a name="creating-responses"></a></p>
+<h2 id="creating-responses">Creating Responses</h2>
+<p><a name="strings-arrays"></a></p>
+<h4 id="strings-arrays">Strings &amp; Arrays</h4>
+<p>All routes and controllers should return a response to be sent back to the user's browser. Laravel provides several different ways to return responses. The most basic response is returning a string from a route or controller. The framework will automatically convert the string into a full HTTP response:</p>
+<pre><code>Route::get('/', function () {
+    return 'Hello World';
+});
+</code></pre>
+<p>In addition to returning strings from your routes and controllers, you may also return arrays. The framework will automatically convert the array into a JSON response:</p>
+<pre><code>Route::get('/', function () {
+    return [1, 2, 3];
+});
+</code></pre>
+<blockquote>
+<p>{tip} Did you know you can also return <a href="/docs/{{version}}/eloquent-collections">Eloquent collections</a> from your routes or controllers? They will automatically be converted to JSON. Give it a shot!</p>
+</blockquote>
+<p><a name="response-objects"></a></p>
+<h4 id="response-objects">Response Objects</h4>
+<p>Typically, you won't just be returning simple strings or arrays from your route actions. Instead, you will be returning full <code>Illuminate\Http\Response</code> instances or <a href="/docs/{{version}}/views">views</a>.</p>
+<p>Returning a full <code>Response</code> instance allows you to customize the response's HTTP status code and headers. A <code>Response</code> instance inherits from the <code>Symfony\Component\HttpFoundation\Response</code> class, which provides a variety of methods for building HTTP responses:</p>
+<pre><code>Route::get('/home', function () {
+    return response('Hello World', 200)
+                  -&gt;header('Content-Type', 'text/plain');
+});
+</code></pre>
+<p><a name="eloquent-models-and-collections"></a></p>
+<h4 id="eloquent-models-collections">Eloquent Models &amp; Collections</h4>
+<p>You may also return <a href="/docs/{{version}}/eloquent">Eloquent ORM</a> models and collections directly from your routes and controllers. When you do, Laravel will automatically convert the models and collections to JSON responses while respecting the model's <a href="/docs/{{version}}/eloquent-serialization#hiding-attributes-from-json">hidden attributes</a>:</p>
+<pre><code>use App\Models\User;
+
+Route::get('/user/{user}', function (User $user) {
+    return $user;
+});
+</code></pre>
+<p><a name="attaching-headers-to-responses"></a></p>
+<h3 id="attaching-headers-to-responses">Attaching Headers To Responses</h3>
+<p>Keep in mind that most response methods are chainable, allowing for the fluent construction of response instances. For example, you may use the <code>header</code> method to add a series of headers to the response before sending it back to the user:</p>
+<pre><code>return response($content)
+            -&gt;header('Content-Type', $type)
+            -&gt;header('X-Header-One', 'Header Value')
+            -&gt;header('X-Header-Two', 'Header Value');
+</code></pre>
+<p>Or, you may use the <code>withHeaders</code> method to specify an array of headers to be added to the response:</p>
+<pre><code>return response($content)
+            -&gt;withHeaders([
+                'Content-Type' =&gt; $type,
+                'X-Header-One' =&gt; 'Header Value',
+                'X-Header-Two' =&gt; 'Header Value',
+            ]);
+</code></pre>
+<p><a name="cache-control-middleware"></a></p>
+<h4 id="cache-control-middleware">Cache Control Middleware</h4>
+<p>Laravel includes a <code>cache.headers</code> middleware, which may be used to quickly set the <code>Cache-Control</code> header for a group of routes. If <code>etag</code> is specified in the list of directives, an MD5 hash of the response content will automatically be set as the ETag identifier:</p>
+<pre><code>Route::middleware('cache.headers:public;max_age=2628000;etag')-&gt;group(function () {
+    Route::get('/privacy', function () {
+        // ...
+    });
+
+    Route::get('/terms', function () {
+        // ...
+    });
+});
+</code></pre>
+<p><a name="attaching-cookies-to-responses"></a></p>
+<h3 id="attaching-cookies-to-responses">Attaching Cookies To Responses</h3>
+<p>You may attach a cookie to an outgoing <code>Illuminate\Http\Response</code> instance using the <code>cookie</code> method. You should pass the name, value, and the number of minutes the cookie should be considered valid to this method:</p>
+<pre><code>return response('Hello World')-&gt;cookie(
+    'name', 'value', $minutes
+);
+</code></pre>
+<p>The <code>cookie</code> method also accepts a few more arguments which are used less frequently. Generally, these arguments have the same purpose and meaning as the arguments that would be given to PHP's native <a href="https://secure.php.net/manual/en/function.setcookie.php">setcookie</a> method:</p>
+<pre><code>return response('Hello World')-&gt;cookie(
+    'name', 'value', $minutes, $path, $domain, $secure, $httpOnly
+);
+</code></pre>
+<p>If you would like to ensure that a cookie is sent with the outgoing response but you do not yet have an instance of that response, you can use the <code>Cookie</code> facade to "queue" cookies for attachment to the response when it is sent. The <code>queue</code> method accepts the arguments needed to create a cookie instance. These cookies will be attached to the outgoing response before it is sent to the browser:</p>
+<pre><code>use Illuminate\Support\Facades\Cookie;
+
+Cookie::queue('name', 'value', $minutes);
+</code></pre>
+<p><a name="generating-cookie-instances"></a></p>
+<h4 id="generating-cookie-instances">Generating Cookie Instances</h4>
+<p>If you would like to generate a <code>Symfony\Component\HttpFoundation\Cookie</code> instance that can be attached to a response instance at a later time, you may use the global <code>cookie</code> helper. This cookie will not be sent back to the client unless it is attached to a response instance:</p>
+<pre><code>$cookie = cookie('name', 'value', $minutes);
+
+return response('Hello World')-&gt;cookie($cookie);
+</code></pre>
+<p><a name="expiring-cookies-early"></a></p>
+<h4 id="expiring-cookies-early">Expiring Cookies Early</h4>
+<p>You may remove a cookie by expiring it via the <code>withoutCookie</code> method of an outgoing response:</p>
+<pre><code>return response('Hello World')-&gt;withoutCookie('name');
+</code></pre>
+<p>If you do not yet have an instance of the outgoing response, you may use the <code>Cookie</code> facade's <code>expire</code> method to expire a cookie:</p>
+<pre><code>Cookie::expire('name');
+</code></pre>
+<p><a name="cookies-and-encryption"></a></p>
+<h3 id="cookies-encryption">Cookies &amp; Encryption</h3>
+<p>By default, all cookies generated by Laravel are encrypted and signed so that they can't be modified or read by the client. If you would like to disable encryption for a subset of cookies generated by your application, you may use the <code>$except</code> property of the <code>App\Http\Middleware\EncryptCookies</code> middleware, which is located in the <code>app/Http/Middleware</code> directory:</p>
+<pre><code>/**
+ * The names of the cookies that should not be encrypted.
+ *
+ * @var array
+ */
+protected $except = [
+    'cookie_name',
+];
+</code></pre>
+<p><a name="redirects"></a></p>
+<h2 id="redirects">Redirects</h2>
+<p>Redirect responses are instances of the <code>Illuminate\Http\RedirectResponse</code> class, and contain the proper headers needed to redirect the user to another URL. There are several ways to generate a <code>RedirectResponse</code> instance. The simplest method is to use the global <code>redirect</code> helper:</p>
+<pre><code>Route::get('/dashboard', function () {
+    return redirect('home/dashboard');
+});
+</code></pre>
+<p>Sometimes you may wish to redirect the user to their previous location, such as when a submitted form is invalid. You may do so by using the global <code>back</code> helper function. Since this feature utilizes the <a href="/docs/{{version}}/session">session</a>, make sure the route calling the <code>back</code> function is using the <code>web</code> middleware group:</p>
+<pre><code>Route::post('/user/profile', function () {
+    // Validate the request...
+
+    return back()-&gt;withInput();
+});
+</code></pre>
+<p><a name="redirecting-named-routes"></a></p>
+<h3 id="redirecting-to-named-routes">Redirecting To Named Routes</h3>
+<p>When you call the <code>redirect</code> helper with no parameters, an instance of <code>Illuminate\Routing\Redirector</code> is returned, allowing you to call any method on the <code>Redirector</code> instance. For example, to generate a <code>RedirectResponse</code> to a named route, you may use the <code>route</code> method:</p>
+<pre><code>return redirect()-&gt;route('login');
+</code></pre>
+<p>If your route has parameters, you may pass them as the second argument to the <code>route</code> method:</p>
+<pre><code>// For a route with the following URI: /profile/{id}
+
+return redirect()-&gt;route('profile', ['id' =&gt; 1]);
+</code></pre>
+<p><a name="populating-parameters-via-eloquent-models"></a></p>
+<h4 id="populating-parameters-via-eloquent-models">Populating Parameters Via Eloquent Models</h4>
+<p>If you are redirecting to a route with an "ID" parameter that is being populated from an Eloquent model, you may pass the model itself. The ID will be extracted automatically:</p>
+<pre><code>// For a route with the following URI: /profile/{id}
+
+return redirect()-&gt;route('profile', [$user]);
+</code></pre>
+<p>If you would like to customize the value that is placed in the route parameter, you can specify the column in the route parameter definition (<code>/profile/{id:slug}</code>) or you can override the <code>getRouteKey</code> method on your Eloquent model:</p>
+<pre><code>/**
+ * Get the value of the model's route key.
+ *
+ * @return mixed
+ */
+public function getRouteKey()
+{
+    return $this-&gt;slug;
+}
+</code></pre>
+<p><a name="redirecting-controller-actions"></a></p>
+<h3 id="redirecting-to-controller-actions">Redirecting To Controller Actions</h3>
+<p>You may also generate redirects to <a href="/docs/{{version}}/controllers">controller actions</a>. To do so, pass the controller and action name to the <code>action</code> method:</p>
+<pre><code>use App\Http\Controllers\UserController;
+
+return redirect()-&gt;action([UserController::class, 'index']);
+</code></pre>
+<p>If your controller route requires parameters, you may pass them as the second argument to the <code>action</code> method:</p>
+<pre><code>return redirect()-&gt;action(
+    [UserController::class, 'profile'], ['id' =&gt; 1]
+);
+</code></pre>
+<p><a name="redirecting-external-domains"></a></p>
+<h3 id="redirecting-to-external-domains">Redirecting To External Domains</h3>
+<p>Sometimes you may need to redirect to a domain outside of your application. You may do so by calling the <code>away</code> method, which creates a <code>RedirectResponse</code> without any additional URL encoding, validation, or verification:</p>
+<pre><code>return redirect()-&gt;away('https://www.google.com');
+</code></pre>
+<p><a name="redirecting-with-flashed-session-data"></a></p>
+<h3 id="redirecting-with-flashed-session-data">Redirecting With Flashed Session Data</h3>
+<p>Redirecting to a new URL and <a href="/docs/{{version}}/session#flash-data">flashing data to the session</a> are usually done at the same time. Typically, this is done after successfully performing an action when you flash a success message to the session. For convenience, you may create a <code>RedirectResponse</code> instance and flash data to the session in a single, fluent method chain:</p>
+<pre><code>Route::post('/user/profile', function () {
+    // ...
+
+    return redirect('dashboard')-&gt;with('status', 'Profile updated!');
+});
+</code></pre>
+<p>After the user is redirected, you may display the flashed message from the <a href="/docs/{{version}}/session">session</a>. For example, using <a href="/docs/{{version}}/blade">Blade syntax</a>:</p>
+<pre><code>@if (session('status'))
+    &lt;div class="alert alert-success"&gt;
+        {{ session('status') }}
+    &lt;/div&gt;
+@endif
+</code></pre>
+<p><a name="redirecting-with-input"></a></p>
+<h4 id="redirecting-with-input">Redirecting With Input</h4>
+<p>You may use the <code>withInput</code> method provided by the <code>RedirectResponse</code> instance to flash the current request's input data to the session before redirecting the user to a new location. This is typically done if the user has encountered a validation error. Once the input has been flashed to the session, you may easily <a href="/docs/{{version}}/requests#retrieving-old-input">retrieve it</a> during the next request to repopulate the form:</p>
+<pre><code>return back()-&gt;withInput();
+</code></pre>
+<p><a name="other-response-types"></a></p>
+<h2 id="other-response-types">Other Response Types</h2>
+<p>The <code>response</code> helper may be used to generate other types of response instances. When the <code>response</code> helper is called without arguments, an implementation of the <code>Illuminate\Contracts\Routing\ResponseFactory</code> <a href="/docs/{{version}}/contracts">contract</a> is returned. This contract provides several helpful methods for generating responses.</p>
+<p><a name="view-responses"></a></p>
+<h3 id="view-responses">View Responses</h3>
+<p>If you need control over the response's status and headers but also need to return a <a href="/docs/{{version}}/views">view</a> as the response's content, you should use the <code>view</code> method:</p>
+<pre><code>return response()
+            -&gt;view('hello', $data, 200)
+            -&gt;header('Content-Type', $type);
+</code></pre>
+<p>Of course, if you do not need to pass a custom HTTP status code or custom headers, you may use the global <code>view</code> helper function.</p>
+<p><a name="json-responses"></a></p>
+<h3 id="json-responses">JSON Responses</h3>
+<p>The <code>json</code> method will automatically set the <code>Content-Type</code> header to <code>application/json</code>, as well as convert the given array to JSON using the <code>json_encode</code> PHP function:</p>
+<pre><code>return response()-&gt;json([
+    'name' =&gt; 'Abigail',
+    'state' =&gt; 'CA',
+]);
+</code></pre>
+<p>If you would like to create a JSONP response, you may use the <code>json</code> method in combination with the <code>withCallback</code> method:</p>
+<pre><code>return response()
+            -&gt;json(['name' =&gt; 'Abigail', 'state' =&gt; 'CA'])
+            -&gt;withCallback($request-&gt;input('callback'));
+</code></pre>
+<p><a name="file-downloads"></a></p>
+<h3 id="file-downloads">File Downloads</h3>
+<p>The <code>download</code> method may be used to generate a response that forces the user's browser to download the file at the given path. The <code>download</code> method accepts a filename as the second argument to the method, which will determine the filename that is seen by the user downloading the file. Finally, you may pass an array of HTTP headers as the third argument to the method:</p>
+<pre><code>return response()-&gt;download($pathToFile);
+
+return response()-&gt;download($pathToFile, $name, $headers);
+</code></pre>
+<blockquote>
+<p>{note} Symfony HttpFoundation, which manages file downloads, requires the file being downloaded to have an ASCII filename.</p>
+</blockquote>
+<p><a name="streamed-downloads"></a></p>
+<h4 id="streamed-downloads">Streamed Downloads</h4>
+<p>Sometimes you may wish to turn the string response of a given operation into a downloadable response without having to write the contents of the operation to disk. You may use the <code>streamDownload</code> method in this scenario. This method accepts a callback, filename, and an optional array of headers as its arguments:</p>
+<pre><code>use App\Services\GitHub;
+
+return response()-&gt;streamDownload(function () {
+    echo GitHub::api('repo')
+                -&gt;contents()
+                -&gt;readme('laravel', 'laravel')['contents'];
+}, 'laravel-readme.md');
+</code></pre>
+<p><a name="file-responses"></a></p>
+<h3 id="file-responses">File Responses</h3>
+<p>The <code>file</code> method may be used to display a file, such as an image or PDF, directly in the user's browser instead of initiating a download. This method accepts the path to the file as its first argument and an array of headers as its second argument:</p>
+<pre><code>return response()-&gt;file($pathToFile);
+
+return response()-&gt;file($pathToFile, $headers);
+</code></pre>
+<p><a name="response-macros"></a></p>
+<h2 id="response-macros">Response Macros</h2>
+<p>If you would like to define a custom response that you can re-use in a variety of your routes and controllers, you may use the <code>macro</code> method on the <code>Response</code> facade. Typically, you should call this method from the <code>boot</code> method of one of your application's <a href="/docs/{{version}}/providers">service providers</a>, such as the <code>App\Providers\AppServiceProvider</code> service provider:</p>
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Response::macro('caps', function ($value) {
+            return Response::make(strtoupper($value));
+        });
+    }
+}
+</code></pre>
+<p>The <code>macro</code> function accepts a name as its first argument and a closure as its second argument. The macro's closure will be executed when calling the macro name from a <code>ResponseFactory</code> implementation or the <code>response</code> helper:</p>
+<pre><code>return response()-&gt;caps('foo');
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../routing/" class="btn btn-neutral float-right" title="Routing">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../requests/" class="btn btn-neutral" title="HTTP Requests"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../requests/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../routing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>File Storage - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "File Storage";
+    var mkdocs_page_input_path = "filesystem.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">File Storage</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-local-driver">The Local Driver</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-public-disk">The Public Disk</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#driver-prerequisites">Driver Prerequisites</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#composer-packages">Composer Packages</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#s3-driver-configuration">S3 Driver Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ftp-driver-configuration">FTP Driver Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sftp-driver-configuration">SFTP Driver Configuration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#amazon-s3-compatible-filesystems">Amazon S3 Compatible Filesystems</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#caching">Caching</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#obtaining-disk-instances">Obtaining Disk Instances</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#retrieving-files">Retrieving Files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#downloading-files">Downloading Files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-urls">File URLs</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#temporary-urls">Temporary URLs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#url-host-customization">URL Host Customization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-metadata">File Metadata</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#file-paths">File Paths</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#storing-files">Storing Files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#automatic-streaming">Automatic Streaming</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#prepending-appending-to-files">Prepending &amp; Appending To Files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#copying-moving-files">Copying &amp; Moving Files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-uploads">File Uploads</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#specifying-a-file-name">Specifying A File Name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#specifying-a-disk">Specifying A Disk</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#other-uploaded-file-information">Other Uploaded File Information</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-visibility">File Visibility</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#local-files-visibility">Local Files &amp; Visibility</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deleting-files">Deleting Files</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#directories">Directories</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-all-files-within-a-directory">Get All Files Within A Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-all-directories-within-a-directory">Get All Directories Within A Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#create-a-directory">Create A Directory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delete-a-directory">Delete A Directory</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#custom-filesystems">Custom Filesystems</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>File Storage</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="file-storage">File Storage</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#configuration">Configuration</a><ul>
+<li><a href="#the-local-driver">The Local Driver</a></li>
+<li><a href="#the-public-disk">The Public Disk</a></li>
+<li><a href="#driver-prerequisites">Driver Prerequisites</a></li>
+<li><a href="#amazon-s3-compatible-filesystems">Amazon S3 Compatible Filesystems</a></li>
+<li><a href="#caching">Caching</a></li>
+</ul>
+</li>
+<li><a href="#obtaining-disk-instances">Obtaining Disk Instances</a></li>
+<li><a href="#retrieving-files">Retrieving Files</a><ul>
+<li><a href="#downloading-files">Downloading Files</a></li>
+<li><a href="#file-urls">File URLs</a></li>
+<li><a href="#file-metadata">File Metadata</a></li>
+</ul>
+</li>
+<li><a href="#storing-files">Storing Files</a><ul>
+<li><a href="#file-uploads">File Uploads</a></li>
+<li><a href="#file-visibility">File Visibility</a></li>
+</ul>
+</li>
+<li><a href="#deleting-files">Deleting Files</a></li>
+<li><a href="#directories">Directories</a></li>
+<li><a href="#custom-filesystems">Custom Filesystems</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Laravel provides a powerful filesystem abstraction thanks to the wonderful <a href="https://github.com/thephpleague/flysystem">Flysystem</a> PHP package by Frank de Jonge. The Laravel Flysystem integration provides simple drivers for working with local filesystems, SFTP, and Amazon S3. Even better, it's amazingly simple to switch between these storage options between your local development machine and production server as the API remains the same for each system.</p>
+<p><a name="configuration"></a></p>
+<h2 id="configuration">Configuration</h2>
+<p>Laravel's filesystem configuration file is located at <code>config/filesystems.php</code>. Within this file, you may configure all of your filesystem "disks". Each disk represents a particular storage driver and storage location. Example configurations for each supported driver are included in the configuration file so you can modify the configuration to reflect your storage preferences and credentials.</p>
+<p>The <code>local</code> driver interacts with files stored locally on the server running the Laravel application while the <code>s3</code> driver is used to write to Amazon's S3 cloud storage service.</p>
+<blockquote>
+<p>{tip} You may configure as many disks as you like and may even have multiple disks that use the same driver.</p>
+</blockquote>
+<p><a name="the-local-driver"></a></p>
+<h3 id="the-local-driver">The Local Driver</h3>
+<p>When using the <code>local</code> driver, all file operations are relative to the <code>root</code> directory defined in your <code>filesystems</code> configuration file. By default, this value is set to the <code>storage/app</code> directory. Therefore, the following method would write to <code>storage/app/example.txt</code>:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+Storage::disk('local')-&gt;put('example.txt', 'Contents');
+</code></pre>
+<p><a name="the-public-disk"></a></p>
+<h3 id="the-public-disk">The Public Disk</h3>
+<p>The <code>public</code> disk included in your application's <code>filesystems</code> configuration file is intended for files that are going to be publicly accessible. By default, the <code>public</code> disk uses the <code>local</code> driver and stores its files in <code>storage/app/public</code>.</p>
+<p>To make these files accessible from the web, you should create a symbolic link from <code>public/storage</code> to <code>storage/app/public</code>. Utilizing this folder convention will keep your publicly accessible files in one directory that can be easily shared across deployments when using zero down-time deployment systems like <a href="https://envoyer.io">Envoyer</a>.</p>
+<p>To create the symbolic link, you may use the <code>storage:link</code> Artisan command:</p>
+<pre><code>php artisan storage:link
+</code></pre>
+<p>Once a file has been stored and the symbolic link has been created, you can create a URL to the files using the <code>asset</code> helper:</p>
+<pre><code>echo asset('storage/file.txt');
+</code></pre>
+<p>You may configure additional symbolic links in your <code>filesystems</code> configuration file. Each of the configured links will be created when you run the <code>storage:link</code> command:</p>
+<pre><code>'links' =&gt; [
+    public_path('storage') =&gt; storage_path('app/public'),
+    public_path('images') =&gt; storage_path('app/images'),
+],
+</code></pre>
+<p><a name="driver-prerequisites"></a></p>
+<h3 id="driver-prerequisites">Driver Prerequisites</h3>
+<p><a name="composer-packages"></a></p>
+<h4 id="composer-packages">Composer Packages</h4>
+<p>Before using the S3 or SFTP drivers, you will need to install the appropriate package via the Composer package manager:</p>
+<ul>
+<li>Amazon S3: <code>composer require league/flysystem-aws-s3-v3 "~1.0"</code></li>
+<li>SFTP: <code>composer require league/flysystem-sftp "~1.0"</code></li>
+</ul>
+<p>In addition, you may choose to install a cached adapter for increased performance:</p>
+<ul>
+<li>CachedAdapter: <code>composer require league/flysystem-cached-adapter "~1.0"</code></li>
+</ul>
+<p><a name="s3-driver-configuration"></a></p>
+<h4 id="s3-driver-configuration">S3 Driver Configuration</h4>
+<p>The S3 driver configuration information is located in your <code>config/filesystems.php</code> configuration file. This file contains an example configuration array for an S3 driver. You are free to modify this array with your own S3 configuration and credentials. For convenience, these environment variables match the naming convention used by the AWS CLI.</p>
+<p><a name="ftp-driver-configuration"></a></p>
+<h4 id="ftp-driver-configuration">FTP Driver Configuration</h4>
+<p>Laravel's Flysystem integrations work great with FTP; however, a sample configuration is not included with the framework's default <code>filesystems.php</code> configuration file. If you need to configure an FTP filesystem, you may use the configuration example below:</p>
+<pre><code>'ftp' =&gt; [
+    'driver' =&gt; 'ftp',
+    'host' =&gt; 'ftp.example.com',
+    'username' =&gt; 'your-username',
+    'password' =&gt; 'your-password',
+
+    // Optional FTP Settings...
+    // 'port' =&gt; 21,
+    // 'root' =&gt; '',
+    // 'passive' =&gt; true,
+    // 'ssl' =&gt; true,
+    // 'timeout' =&gt; 30,
+],
+</code></pre>
+<p><a name="sftp-driver-configuration"></a></p>
+<h4 id="sftp-driver-configuration">SFTP Driver Configuration</h4>
+<p>Laravel's Flysystem integrations work great with SFTP; however, a sample configuration is not included with the framework's default <code>filesystems.php</code> configuration file. If you need to configure an SFTP filesystem, you may use the configuration example below:</p>
+<pre><code>'sftp' =&gt; [
+    'driver' =&gt; 'sftp',
+    'host' =&gt; 'example.com',
+    'username' =&gt; 'your-username',
+    'password' =&gt; 'your-password',
+
+    // Settings for SSH key based authentication...
+    'privateKey' =&gt; '/path/to/privateKey',
+    'password' =&gt; 'encryption-password',
+
+    // Optional SFTP Settings...
+    // 'port' =&gt; 22,
+    // 'root' =&gt; '',
+    // 'timeout' =&gt; 30,
+],
+</code></pre>
+<p><a name="amazon-s3-compatible-filesystems"></a></p>
+<h3 id="amazon-s3-compatible-filesystems">Amazon S3 Compatible Filesystems</h3>
+<p>By default, your application's <code>filesystems</code> configuration file contains a disk configuration for the <code>s3</code> disk. In addition to using this disk to interact with Amazon S3, you may use it to interact with any S3 compatible file storage service such as <a href="https://github.com/minio/minio">MinIO</a> or <a href="https://www.digitalocean.com/products/spaces/">DigitalOcean Spaces</a>.</p>
+<p>Typically, after updating the disk's credentials to match the credentials of the service you are planning to use, you only need to update the value of the <code>url</code> configuration option. This option's value is typically defined via the <code>AWS_ENDPOINT</code> environment variable:</p>
+<pre><code>'endpoint' =&gt; env('AWS_ENDPOINT', 'https://minio:9000'),
+</code></pre>
+<p><a name="caching"></a></p>
+<h3 id="caching">Caching</h3>
+<p>To enable caching for a given disk, you may add a <code>cache</code> directive to the disk's configuration options. The <code>cache</code> option should be an array of caching options containing the <code>disk</code> name, the <code>expire</code> time in seconds, and the cache <code>prefix</code>:</p>
+<pre><code>'s3' =&gt; [
+    'driver' =&gt; 's3',
+
+    // Other Disk Options...
+
+    'cache' =&gt; [
+        'store' =&gt; 'memcached',
+        'expire' =&gt; 600,
+        'prefix' =&gt; 'cache-prefix',
+    ],
+],
+</code></pre>
+<p><a name="obtaining-disk-instances"></a></p>
+<h2 id="obtaining-disk-instances">Obtaining Disk Instances</h2>
+<p>The <code>Storage</code> facade may be used to interact with any of your configured disks. For example, you may use the <code>put</code> method on the facade to store an avatar on the default disk. If you call methods on the <code>Storage</code> facade without first calling the <code>disk</code> method, the method will automatically be passed to the default disk:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+Storage::put('avatars/1', $content);
+</code></pre>
+<p>If your application interacts with multiple disks, you may use the <code>disk</code> method on the <code>Storage</code> facade to work with files on a particular disk:</p>
+<pre><code>Storage::disk('s3')-&gt;put('avatars/1', $content);
+</code></pre>
+<p><a name="retrieving-files"></a></p>
+<h2 id="retrieving-files">Retrieving Files</h2>
+<p>The <code>get</code> method may be used to retrieve the contents of a file. The raw string contents of the file will be returned by the method. Remember, all file paths should be specified relative to the disk's "root" location:</p>
+<pre><code>$contents = Storage::get('file.jpg');
+</code></pre>
+<p>The <code>exists</code> method may be used to determine if a file exists on the disk:</p>
+<pre><code>if (Storage::disk('s3')-&gt;exists('file.jpg')) {
+    // ...
+}
+</code></pre>
+<p>The <code>missing</code> method may be used to determine if a file is missing from the disk:</p>
+<pre><code>if (Storage::disk('s3')-&gt;missing('file.jpg')) {
+    // ...
+}
+</code></pre>
+<p><a name="downloading-files"></a></p>
+<h3 id="downloading-files">Downloading Files</h3>
+<p>The <code>download</code> method may be used to generate a response that forces the user's browser to download the file at the given path. The <code>download</code> method accepts a filename as the second argument to the method, which will determine the filename that is seen by the user downloading the file. Finally, you may pass an array of HTTP headers as the third argument to the method:</p>
+<pre><code>return Storage::download('file.jpg');
+
+return Storage::download('file.jpg', $name, $headers);
+</code></pre>
+<p><a name="file-urls"></a></p>
+<h3 id="file-urls">File URLs</h3>
+<p>You may use the <code>url</code> method to get the URL for a given file. If you are using the <code>local</code> driver, this will typically just prepend <code>/storage</code> to the given path and return a relative URL to the file. If you are using the <code>s3</code> driver, the fully qualified remote URL will be returned:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+$url = Storage::url('file.jpg');
+</code></pre>
+<p>When using the <code>local</code> driver, all files that should be publicly accessible should be placed in the <code>storage/app/public</code> directory. Furthermore, you should <a href="#the-public-disk">create a symbolic link</a> at <code>public/storage</code> which points to the <code>storage/app/public</code> directory.</p>
+<blockquote>
+<p>{note} When using the <code>local</code> driver, the return value of <code>url</code> is not URL encoded. For this reason, we recommend always storing your files using names that will create valid URLs.</p>
+</blockquote>
+<p><a name="temporary-urls"></a></p>
+<h4 id="temporary-urls">Temporary URLs</h4>
+<p>Using the <code>temporaryUrl</code> method, you may create temporary URLs to files stored using the <code>s3</code> driver. This method accepts a path and a <code>DateTime</code> instance specifying when the URL should expire:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+$url = Storage::temporaryUrl(
+    'file.jpg', now()-&gt;addMinutes(5)
+);
+</code></pre>
+<p>If you need to specify additional <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html#RESTObjectGET-requests">S3 request parameters</a>, you may pass the array of request parameters as the third argument to the <code>temporaryUrl</code> method:</p>
+<pre><code>$url = Storage::temporaryUrl(
+    'file.jpg',
+    now()-&gt;addMinutes(5),
+    [
+        'ResponseContentType' =&gt; 'application/octet-stream',
+        'ResponseContentDisposition' =&gt; 'attachment; filename=file2.jpg',
+    ]
+);
+</code></pre>
+<p><a name="url-host-customization"></a></p>
+<h4 id="url-host-customization">URL Host Customization</h4>
+<p>If you would like to pre-define the host for URLs generated using the <code>Storage</code> facade, you may add a <code>url</code> option to the disk's configuration array:</p>
+<pre><code>'public' =&gt; [
+    'driver' =&gt; 'local',
+    'root' =&gt; storage_path('app/public'),
+    'url' =&gt; env('APP_URL').'/storage',
+    'visibility' =&gt; 'public',
+],
+</code></pre>
+<p><a name="file-metadata"></a></p>
+<h3 id="file-metadata">File Metadata</h3>
+<p>In addition to reading and writing files, Laravel can also provide information about the files themselves. For example, the <code>size</code> method may be used to get the size of a file in bytes:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+$size = Storage::size('file.jpg');
+</code></pre>
+<p>The <code>lastModified</code> method returns the UNIX timestamp of the last time the file was modified:</p>
+<pre><code>$time = Storage::lastModified('file.jpg');
+</code></pre>
+<p><a name="file-paths"></a></p>
+<h4 id="file-paths">File Paths</h4>
+<p>You may use the <code>path</code> method to get the path for a given file. If you are using the <code>local</code> driver, this will return the absolute path to the file. If you are using the <code>s3</code> driver, this method will return the relative path to the file in the S3 bucket:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+$path = Storage::path('file.jpg');
+</code></pre>
+<p><a name="storing-files"></a></p>
+<h2 id="storing-files">Storing Files</h2>
+<p>The <code>put</code> method may be used to store file contents on a disk. You may also pass a PHP <code>resource</code> to the <code>put</code> method, which will use Flysystem's underlying stream support. Remember, all file paths should be specified relative to the "root" location configured for the disk:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+Storage::put('file.jpg', $contents);
+
+Storage::put('file.jpg', $resource);
+</code></pre>
+<p><a name="automatic-streaming"></a></p>
+<h4 id="automatic-streaming">Automatic Streaming</h4>
+<p>Streaming files to storage offers significantly reduced memory usage. If you would like Laravel to automatically manage streaming a given file to your storage location, you may use the <code>putFile</code> or <code>putFileAs</code> method. This method accepts either an <code>Illuminate\Http\File</code> or <code>Illuminate\Http\UploadedFile</code> instance and will automatically stream the file to your desired location:</p>
+<pre><code>use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+
+// Automatically generate a unique ID for filename...
+$path = Storage::putFile('photos', new File('/path/to/photo'));
+
+// Manually specify a filename...
+$path = Storage::putFileAs('photos', new File('/path/to/photo'), 'photo.jpg');
+</code></pre>
+<p>There are a few important things to note about the <code>putFile</code> method. Note that we only specified a directory name and not a filename. By default, the <code>putFile</code> method will generate a unique ID to serve as the filename. The file's extension will be determined by examining the file's MIME type. The path to the file will be returned by the <code>putFile</code> method so you can store the path, including the generated filename, in your database.</p>
+<p>The <code>putFile</code> and <code>putFileAs</code> methods also accept an argument to specify the "visibility" of the stored file. This is particularly useful if you are storing the file on a cloud disk such as Amazon S3 and would like the file to be publicly accessible via generated URLs:</p>
+<pre><code>Storage::putFile('photos', new File('/path/to/photo'), 'public');
+</code></pre>
+<p><a name="prepending-appending-to-files"></a></p>
+<h4 id="prepending-appending-to-files">Prepending &amp; Appending To Files</h4>
+<p>The <code>prepend</code> and <code>append</code> methods allow you to write to the beginning or end of a file:</p>
+<pre><code>Storage::prepend('file.log', 'Prepended Text');
+
+Storage::append('file.log', 'Appended Text');
+</code></pre>
+<p><a name="copying-moving-files"></a></p>
+<h4 id="copying-moving-files">Copying &amp; Moving Files</h4>
+<p>The <code>copy</code> method may be used to copy an existing file to a new location on the disk, while the <code>move</code> method may be used to rename or move an existing file to a new location:</p>
+<pre><code>Storage::copy('old/file.jpg', 'new/file.jpg');
+
+Storage::move('old/file.jpg', 'new/file.jpg');
+</code></pre>
+<p><a name="file-uploads"></a></p>
+<h3 id="file-uploads">File Uploads</h3>
+<p>In web applications, one of the most common use-cases for storing files is storing user uploaded files such as photos and documents. Laravel makes it very easy to store uploaded files using the <code>store</code> method on an uploaded file instance. Call the <code>store</code> method with the path at which you wish to store the uploaded file:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
+class UserAvatarController extends Controller
+{
+    /**
+     * Update the avatar for the user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {
+        $path = $request-&gt;file('avatar')-&gt;store('avatars');
+
+        return $path;
+    }
+}
+</code></pre>
+<p>There are a few important things to note about this example. Note that we only specified a directory name, not a filename. By default, the <code>store</code> method will generate a unique ID to serve as the filename. The file's extension will be determined by examining the file's MIME type. The path to the file will be returned by the <code>store</code> method so you can store the path, including the generated filename, in your database.</p>
+<p>You may also call the <code>putFile</code> method on the <code>Storage</code> facade to perform the same file storage operation as the example above:</p>
+<pre><code>$path = Storage::putFile('avatars', $request-&gt;file('avatar'));
+</code></pre>
+<p><a name="specifying-a-file-name"></a></p>
+<h4 id="specifying-a-file-name">Specifying A File Name</h4>
+<p>If you do not want a filename to be automatically assigned to your stored file, you may use the <code>storeAs</code> method, which receives the path, the filename, and the (optional) disk as its arguments:</p>
+<pre><code>$path = $request-&gt;file('avatar')-&gt;storeAs(
+    'avatars', $request-&gt;user()-&gt;id
+);
+</code></pre>
+<p>You may also use the <code>putFileAs</code> method on the <code>Storage</code> facade, which will perform the same file storage operation as the example above:</p>
+<pre><code>$path = Storage::putFileAs(
+    'avatars', $request-&gt;file('avatar'), $request-&gt;user()-&gt;id
+);
+</code></pre>
+<blockquote>
+<p>{note} Unprintable and invalid unicode characters will automatically be removed from file paths. Therefore, you may wish to sanitize your file paths before passing them to Laravel's file storage methods. File paths are normalized using the <code>League\Flysystem\Util::normalizePath</code> method.</p>
+</blockquote>
+<p><a name="specifying-a-disk"></a></p>
+<h4 id="specifying-a-disk">Specifying A Disk</h4>
+<p>By default, this uploaded file's <code>store</code> method will use your default disk. If you would like to specify another disk, pass the disk name as the second argument to the <code>store</code> method:</p>
+<pre><code>$path = $request-&gt;file('avatar')-&gt;store(
+    'avatars/'.$request-&gt;user()-&gt;id, 's3'
+);
+</code></pre>
+<p>If you are using the <code>storeAs</code> method, you may pass the disk name as the third argument to the method:</p>
+<pre><code>$path = $request-&gt;file('avatar')-&gt;storeAs(
+    'avatars',
+    $request-&gt;user()-&gt;id,
+    's3'
+);
+</code></pre>
+<p><a name="other-uploaded-file-information"></a></p>
+<h4 id="other-uploaded-file-information">Other Uploaded File Information</h4>
+<p>If you would like to get the original name of the uploaded file, you may do so using the <code>getClientOriginalName</code> method:</p>
+<pre><code>$name = $request-&gt;file('avatar')-&gt;getClientOriginalName();
+</code></pre>
+<p>The <code>extension</code> method may be used to get the file extension of the uploaded file:</p>
+<pre><code>$extension = $request-&gt;file('avatar')-&gt;extension();
+</code></pre>
+<p><a name="file-visibility"></a></p>
+<h3 id="file-visibility">File Visibility</h3>
+<p>In Laravel's Flysystem integration, "visibility" is an abstraction of file permissions across multiple platforms. Files may either be declared <code>public</code> or <code>private</code>. When a file is declared <code>public</code>, you are indicating that the file should generally be accessible to others. For example, when using the S3 driver, you may retrieve URLs for <code>public</code> files.</p>
+<p>You can set the visibility when writing the file via the <code>put</code> method:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+Storage::put('file.jpg', $contents, 'public');
+</code></pre>
+<p>If the file has already been stored, its visibility can be retrieved and set via the <code>getVisibility</code> and <code>setVisibility</code> methods:</p>
+<pre><code>$visibility = Storage::getVisibility('file.jpg');
+
+Storage::setVisibility('file.jpg', 'public');
+</code></pre>
+<p>When interacting with uploaded files, you may use the <code>storePublicly</code> and <code>storePubliclyAs</code> methods to store the uploaded file with <code>public</code> visibility:</p>
+<pre><code>$path = $request-&gt;file('avatar')-&gt;storePublicly('avatars', 's3');
+
+$path = $request-&gt;file('avatar')-&gt;storePubliclyAs(
+    'avatars',
+    $request-&gt;user()-&gt;id,
+    's3'
+);
+</code></pre>
+<p><a name="local-files-and-visibility"></a></p>
+<h4 id="local-files-visibility">Local Files &amp; Visibility</h4>
+<p>When using the <code>local</code> driver, <code>public</code> <a href="#file-visibility">visibility</a> translates to <code>0755</code> permissions for directories and <code>0644</code> permissions for files. You can modify the permissions mappings in your application's <code>filesystems</code> configuration file:</p>
+<pre><code>'local' =&gt; [
+    'driver' =&gt; 'local',
+    'root' =&gt; storage_path('app'),
+    'permissions' =&gt; [
+        'file' =&gt; [
+            'public' =&gt; 0664,
+            'private' =&gt; 0600,
+        ],
+        'dir' =&gt; [
+            'public' =&gt; 0775,
+            'private' =&gt; 0700,
+        ],
+    ],
+],
+</code></pre>
+<p><a name="deleting-files"></a></p>
+<h2 id="deleting-files">Deleting Files</h2>
+<p>The <code>delete</code> method accepts a single filename or an array of files to delete:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+Storage::delete('file.jpg');
+
+Storage::delete(['file.jpg', 'file2.jpg']);
+</code></pre>
+<p>If necessary, you may specify the disk that the file should be deleted from:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+Storage::disk('s3')-&gt;delete('path/file.jpg');
+</code></pre>
+<p><a name="directories"></a></p>
+<h2 id="directories">Directories</h2>
+<p><a name="get-all-files-within-a-directory"></a></p>
+<h4 id="get-all-files-within-a-directory">Get All Files Within A Directory</h4>
+<p>The <code>files</code> method returns an array of all of the files in a given directory. If you would like to retrieve a list of all files within a given directory including all subdirectories, you may use the <code>allFiles</code> method:</p>
+<pre><code>use Illuminate\Support\Facades\Storage;
+
+$files = Storage::files($directory);
+
+$files = Storage::allFiles($directory);
+</code></pre>
+<p><a name="get-all-directories-within-a-directory"></a></p>
+<h4 id="get-all-directories-within-a-directory">Get All Directories Within A Directory</h4>
+<p>The <code>directories</code> method returns an array of all the directories within a given directory. Additionally, you may use the <code>allDirectories</code> method to get a list of all directories within a given directory and all of its subdirectories:</p>
+<pre><code>$directories = Storage::directories($directory);
+
+$directories = Storage::allDirectories($directory);
+</code></pre>
+<p><a name="create-a-directory"></a></p>
+<h4 id="create-a-directory">Create A Directory</h4>
+<p>The <code>makeDirectory</code> method will create the given directory, including any needed subdirectories:</p>
+<pre><code>Storage::makeDirectory($directory);
+</code></pre>
+<p><a name="delete-a-directory"></a></p>
+<h4 id="delete-a-directory">Delete A Directory</h4>
+<p>Finally, the <code>deleteDirectory</code> method may be used to remove a directory and all of its files:</p>
+<pre><code>Storage::deleteDirectory($directory);
+</code></pre>
+<p><a name="custom-filesystems"></a></p>
+<h2 id="custom-filesystems">Custom Filesystems</h2>
+<p>Laravel's Flysystem integration provides support for several "drivers" out of the box; however, Flysystem is not limited to these and has adapters for many other storage systems. You can create a custom driver if you want to use one of these additional adapters in your Laravel application.</p>
+<p>In order to define a custom filesystem you will need a Flysystem adapter. Let's add a community maintained Dropbox adapter to our project:</p>
+<pre><code>composer require spatie/flysystem-dropbox
+</code></pre>
+<p>Next, you can register the driver within the <code>boot</code> method of one of your application's <a href="/docs/{{version}}/providers">service providers</a>. To accomplish this, you should use the <code>extend</code> method of the <code>Storage</code> facade:</p>
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\ServiceProvider;
+use League\Flysystem\Filesystem;
+use Spatie\Dropbox\Client as DropboxClient;
+use Spatie\FlysystemDropbox\DropboxAdapter;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Storage::extend('dropbox', function ($app, $config) {
+            $client = new DropboxClient(
+                $config['authorization_token']
+            );
+
+            return new Filesystem(new DropboxAdapter($client));
+        });
+    }
+}
+</code></pre>
+<p>The first argument of the <code>extend</code> method is the name of the driver and the second is a closure that receives the <code>$app</code> and <code>$config</code> variables. The closure must return an instance of <code>League\Flysystem\Filesystem</code>. The <code>$config</code> variable contains the values defined in <code>config/filesystems.php</code> for the specified disk.</p>
+<p>Once you have created and registered the extension's service provider, you may use the <code>dropbox</code> driver in your <code>config/filesystems.php</code> configuration file.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../fortify/" class="btn btn-neutral float-right" title="Laravel Fortify">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../facades/" class="btn btn-neutral" title="Facades"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../facades/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../fortify/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Database Testing - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Database Testing";
+    var mkdocs_page_input_path = "database-testing.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Database Testing</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#resetting-the-database-after-each-test">Resetting The Database After Each Test</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#defining-model-factories">Defining Model Factories</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#concept-overview">Concept Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#generating-factories">Generating Factories</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#factory-states">Factory States</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#factory-callbacks">Factory Callbacks</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creating-models-using-factories">Creating Models Using Factories</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#instantiating-models">Instantiating Models</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#applying-states">Applying States</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#overriding-attributes">Overriding Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#connecting-factories-models">Connecting Factories &amp; Models</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#persisting-models">Persisting Models</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sequences">Sequences</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#factory-relationships">Factory Relationships</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#has-many-relationships">Has Many Relationships</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#using-magic-methods">Using Magic Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#belongs-to-relationships">Belongs To Relationships</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#using-magic-methods_1">Using Magic Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#many-to-many-relationships">Many To Many Relationships</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pivot-table-attributes">Pivot Table Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#using-magic-methods_2">Using Magic Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#polymorphic-relationships">Polymorphic Relationships</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#morph-to-relationships">Morph To Relationships</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#polymorphic-many-to-many-relationships">Polymorphic Many To Many Relationships</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#defining-relationships-within-factories">Defining Relationships Within Factories</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-seeders">Running Seeders</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#available-assertions">Available Assertions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdatabasecount">assertDatabaseCount</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdatabasehas">assertDatabaseHas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdatabasemissing">assertDatabaseMissing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdeleted">assertDeleted</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Database Testing</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="database-testing">Database Testing</h1>
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#resetting-the-database-after-each-test">Resetting The Database After Each Test</a></li>
+</ul>
+</li>
+<li><a href="#defining-model-factories">Defining Model Factories</a><ul>
+<li><a href="#concept-overview">Concept Overview</a></li>
+<li><a href="#generating-factories">Generating Factories</a></li>
+<li><a href="#factory-states">Factory States</a></li>
+<li><a href="#factory-callbacks">Factory Callbacks</a></li>
+</ul>
+</li>
+<li><a href="#creating-models-using-factories">Creating Models Using Factories</a><ul>
+<li><a href="#instantiating-models">Instantiating Models</a></li>
+<li><a href="#persisting-models">Persisting Models</a></li>
+<li><a href="#sequences">Sequences</a></li>
+</ul>
+</li>
+<li><a href="#factory-relationships">Factory Relationships</a><ul>
+<li><a href="#has-many-relationships">Has Many Relationships</a></li>
+<li><a href="#belongs-to-relationships">Belongs To Relationships</a></li>
+<li><a href="#many-to-many-relationships">Many To Many Relationships</a></li>
+<li><a href="#polymorphic-relationships">Polymorphic Relationships</a></li>
+<li><a href="#defining-relationships-within-factories">Defining Relationships Within Factories</a></li>
+</ul>
+</li>
+<li><a href="#running-seeders">Running Seeders</a></li>
+<li><a href="#available-assertions">Available Assertions</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Laravel provides a variety of helpful tools and assertions to make it easier to test your database driven applications. In addition, Laravel model factories and seeders make it painless to create test database records using your application's Eloquent models and relationships. We'll discuss all of these powerful features in the following documentation.</p>
+<p><a name="resetting-the-database-after-each-test"></a></p>
+<h3 id="resetting-the-database-after-each-test">Resetting The Database After Each Test</h3>
+<p>Before proceeding much further, let's discuss how to reset your database after each of your tests so that data from a previous test does not interfere with subsequent tests. Laravel's included <code>Illuminate\Foundation\Testing\RefreshDatabase</code> trait will take care of this for you. Simply use the trait on your test class:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /**
+     * A basic functional test example.
+     *
+     * @return void
+     */
+    public function test_basic_example()
+    {
+        $response = $this-&gt;get('/');
+
+        // ...
+    }
+}
+</code></pre>
+<p><a name="defining-model-factories"></a></p>
+<h2 id="defining-model-factories">Defining Model Factories</h2>
+<p><a name="concept-overview"></a></p>
+<h3 id="concept-overview">Concept Overview</h3>
+<p>First, let's talk about Eloquent model factories. When testing, you may need to insert a few records into your database before executing your test. Instead of manually specifying the value of each column when you create this test data, Laravel allows you to define a set of default attributes for each of your <a href="/docs/{{version}}/eloquent">Eloquent models</a> using model factories.</p>
+<p>To see an example of how to write a factory, take a look at the <code>database/factories/UserFactory.php</code> file in your application. This factory is included with all new Laravel applications and contains the following factory definition:</p>
+<pre><code>namespace Database\Factories;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+class UserFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = User::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' =&gt; $this-&gt;faker-&gt;name(),
+            'email' =&gt; $this-&gt;faker-&gt;unique()-&gt;safeEmail(),
+            'email_verified_at' =&gt; now(),
+            'password' =&gt; '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'remember_token' =&gt; Str::random(10),
+        ];
+    }
+}
+</code></pre>
+<p>As you can see, in their most basic form, factories are classes that extend Laravel's base factory class and define a <code>model</code> property and <code>definition</code> method. The <code>definition</code> method returns the default set of attribute values that should be applied when creating a model using the factory.</p>
+<p>Via the <code>faker</code> property, factories have access to the <a href="https://github.com/FakerPHP/Faker">Faker</a> PHP library, which allows you to conveniently generate various kinds of random data for testing.</p>
+<blockquote>
+<p>{tip} You can set your application's Faker locale by adding a <code>faker_locale</code> option to your <code>config/app.php</code> configuration file.</p>
+</blockquote>
+<p><a name="generating-factories"></a></p>
+<h3 id="generating-factories">Generating Factories</h3>
+<p>To create a factory, execute the <code>make:factory</code> <a href="/docs/{{version}}/artisan">Artisan command</a>:</p>
+<pre><code>php artisan make:factory PostFactory
+</code></pre>
+<p>The new factory class will be placed in your <code>database/factories</code> directory.</p>
+<p>The <code>--model</code> option may be used to indicate the name of the model created by the factory. This option will pre-fill the generated factory file with the given model:</p>
+<pre><code>php artisan make:factory PostFactory --model=Post
+</code></pre>
+<p><a name="factory-states"></a></p>
+<h3 id="factory-states">Factory States</h3>
+<p>State manipulation methods allow you to define discrete modifications that can be applied to your model factories in any combination. For example, your <code>Database\Factories\UserFactory</code> factory might contain a <code>suspended</code> state method that modifies one of its default attribute values.</p>
+<p>State transformation methods typically call the <code>state</code> method provided by Laravel's base factory class. The <code>state</code> method accepts a closure which will receive the array of raw attributes defined for the factory and should return an array of attributes to modify:</p>
+<pre><code>/**
+ * Indicate that the user is suspended.
+ *
+ * @return \Illuminate\Database\Eloquent\Factories\Factory
+ */
+public function suspended()
+{
+    return $this-&gt;state(function (array $attributes) {
+        return [
+            'account_status' =&gt; 'suspended',
+        ];
+    });
+}
+</code></pre>
+<p><a name="factory-callbacks"></a></p>
+<h3 id="factory-callbacks">Factory Callbacks</h3>
+<p>Factory callbacks are registered using the <code>afterMaking</code> and <code>afterCreating</code> methods and allow you to perform additional tasks after making or creating a model. You should register these callbacks by defining a <code>configure</code> method on your factory class. This method will be automatically called by Laravel when the factory is instantiated:</p>
+<pre><code>namespace Database\Factories;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+class UserFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = User::class;
+
+    /**
+     * Configure the model factory.
+     *
+     * @return $this
+     */
+    public function configure()
+    {
+        return $this-&gt;afterMaking(function (User $user) {
+            //
+        })-&gt;afterCreating(function (User $user) {
+            //
+        });
+    }
+
+    // ...
+}
+</code></pre>
+<p><a name="creating-models-using-factories"></a></p>
+<h2 id="creating-models-using-factories">Creating Models Using Factories</h2>
+<p><a name="instantiating-models"></a></p>
+<h3 id="instantiating-models">Instantiating Models</h3>
+<p>Once you have defined your factories, you may use the static <code>factory</code> method provided to your models by the <code>Illuminate\Database\Eloquent\Factories\HasFactory</code> trait in order to instantiate a factory instance for that model. Let's take a look at a few examples of creating models. First, we'll use the <code>make</code> method to create models without persisting them to the database:</p>
+<pre><code>use App\Models\User;
+
+public function test_models_can_be_instantiated()
+{
+    $user = User::factory()-&gt;make();
+
+    // Use model in tests...
+}
+</code></pre>
+<p>You may create a collection of many models using the <code>count</code> method:</p>
+<pre><code>$users = User::factory()-&gt;count(3)-&gt;make();
+</code></pre>
+<p><a name="applying-states"></a></p>
+<h4 id="applying-states">Applying States</h4>
+<p>You may also apply any of your <a href="#factory-states">states</a> to the models. If you would like to apply multiple state transformations to the models, you may simply call the state transformation methods directly:</p>
+<pre><code>$users = User::factory()-&gt;count(5)-&gt;suspended()-&gt;make();
+</code></pre>
+<p><a name="overriding-attributes"></a></p>
+<h4 id="overriding-attributes">Overriding Attributes</h4>
+<p>If you would like to override some of the default values of your models, you may pass an array of values to the <code>make</code> method. Only the specified attributes will be replaced while the rest of the attributes remain set to their default values as specified by the factory:</p>
+<pre><code>$user = User::factory()-&gt;make([
+    'name' =&gt; 'Abigail Otwell',
+]);
+</code></pre>
+<p>Alternatively, the <code>state</code> method may be called directly on the factory instance to perform an inline state transformation:</p>
+<pre><code>$user = User::factory()-&gt;state([
+    'name' =&gt; 'Abigail Otwell',
+])-&gt;make();
+</code></pre>
+<blockquote>
+<p>{tip} <a href="/docs/{{version}}/eloquent#mass-assignment">Mass assignment protection</a> is automatically disabled when creating models using factories.</p>
+</blockquote>
+<p><a name="connecting-factories-and-models"></a></p>
+<h4 id="connecting-factories-models">Connecting Factories &amp; Models</h4>
+<p>The <code>HasFactory</code> trait's <code>factory</code> method will use conventions to determine the proper factory for the model. Specifically, the method will look for a factory in the <code>Database\Factories</code> namespace that has a class name matching the model name and is suffixed with <code>Factory</code>. If these conventions do not apply to your particular application or factory, you may overwrite the <code>newFactory</code> method on your model to return an instance of the model's corresponding factory directly:</p>
+<pre><code>use Database\Factories\Administration\FlightFactory;
+
+/**
+ * Create a new factory instance for the model.
+ *
+ * @return \Illuminate\Database\Eloquent\Factories\Factory
+ */
+protected static function newFactory()
+{
+    return FlightFactory::new();
+}
+</code></pre>
+<p><a name="persisting-models"></a></p>
+<h3 id="persisting-models">Persisting Models</h3>
+<p>The <code>create</code> method instantiates model instances and persists them to the database using Eloquent's <code>save</code> method:</p>
+<pre><code>use App\Models\User;
+
+public function test_models_can_be_persisted()
+{
+    // Create a single App\Models\User instance...
+    $user = User::factory()-&gt;create();
+
+    // Create three App\Models\User instances...
+    $users = User::factory()-&gt;count(3)-&gt;create();
+
+    // Use model in tests...
+}
+</code></pre>
+<p>You may override the factory's default model attributes by passing an array of attributes to the <code>create</code> method:</p>
+<pre><code>$user = User::factory()-&gt;create([
+    'name' =&gt; 'Abigail',
+]);
+</code></pre>
+<p><a name="sequences"></a></p>
+<h3 id="sequences">Sequences</h3>
+<p>Sometimes you may wish to alternate the value of a given model attribute for each created model. You may accomplish this by defining a state transformation as a sequence. For example, you may wish to alternate the value of an <code>admin</code> column between <code>Y</code> and <code>N</code> for each created user:</p>
+<pre><code>use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Sequence;
+
+$users = User::factory()
+                -&gt;count(10)
+                -&gt;state(new Sequence(
+                    ['admin' =&gt; 'Y'],
+                    ['admin' =&gt; 'N'],
+                ))
+                -&gt;create();
+</code></pre>
+<p>In this example, five users will be created with an <code>admin</code> value of <code>Y</code> and five users will be created with an <code>admin</code> value of <code>N</code>.</p>
+<p>If necessary, you may include a closure as a sequence value. The closure will be invoked each time the sequence needs a new value:</p>
+<pre><code>$users = User::factory()
+                -&gt;count(10)
+                -&gt;state(new Sequence(
+                    fn () =&gt; ['role' =&gt; UserRoles::all()-&gt;random()],
+                ))
+                -&gt;create();
+</code></pre>
+<p><a name="factory-relationships"></a></p>
+<h2 id="factory-relationships">Factory Relationships</h2>
+<p><a name="has-many-relationships"></a></p>
+<h3 id="has-many-relationships">Has Many Relationships</h3>
+<p>Next, let's explore building Eloquent model relationships using Laravel's fluent factory methods. First, let's assume our application has an <code>App\Models\User</code> model and an <code>App\Models\Post</code> model. Also, let's assume that the <code>User</code> model defines a <code>hasMany</code> relationship with <code>Post</code>. We can create a user that has three posts using the <code>has</code> method provided by the Laravel's factories. The <code>has</code> method accepts a factory instance:</p>
+<pre><code>use App\Models\Post;
+use App\Models\User;
+
+$user = User::factory()
+            -&gt;has(Post::factory()-&gt;count(3))
+            -&gt;create();
+</code></pre>
+<p>By convention, when passing a <code>Post</code> model to the <code>has</code> method, Laravel will assume that the <code>User</code> model must have a <code>posts</code> method that defines the relationship. If necessary, you may explicitly specify the name of the relationship that you would like to manipulate:</p>
+<pre><code>$user = User::factory()
+            -&gt;has(Post::factory()-&gt;count(3), 'posts')
+            -&gt;create();
+</code></pre>
+<p>Of course, you may perform state manipulations on the related models. In addition, you may pass a closure based state transformation if your state change requires access to the parent model:</p>
+<pre><code>$user = User::factory()
+            -&gt;has(
+                Post::factory()
+                        -&gt;count(3)
+                        -&gt;state(function (array $attributes, User $user) {
+                            return ['user_type' =&gt; $user-&gt;type];
+                        })
+            )
+            -&gt;create();
+</code></pre>
+<p><a name="has-many-relationships-using-magic-methods"></a></p>
+<h4 id="using-magic-methods">Using Magic Methods</h4>
+<p>For convenience, you may use Laravel's magic factory relationship methods to build relationships. For example, the following example will use convention to determine that the related models should be created via a <code>posts</code> relationship method on the <code>User</code> model:</p>
+<pre><code>$user = User::factory()
+            -&gt;hasPosts(3)
+            -&gt;create();
+</code></pre>
+<p>When using magic methods to create factory relationships, you may pass an array of attributes to override on the related models:</p>
+<pre><code>$user = User::factory()
+            -&gt;hasPosts(3, [
+                'published' =&gt; false,
+            ])
+            -&gt;create();
+</code></pre>
+<p>You may provide a closure based state transformation if your state change requires access to the parent model:</p>
+<pre><code>$user = User::factory()
+            -&gt;hasPosts(3, function (array $attributes, User $user) {
+                return ['user_type' =&gt; $user-&gt;type];
+            })
+            -&gt;create();
+</code></pre>
+<p><a name="belongs-to-relationships"></a></p>
+<h3 id="belongs-to-relationships">Belongs To Relationships</h3>
+<p>Now that we have explored how to build "has many" relationships using factories, let's explore the inverse of the relationship. The <code>for</code> method may be used to define the parent model that factory created models belong to. For example, we can create three <code>App\Models\Post</code> model instances that belong to a single user:</p>
+<pre><code>use App\Models\Post;
+use App\Models\User;
+
+$posts = Post::factory()
+            -&gt;count(3)
+            -&gt;for(User::factory()-&gt;state([
+                'name' =&gt; 'Jessica Archer',
+            ]))
+            -&gt;create();
+</code></pre>
+<p>If you already have a parent model instance that should be associated with the models you are creating, you may pass the model instance to the <code>for</code> method:</p>
+<pre><code>$user = User::factory()-&gt;create();
+
+$posts = Post::factory()
+            -&gt;count(3)
+            -&gt;for($user)
+            -&gt;create();
+</code></pre>
+<p><a name="belongs-to-relationships-using-magic-methods"></a></p>
+<h4 id="using-magic-methods_1">Using Magic Methods</h4>
+<p>For convenience, you may use Laravel's magic factory relationship methods to define "belongs to" relationships. For example, the following example will use convention to determine that the three posts should belong to the <code>user</code> relationship on the <code>Post</code> model:</p>
+<pre><code>$posts = Post::factory()
+            -&gt;count(3)
+            -&gt;forUser([
+                'name' =&gt; 'Jessica Archer',
+            ])
+            -&gt;create();
+</code></pre>
+<p><a name="many-to-many-relationships"></a></p>
+<h3 id="many-to-many-relationships">Many To Many Relationships</h3>
+<p>Like <a href="#has-many-relationships">has many relationships</a>, "many to many" relationships may be created using the <code>has</code> method:</p>
+<pre><code>use App\Models\Role;
+use App\Models\User;
+
+$user = User::factory()
+            -&gt;has(Role::factory()-&gt;count(3))
+            -&gt;create();
+</code></pre>
+<p><a name="pivot-table-attributes"></a></p>
+<h4 id="pivot-table-attributes">Pivot Table Attributes</h4>
+<p>If you need to define attributes that should be set on the pivot / intermediate table linking the models, you may use the <code>hasAttached</code> method. This method accepts an array of pivot table attribute names and values as its second argument:</p>
+<pre><code>use App\Models\Role;
+use App\Models\User;
+
+$user = User::factory()
+            -&gt;hasAttached(
+                Role::factory()-&gt;count(3),
+                ['active' =&gt; true]
+            )
+            -&gt;create();
+</code></pre>
+<p>You may provide a closure based state transformation if your state change requires access to the related model:</p>
+<pre><code>$user = User::factory()
+            -&gt;hasAttached(
+                Role::factory()
+                    -&gt;count(3)
+                    -&gt;state(function (array $attributes, User $user) {
+                        return ['name' =&gt; $user-&gt;name.' Role'];
+                    }),
+                ['active' =&gt; true]
+            )
+            -&gt;create();
+</code></pre>
+<p>If you already have model instances that you would like to be attached to the models you are creating, you may pass the model instances to the <code>hasAttached</code> method. In this example, the same three roles will be attached to all three users:</p>
+<pre><code>$roles = Role::factory()-&gt;count(3)-&gt;create();
+
+$user = User::factory()
+            -&gt;count(3)
+            -&gt;hasAttached($roles, ['active' =&gt; true])
+            -&gt;create();
+</code></pre>
+<p><a name="many-to-many-relationships-using-magic-methods"></a></p>
+<h4 id="using-magic-methods_2">Using Magic Methods</h4>
+<p>For convenience, you may use Laravel's magic factory relationship methods to define many to many relationships. For example, the following example will use convention to determine that the related models should be created via a <code>roles</code> relationship method on the <code>User</code> model:</p>
+<pre><code>$user = User::factory()
+            -&gt;hasRoles(1, [
+                'name' =&gt; 'Editor'
+            ])
+            -&gt;create();
+</code></pre>
+<p><a name="polymorphic-relationships"></a></p>
+<h3 id="polymorphic-relationships">Polymorphic Relationships</h3>
+<p><a href="/docs/{{version}}/eloquent-relationships#polymorphic-relationships">Polymorphic relationships</a> may also be created using factories. Polymorphic "morph many" relationships are created in the same way as typical "has many" relationships. For example, if a <code>App\Models\Post</code> model has a <code>morphMany</code> relationship with a <code>App\Models\Comment</code> model:</p>
+<pre><code>use App\Models\Post;
+
+$post = Post::factory()-&gt;hasComments(3)-&gt;create();
+</code></pre>
+<p><a name="morph-to-relationships"></a></p>
+<h4 id="morph-to-relationships">Morph To Relationships</h4>
+<p>Magic methods may not be used to create <code>morphTo</code> relationships. Instead, the <code>for</code> method must be used directly and the name of the relationship must be explicitly provided. For example, imagine that the <code>Comment</code> model has a <code>commentable</code> method that defines a <code>morphTo</code> relationship. In this situation, we may create three comments that belong to a single post by using the <code>for</code> method directly:</p>
+<pre><code>$comments = Comment::factory()-&gt;count(3)-&gt;for(
+    Post::factory(), 'commentable'
+)-&gt;create();
+</code></pre>
+<p><a name="polymorphic-many-to-many-relationships"></a></p>
+<h4 id="polymorphic-many-to-many-relationships">Polymorphic Many To Many Relationships</h4>
+<p>Polymorphic "many to many" (<code>morphToMany</code> / <code>morphedByMany</code>) relationships may be created just like non-polymorphic "many to many" relationships:</p>
+<pre><code>use App\Models\Tag;
+use App\Models\Video;
+
+$videos = Video::factory()
+            -&gt;hasAttached(
+                Tag::factory()-&gt;count(3),
+                ['public' =&gt; true]
+            )
+            -&gt;create();
+</code></pre>
+<p>Of course, the magic <code>has</code> method may also be used to create polymorphic "many to many" relationships:</p>
+<pre><code>$videos = Video::factory()
+            -&gt;hasTags(3, ['public' =&gt; true])
+            -&gt;create();
+</code></pre>
+<p><a name="defining-relationships-within-factories"></a></p>
+<h3 id="defining-relationships-within-factories">Defining Relationships Within Factories</h3>
+<p>To define a relationship within your model factory, you will typically assign a new factory instance to the foreign key of the relationship. This is normally done for the "inverse" relationships such as <code>belongsTo</code> and <code>morphTo</code> relationships. For example, if you would like to create a new user when creating a post, you may do the following:</p>
+<pre><code>use App\Models\User;
+
+/**
+ * Define the model's default state.
+ *
+ * @return array
+ */
+public function definition()
+{
+    return [
+        'user_id' =&gt; User::factory(),
+        'title' =&gt; $this-&gt;faker-&gt;title(),
+        'content' =&gt; $this-&gt;faker-&gt;paragraph(),
+    ];
+}
+</code></pre>
+<p>If the relationship's columns depend on the factory that defines it you may assign a closure to an attribute. The closure will receive the factory's evaluated attribute array:</p>
+<pre><code>/**
+ * Define the model's default state.
+ *
+ * @return array
+ */
+public function definition()
+{
+    return [
+        'user_id' =&gt; User::factory(),
+        'user_type' =&gt; function (array $attributes) {
+            return User::find($attributes['user_id'])-&gt;type;
+        },
+        'title' =&gt; $this-&gt;faker-&gt;title(),
+        'content' =&gt; $this-&gt;faker-&gt;paragraph(),
+    ];
+}
+</code></pre>
+<p><a name="running-seeders"></a></p>
+<h2 id="running-seeders">Running Seeders</h2>
+<p>If you would like to use <a href="/docs/{{version}}/seeding">database seeders</a> to populate your database during a feature test, you may invoke the <code>seed</code> method. By default, the <code>seed</code> method will execute the <code>DatabaseSeeder</code>, which should execute all of your other seeders. Alternatively, you pass a specific seeder class name to the <code>seed</code> method:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Feature;
+
+use Database\Seeders\OrderStatusSeeder;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    use RefreshDatabase;
+
+    /**
+     * Test creating a new order.
+     *
+     * @return void
+     */
+    public function test_orders_can_be_created()
+    {
+        // Run the DatabaseSeeder...
+        $this-&gt;seed();
+
+        // Run a specific seeder...
+        $this-&gt;seed(OrderStatusSeeder::class);
+
+        // ...
+    }
+}
+</code></pre>
+<p>Alternatively, you may instruct Laravel to automatically seed the database before each test. You may accomplish this by defining a <code>$seed</code> property on your base test class:</p>
+<pre><code>&lt;?php
+
+namespace Tests;
+
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+
+abstract class TestCase extends BaseTestCase
+{
+    use CreatesApplication;
+
+    /**
+     * Indicates whether the default seeder should run before each test.
+     *
+     * @var bool
+     */
+    protected $seed = true;
+}
+</code></pre>
+<p>When the <code>$seed</code> property is <code>true</code>, the test will run the <code>Database\Seeders\DatabaseSeeder</code> class before each test. However, you may specify a specific seeder that should be executed by defining a <code>$seeder</code> property on your test class:</p>
+<pre><code>use Database\Seeders\OrderStatusSeeder;
+
+/**
+ * Run a specific seeder before each test.
+ *
+ * @var string
+ */
+protected $seeder = OrderStatusSeeder::class;
+</code></pre>
+<p><a name="available-assertions"></a></p>
+<h2 id="available-assertions">Available Assertions</h2>
+<p>Laravel provides several database assertions for your <a href="https://phpunit.de/">PHPUnit</a> feature tests. We'll discuss each of these assertions below.</p>
+<p><a name="assert-database-count"></a></p>
+<h4 id="assertdatabasecount">assertDatabaseCount</h4>
+<p>Assert that a table in the database contains the given number of records:</p>
+<pre><code>$this-&gt;assertDatabaseCount('users', 5);
+</code></pre>
+<p><a name="assert-database-has"></a></p>
+<h4 id="assertdatabasehas">assertDatabaseHas</h4>
+<p>Assert that a table in the database contains records matching the given key / value query constraints:</p>
+<pre><code>$this-&gt;assertDatabaseHas('users', [
+    'email' =&gt; 'sally@example.com',
+]);
+</code></pre>
+<p><a name="assert-database-missing"></a></p>
+<h4 id="assertdatabasemissing">assertDatabaseMissing</h4>
+<p>Assert that a table in the database does not contain records matching the given key / value query constraints:</p>
+<pre><code>$this-&gt;assertDatabaseMissing('users', [
+    'email' =&gt; 'sally@example.com',
+]);
+</code></pre>
+<p><a name="assert-deleted"></a></p>
+<h4 id="assertdeleted">assertDeleted</h4>
+<p>The <code>assertDeleted</code> asserts that a given Eloquent model has been deleted from the database:</p>
+<pre><code>use App\Models\User;
+
+$user = User::find(1);
+
+$user-&gt;delete();
+
+$this-&gt;assertDeleted($user);
+</code></pre>
+<p>The <code>assertSoftDeleted</code> method may be used to assert a given Eloquent model has been "soft deleted":</p>
+<pre><code>$this-&gt;assertSoftDeleted($user);
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../database/" class="btn btn-neutral float-right" title="Database: Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../csrf/" class="btn btn-neutral" title="CSRF Protection"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../csrf/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../database/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

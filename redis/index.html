@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Redis - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Redis";
+    var mkdocs_page_input_path = "redis.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Redis</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#configuring-the-connection-scheme">Configuring The Connection Scheme</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clusters">Clusters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#predis">Predis</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-redis-facade-alias">The Redis Facade Alias</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#phpredis">phpredis</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interacting-with-redis">Interacting With Redis</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#using-multiple-redis-connections">Using Multiple Redis Connections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transactions">Transactions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#lua-scripts">Lua Scripts</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pipelining-commands">Pipelining Commands</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pub-sub">Pub / Sub</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#wildcard-subscriptions">Wildcard Subscriptions</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Redis</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="redis">Redis</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#configuration">Configuration</a><ul>
+<li><a href="#clusters">Clusters</a></li>
+<li><a href="#predis">Predis</a></li>
+<li><a href="#phpredis">phpredis</a></li>
+</ul>
+</li>
+<li><a href="#interacting-with-redis">Interacting With Redis</a><ul>
+<li><a href="#transactions">Transactions</a></li>
+<li><a href="#pipelining-commands">Pipelining Commands</a></li>
+</ul>
+</li>
+<li><a href="#pubsub">Pub / Sub</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p><a href="https://redis.io">Redis</a> is an open source, advanced key-value store. It is often referred to as a data structure server since keys can contain <a href="https://redis.io/topics/data-types#strings">strings</a>, <a href="https://redis.io/topics/data-types#hashes">hashes</a>, <a href="https://redis.io/topics/data-types#lists">lists</a>, <a href="https://redis.io/topics/data-types#sets">sets</a>, and <a href="https://redis.io/topics/data-types#sorted-sets">sorted sets</a>.</p>
+<p>Before using Redis with Laravel, we encourage you to install and use the <a href="https://github.com/phpredis/phpredis">phpredis</a> PHP extension via PECL. The extension is more complex to install compared to "user-land" PHP packages but may yield better performance for applications that make heavy use of Redis. If you are using <a href="/docs/{{version}}/sail">Laravel Sail</a>, this extension is already installed in your application's Docker container.</p>
+<p>If you are unable to install the phpredis extension, you may install the <code>predis/predis</code> package via Composer. Predis is a Redis client written entirely in PHP and does not require any additional extensions:</p>
+<pre><code class="language-bash">composer require predis/predis
+</code></pre>
+<p><a name="configuration"></a></p>
+<h2 id="configuration">Configuration</h2>
+<p>You may configure your application's Redis settings via the <code>config/database.php</code> configuration file. Within this file, you will see a <code>redis</code> array containing the Redis servers utilized by your application:</p>
+<pre><code>'redis' =&gt; [
+
+    'client' =&gt; env('REDIS_CLIENT', 'phpredis'),
+
+    'default' =&gt; [
+        'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
+        'password' =&gt; env('REDIS_PASSWORD', null),
+        'port' =&gt; env('REDIS_PORT', 6379),
+        'database' =&gt; env('REDIS_DB', 0),
+    ],
+
+    'cache' =&gt; [
+        'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
+        'password' =&gt; env('REDIS_PASSWORD', null),
+        'port' =&gt; env('REDIS_PORT', 6379),
+        'database' =&gt; env('REDIS_CACHE_DB', 1),
+    ],
+
+],
+</code></pre>
+<p>Each Redis server defined in your configuration file is required to have a name, host, and a port unless you define a single URL to represent the Redis connection:</p>
+<pre><code>'redis' =&gt; [
+
+    'client' =&gt; env('REDIS_CLIENT', 'phpredis'),
+
+    'default' =&gt; [
+        'url' =&gt; 'tcp://127.0.0.1:6379?database=0',
+    ],
+
+    'cache' =&gt; [
+        'url' =&gt; 'tls://user:password@127.0.0.1:6380?database=1',
+    ],
+
+],
+</code></pre>
+<p><a name="configuring-the-connection-scheme"></a></p>
+<h4 id="configuring-the-connection-scheme">Configuring The Connection Scheme</h4>
+<p>By default, Redis clients will use the <code>tcp</code> scheme when connecting to your Redis servers; however, you may use TLS / SSL encryption by specifying a <code>scheme</code> configuration option in your Redis server's configuration array:</p>
+<pre><code>'redis' =&gt; [
+
+    'client' =&gt; env('REDIS_CLIENT', 'phpredis'),
+
+    'default' =&gt; [
+        'scheme' =&gt; 'tls',
+        'host' =&gt; env('REDIS_HOST', '127.0.0.1'),
+        'password' =&gt; env('REDIS_PASSWORD', null),
+        'port' =&gt; env('REDIS_PORT', 6379),
+        'database' =&gt; env('REDIS_DB', 0),
+    ],
+
+],
+</code></pre>
+<p><a name="clusters"></a></p>
+<h3 id="clusters">Clusters</h3>
+<p>If your application is utilizing a cluster of Redis servers, you should define these clusters within a <code>clusters</code> key of your Redis configuration. This configuration key does not exist by default so you will need to create it within your application's <code>config/database.php</code> configuration file:</p>
+<pre><code>'redis' =&gt; [
+
+    'client' =&gt; env('REDIS_CLIENT', 'phpredis'),
+
+    'clusters' =&gt; [
+        'default' =&gt; [
+            [
+                'host' =&gt; env('REDIS_HOST', 'localhost'),
+                'password' =&gt; env('REDIS_PASSWORD', null),
+                'port' =&gt; env('REDIS_PORT', 6379),
+                'database' =&gt; 0,
+            ],
+        ],
+    ],
+
+],
+</code></pre>
+<p>By default, clusters will perform client-side sharding across your nodes, allowing you to pool nodes and create a large amount of available RAM. However, client-side sharding does not handle failover; therefore, it is primarily suited for transient cached data that is available from another primary data store.</p>
+<p>If you would like to use native Redis clustering instead of client-side sharding, you may specify this by setting the <code>options.cluster</code> configuration value to <code>redis</code> within your application's <code>config/database.php</code> configuration file:</p>
+<pre><code>'redis' =&gt; [
+
+    'client' =&gt; env('REDIS_CLIENT', 'phpredis'),
+
+    'options' =&gt; [
+        'cluster' =&gt; env('REDIS_CLUSTER', 'redis'),
+    ],
+
+    'clusters' =&gt; [
+        // ...
+    ],
+
+],
+</code></pre>
+<p><a name="predis"></a></p>
+<h3 id="predis">Predis</h3>
+<p>If you would like your application to interact with Redis via the Predis package, you should ensure the <code>REDIS_CLIENT</code> environment variable's value is <code>predis</code>:</p>
+<pre><code>'redis' =&gt; [
+
+    'client' =&gt; env('REDIS_CLIENT', 'predis'),
+
+    // Rest of Redis configuration...
+],
+</code></pre>
+<p>In addition to the default <code>host</code>, <code>port</code>, <code>database</code>, and <code>password</code> server configuration options, Predis supports additional <a href="https://github.com/nrk/predis/wiki/Connection-Parameters">connection parameters</a> that may be defined for each of your Redis servers. To utilize these additional configuration options, add them to your Redis server configuration in your application's <code>config/database.php</code> configuration file:</p>
+<pre><code>'default' =&gt; [
+    'host' =&gt; env('REDIS_HOST', 'localhost'),
+    'password' =&gt; env('REDIS_PASSWORD', null),
+    'port' =&gt; env('REDIS_PORT', 6379),
+    'database' =&gt; 0,
+    'read_write_timeout' =&gt; 60,
+],
+</code></pre>
+<p><a name="the-redis-facade-alias"></a></p>
+<h4 id="the-redis-facade-alias">The Redis Facade Alias</h4>
+<p>Laravel's <code>config/app.php</code> configuration file contains an <code>aliases</code> array which defines all of the class aliases that will be registered by the framework. For convenience, an alias entry is included for each <a href="/docs/{{version}}/facades">facade</a> offered by Laravel; however, the <code>Redis</code> alias is disabled because it conflicts with the <code>Redis</code> class name provided by the phpredis extension. If you are using the Predis client and would like to enable this alias, you may un-comment the alias in your application's <code>config/app.php</code> configuration file.</p>
+<p><a name="phpredis"></a></p>
+<h3 id="phpredis">phpredis</h3>
+<p>By default, Laravel will use the phpredis extension to communicate with Redis. The client that Laravel will use to communicate with Redis is dictated by the value of the <code>redis.client</code> configuration option, which typically reflects the value of the <code>REDIS_CLIENT</code> environment variable:</p>
+<pre><code>'redis' =&gt; [
+
+    'client' =&gt; env('REDIS_CLIENT', 'phpredis'),
+
+    // Rest of Redis configuration...
+],
+</code></pre>
+<p>In addition to the default <code>host</code>, <code>port</code>, <code>database</code>, and <code>password</code> server configuration options, phpredis supports the following additional connection parameters: <code>name</code>, <code>persistent</code>, <code>prefix</code>, <code>read_timeout</code>, <code>retry_interval</code>, <code>timeout</code>, and <code>context</code>. You may add any of these options to your Redis server configuration in the <code>config/database.php</code> configuration file:</p>
+<pre><code>'default' =&gt; [
+    'host' =&gt; env('REDIS_HOST', 'localhost'),
+    'password' =&gt; env('REDIS_PASSWORD', null),
+    'port' =&gt; env('REDIS_PORT', 6379),
+    'database' =&gt; 0,
+    'read_timeout' =&gt; 60,
+    'context' =&gt; [
+        // 'auth' =&gt; ['username', 'secret'],
+        // 'stream' =&gt; ['verify_peer' =&gt; false],
+    ],
+],
+</code></pre>
+<p><a name="interacting-with-redis"></a></p>
+<h2 id="interacting-with-redis">Interacting With Redis</h2>
+<p>You may interact with Redis by calling various methods on the <code>Redis</code> <a href="/docs/{{version}}/facades">facade</a>. The <code>Redis</code> facade supports dynamic methods, meaning you may call any <a href="https://redis.io/commands">Redis command</a> on the facade and the command will be passed directly to Redis. In this example, we will call the Redis <code>GET</code> command by calling the <code>get</code> method on the <code>Redis</code> facade:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redis;
+
+class UserController extends Controller
+{
+    /**
+     * Show the profile for the given user.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        return view('user.profile', [
+            'user' =&gt; Redis::get('user:profile:'.$id)
+        ]);
+    }
+}
+</code></pre>
+<p>As mentioned above, you may call any of Redis' commands on the <code>Redis</code> facade. Laravel uses magic methods to pass the commands to the Redis server. If a Redis command expects arguments, you should pass those to the facade's corresponding method:</p>
+<pre><code>use Illuminate\Support\Facades\Redis;
+
+Redis::set('name', 'Taylor');
+
+$values = Redis::lrange('names', 5, 10);
+</code></pre>
+<p>Alternatively, you may pass commands to the server using the <code>Redis</code> facade's <code>command</code> method, which accepts the name of the command as its first argument and an array of values as its second argument:</p>
+<pre><code>$values = Redis::command('lrange', ['name', 5, 10]);
+</code></pre>
+<p><a name="using-multiple-redis-connections"></a></p>
+<h4 id="using-multiple-redis-connections">Using Multiple Redis Connections</h4>
+<p>Your application's <code>config/database.php</code> configuration file allows you to define multiple Redis connections / servers. You may obtain a connection to a specific Redis connection using the <code>Redis</code> facade's <code>connection</code> method:</p>
+<pre><code>$redis = Redis::connection('connection-name');
+</code></pre>
+<p>To obtain an instance of the default Redis connection, you may call the <code>connection</code> method without any additional arguments:</p>
+<pre><code>$redis = Redis::connection();
+</code></pre>
+<p><a name="transactions"></a></p>
+<h3 id="transactions">Transactions</h3>
+<p>The <code>Redis</code> facade's <code>transaction</code> method provides a convenient wrapper around Redis' native <code>MULTI</code> and <code>EXEC</code> commands. The <code>transaction</code> method accepts a closure as its only argument. This closure will receive a Redis connection instance and may issue any commands it would like to this instance. All of the Redis commands issued within the closure will be executed in a single, atomic transaction:</p>
+<pre><code>use Illuminate\Support\Facades\Redis;
+
+Redis::transaction(function ($redis) {
+    $redis-&gt;incr('user_visits', 1);
+    $redis-&gt;incr('total_visits', 1);
+});
+</code></pre>
+<blockquote>
+<p>{note} When defining a Redis transaction, you may not retrieve any values from the Redis connection. Remember, your transaction is executed as a single, atomic operation and that operation is not executed until your entire closure has finished executing its commands.</p>
+</blockquote>
+<h4 id="lua-scripts">Lua Scripts</h4>
+<p>The <code>eval</code> method provides another method of executing multiple Redis commands in a single, atomic operation. However, the <code>eval</code> method has the benefit of being able to interact with and inspect Redis key values during that operation. Redis scripts are written in the <a href="https://www.lua.org">Lua programming language</a>.</p>
+<p>The <code>eval</code> method can be a bit scary at first, but we'll explore a basic example to break the ice. The <code>eval</code> method expects several arguments. First, you should pass the Lua script (as a string) to the method. Secondly, you should pass the number of keys (as an integer) that the script interacts with. Thirdly, you should pass the names of those keys. Finally, you may pass any other additional arguments that you need to access within your script.</p>
+<p>In this example, we will increment a counter, inspect its new value, and increment a second counter if the first counter's value is greater than five. Finally, we will return the value of the first counter:</p>
+<pre><code>$value = Redis::eval(&lt;&lt;&lt;'LUA'
+    local counter = redis.call("incr", KEYS[1])
+
+    if counter &gt; 5 then
+        redis.call("incr", KEYS[2])
+    end
+
+    return counter
+LUA, 2, 'first-counter', 'second-counter');
+</code></pre>
+<blockquote>
+<p>{note} Please consult the <a href="https://redis.io/commands/eval">Redis documentation</a> for more information on Redis scripting.</p>
+</blockquote>
+<p><a name="pipelining-commands"></a></p>
+<h3 id="pipelining-commands">Pipelining Commands</h3>
+<p>Sometimes you may need to execute dozens of Redis commands. Instead of making a network trip to your Redis server for each command, you may use the <code>pipeline</code> method. The <code>pipeline</code> method accepts one argument: a closure that receives a Redis instance. You may issue all of your commands to this Redis instance and they will all be sent to the Redis server at the same time to reduce network trips to the server. The commands will still be executed in the order they were issued:</p>
+<pre><code>use Illuminate\Support\Facades\Redis;
+
+Redis::pipeline(function ($pipe) {
+    for ($i = 0; $i &lt; 1000; $i++) {
+        $pipe-&gt;set("key:$i", $i);
+    }
+});
+</code></pre>
+<p><a name="pubsub"></a></p>
+<h2 id="pub-sub">Pub / Sub</h2>
+<p>Laravel provides a convenient interface to the Redis <code>publish</code> and <code>subscribe</code> commands. These Redis commands allow you to listen for messages on a given "channel". You may publish messages to the channel from another application, or even using another programming language, allowing easy communication between applications and processes.</p>
+<p>First, let's setup a channel listener using the <code>subscribe</code> method. We'll place this method call within an <a href="/docs/{{version}}/artisan">Artisan command</a> since calling the <code>subscribe</code> method begins a long-running process:</p>
+<pre><code>&lt;?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Redis;
+
+class RedisSubscribe extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'redis:subscribe';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Subscribe to a Redis channel';
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        Redis::subscribe(['test-channel'], function ($message) {
+            echo $message;
+        });
+    }
+}
+</code></pre>
+<p>Now we may publish messages to the channel using the <code>publish</code> method:</p>
+<pre><code>use Illuminate\Support\Facades\Redis;
+
+Route::get('/publish', function () {
+    // ...
+
+    Redis::publish('test-channel', json_encode([
+        'name' =&gt; 'Adam Wathan'
+    ]));
+});
+</code></pre>
+<p><a name="wildcard-subscriptions"></a></p>
+<h4 id="wildcard-subscriptions">Wildcard Subscriptions</h4>
+<p>Using the <code>psubscribe</code> method, you may subscribe to a wildcard channel, which may be useful for catching all messages on all channels. The channel name will be passed as the second argument to the provided closure:</p>
+<pre><code>Redis::psubscribe(['*'], function ($message, $channel) {
+    echo $message;
+});
+
+Redis::psubscribe(['users.*'], function ($message, $channel) {
+    echo $message;
+});
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../releases/" class="btn btn-neutral float-right" title="Release Notes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../redirects/" class="btn btn-neutral" title="HTTP Redirects"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../redirects/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../releases/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

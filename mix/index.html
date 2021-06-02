@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Compiling Assets (Mix) - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Compiling Assets (Mix)";
+    var mkdocs_page_input_path = "mix.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Compiling Assets (Mix)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation-setup">Installation &amp; Setup</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#installing-node">Installing Node</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installing-laravel-mix">Installing Laravel Mix</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#running-mix">Running Mix</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#watching-assets-for-changes">Watching Assets For Changes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#working-with-stylesheets">Working With Stylesheets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tailwind-css">Tailwind CSS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#postcss">PostCSS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sass">Sass</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#url-processing">URL Processing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#source-maps">Source Maps</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#style-of-source-mapping">Style Of Source Mapping</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#working-with-javascript">Working With JavaScript</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vue">Vue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#react">React</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vendor-extraction">Vendor Extraction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#custom-webpack-configuration">Custom Webpack Configuration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#versioning-cache-busting">Versioning / Cache Busting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#custom-mix-base-urls">Custom Mix Base URLs</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#browsersync-reloading">Browsersync Reloading</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment Variables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notifications">Notifications</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Compiling Assets (Mix)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="compiling-assets-mix">Compiling Assets (Mix)</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation &amp; Setup</a></li>
+<li><a href="#running-mix">Running Mix</a></li>
+<li><a href="#working-with-stylesheets">Working With Stylesheets</a><ul>
+<li><a href="#tailwindcss">Tailwind CSS</a></li>
+<li><a href="#postcss">PostCSS</a></li>
+<li><a href="#sass">Sass</a></li>
+<li><a href="#url-processing">URL Processing</a></li>
+<li><a href="#css-source-maps">Source Maps</a></li>
+</ul>
+</li>
+<li><a href="#working-with-scripts">Working With JavaScript</a><ul>
+<li><a href="#vue">Vue</a></li>
+<li><a href="#react">React</a></li>
+<li><a href="#vendor-extraction">Vendor Extraction</a></li>
+<li><a href="#custom-webpack-configuration">Custom Webpack Configuration</a></li>
+</ul>
+</li>
+<li><a href="#versioning-and-cache-busting">Versioning / Cache Busting</a></li>
+<li><a href="#browsersync-reloading">Browsersync Reloading</a></li>
+<li><a href="#environment-variables">Environment Variables</a></li>
+<li><a href="#notifications">Notifications</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p><a href="https://github.com/JeffreyWay/laravel-mix">Laravel Mix</a>, a package developed by <a href="https://laracasts.com">Laracasts</a> creator Jeffrey Way, provides a fluent API for defining <a href="https://webpack.js.org">webpack</a> build steps for your Laravel application using several common CSS and JavaScript pre-processors.</p>
+<p>In other words, Mix makes it a cinch to compile and minify your application's CSS and JavaScript files. Through simple method chaining, you can fluently define your asset pipeline. For example:</p>
+<pre><code>mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css');
+</code></pre>
+<p>If you've ever been confused and overwhelmed about getting started with webpack and asset compilation, you will love Laravel Mix. However, you are not required to use it while developing your application; you are free to use any asset pipeline tool you wish, or even none at all.</p>
+<blockquote>
+<p>{tip} If you need a head start building your application with Laravel and <a href="https://tailwindcss.com">Tailwind CSS</a>, check out one of our <a href="/docs/{{version}}/starter-kits">application starter kits</a>.</p>
+</blockquote>
+<p><a name="installation"></a></p>
+<h2 id="installation-setup">Installation &amp; Setup</h2>
+<p><a name="installing-node"></a></p>
+<h4 id="installing-node">Installing Node</h4>
+<p>Before running Mix, you must first ensure that Node.js and NPM are installed on your machine:</p>
+<pre><code>node -v
+npm -v
+</code></pre>
+<p>You can easily install the latest version of Node and NPM using simple graphical installers from <a href="https://nodejs.org/en/download/">the official Node website</a>. Or, if you are using <a href="/docs/{{version}}/sail">Laravel Sail</a>, you may invoke Node and NPM through Sail:</p>
+<pre><code>./sail node -v
+./sail npm -v
+</code></pre>
+<p><a name="installing-laravel-mix"></a></p>
+<h4 id="installing-laravel-mix">Installing Laravel Mix</h4>
+<p>The only remaining step is to install Laravel Mix. Within a fresh installation of Laravel, you'll find a <code>package.json</code> file in the root of your directory structure. The default <code>package.json</code> file already includes everything you need to get started using Laravel Mix. Think of this file like your <code>composer.json</code> file, except it defines Node dependencies instead of PHP dependencies. You may install the dependencies it references by running:</p>
+<pre><code>npm install
+</code></pre>
+<p><a name="running-mix"></a></p>
+<h2 id="running-mix">Running Mix</h2>
+<p>Mix is a configuration layer on top of <a href="https://webpack.js.org">webpack</a>, so to run your Mix tasks you only need to execute one of the NPM scripts that are included in the default Laravel <code>package.json</code> file. When you run the <code>dev</code> or <code>production</code> scripts, all of your application's CSS and JavaScript assets will be compiled and placed in your application's <code>public</code> directory:</p>
+<pre><code>// Run all Mix tasks...
+npm run dev
+
+// Run all Mix tasks and minify output...
+npm run prod
+</code></pre>
+<p><a name="watching-assets-for-changes"></a></p>
+<h4 id="watching-assets-for-changes">Watching Assets For Changes</h4>
+<p>The <code>npm run watch</code> command will continue running in your terminal and watch all relevant CSS and JavaScript files for changes. Webpack will automatically recompile your assets when it detects a change to one of these files:</p>
+<pre><code>npm run watch
+</code></pre>
+<p>Webpack may not be able to detect your file changes in certain local development environments. If this is the case on your system, consider using the <code>watch-poll</code> command:</p>
+<pre><code>npm run watch-poll
+</code></pre>
+<p><a name="working-with-stylesheets"></a></p>
+<h2 id="working-with-stylesheets">Working With Stylesheets</h2>
+<p>Your application's <code>webpack.mix.js</code> file is your entry point for all asset compilation. Think of it as a light configuration wrapper around <a href="https://webpack.js.org">webpack</a>. Mix tasks can be chained together to define exactly how your assets should be compiled.</p>
+<p><a name="tailwindcss"></a></p>
+<h3 id="tailwind-css">Tailwind CSS</h3>
+<p><a href="https://tailwindcss.com">Tailwind CSS</a> is a modern, utility-first framework for building amazing sites without ever leaving your HTML. Let's dig into how to start using it in a Laravel project with Laravel Mix. First, we should install Tailwind using NPM and generate our Tailwind configuration file:</p>
+<pre><code>npm install
+
+npm install -D tailwindcss
+
+npx tailwindcss init
+</code></pre>
+<p>The <code>init</code> command will generate a <code>tailwind.config.js</code> file. Within this file, you may configure the paths to all of your application's templates and JavaScript so that Tailwind can tree-shake unused styles when optimizing your CSS for production:</p>
+<pre><code class="language-js">purge: [
+    './storage/framework/views/*.php',
+    './resources/**/*.blade.php',
+    './resources/**/*.js',
+    './resources/**/*.vue',
+],
+</code></pre>
+<p>Next, you should add each of Tailwind's "layers" to your application's <code>resources/css/app.css</code> file:</p>
+<pre><code class="language-css">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</code></pre>
+<p>Once you have configured Tailwind's layers, you are ready to update your application's <code>webpack.mix.js</code> file to compile your Tailwind powered CSS:</p>
+<pre><code class="language-js">mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css', [
+        require('tailwindcss'),
+    ]);
+</code></pre>
+<p>Finally, you should reference your stylesheet in your application's primary layout template. Many applications choose to store this template at <code>resources/views/layouts/app.blade.php</code>. In addition, ensure you add the responsive viewport <code>meta</code> tag if it's not already present:</p>
+<pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;link href=&quot;/css/app.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<p><a name="postcss"></a></p>
+<h3 id="postcss">PostCSS</h3>
+<p><a href="https://postcss.org/">PostCSS</a>, a powerful tool for transforming your CSS, is included with Laravel Mix out of the box. By default, Mix leverages the popular <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> plugin to automatically apply all necessary CSS3 vendor prefixes. However, you're free to add any additional plugins that are appropriate for your application.</p>
+<p>First, install the desired plugin through NPM and include it in your array of plugins when calling Mix's <code>postCss</code> method. The <code>postCss</code> method accepts the path to your CSS file as its first argument and the directory where the compiled file should be placed as its second argument:</p>
+<pre><code>mix.postCss('resources/css/app.css', 'public/css', [
+    require('postcss-custom-properties')
+]);
+</code></pre>
+<p>Or, you may execute <code>postCss</code> with no additional plugins in order to achieve simple CSS compilation and minification:</p>
+<pre><code>mix.postCss('resources/css/app.css', 'public/css');
+</code></pre>
+<p><a name="sass"></a></p>
+<h3 id="sass">Sass</h3>
+<p>The <code>sass</code> method allows you to compile <a href="https://sass-lang.com/">Sass</a> into CSS that can be understood by web browsers. The <code>sass</code> method accepts the path to your Sass file as its first argument and the directory where the compiled file should be placed as its second argument:</p>
+<pre><code>mix.sass('resources/sass/app.scss', 'public/css');
+</code></pre>
+<p>You may compile multiple Sass files into their own respective CSS files and even customize the output directory of the resulting CSS by calling the <code>sass</code> method multiple times:</p>
+<pre><code>mix.sass('resources/sass/app.sass', 'public/css')
+    .sass('resources/sass/admin.sass', 'public/css/admin');
+</code></pre>
+<p><a name="url-processing"></a></p>
+<h3 id="url-processing">URL Processing</h3>
+<p>Because Laravel Mix is built on top of webpack, it's important to understand a few webpack concepts. For CSS compilation, webpack will rewrite and optimize any <code>url()</code> calls within your stylesheets. While this might initially sound strange, it's an incredibly powerful piece of functionality. Imagine that we want to compile Sass that includes a relative URL to an image:</p>
+<pre><code>.example {
+    background: url('../images/example.png');
+}
+</code></pre>
+<blockquote>
+<p>{note} Absolute paths for any given <code>url()</code> will be excluded from URL-rewriting. For example, <code>url('/images/thing.png')</code> or <code>url('http://example.com/images/thing.png')</code> won't be modified.</p>
+</blockquote>
+<p>By default, Laravel Mix and webpack will find <code>example.png</code>, copy it to your <code>public/images</code> folder, and then rewrite the <code>url()</code> within your generated stylesheet. As such, your compiled CSS will be:</p>
+<pre><code>.example {
+    background: url(/images/example.png?d41d8cd98f00b204e9800998ecf8427e);
+}
+</code></pre>
+<p>As useful as this feature may be, your existing folder structure may already be configured in a way you like. If this is the case, you may disable <code>url()</code> rewriting like so:</p>
+<pre><code>mix.sass('resources/sass/app.scss', 'public/css').options({
+    processCssUrls: false
+});
+</code></pre>
+<p>With this addition to your <code>webpack.mix.js</code> file, Mix will no longer match any <code>url()</code> or copy assets to your public directory. In other words, the compiled CSS will look just like how you originally typed it:</p>
+<pre><code>.example {
+    background: url("../images/thing.png");
+}
+</code></pre>
+<p><a name="css-source-maps"></a></p>
+<h3 id="source-maps">Source Maps</h3>
+<p>Though disabled by default, source maps may be activated by calling the <code>mix.sourceMaps()</code> method in your <code>webpack.mix.js</code> file. Though it comes with a compile/performance cost, this will provide extra debugging information to your browser's developer tools when using compiled assets:</p>
+<pre><code>mix.js('resources/js/app.js', 'public/js')
+    .sourceMaps();
+</code></pre>
+<p><a name="style-of-source-mapping"></a></p>
+<h4 id="style-of-source-mapping">Style Of Source Mapping</h4>
+<p>Webpack offers a variety of <a href="https://webpack.js.org/configuration/devtool/#devtool">source mapping styles</a>. By default, Mix's source mapping style is set to <code>eval-source-map</code>, which provides a fast rebuild time. If you want to change the mapping style, you may do so using the <code>sourceMaps</code> method:</p>
+<pre><code>let productionSourceMaps = false;
+
+mix.js('resources/js/app.js', 'public/js')
+    .sourceMaps(productionSourceMaps, 'source-map');
+</code></pre>
+<p><a name="working-with-scripts"></a></p>
+<h2 id="working-with-javascript">Working With JavaScript</h2>
+<p>Mix provides several features to help you work with your JavaScript files, such as compiling modern ECMAScript, module bundling, minification, and concatenating plain JavaScript files. Even better, this all works seamlessly, without requiring an ounce of custom configuration:</p>
+<pre><code>mix.js('resources/js/app.js', 'public/js');
+</code></pre>
+<p>With this single line of code, you may now take advantage of:</p>
+<div class="content-list" markdown="1">
+- The latest EcmaScript syntax.
+- Modules
+- Minification for production environments.
+</div>
+
+<p><a name="vue"></a></p>
+<h3 id="vue">Vue</h3>
+<p>Mix will automatically install the Babel plugins necessary for Vue single-file component compilation support when using the <code>vue</code> method. No further configuration is required:</p>
+<pre><code>mix.js('resources/js/app.js', 'public/js')
+   .vue();
+</code></pre>
+<p>Once your JavaScript has been compiled, you can reference it in your application:</p>
+<pre><code class="language-html">&lt;head&gt;
+    &lt;!-- ... --&gt;
+
+    &lt;script src=&quot;/js/app.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<p><a name="react"></a></p>
+<h3 id="react">React</h3>
+<p>Mix can automatically install the Babel plugins necessary for React support. To get started, add a call to the <code>react</code> method:</p>
+<pre><code>mix.js('resources/js/app.jsx', 'public/js')
+   .react();
+</code></pre>
+<p>Behind the scenes, Mix will download and include the appropriate <code>babel-preset-react</code> Babel plugin. Once your JavaScript has been compiled, you can reference it in your application:</p>
+<pre><code class="language-html">&lt;head&gt;
+    &lt;!-- ... --&gt;
+
+    &lt;script src=&quot;/js/app.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<p><a name="vendor-extraction"></a></p>
+<h3 id="vendor-extraction">Vendor Extraction</h3>
+<p>One potential downside to bundling all of your application-specific JavaScript with your vendor libraries such as React and Vue is that it makes long-term caching more difficult. For example, a single update to your application code will force the browser to re-download all of your vendor libraries even if they haven't changed.</p>
+<p>If you intend to make frequent updates to your application's JavaScript, you should consider extracting all of your vendor libraries into their own file. This way, a change to your application code will not affect the caching of your large <code>vendor.js</code> file. Mix's <code>extract</code> method makes this a breeze:</p>
+<pre><code>mix.js('resources/js/app.js', 'public/js')
+    .extract(['vue'])
+</code></pre>
+<p>The <code>extract</code> method accepts an array of all libraries or modules that you wish to extract into a <code>vendor.js</code> file. Using the snippet above as an example, Mix will generate the following files:</p>
+<div class="content-list" markdown="1">
+- `public/js/manifest.js`: *The Webpack manifest runtime*
+- `public/js/vendor.js`: *Your vendor libraries*
+- `public/js/app.js`: *Your application code*
+</div>
+
+<p>To avoid JavaScript errors, be sure to load these files in the proper order:</p>
+<pre><code>&lt;script src="/js/manifest.js"&gt;&lt;/script&gt;
+&lt;script src="/js/vendor.js"&gt;&lt;/script&gt;
+&lt;script src="/js/app.js"&gt;&lt;/script&gt;
+</code></pre>
+<p><a name="custom-webpack-configuration"></a></p>
+<h3 id="custom-webpack-configuration">Custom Webpack Configuration</h3>
+<p>Occasionally, you may need to manually modify the underlying Webpack configuration. For example, you might have a special loader or plugin that needs to be referenced.</p>
+<p>Mix provides a useful <code>webpackConfig</code> method that allows you to merge any short Webpack configuration overrides. This is particularly appealing, as it doesn't require you to copy and maintain your own copy of the <code>webpack.config.js</code> file. The <code>webpackConfig</code> method accepts an object, which should contain any <a href="https://webpack.js.org/configuration/">Webpack-specific configuration</a> that you wish to apply.</p>
+<pre><code>mix.webpackConfig({
+    resolve: {
+        modules: [
+            path.resolve(__dirname, 'vendor/laravel/spark/resources/assets/js')
+        ]
+    }
+});
+</code></pre>
+<p><a name="versioning-and-cache-busting"></a></p>
+<h2 id="versioning-cache-busting">Versioning / Cache Busting</h2>
+<p>Many developers suffix their compiled assets with a timestamp or unique token to force browsers to load the fresh assets instead of serving stale copies of the code. Mix can automatically handle this for you using the <code>version</code> method.</p>
+<p>The <code>version</code> method will append a unique hash to the filenames of all compiled files, allowing for more convenient cache busting:</p>
+<pre><code>mix.js('resources/js/app.js', 'public/js')
+    .version();
+</code></pre>
+<p>After generating the versioned file, you won't know the exact filename. So, you should use Laravel's global <code>mix</code> function within your <a href="/docs/{{version}}/views">views</a> to load the appropriately hashed asset. The <code>mix</code> function will automatically determine the current name of the hashed file:</p>
+<pre><code>&lt;script src="{{ mix('/js/app.js') }}"&gt;&lt;/script&gt;
+</code></pre>
+<p>Because versioned files are usually unnecessary in development, you may instruct the versioning process to only run during <code>npm run prod</code>:</p>
+<pre><code>mix.js('resources/js/app.js', 'public/js');
+
+if (mix.inProduction()) {
+    mix.version();
+}
+</code></pre>
+<p><a name="custom-mix-base-urls"></a></p>
+<h4 id="custom-mix-base-urls">Custom Mix Base URLs</h4>
+<p>If your Mix compiled assets are deployed to a CDN separate from your application, you will need to change the base URL generated by the <code>mix</code> function. You may do so by adding a <code>mix_url</code> configuration option to your application's <code>config/app.php</code> configuration file:</p>
+<pre><code>'mix_url' =&gt; env('MIX_ASSET_URL', null)
+</code></pre>
+<p>After configuring the Mix URL, The <code>mix</code> function will prefix the configured URL when generating URLs to assets:</p>
+<pre><code class="language-bash">https://cdn.example.com/js/app.js?id=1964becbdd96414518cd
+</code></pre>
+<p><a name="browsersync-reloading"></a></p>
+<h2 id="browsersync-reloading">Browsersync Reloading</h2>
+<p><a href="https://browsersync.io/">BrowserSync</a> can automatically monitor your files for changes, and inject your changes into the browser without requiring a manual refresh. You may enable support for this by calling the <code>mix.browserSync()</code> method:</p>
+<pre><code class="language-js">mix.browserSync('laravel.test');
+</code></pre>
+<p><a href="https://browsersync.io/docs/options">BrowserSync options</a> may be specified by passing a JavaScript object to the <code>browserSync</code> method:</p>
+<pre><code class="language-js">mix.browserSync({
+    proxy: 'laravel.test'
+});
+</code></pre>
+<p>Next, start webpack's development server using the <code>npm run watch</code> command. Now, when you modify a script or PHP file you can watch as the browser instantly refreshes the page to reflect your changes.</p>
+<p><a name="environment-variables"></a></p>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>You may inject environment variables into your <code>webpack.mix.js</code> script by prefixing one of the environment variables in your <code>.env</code> file with <code>MIX_</code>:</p>
+<pre><code>MIX_SENTRY_DSN_PUBLIC=http://example.com
+</code></pre>
+<p>After the variable has been defined in your <code>.env</code> file, you may access it via the <code>process.env</code> object. However, you will need to restart the task if the environment variable's value changes while the task is running:</p>
+<pre><code>process.env.MIX_SENTRY_DSN_PUBLIC
+</code></pre>
+<p><a name="notifications"></a></p>
+<h2 id="notifications">Notifications</h2>
+<p>When available, Mix will automatically display OS notifications when compiling, giving you instant feedback as to whether the compilation was successful or not. However, there may be instances when you would prefer to disable these notifications. One such example might be triggering Mix on your production server. Notifications may be deactivated using the <code>disableNotifications</code> method:</p>
+<pre><code>mix.disableNotifications();
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mocking/" class="btn btn-neutral float-right" title="Mocking">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../migrations/" class="btn btn-neutral" title="Database: Migrations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../migrations/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../mocking/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

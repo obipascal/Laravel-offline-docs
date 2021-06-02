@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Laravel Telescope - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Laravel Telescope";
+    var mkdocs_page_input_path = "telescope.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Laravel Telescope</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#migration-customization">Migration Customization</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#local-only-installation">Local Only Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#data-pruning">Data Pruning</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dashboard-authorization">Dashboard Authorization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#upgrading-telescope">Upgrading Telescope</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#filtering">Filtering</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#entries">Entries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#batches">Batches</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tagging">Tagging</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#available-watchers">Available Watchers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#batch-watcher">Batch Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cache-watcher">Cache Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#command-watcher">Command Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dump-watcher">Dump Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#event-watcher">Event Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exception-watcher">Exception Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#gate-watcher">Gate Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#job-watcher">Job Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#log-watcher">Log Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mail-watcher">Mail Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#model-watcher">Model Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notification-watcher">Notification Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#query-watcher">Query Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#redis-watcher">Redis Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#request-watcher">Request Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#schedule-watcher">Schedule Watcher</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#view-watcher">View Watcher</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#displaying-user-avatars">Displaying User Avatars</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Laravel Telescope</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="laravel-telescope">Laravel Telescope</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#local-only-installation">Local Only Installation</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#data-pruning">Data Pruning</a></li>
+<li><a href="#dashboard-authorization">Dashboard Authorization</a></li>
+</ul>
+</li>
+<li><a href="#upgrading-telescope">Upgrading Telescope</a></li>
+<li><a href="#filtering">Filtering</a><ul>
+<li><a href="#filtering-entries">Entries</a></li>
+<li><a href="#filtering-batches">Batches</a></li>
+</ul>
+</li>
+<li><a href="#tagging">Tagging</a></li>
+<li><a href="#available-watchers">Available Watchers</a><ul>
+<li><a href="#batch-watcher">Batch Watcher</a></li>
+<li><a href="#cache-watcher">Cache Watcher</a></li>
+<li><a href="#command-watcher">Command Watcher</a></li>
+<li><a href="#dump-watcher">Dump Watcher</a></li>
+<li><a href="#event-watcher">Event Watcher</a></li>
+<li><a href="#exception-watcher">Exception Watcher</a></li>
+<li><a href="#gate-watcher">Gate Watcher</a></li>
+<li><a href="#job-watcher">Job Watcher</a></li>
+<li><a href="#log-watcher">Log Watcher</a></li>
+<li><a href="#mail-watcher">Mail Watcher</a></li>
+<li><a href="#model-watcher">Model Watcher</a></li>
+<li><a href="#notification-watcher">Notification Watcher</a></li>
+<li><a href="#query-watcher">Query Watcher</a></li>
+<li><a href="#redis-watcher">Redis Watcher</a></li>
+<li><a href="#request-watcher">Request Watcher</a></li>
+<li><a href="#schedule-watcher">Schedule Watcher</a></li>
+<li><a href="#view-watcher">View Watcher</a></li>
+</ul>
+</li>
+<li><a href="#displaying-user-avatars">Displaying User Avatars</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Telescope makes a wonderful companion to your local Laravel development environment. Telescope provides insight into the requests coming into your application, exceptions, log entries, database queries, queued jobs, mail, notifications, cache operations, scheduled tasks, variable dumps, and more.</p>
+<p><img src="https://laravel.com/img/docs/telescope-example.png"></p>
+<p><a name="installation"></a></p>
+<h2 id="installation">Installation</h2>
+<p>You may use the Composer package manager to install Telescope into your Laravel project:</p>
+<pre><code>composer require laravel/telescope
+</code></pre>
+<p>After installing Telescope, publish its assets using the <code>telescope:install</code> Artisan command. After installing Telescope, you should also run the <code>migrate</code> command in order to create the tables needed to store Telescope's data:</p>
+<pre><code>php artisan telescope:install
+
+php artisan migrate
+</code></pre>
+<p><a name="migration-customization"></a></p>
+<h4 id="migration-customization">Migration Customization</h4>
+<p>If you are not going to use Telescope's default migrations, you should call the <code>Telescope::ignoreMigrations</code> method in the <code>register</code> method of your application's <code>App\Providers\AppServiceProvider</code> class. You may export the default migrations using the following command: <code>php artisan vendor:publish --tag=telescope-migrations</code></p>
+<p><a name="local-only-installation"></a></p>
+<h3 id="local-only-installation">Local Only Installation</h3>
+<p>If you plan to only use Telescope to assist your local development, you may install Telescope using the <code>--dev</code> flag:</p>
+<pre><code>composer require laravel/telescope --dev
+
+php artisan telescope:install
+
+php artisan migrate
+</code></pre>
+<p>After running <code>telescope:install</code>, you should remove the <code>TelescopeServiceProvider</code> service provider registration from your application's <code>config/app.php</code> configuration file. Instead, manually register Telescope's service providers in the <code>register</code> method of your <code>App\Providers\AppServiceProvider</code> class. We will ensure the current environment is <code>local</code> before registering the providers:</p>
+<pre><code>/**
+ * Register any application services.
+ *
+ * @return void
+ */
+public function register()
+{
+    if ($this-&gt;app-&gt;environment('local')) {
+        $this-&gt;app-&gt;register(\Laravel\Telescope\TelescopeServiceProvider::class);
+        $this-&gt;app-&gt;register(TelescopeServiceProvider::class);
+    }
+}
+</code></pre>
+<p>Finally, you should also prevent the Telescope package from being <a href="/docs/{{version}}/packages#package-discovery">auto-discovered</a> by adding the following to your <code>composer.json</code> file:</p>
+<pre><code>"extra": {
+    "laravel": {
+        "dont-discover": [
+            "laravel/telescope"
+        ]
+    }
+},
+</code></pre>
+<p><a name="configuration"></a></p>
+<h3 id="configuration">Configuration</h3>
+<p>After publishing Telescope's assets, its primary configuration file will be located at <code>config/telescope.php</code>. This configuration file allows you to configure your <a href="#available-watchers">watcher options</a>. Each configuration option includes a description of its purpose, so be sure to thoroughly explore this file.</p>
+<p>If desired, you may disable Telescope's data collection entirely using the <code>enabled</code> configuration option:</p>
+<pre><code>'enabled' =&gt; env('TELESCOPE_ENABLED', true),
+</code></pre>
+<p><a name="data-pruning"></a></p>
+<h3 id="data-pruning">Data Pruning</h3>
+<p>Without pruning, the <code>telescope_entries</code> table can accumulate records very quickly. To mitigate this, you should <a href="/docs/{{version}}/scheduling">schedule</a> the <code>telescope:prune</code> Artisan command to run daily:</p>
+<pre><code>$schedule-&gt;command('telescope:prune')-&gt;daily();
+</code></pre>
+<p>By default, all entries older than 24 hours will be pruned. You may use the <code>hours</code> option when calling the command to determine how long to retain Telescope data. For example, the following command will delete all records created over 48 hours ago:</p>
+<pre><code>$schedule-&gt;command('telescope:prune --hours=48')-&gt;daily();
+</code></pre>
+<p><a name="dashboard-authorization"></a></p>
+<h3 id="dashboard-authorization">Dashboard Authorization</h3>
+<p>The Telescope dashboard may be accessed at the <code>/telescope</code> route. By default, you will only be able to access this dashboard in the <code>local</code> environment. Within your <code>app/Providers/TelescopeServiceProvider.php</code> file, there is an <a href="/docs/{{version}}/authorization#gates">authorization gate</a> definition. This authorization gate controls access to Telescope in <strong>non-local</strong> environments. You are free to modify this gate as needed to restrict access to your Telescope installation:</p>
+<pre><code>/**
+ * Register the Telescope gate.
+ *
+ * This gate determines who can access Telescope in non-local environments.
+ *
+ * @return void
+ */
+protected function gate()
+{
+    Gate::define('viewTelescope', function ($user) {
+        return in_array($user-&gt;email, [
+            'taylor@laravel.com',
+        ]);
+    });
+}
+</code></pre>
+<blockquote>
+<p>{note} You should ensure you change your <code>APP_ENV</code> environment variable to <code>production</code> in your production environment. Otherwise, your Telescope installation will be publicly available.</p>
+</blockquote>
+<p><a name="upgrading-telescope"></a></p>
+<h2 id="upgrading-telescope">Upgrading Telescope</h2>
+<p>When upgrading to a new major version of Telescope, it's important that you carefully review <a href="https://github.com/laravel/telescope/blob/master/UPGRADE.md">the upgrade guide</a>.</p>
+<p>In addition, when upgrading to any new Telescope version, you should re-publish Telescope's assets:</p>
+<pre><code>php artisan telescope:publish
+</code></pre>
+<p>To keep the assets up-to-date and avoid issues in future updates, you may add the <code>telescope:publish</code> command to the <code>post-update-cmd</code> scripts in your application's <code>composer.json</code> file:</p>
+<pre><code>{
+    "scripts": {
+        "post-update-cmd": [
+            "@php artisan telescope:publish --ansi"
+        ]
+    }
+}
+</code></pre>
+<p><a name="filtering"></a></p>
+<h2 id="filtering">Filtering</h2>
+<p><a name="filtering-entries"></a></p>
+<h3 id="entries">Entries</h3>
+<p>You may filter the data that is recorded by Telescope via the <code>filter</code> closure that is defined in your <code>App\Providers\TelescopeServiceProvider</code> class. By default, this closure records all data in the <code>local</code> environment and exceptions, failed jobs, scheduled tasks, and data with monitored tags in all other environments:</p>
+<pre><code>use Laravel\Telescope\IncomingEntry;
+use Laravel\Telescope\Telescope;
+
+/**
+ * Register any application services.
+ *
+ * @return void
+ */
+public function register()
+{
+    $this-&gt;hideSensitiveRequestDetails();
+
+    Telescope::filter(function (IncomingEntry $entry) {
+        if ($this-&gt;app-&gt;environment('local')) {
+            return true;
+        }
+
+        return $entry-&gt;isReportableException() ||
+            $entry-&gt;isFailedJob() ||
+            $entry-&gt;isScheduledTask() ||
+            $entry-&gt;hasMonitoredTag();
+    });
+}
+</code></pre>
+<p><a name="filtering-batches"></a></p>
+<h3 id="batches">Batches</h3>
+<p>While the <code>filter</code> closure filters data for individual entries, you may use the <code>filterBatch</code> method to register a closure that filters all data for a given request or console command. If the closure returns <code>true</code>, all of the entries are recorded by Telescope:</p>
+<pre><code>use Illuminate\Support\Collection;
+use Laravel\Telescope\Telescope;
+
+/**
+ * Register any application services.
+ *
+ * @return void
+ */
+public function register()
+{
+    $this-&gt;hideSensitiveRequestDetails();
+
+    Telescope::filterBatch(function (Collection $entries) {
+        if ($this-&gt;app-&gt;environment('local')) {
+            return true;
+        }
+
+        return $entries-&gt;contains(function ($entry) {
+            return $entry-&gt;isReportableException() ||
+                $entry-&gt;isFailedJob() ||
+                $entry-&gt;isScheduledTask() ||
+                $entry-&gt;hasMonitoredTag();
+            });
+    });
+}
+</code></pre>
+<p><a name="tagging"></a></p>
+<h2 id="tagging">Tagging</h2>
+<p>Telescope allows you to search entries by "tag". Often, tags are Eloquent model class names or authenticated user IDs which Telescope automatically adds to entries. Occasionally, you may want to attach your own custom tags to entries. To accomplish this, you may use the <code>Telescope::tag</code> method. The <code>tag</code> method accepts a closure which should return an array of tags. The tags returned by the closure will be merged with any tags Telescope would automatically attach to the entry. Typically, you should call the <code>tag</code> method within the <code>register</code> method of your <code>App\Providers\TelescopeServiceProvider</code> class:</p>
+<pre><code>use Laravel\Telescope\IncomingEntry;
+use Laravel\Telescope\Telescope;
+
+/**
+ * Register any application services.
+ *
+ * @return void
+ */
+public function register()
+{
+    $this-&gt;hideSensitiveRequestDetails();
+
+    Telescope::tag(function (IncomingEntry $entry) {
+        return $entry-&gt;type === 'request'
+                    ? ['status:'.$entry-&gt;content['response_status']]
+                    : [];
+    });
+ }
+</code></pre>
+<p><a name="available-watchers"></a></p>
+<h2 id="available-watchers">Available Watchers</h2>
+<p>Telescope "watchers" gather application data when a request or console command is executed. You may customize the list of watchers that you would like to enable within your <code>config/telescope.php</code> configuration file:</p>
+<pre><code>'watchers' =&gt; [
+    Watchers\CacheWatcher::class =&gt; true,
+    Watchers\CommandWatcher::class =&gt; true,
+    ...
+],
+</code></pre>
+<p>Some watchers also allow you to provide additional customization options:</p>
+<pre><code>'watchers' =&gt; [
+    Watchers\QueryWatcher::class =&gt; [
+        'enabled' =&gt; env('TELESCOPE_QUERY_WATCHER', true),
+        'slow' =&gt; 100,
+    ],
+    ...
+],
+</code></pre>
+<p><a name="batch-watcher"></a></p>
+<h3 id="batch-watcher">Batch Watcher</h3>
+<p>The batch watcher records information about queued <a href="/docs/{{version}}/queues#job-batching">batches</a>, including the job and connection information.</p>
+<p><a name="cache-watcher"></a></p>
+<h3 id="cache-watcher">Cache Watcher</h3>
+<p>The cache watcher records data when a cache key is hit, missed, updated and forgotten.</p>
+<p><a name="command-watcher"></a></p>
+<h3 id="command-watcher">Command Watcher</h3>
+<p>The command watcher records the arguments, options, exit code, and output whenever an Artisan command is executed. If you would like to exclude certain commands from being recorded by the watcher, you may specify the command in the <code>ignore</code> option within your <code>config/telescope.php</code> file:</p>
+<pre><code>'watchers' =&gt; [
+    Watchers\CommandWatcher::class =&gt; [
+        'enabled' =&gt; env('TELESCOPE_COMMAND_WATCHER', true),
+        'ignore' =&gt; ['key:generate'],
+    ],
+    ...
+],
+</code></pre>
+<p><a name="dump-watcher"></a></p>
+<h3 id="dump-watcher">Dump Watcher</h3>
+<p>The dump watcher records and displays your variable dumps in Telescope. When using Laravel, variables may be dumped using the global <code>dump</code> function. The dump watcher tab must be open in a browser for the dump to be recorded, otherwise, the dumps will be ignored by the watcher.</p>
+<p><a name="event-watcher"></a></p>
+<h3 id="event-watcher">Event Watcher</h3>
+<p>The event watcher records the payload, listeners, and broadcast data for any <a href="/docs/{{version}}/events">events</a> dispatched by your application. The Laravel framework's internal events are ignored by the Event watcher.</p>
+<p><a name="exception-watcher"></a></p>
+<h3 id="exception-watcher">Exception Watcher</h3>
+<p>The exception watcher records the data and stack trace for any reportable exceptions that are thrown by your application.</p>
+<p><a name="gate-watcher"></a></p>
+<h3 id="gate-watcher">Gate Watcher</h3>
+<p>The gate watcher records the data and result of <a href="/docs/{{version}}/authorization">gate and policy</a> checks by your application. If you would like to exclude certain abilities from being recorded by the watcher, you may specify those in the <code>ignore_abilities</code> option in your <code>config/telescope.php</code> file:</p>
+<pre><code>'watchers' =&gt; [
+    Watchers\GateWatcher::class =&gt; [
+        'enabled' =&gt; env('TELESCOPE_GATE_WATCHER', true),
+        'ignore_abilities' =&gt; ['viewNova'],
+    ],
+    ...
+],
+</code></pre>
+<p><a name="job-watcher"></a></p>
+<h3 id="job-watcher">Job Watcher</h3>
+<p>The job watcher records the data and status of any <a href="/docs/{{version}}/queues">jobs</a> dispatched by your application.</p>
+<p><a name="log-watcher"></a></p>
+<h3 id="log-watcher">Log Watcher</h3>
+<p>The log watcher records the <a href="/docs/{{version}}/logging">log data</a> for any logs written by your application.</p>
+<p><a name="mail-watcher"></a></p>
+<h3 id="mail-watcher">Mail Watcher</h3>
+<p>The mail watcher allows you to view an in-browser preview of <a href="/docs/{{version}}/mail">emails</a> sent by your application along with their associated data. You may also download the email as an <code>.eml</code> file.</p>
+<p><a name="model-watcher"></a></p>
+<h3 id="model-watcher">Model Watcher</h3>
+<p>The model watcher records model changes whenever an Eloquent <a href="/docs/{{version}}/eloquent#events">model event</a> is dispatched. You may specify which model events should be recorded via the watcher's <code>events</code> option:</p>
+<pre><code>'watchers' =&gt; [
+    Watchers\ModelWatcher::class =&gt; [
+        'enabled' =&gt; env('TELESCOPE_MODEL_WATCHER', true),
+        'events' =&gt; ['eloquent.created*', 'eloquent.updated*'],
+    ],
+    ...
+],
+</code></pre>
+<p>If you would like to record the number of models hydrated during a given request, enable the <code>hydrations</code> option:</p>
+<pre><code>'watchers' =&gt; [
+    Watchers\ModelWatcher::class =&gt; [
+        'enabled' =&gt; env('TELESCOPE_MODEL_WATCHER', true),
+        'events' =&gt; ['eloquent.created*', 'eloquent.updated*'],
+        'hydrations' =&gt; true,
+    ],
+    ...
+],
+</code></pre>
+<p><a name="notification-watcher"></a></p>
+<h3 id="notification-watcher">Notification Watcher</h3>
+<p>The notification watcher records all <a href="/docs/{{version}}/notifications">notifications</a> sent by your application. If the notification triggers an email and you have the mail watcher enabled, the email will also be available for preview on the mail watcher screen.</p>
+<p><a name="query-watcher"></a></p>
+<h3 id="query-watcher">Query Watcher</h3>
+<p>The query watcher records the raw SQL, bindings, and execution time for all queries that are executed by your application. The watcher also tags any queries slower than 100 milliseconds as <code>slow</code>. You may customize the slow query threshold using the watcher's <code>slow</code> option:</p>
+<pre><code>'watchers' =&gt; [
+    Watchers\QueryWatcher::class =&gt; [
+        'enabled' =&gt; env('TELESCOPE_QUERY_WATCHER', true),
+        'slow' =&gt; 50,
+    ],
+    ...
+],
+</code></pre>
+<p><a name="redis-watcher"></a></p>
+<h3 id="redis-watcher">Redis Watcher</h3>
+<p>The Redis watcher records all <a href="/docs/{{version}}/redis">Redis</a> commands executed by your application. If you are using Redis for caching, cache commands will also be recorded by the Redis watcher.</p>
+<p><a name="request-watcher"></a></p>
+<h3 id="request-watcher">Request Watcher</h3>
+<p>The request watcher records the request, headers, session, and response data associated with any requests handled by the application. You may limit your recorded response data via the <code>size_limit</code> (in kilobytes) option:</p>
+<pre><code>'watchers' =&gt; [
+    Watchers\RequestWatcher::class =&gt; [
+        'enabled' =&gt; env('TELESCOPE_REQUEST_WATCHER', true),
+        'size_limit' =&gt; env('TELESCOPE_RESPONSE_SIZE_LIMIT', 64),
+    ],
+    ...
+],
+</code></pre>
+<p><a name="schedule-watcher"></a></p>
+<h3 id="schedule-watcher">Schedule Watcher</h3>
+<p>The schedule watcher records the command and output of any <a href="/docs/{{version}}/scheduling">scheduled tasks</a> run by your application.</p>
+<p><a name="view-watcher"></a></p>
+<h3 id="view-watcher">View Watcher</h3>
+<p>The view watcher records the <a href="/docs/{{version}}/views">view</a> name, path, data, and "composers" used when rendering views.</p>
+<p><a name="displaying-user-avatars"></a></p>
+<h2 id="displaying-user-avatars">Displaying User Avatars</h2>
+<p>The Telescope dashboard displays the user avatar for the user that was authenticated when a given entry was saved. By default, Telescope will retrieve avatars using the Gravatar web service. However, you may customize the avatar URL by registering a callback in your <code>App\Providers\TelescopeServiceProvider</code> class. The callback will receive the user's ID and email address and should return the user's avatar image URL:</p>
+<pre><code>use App\Models\User;
+use Laravel\Telescope\Telescope;
+
+/**
+ * Register any application services.
+ *
+ * @return void
+ */
+public function register()
+{
+    // ...
+
+    Telescope::avatar(function ($id, $email) {
+        return '/avatars/'.User::find($id)-&gt;avatar_path;
+    });
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../testing/" class="btn btn-neutral float-right" title="Testing: Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../structure/" class="btn btn-neutral" title="Directory Structure"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../structure/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../testing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

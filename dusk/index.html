@@ -1,0 +1,2286 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Laravel Dusk - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Laravel Dusk";
+    var mkdocs_page_input_path = "dusk.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Laravel Dusk</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#managing-chromedriver-installations">Managing ChromeDriver Installations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-other-browsers">Using Other Browsers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generating-tests">Generating Tests</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#database-migrations">Database Migrations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#running-tests">Running Tests</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#manually-starting-chromedriver">Manually Starting ChromeDriver</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#environment-handling">Environment Handling</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#browser-basics">Browser Basics</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-browsers">Creating Browsers</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creating-multiple-browsers">Creating Multiple Browsers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#navigation">Navigation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#resizing-browser-windows">Resizing Browser Windows</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#browser-macros">Browser Macros</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cookies">Cookies</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#executing-javascript">Executing JavaScript</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#taking-a-screenshot">Taking A Screenshot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#storing-console-output-to-disk">Storing Console Output To Disk</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#storing-page-source-to-disk">Storing Page Source To Disk</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#interacting-with-elements">Interacting With Elements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dusk-selectors">Dusk Selectors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#text-values-attributes">Text, Values, &amp; Attributes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#retrieving-setting-values">Retrieving &amp; Setting Values</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#retrieving-text">Retrieving Text</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#retrieving-attributes">Retrieving Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interacting-with-forms">Interacting With Forms</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#typing-values">Typing Values</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dropdowns">Dropdowns</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#checkboxes">Checkboxes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#radio-buttons">Radio Buttons</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#attaching-files">Attaching Files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pressing-buttons">Pressing Buttons</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clicking-links">Clicking Links</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-the-keyboard">Using The Keyboard</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-the-mouse">Using The Mouse</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#clicking-on-elements">Clicking On Elements</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mouseover">Mouseover</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#drag-drop">Drag &amp; Drop</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#javascript-dialogs">JavaScript Dialogs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scoping-selectors">Scoping Selectors</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#waiting-for-elements">Waiting For Elements</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting">Waiting</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting-for-selectors">Waiting For Selectors</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#scoping-selectors-when-available">Scoping Selectors When Available</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting-for-text">Waiting For Text</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting-for-links">Waiting For Links</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting-on-the-page-location">Waiting On The Page Location</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting-for-page-reloads">Waiting for Page Reloads</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting-on-javascript-expressions">Waiting On JavaScript Expressions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting-on-vue-expressions">Waiting On Vue Expressions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#waiting-with-a-callback">Waiting With A Callback</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#scrolling-an-element-into-view">Scrolling An Element Into View</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#available-assertions">Available Assertions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#asserttitle">assertTitle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asserttitlecontains">assertTitleContains</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asserturlis">assertUrlIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertschemeis">assertSchemeIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertschemeisnot">assertSchemeIsNot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asserthostis">assertHostIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asserthostisnot">assertHostIsNot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertportis">assertPortIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertportisnot">assertPortIsNot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertpathbeginswith">assertPathBeginsWith</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertpathis">assertPathIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertpathisnot">assertPathIsNot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertrouteis">assertRouteIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertquerystringhas">assertQueryStringHas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertquerystringmissing">assertQueryStringMissing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertfragmentis">assertFragmentIs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertfragmentbeginswith">assertFragmentBeginsWith</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertfragmentisnot">assertFragmentIsNot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asserthascookie">assertHasCookie</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#asserthasplaincookie">assertHasPlainCookie</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertcookiemissing">assertCookieMissing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertplaincookiemissing">assertPlainCookieMissing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertcookievalue">assertCookieValue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertplaincookievalue">assertPlainCookieValue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertsee">assertSee</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdontsee">assertDontSee</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertseein">assertSeeIn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdontseein">assertDontSeeIn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertseeanythingin">assertSeeAnythingIn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertseenothingin">assertSeeNothingIn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertscript">assertScript</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertsourcehas">assertSourceHas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertsourcemissing">assertSourceMissing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertseelink">assertSeeLink</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdontseelink">assertDontSeeLink</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertinputvalue">assertInputValue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertinputvalueisnot">assertInputValueIsNot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertchecked">assertChecked</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertnotchecked">assertNotChecked</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertradioselected">assertRadioSelected</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertradionotselected">assertRadioNotSelected</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertselected">assertSelected</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertnotselected">assertNotSelected</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertselecthasoptions">assertSelectHasOptions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertselectmissingoptions">assertSelectMissingOptions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertselecthasoption">assertSelectHasOption</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertselectmissingoption">assertSelectMissingOption</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertvalue">assertValue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertattribute">assertAttribute</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertariaattribute">assertAriaAttribute</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdataattribute">assertDataAttribute</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertvisible">assertVisible</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertpresent">assertPresent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertnotpresent">assertNotPresent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertmissing">assertMissing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdialogopened">assertDialogOpened</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertenabled">assertEnabled</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertdisabled">assertDisabled</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertbuttonenabled">assertButtonEnabled</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertbuttondisabled">assertButtonDisabled</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertfocused">assertFocused</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertnotfocused">assertNotFocused</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertauthenticated">assertAuthenticated</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertguest">assertGuest</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertauthenticatedas">assertAuthenticatedAs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertvue">assertVue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertvueisnot">assertVueIsNot</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertvuecontains">assertVueContains</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#assertvuedoesnotcontain">assertVueDoesNotContain</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pages">Pages</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generating-pages">Generating Pages</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#configuring-pages">Configuring Pages</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-url-method">The url Method</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#the-assert-method">The assert Method</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#navigating-to-pages">Navigating To Pages</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shorthand-selectors">Shorthand Selectors</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#global-shorthand-selectors">Global Shorthand Selectors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#page-methods">Page Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#components">Components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generating-components">Generating Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-components">Using Components</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#continuous-integration">Continuous Integration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#heroku-ci">Heroku CI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#travis-ci">Travis CI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#github-actions">GitHub Actions</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Laravel Dusk</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="laravel-dusk">Laravel Dusk</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#managing-chromedriver-installations">Managing ChromeDriver Installations</a></li>
+<li><a href="#using-other-browsers">Using Other Browsers</a></li>
+</ul>
+</li>
+<li><a href="#getting-started">Getting Started</a><ul>
+<li><a href="#generating-tests">Generating Tests</a></li>
+<li><a href="#migrations">Database Migrations</a></li>
+<li><a href="#running-tests">Running Tests</a></li>
+<li><a href="#environment-handling">Environment Handling</a></li>
+</ul>
+</li>
+<li><a href="#browser-basics">Browser Basics</a><ul>
+<li><a href="#creating-browsers">Creating Browsers</a></li>
+<li><a href="#navigation">Navigation</a></li>
+<li><a href="#resizing-browser-windows">Resizing Browser Windows</a></li>
+<li><a href="#browser-macros">Browser Macros</a></li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#cookies">Cookies</a></li>
+<li><a href="#executing-javascript">Executing JavaScript</a></li>
+<li><a href="#taking-a-screenshot">Taking A Screenshot</a></li>
+<li><a href="#storing-console-output-to-disk">Storing Console Output To Disk</a></li>
+<li><a href="#storing-page-source-to-disk">Storing Page Source To Disk</a></li>
+</ul>
+</li>
+<li><a href="#interacting-with-elements">Interacting With Elements</a><ul>
+<li><a href="#dusk-selectors">Dusk Selectors</a></li>
+<li><a href="#text-values-and-attributes">Text, Values, &amp; Attributes</a></li>
+<li><a href="#interacting-with-forms">Interacting With Forms</a></li>
+<li><a href="#attaching-files">Attaching Files</a></li>
+<li><a href="#pressing-buttons">Pressing Buttons</a></li>
+<li><a href="#clicking-links">Clicking Links</a></li>
+<li><a href="#using-the-keyboard">Using The Keyboard</a></li>
+<li><a href="#using-the-mouse">Using The Mouse</a></li>
+<li><a href="#javascript-dialogs">JavaScript Dialogs</a></li>
+<li><a href="#scoping-selectors">Scoping Selectors</a></li>
+<li><a href="#waiting-for-elements">Waiting For Elements</a></li>
+<li><a href="#scrolling-an-element-into-view">Scrolling An Element Into View</a></li>
+</ul>
+</li>
+<li><a href="#available-assertions">Available Assertions</a></li>
+<li><a href="#pages">Pages</a><ul>
+<li><a href="#generating-pages">Generating Pages</a></li>
+<li><a href="#configuring-pages">Configuring Pages</a></li>
+<li><a href="#navigating-to-pages">Navigating To Pages</a></li>
+<li><a href="#shorthand-selectors">Shorthand Selectors</a></li>
+<li><a href="#page-methods">Page Methods</a></li>
+</ul>
+</li>
+<li><a href="#components">Components</a><ul>
+<li><a href="#generating-components">Generating Components</a></li>
+<li><a href="#using-components">Using Components</a></li>
+</ul>
+</li>
+<li><a href="#continuous-integration">Continuous Integration</a><ul>
+<li><a href="#running-tests-on-heroku-ci">Heroku CI</a></li>
+<li><a href="#running-tests-on-travis-ci">Travis CI</a></li>
+<li><a href="#running-tests-on-github-actions">GitHub Actions</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Laravel Dusk provides an expressive, easy-to-use browser automation and testing API. By default, Dusk does not require you to install JDK or Selenium on your local computer. Instead, Dusk uses a standalone <a href="https://sites.google.com/a/chromium.org/chromedriver/home">ChromeDriver</a> installation. However, you are free to utilize any other Selenium compatible driver you wish.</p>
+<p><a name="installation"></a></p>
+<h2 id="installation">Installation</h2>
+<p>To get started, you should add the <code>laravel/dusk</code> Composer dependency to your project:</p>
+<pre><code>composer require --dev laravel/dusk
+</code></pre>
+<blockquote>
+<p>{note} If you are manually registering Dusk's service provider, you should <strong>never</strong> register it in your production environment, as doing so could lead to arbitrary users being able to authenticate with your application.</p>
+</blockquote>
+<p>After installing the Dusk package, execute the <code>dusk:install</code> Artisan command. The <code>dusk:install</code> command will create a <code>tests/Browser</code> directory and an example Dusk test:</p>
+<pre><code>php artisan dusk:install
+</code></pre>
+<p>Next, set the <code>APP_URL</code> environment variable in your application's <code>.env</code> file. This value should match the URL you use to access your application in a browser.</p>
+<blockquote>
+<p>{tip} If you are using <a href="/docs/{{version}}/sail">Laravel Sail</a> to manage your local development environment, please also consult the Sail documentation on <a href="/docs/{{version}}/sail#laravel-dusk">configuring and running Dusk tests</a>.</p>
+</blockquote>
+<p><a name="managing-chromedriver-installations"></a></p>
+<h3 id="managing-chromedriver-installations">Managing ChromeDriver Installations</h3>
+<p>If you would like to install a different version of ChromeDriver than what is included with Laravel Dusk, you may use the <code>dusk:chrome-driver</code> command:</p>
+<pre><code># Install the latest version of ChromeDriver for your OS...
+php artisan dusk:chrome-driver
+
+# Install a given version of ChromeDriver for your OS...
+php artisan dusk:chrome-driver 86
+
+# Install a given version of ChromeDriver for all supported OSs...
+php artisan dusk:chrome-driver --all
+
+# Install the version of ChromeDriver that matches the detected version of Chrome / Chromium for your OS...
+php artisan dusk:chrome-driver --detect
+</code></pre>
+<blockquote>
+<p>{note} Dusk requires the <code>chromedriver</code> binaries to be executable. If you're having problems running Dusk, you should ensure the binaries are executable using the following command: <code>chmod -R 0755 vendor/laravel/dusk/bin/</code>.</p>
+</blockquote>
+<p><a name="using-other-browsers"></a></p>
+<h3 id="using-other-browsers">Using Other Browsers</h3>
+<p>By default, Dusk uses Google Chrome and a standalone <a href="https://sites.google.com/a/chromium.org/chromedriver/home">ChromeDriver</a> installation to run your browser tests. However, you may start your own Selenium server and run your tests against any browser you wish.</p>
+<p>To get started, open your <code>tests/DuskTestCase.php</code> file, which is the base Dusk test case for your application. Within this file, you can remove the call to the <code>startChromeDriver</code> method. This will stop Dusk from automatically starting the ChromeDriver:</p>
+<pre><code>/**
+ * Prepare for Dusk test execution.
+ *
+ * @beforeClass
+ * @return void
+ */
+public static function prepare()
+{
+    // static::startChromeDriver();
+}
+</code></pre>
+<p>Next, you may modify the <code>driver</code> method to connect to the URL and port of your choice. In addition, you may modify the "desired capabilities" that should be passed to the WebDriver:</p>
+<pre><code>/**
+ * Create the RemoteWebDriver instance.
+ *
+ * @return \Facebook\WebDriver\Remote\RemoteWebDriver
+ */
+protected function driver()
+{
+    return RemoteWebDriver::create(
+        'http://localhost:4444/wd/hub', DesiredCapabilities::phantomjs()
+    );
+}
+</code></pre>
+<p><a name="getting-started"></a></p>
+<h2 id="getting-started">Getting Started</h2>
+<p><a name="generating-tests"></a></p>
+<h3 id="generating-tests">Generating Tests</h3>
+<p>To generate a Dusk test, use the <code>dusk:make</code> Artisan command. The generated test will be placed in the <code>tests/Browser</code> directory:</p>
+<pre><code>php artisan dusk:make LoginTest
+</code></pre>
+<p><a name="migrations"></a></p>
+<h3 id="database-migrations">Database Migrations</h3>
+<p>Most of the tests you write will interact with pages that retrieve data from your application's database; however, your Dusk tests should never use the <code>RefreshDatabase</code>trait. The <code>RefreshDatabase</code> trait leverages database transactions which will not be applicable or available across HTTP requests. Instead, use the <code>DatabaseMigrations</code> trait, which re-migrates the database for each test:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Browser;
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\Dusk\Chrome;
+use Tests\DuskTestCase;
+
+class ExampleTest extends DuskTestCase
+{
+    use DatabaseMigrations;
+}
+</code></pre>
+<blockquote>
+<p>{note} SQLite in-memory databases may not be used when executing Dusk tests. Since the browser executes within its own process, it will not be able to access the in-memory databases of other processes.</p>
+</blockquote>
+<p><a name="running-tests"></a></p>
+<h3 id="running-tests">Running Tests</h3>
+<p>To run your browser tests, execute the <code>dusk</code> Artisan command:</p>
+<pre><code>php artisan dusk
+</code></pre>
+<p>If you had test failures the last time you ran the <code>dusk</code> command, you may save time by re-running the failing tests first using the <code>dusk:fails</code> command:</p>
+<pre><code>php artisan dusk:fails
+</code></pre>
+<p>The <code>dusk</code> command accepts any argument that is normally accepted by the PHPUnit test runner, such as allowing you to only run the tests for a given <a href="https://phpunit.de/manual/current/en/appendixes.annotations.html#appendixes.annotations.group">group</a>:</p>
+<pre><code>php artisan dusk --group=foo
+</code></pre>
+<blockquote>
+<p>{tip} If you are using <a href="/docs/{{version}}/sail">Laravel Sail</a> to manage your local development environment, please consult the Sail documentation on <a href="/docs/{{version}}/sail#laravel-dusk">configuring and running Dusk tests</a>.</p>
+</blockquote>
+<p><a name="manually-starting-chromedriver"></a></p>
+<h4 id="manually-starting-chromedriver">Manually Starting ChromeDriver</h4>
+<p>By default, Dusk will automatically attempt to start ChromeDriver. If this does not work for your particular system, you may manually start ChromeDriver before running the <code>dusk</code> command. If you choose to start ChromeDriver manually, you should comment out the following line of your <code>tests/DuskTestCase.php</code> file:</p>
+<pre><code>/**
+ * Prepare for Dusk test execution.
+ *
+ * @beforeClass
+ * @return void
+ */
+public static function prepare()
+{
+    // static::startChromeDriver();
+}
+</code></pre>
+<p>In addition, if you start ChromeDriver on a port other than 9515, you should modify the <code>driver</code> method of the same class to reflect the correct port:</p>
+<pre><code>/**
+ * Create the RemoteWebDriver instance.
+ *
+ * @return \Facebook\WebDriver\Remote\RemoteWebDriver
+ */
+protected function driver()
+{
+    return RemoteWebDriver::create(
+        'http://localhost:9515', DesiredCapabilities::chrome()
+    );
+}
+</code></pre>
+<p><a name="environment-handling"></a></p>
+<h3 id="environment-handling">Environment Handling</h3>
+<p>To force Dusk to use its own environment file when running tests, create a <code>.env.dusk.{environment}</code> file in the root of your project. For example, if you will be initiating the <code>dusk</code> command from your <code>local</code> environment, you should create a <code>.env.dusk.local</code> file.</p>
+<p>When running tests, Dusk will back-up your <code>.env</code> file and rename your Dusk environment to <code>.env</code>. Once the tests have completed, your <code>.env</code> file will be restored.</p>
+<p><a name="browser-basics"></a></p>
+<h2 id="browser-basics">Browser Basics</h2>
+<p><a name="creating-browsers"></a></p>
+<h3 id="creating-browsers">Creating Browsers</h3>
+<p>To get started, let's write a test that verifies we can log into our application. After generating a test, we can modify it to navigate to the login page, enter some credentials, and click the "Login" button. To create a browser instance, you may call the <code>browse</code> method from within your Dusk test:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Browser;
+
+use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\Dusk\Chrome;
+use Tests\DuskTestCase;
+
+class ExampleTest extends DuskTestCase
+{
+    use DatabaseMigrations;
+
+    /**
+     * A basic browser test example.
+     *
+     * @return void
+     */
+    public function test_basic_example()
+    {
+        $user = User::factory()-&gt;create([
+            'email' =&gt; 'taylor@laravel.com',
+        ]);
+
+        $this-&gt;browse(function ($browser) use ($user) {
+            $browser-&gt;visit('/login')
+                    -&gt;type('email', $user-&gt;email)
+                    -&gt;type('password', 'password')
+                    -&gt;press('Login')
+                    -&gt;assertPathIs('/home');
+        });
+    }
+}
+</code></pre>
+<p>As you can see in the example above, the <code>browse</code> method accepts a closure. A browser instance will automatically be passed to this closure by Dusk and is the main object used to interact with and make assertions against your application.</p>
+<p><a name="creating-multiple-browsers"></a></p>
+<h4 id="creating-multiple-browsers">Creating Multiple Browsers</h4>
+<p>Sometimes you may need multiple browsers in order to properly carry out a test. For example, multiple browsers may be needed to test a chat screen that interacts with websockets. To create multiple browsers, simply add more browser arguments to the signature of the closure given to the <code>browse</code> method:</p>
+<pre><code>$this-&gt;browse(function ($first, $second) {
+    $first-&gt;loginAs(User::find(1))
+          -&gt;visit('/home')
+          -&gt;waitForText('Message');
+
+    $second-&gt;loginAs(User::find(2))
+           -&gt;visit('/home')
+           -&gt;waitForText('Message')
+           -&gt;type('message', 'Hey Taylor')
+           -&gt;press('Send');
+
+    $first-&gt;waitForText('Hey Taylor')
+          -&gt;assertSee('Jeffrey Way');
+});
+</code></pre>
+<p><a name="navigation"></a></p>
+<h3 id="navigation">Navigation</h3>
+<p>The <code>visit</code> method may be used to navigate to a given URI within your application:</p>
+<pre><code>$browser-&gt;visit('/login');
+</code></pre>
+<p>You may use the <code>visitRoute</code> method to navigate to a <a href="/docs/{{version}}/routing#named-routes">named route</a>:</p>
+<pre><code>$browser-&gt;visitRoute('login');
+</code></pre>
+<p>You may navigate "back" and "forward" using the <code>back</code> and <code>forward</code> methods:</p>
+<pre><code>$browser-&gt;back();
+
+$browser-&gt;forward();
+</code></pre>
+<p>You may use the <code>refresh</code> method to refresh the page:</p>
+<pre><code>$browser-&gt;refresh();
+</code></pre>
+<p><a name="resizing-browser-windows"></a></p>
+<h3 id="resizing-browser-windows">Resizing Browser Windows</h3>
+<p>You may use the <code>resize</code> method to adjust the size of the browser window:</p>
+<pre><code>$browser-&gt;resize(1920, 1080);
+</code></pre>
+<p>The <code>maximize</code> method may be used to maximize the browser window:</p>
+<pre><code>$browser-&gt;maximize();
+</code></pre>
+<p>The <code>fitContent</code> method will resize the browser window to match the size of its content:</p>
+<pre><code>$browser-&gt;fitContent();
+</code></pre>
+<p>When a test fails, Dusk will automatically resize the browser to fit the content prior to taking a screenshot. You may disable this feature by calling the <code>disableFitOnFailure</code> method within your test:</p>
+<pre><code>$browser-&gt;disableFitOnFailure();
+</code></pre>
+<p>You may use the <code>move</code> method to move the browser window to a different position on your screen:</p>
+<pre><code>$browser-&gt;move($x = 100, $y = 100);
+</code></pre>
+<p><a name="browser-macros"></a></p>
+<h3 id="browser-macros">Browser Macros</h3>
+<p>If you would like to define a custom browser method that you can re-use in a variety of your tests, you may use the <code>macro</code> method on the <code>Browser</code> class. Typically, you should call this method from a <a href="/docs/{{version}}/providers">service provider's</a> <code>boot</code> method:</p>
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Laravel\Dusk\Browser;
+
+class DuskServiceProvider extends ServiceProvider
+{
+    /**
+     * Register Dusk's browser macros.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Browser::macro('scrollToElement', function ($element = null) {
+            $this-&gt;script("$('html, body').animate({ scrollTop: $('$element').offset().top }, 0);");
+
+            return $this;
+        });
+    }
+}
+</code></pre>
+<p>The <code>macro</code> function accepts a name as its first argument, and a closure as its second. The macro's closure will be executed when calling the macro as a method on a <code>Browser</code> instance:</p>
+<pre><code>$this-&gt;browse(function ($browser) use ($user) {
+    $browser-&gt;visit('/pay')
+            -&gt;scrollToElement('#credit-card-details')
+            -&gt;assertSee('Enter Credit Card Details');
+});
+</code></pre>
+<p><a name="authentication"></a></p>
+<h3 id="authentication">Authentication</h3>
+<p>Often, you will be testing pages that require authentication. You can use Dusk's <code>loginAs</code> method in order to avoid interacting with your application's login screen during every test. The <code>loginAs</code> method accepts a primary key associated with your authenticatable model or an authenticatable model instance:</p>
+<pre><code>use App\Models\User;
+
+$this-&gt;browse(function ($browser) {
+    $browser-&gt;loginAs(User::find(1))
+          -&gt;visit('/home');
+});
+</code></pre>
+<blockquote>
+<p>{note} After using the <code>loginAs</code> method, the user session will be maintained for all tests within the file.</p>
+</blockquote>
+<p><a name="cookies"></a></p>
+<h3 id="cookies">Cookies</h3>
+<p>You may use the <code>cookie</code> method to get or set an encrypted cookie's value. By default, all of the cookies created by Laravel are encrypted:</p>
+<pre><code>$browser-&gt;cookie('name');
+
+$browser-&gt;cookie('name', 'Taylor');
+</code></pre>
+<p>You may use the <code>plainCookie</code> method to get or set an unencrypted cookie's value:</p>
+<pre><code>$browser-&gt;plainCookie('name');
+
+$browser-&gt;plainCookie('name', 'Taylor');
+</code></pre>
+<p>You may use the <code>deleteCookie</code> method to delete the given cookie:</p>
+<pre><code>$browser-&gt;deleteCookie('name');
+</code></pre>
+<p><a name="executing-javascript"></a></p>
+<h3 id="executing-javascript">Executing JavaScript</h3>
+<p>You may use the <code>script</code> method to execute arbitrary JavaScript statements within the browser:</p>
+<pre><code>$output = $browser-&gt;script('document.documentElement.scrollTop = 0');
+
+$output = $browser-&gt;script([
+    'document.body.scrollTop = 0',
+    'document.documentElement.scrollTop = 0',
+]);
+</code></pre>
+<p><a name="taking-a-screenshot"></a></p>
+<h3 id="taking-a-screenshot">Taking A Screenshot</h3>
+<p>You may use the <code>screenshot</code> method to take a screenshot and store it with the given filename. All screenshots will be stored within the <code>tests/Browser/screenshots</code> directory:</p>
+<pre><code>$browser-&gt;screenshot('filename');
+</code></pre>
+<p><a name="storing-console-output-to-disk"></a></p>
+<h3 id="storing-console-output-to-disk">Storing Console Output To Disk</h3>
+<p>You may use the <code>storeConsoleLog</code> method to write the current browser's console output to disk with the given filename. Console output will be stored within the <code>tests/Browser/console</code> directory:</p>
+<pre><code>$browser-&gt;storeConsoleLog('filename');
+</code></pre>
+<p><a name="storing-page-source-to-disk"></a></p>
+<h3 id="storing-page-source-to-disk">Storing Page Source To Disk</h3>
+<p>You may use the <code>storeSource</code> method to write the current page's source to disk with the given filename. The page source will be stored within the <code>tests/Browser/source</code> directory:</p>
+<pre><code>$browser-&gt;storeSource('filename');
+</code></pre>
+<p><a name="interacting-with-elements"></a></p>
+<h2 id="interacting-with-elements">Interacting With Elements</h2>
+<p><a name="dusk-selectors"></a></p>
+<h3 id="dusk-selectors">Dusk Selectors</h3>
+<p>Choosing good CSS selectors for interacting with elements is one of the hardest parts of writing Dusk tests. Over time, frontend changes can cause CSS selectors like the following to break your tests:</p>
+<pre><code>// HTML...
+
+&lt;button&gt;Login&lt;/button&gt;
+
+// Test...
+
+$browser-&gt;click('.login-page .container div &gt; button');
+</code></pre>
+<p>Dusk selectors allow you to focus on writing effective tests rather than remembering CSS selectors. To define a selector, add a <code>dusk</code> attribute to your HTML element. Then, when interacting with a Dusk browser, prefix the selector with <code>@</code> to manipulate the attached element within your test:</p>
+<pre><code>// HTML...
+
+&lt;button dusk="login-button"&gt;Login&lt;/button&gt;
+
+// Test...
+
+$browser-&gt;click('@login-button');
+</code></pre>
+<p><a name="text-values-and-attributes"></a></p>
+<h3 id="text-values-attributes">Text, Values, &amp; Attributes</h3>
+<p><a name="retrieving-setting-values"></a></p>
+<h4 id="retrieving-setting-values">Retrieving &amp; Setting Values</h4>
+<p>Dusk provides several methods for interacting with the current value, display text, and attributes of elements on the page. For example, to get the "value" of an element that matches a given CSS or Dusk selector, use the <code>value</code> method:</p>
+<pre><code>// Retrieve the value...
+$value = $browser-&gt;value('selector');
+
+// Set the value...
+$browser-&gt;value('selector', 'value');
+</code></pre>
+<p>You may use the <code>inputValue</code> method to get the "value" of an input element that has a given field name:</p>
+<pre><code>$value = $browser-&gt;inputValue('field');
+</code></pre>
+<p><a name="retrieving-text"></a></p>
+<h4 id="retrieving-text">Retrieving Text</h4>
+<p>The <code>text</code> method may be used to retrieve the display text of an element that matches the given selector:</p>
+<pre><code>$text = $browser-&gt;text('selector');
+</code></pre>
+<p><a name="retrieving-attributes"></a></p>
+<h4 id="retrieving-attributes">Retrieving Attributes</h4>
+<p>Finally, the <code>attribute</code> method may be used to retrieve the value of an attribute of an element matching the given selector:</p>
+<pre><code>$attribute = $browser-&gt;attribute('selector', 'value');
+</code></pre>
+<p><a name="interacting-with-forms"></a></p>
+<h3 id="interacting-with-forms">Interacting With Forms</h3>
+<p><a name="typing-values"></a></p>
+<h4 id="typing-values">Typing Values</h4>
+<p>Dusk provides a variety of methods for interacting with forms and input elements. First, let's take a look at an example of typing text into an input field:</p>
+<pre><code>$browser-&gt;type('email', 'taylor@laravel.com');
+</code></pre>
+<p>Note that, although the method accepts one if necessary, we are not required to pass a CSS selector into the <code>type</code> method. If a CSS selector is not provided, Dusk will search for an <code>input</code> or <code>textarea</code> field with the given <code>name</code> attribute.</p>
+<p>To append text to a field without clearing its content, you may use the <code>append</code> method:</p>
+<pre><code>$browser-&gt;type('tags', 'foo')
+        -&gt;append('tags', ', bar, baz');
+</code></pre>
+<p>You may clear the value of an input using the <code>clear</code> method:</p>
+<pre><code>$browser-&gt;clear('email');
+</code></pre>
+<p>You can instruct Dusk to type slowly using the <code>typeSlowly</code> method. By default, Dusk will pause for 100 milliseconds between key presses. To customize the amount of time between key presses, you may pass the appropriate number of milliseconds as the third argument to the method:</p>
+<pre><code>$browser-&gt;typeSlowly('mobile', '+1 (202) 555-5555');
+
+$browser-&gt;typeSlowly('mobile', '+1 (202) 555-5555', 300);
+</code></pre>
+<p>You may use the <code>appendSlowly</code> method to append text slowly:</p>
+<pre><code>$browser-&gt;type('tags', 'foo')
+        -&gt;appendSlowly('tags', ', bar, baz');
+</code></pre>
+<p><a name="dropdowns"></a></p>
+<h4 id="dropdowns">Dropdowns</h4>
+<p>To select a value available on a <code>select</code> element, you may use the <code>select</code> method. Like the <code>type</code> method, the <code>select</code> method does not require a full CSS selector. When passing a value to the <code>select</code> method, you should pass the underlying option value instead of the display text:</p>
+<pre><code>$browser-&gt;select('size', 'Large');
+</code></pre>
+<p>You may select a random option by omitting the second argument:</p>
+<pre><code>$browser-&gt;select('size');
+</code></pre>
+<p><a name="checkboxes"></a></p>
+<h4 id="checkboxes">Checkboxes</h4>
+<p>To "check" a checkbox input, you may use the <code>check</code> method. Like many other input related methods, a full CSS selector is not required. If a CSS selector match can't be found, Dusk will search for a checkbox with a matching <code>name</code> attribute:</p>
+<pre><code>$browser-&gt;check('terms');
+</code></pre>
+<p>The <code>uncheck</code> method may be used to "uncheck" a checkbox input:</p>
+<pre><code>$browser-&gt;uncheck('terms');
+</code></pre>
+<p><a name="radio-buttons"></a></p>
+<h4 id="radio-buttons">Radio Buttons</h4>
+<p>To "select" a <code>radio</code> input option, you may use the <code>radio</code> method. Like many other input related methods, a full CSS selector is not required. If a CSS selector match can't be found, Dusk will search for a <code>radio</code> input with matching <code>name</code> and <code>value</code> attributes:</p>
+<pre><code>$browser-&gt;radio('size', 'large');
+</code></pre>
+<p><a name="attaching-files"></a></p>
+<h3 id="attaching-files">Attaching Files</h3>
+<p>The <code>attach</code> method may be used to attach a file to a <code>file</code> input element. Like many other input related methods, a full CSS selector is not required. If a CSS selector match can't be found, Dusk will search for a <code>file</code> input with a matching <code>name</code> attribute:</p>
+<pre><code>$browser-&gt;attach('photo', __DIR__.'/photos/mountains.png');
+</code></pre>
+<blockquote>
+<p>{note} The attach function requires the <code>Zip</code> PHP extension to be installed and enabled on your server.</p>
+</blockquote>
+<p><a name="pressing-buttons"></a></p>
+<h3 id="pressing-buttons">Pressing Buttons</h3>
+<p>The <code>press</code> method may be used to click a button element on the page. The first argument given to the <code>press</code> method may be either the display text of the button or a CSS / Dusk selector:</p>
+<pre><code>$browser-&gt;press('Login');
+</code></pre>
+<p>When submitting forms, many application's disable the form's submission button after it is pressed and then re-enable the button when the form submission's HTTP request is complete. To press a button and wait for the button to be re-enabled, you may use the <code>pressAndWaitFor</code> method:</p>
+<pre><code>// Press the button and wait a maximum of 5 seconds for it to be enabled...
+$browser-&gt;pressAndWaitFor('Save');
+
+// Press the button and wait a maximum of 1 second for it to be enabled...
+$browser-&gt;pressAndWaitFor('Save', 1);
+</code></pre>
+<p><a name="clicking-links"></a></p>
+<h3 id="clicking-links">Clicking Links</h3>
+<p>To click a link, you may use the <code>clickLink</code> method on the browser instance. The <code>clickLink</code> method will click the link that has the given display text:</p>
+<pre><code>$browser-&gt;clickLink($linkText);
+</code></pre>
+<p>You may use the <code>seeLink</code> method to determine if a link with the given display text is visible on the page:</p>
+<pre><code>if ($browser-&gt;seeLink($linkText)) {
+    // ...
+}
+</code></pre>
+<blockquote>
+<p>{note} These methods interact with jQuery. If jQuery is not available on the page, Dusk will automatically inject it into the page so it is available for the test's duration.</p>
+</blockquote>
+<p><a name="using-the-keyboard"></a></p>
+<h3 id="using-the-keyboard">Using The Keyboard</h3>
+<p>The <code>keys</code> method allows you to provide more complex input sequences to a given element than normally allowed by the <code>type</code> method. For example, you may instruct Dusk to hold modifier keys while entering values. In this example, the <code>shift</code> key will be held while <code>taylor</code> is entered into the element matching the given selector. After <code>taylor</code> is typed, <code>swift</code> will be typed without any modifier keys:</p>
+<pre><code>$browser-&gt;keys('selector', ['{shift}', 'taylor'], 'swift');
+</code></pre>
+<p>Another valuable use case for the <code>keys</code> method is sending a "keyboard shortcut" combination to the primary CSS selector for your application:</p>
+<pre><code>$browser-&gt;keys('.app', ['{command}', 'j']);
+</code></pre>
+<blockquote>
+<p>{tip} All modifier keys such as <code>{command}</code> are wrapped in <code>{}</code> characters, and match the constants defined in the <code>Facebook\WebDriver\WebDriverKeys</code> class, which can be <a href="https://github.com/php-webdriver/php-webdriver/blob/master/lib/WebDriverKeys.php">found on GitHub</a>.</p>
+</blockquote>
+<p><a name="using-the-mouse"></a></p>
+<h3 id="using-the-mouse">Using The Mouse</h3>
+<p><a name="clicking-on-elements"></a></p>
+<h4 id="clicking-on-elements">Clicking On Elements</h4>
+<p>The <code>click</code> method may be used to click on an element matching the given CSS or Dusk selector:</p>
+<pre><code>$browser-&gt;click('.selector');
+</code></pre>
+<p>The <code>clickAtXPath</code> method may be used to click on an element matching the given XPath expression:</p>
+<pre><code>$browser-&gt;clickAtXPath('//div[@class = "selector"]');
+</code></pre>
+<p>The <code>clickAtPoint</code> method may be used to click on the topmost element at a given pair of coordinates relative to the viewable area of the browser:</p>
+<pre><code>$browser-&gt;clickAtPoint($x = 0, $y = 0);
+</code></pre>
+<p>The <code>doubleClick</code> method may be used to simulate the double click of a mouse:</p>
+<pre><code>$browser-&gt;doubleClick();
+</code></pre>
+<p>The <code>rightClick</code> method may be used to simulate the right click of a mouse:</p>
+<pre><code>$browser-&gt;rightClick();
+
+$browser-&gt;rightClick('.selector');
+</code></pre>
+<p>The <code>clickAndHold</code> method may be used to simulate a mouse button being clicked and held down. A subsequent call to the <code>releaseMouse</code> method will undo this behavior and release the mouse button:</p>
+<pre><code>$browser-&gt;clickAndHold()
+        -&gt;pause(1000)
+        -&gt;releaseMouse();
+</code></pre>
+<p><a name="mouseover"></a></p>
+<h4 id="mouseover">Mouseover</h4>
+<p>The <code>mouseover</code> method may be used when you need to move the mouse over an element matching the given CSS or Dusk selector:</p>
+<pre><code>$browser-&gt;mouseover('.selector');
+</code></pre>
+<p><a name="drag-drop"></a></p>
+<h4 id="drag-drop">Drag &amp; Drop</h4>
+<p>The <code>drag</code> method may be used to drag an element matching the given selector to another element:</p>
+<pre><code>$browser-&gt;drag('.from-selector', '.to-selector');
+</code></pre>
+<p>Or, you may drag an element in a single direction:</p>
+<pre><code>$browser-&gt;dragLeft('.selector', $pixels = 10);
+$browser-&gt;dragRight('.selector', $pixels = 10);
+$browser-&gt;dragUp('.selector', $pixels = 10);
+$browser-&gt;dragDown('.selector', $pixels = 10);
+</code></pre>
+<p>Finally, you may drag an element by a given offset:</p>
+<pre><code>$browser-&gt;dragOffset('.selector', $x = 10, $y = 10);
+</code></pre>
+<p><a name="javascript-dialogs"></a></p>
+<h3 id="javascript-dialogs">JavaScript Dialogs</h3>
+<p>Dusk provides various methods to interact with JavaScript Dialogs. For example, you may use the <code>waitForDialog</code> method to wait for a JavaScript dialog to appear. This method accepts an optional argument indicating how many seconds to wait for the dialog to appear:</p>
+<pre><code>$browser-&gt;waitForDialog($seconds = null);
+</code></pre>
+<p>The <code>assertDialogOpened</code> method may be used to assert that a dialog has been displayed and contains the given message:</p>
+<pre><code>$browser-&gt;assertDialogOpened('Dialog message');
+</code></pre>
+<p>If the JavaScript dialog contains a prompt, you may use the <code>typeInDialog</code> method to type a value into the prompt:</p>
+<pre><code>$browser-&gt;typeInDialog('Hello World');
+</code></pre>
+<p>To close an open JavaScript dialog by clicking the "OK" button, you may invoke the <code>acceptDialog</code> method:</p>
+<pre><code>$browser-&gt;acceptDialog();
+</code></pre>
+<p>To close an open JavaScript dialog by clicking the "Cancel" button, you may invoke the <code>dismissDialog</code> method:</p>
+<pre><code>$browser-&gt;dismissDialog();
+</code></pre>
+<p><a name="scoping-selectors"></a></p>
+<h3 id="scoping-selectors">Scoping Selectors</h3>
+<p>Sometimes you may wish to perform several operations while scoping all of the operations within a given selector. For example, you may wish to assert that some text exists only within a table and then click a button within that table. You may use the <code>with</code> method to accomplish this. All operations performed within the closure given to the <code>with</code> method will be scoped to the original selector:</p>
+<pre><code>$browser-&gt;with('.table', function ($table) {
+    $table-&gt;assertSee('Hello World')
+          -&gt;clickLink('Delete');
+});
+</code></pre>
+<p>You may occasionally need to execute assertions outside of the current scope. You may use the <code>elsewhere</code> and <code>elsewhereWhenAvailable</code> methods to accomplish this:</p>
+<pre><code> $browser-&gt;with('.table', function ($table) {
+    // Current scope is `body .table`...
+
+    $browser-&gt;elsewhere('.page-title', function ($title) {
+        // Current scope is `body .page-title`...
+        $title-&gt;assertSee('Hello World');
+    });
+
+    $browser-&gt;elsewhereWhenAvailable('.page-title', function ($title) {
+        // Current scope is `body .page-title`...
+        $title-&gt;assertSee('Hello World');
+    });
+ });
+</code></pre>
+<p><a name="waiting-for-elements"></a></p>
+<h3 id="waiting-for-elements">Waiting For Elements</h3>
+<p>When testing applications that use JavaScript extensively, it often becomes necessary to "wait" for certain elements or data to be available before proceeding with a test. Dusk makes this a cinch. Using a variety of methods, you may wait for elements to be visible on the page or even wait until a given JavaScript expression evaluates to <code>true</code>.</p>
+<p><a name="waiting"></a></p>
+<h4 id="waiting">Waiting</h4>
+<p>If you just need to pause the test for a given number of milliseconds, use the <code>pause</code> method:</p>
+<pre><code>$browser-&gt;pause(1000);
+</code></pre>
+<p><a name="waiting-for-selectors"></a></p>
+<h4 id="waiting-for-selectors">Waiting For Selectors</h4>
+<p>The <code>waitFor</code> method may be used to pause the execution of the test until the element matching the given CSS or Dusk selector is displayed on the page. By default, this will pause the test for a maximum of five seconds before throwing an exception. If necessary, you may pass a custom timeout threshold as the second argument to the method:</p>
+<pre><code>// Wait a maximum of five seconds for the selector...
+$browser-&gt;waitFor('.selector');
+
+// Wait a maximum of one second for the selector...
+$browser-&gt;waitFor('.selector', 1);
+</code></pre>
+<p>You may also wait until the element matching the given selector contains the given text:</p>
+<pre><code>// Wait a maximum of five seconds for the selector to contain the given text...
+$browser-&gt;waitForTextIn('.selector', 'Hello World');
+
+// Wait a maximum of one second for the selector to contain the given text...
+$browser-&gt;waitForTextIn('.selector', 'Hello World', 1);
+</code></pre>
+<p>You may also wait until the element matching the given selector is missing from the page:</p>
+<pre><code>// Wait a maximum of five seconds until the selector is missing...
+$browser-&gt;waitUntilMissing('.selector');
+
+// Wait a maximum of one second until the selector is missing...
+$browser-&gt;waitUntilMissing('.selector', 1);
+</code></pre>
+<p><a name="scoping-selectors-when-available"></a></p>
+<h4 id="scoping-selectors-when-available">Scoping Selectors When Available</h4>
+<p>Occasionally, you may wish to wait for an element to appear that matches a given selector and then interact with the element. For example, you may wish to wait until a modal window is available and then press the "OK" button within the modal. The <code>whenAvailable</code> method may be used to accomplish this. All element operations performed within the given closure will be scoped to the original selector:</p>
+<pre><code>$browser-&gt;whenAvailable('.modal', function ($modal) {
+    $modal-&gt;assertSee('Hello World')
+          -&gt;press('OK');
+});
+</code></pre>
+<p><a name="waiting-for-text"></a></p>
+<h4 id="waiting-for-text">Waiting For Text</h4>
+<p>The <code>waitForText</code> method may be used to wait until the given text is displayed on the page:</p>
+<pre><code>// Wait a maximum of five seconds for the text...
+$browser-&gt;waitForText('Hello World');
+
+// Wait a maximum of one second for the text...
+$browser-&gt;waitForText('Hello World', 1);
+</code></pre>
+<p>You may use the <code>waitUntilMissingText</code> method to wait until the displayed text has been removed from the page:</p>
+<pre><code>// Wait a maximum of five seconds for the text to be removed...
+$browser-&gt;waitUntilMissingText('Hello World');
+
+// Wait a maximum of one second for the text to be removed...
+$browser-&gt;waitUntilMissingText('Hello World', 1);
+</code></pre>
+<p><a name="waiting-for-links"></a></p>
+<h4 id="waiting-for-links">Waiting For Links</h4>
+<p>The <code>waitForLink</code> method may be used to wait until the given link text is displayed on the page:</p>
+<pre><code>// Wait a maximum of five seconds for the link...
+$browser-&gt;waitForLink('Create');
+
+// Wait a maximum of one second for the link...
+$browser-&gt;waitForLink('Create', 1);
+</code></pre>
+<p><a name="waiting-on-the-page-location"></a></p>
+<h4 id="waiting-on-the-page-location">Waiting On The Page Location</h4>
+<p>When making a path assertion such as <code>$browser-&gt;assertPathIs('/home')</code>, the assertion can fail if <code>window.location.pathname</code> is being updated asynchronously. You may use the <code>waitForLocation</code> method to wait for the location to be a given value:</p>
+<pre><code>$browser-&gt;waitForLocation('/secret');
+</code></pre>
+<p>You may also wait for a <a href="/docs/{{version}}/routing#named-routes">named route's</a> location:</p>
+<pre><code>$browser-&gt;waitForRoute($routeName, $parameters);
+</code></pre>
+<p><a name="waiting-for-page-reloads"></a></p>
+<h4 id="waiting-for-page-reloads">Waiting for Page Reloads</h4>
+<p>If you need to make assertions after a page has been reloaded, use the <code>waitForReload</code> method:</p>
+<pre><code>$browser-&gt;click('.some-action')
+        -&gt;waitForReload()
+        -&gt;assertSee('something');
+</code></pre>
+<p><a name="waiting-on-javascript-expressions"></a></p>
+<h4 id="waiting-on-javascript-expressions">Waiting On JavaScript Expressions</h4>
+<p>Sometimes you may wish to pause the execution of a test until a given JavaScript expression evaluates to <code>true</code>. You may easily accomplish this using the <code>waitUntil</code> method. When passing an expression to this method, you do not need to include the <code>return</code> keyword or an ending semi-colon:</p>
+<pre><code>// Wait a maximum of five seconds for the expression to be true...
+$browser-&gt;waitUntil('App.data.servers.length &gt; 0');
+
+// Wait a maximum of one second for the expression to be true...
+$browser-&gt;waitUntil('App.data.servers.length &gt; 0', 1);
+</code></pre>
+<p><a name="waiting-on-vue-expressions"></a></p>
+<h4 id="waiting-on-vue-expressions">Waiting On Vue Expressions</h4>
+<p>The <code>waitUntilVue</code> and <code>waitUntilVueIsNot</code> methods may be used to wait until a <a href="https://vuejs.org">Vue component</a> attribute has a given value:</p>
+<pre><code>// Wait until the component attribute contains the given value...
+$browser-&gt;waitUntilVue('user.name', 'Taylor', '@user');
+
+// Wait until the component attribute doesn't contain the given value...
+$browser-&gt;waitUntilVueIsNot('user.name', null, '@user');
+</code></pre>
+<p><a name="waiting-with-a-callback"></a></p>
+<h4 id="waiting-with-a-callback">Waiting With A Callback</h4>
+<p>Many of the "wait" methods in Dusk rely on the underlying <code>waitUsing</code> method. You may use this method directly to wait for a given closure to return <code>true</code>. The <code>waitUsing</code> method accepts the maximum number of seconds to wait, the interval at which the closure should be evaluated, the closure, and an optional failure message:</p>
+<pre><code>$browser-&gt;waitUsing(10, 1, function () use ($something) {
+    return $something-&gt;isReady();
+}, "Something wasn't ready in time.");
+</code></pre>
+<p><a name="scrolling-an-element-into-view"></a></p>
+<h3 id="scrolling-an-element-into-view">Scrolling An Element Into View</h3>
+<p>Sometimes you may not be able to click on an element because it is outside of the viewable area of the browser. The <code>scrollIntoView</code> method will scroll the browser window until the element at the given selector is within the view:</p>
+<pre><code>$browser-&gt;scrollIntoView('.selector')
+        -&gt;click('.selector');
+</code></pre>
+<p><a name="available-assertions"></a></p>
+<h2 id="available-assertions">Available Assertions</h2>
+<p>Dusk provides a variety of assertions that you may make against your application. All of the available assertions are documented in the list below:</p>
+<style>
+    .collection-method-list > p {
+        column-count: 3; -moz-column-count: 3; -webkit-column-count: 3;
+        column-gap: 2em; -moz-column-gap: 2em; -webkit-column-gap: 2em;
+    }
+
+    .collection-method-list a {
+        display: block;
+    }
+</style>
+
+<div class="collection-method-list" markdown="1">
+[assertTitle](#assert-title)
+[assertTitleContains](#assert-title-contains)
+[assertUrlIs](#assert-url-is)
+[assertSchemeIs](#assert-scheme-is)
+[assertSchemeIsNot](#assert-scheme-is-not)
+[assertHostIs](#assert-host-is)
+[assertHostIsNot](#assert-host-is-not)
+[assertPortIs](#assert-port-is)
+[assertPortIsNot](#assert-port-is-not)
+[assertPathBeginsWith](#assert-path-begins-with)
+[assertPathIs](#assert-path-is)
+[assertPathIsNot](#assert-path-is-not)
+[assertRouteIs](#assert-route-is)
+[assertQueryStringHas](#assert-query-string-has)
+[assertQueryStringMissing](#assert-query-string-missing)
+[assertFragmentIs](#assert-fragment-is)
+[assertFragmentBeginsWith](#assert-fragment-begins-with)
+[assertFragmentIsNot](#assert-fragment-is-not)
+[assertHasCookie](#assert-has-cookie)
+[assertHasPlainCookie](#assert-has-plain-cookie)
+[assertCookieMissing](#assert-cookie-missing)
+[assertPlainCookieMissing](#assert-plain-cookie-missing)
+[assertCookieValue](#assert-cookie-value)
+[assertPlainCookieValue](#assert-plain-cookie-value)
+[assertSee](#assert-see)
+[assertDontSee](#assert-dont-see)
+[assertSeeIn](#assert-see-in)
+[assertDontSeeIn](#assert-dont-see-in)
+[assertSeeAnythingIn](#assert-see-anything-in)
+[assertSeeNothingIn](#assert-see-nothing-in)
+[assertScript](#assert-script)
+[assertSourceHas](#assert-source-has)
+[assertSourceMissing](#assert-source-missing)
+[assertSeeLink](#assert-see-link)
+[assertDontSeeLink](#assert-dont-see-link)
+[assertInputValue](#assert-input-value)
+[assertInputValueIsNot](#assert-input-value-is-not)
+[assertChecked](#assert-checked)
+[assertNotChecked](#assert-not-checked)
+[assertRadioSelected](#assert-radio-selected)
+[assertRadioNotSelected](#assert-radio-not-selected)
+[assertSelected](#assert-selected)
+[assertNotSelected](#assert-not-selected)
+[assertSelectHasOptions](#assert-select-has-options)
+[assertSelectMissingOptions](#assert-select-missing-options)
+[assertSelectHasOption](#assert-select-has-option)
+[assertSelectMissingOption](#assert-select-missing-option)
+[assertValue](#assert-value)
+[assertAttribute](#assert-attribute)
+[assertAriaAttribute](#assert-aria-attribute)
+[assertDataAttribute](#assert-data-attribute)
+[assertVisible](#assert-visible)
+[assertPresent](#assert-present)
+[assertNotPresent](#assert-not-present)
+[assertMissing](#assert-missing)
+[assertDialogOpened](#assert-dialog-opened)
+[assertEnabled](#assert-enabled)
+[assertDisabled](#assert-disabled)
+[assertButtonEnabled](#assert-button-enabled)
+[assertButtonDisabled](#assert-button-disabled)
+[assertFocused](#assert-focused)
+[assertNotFocused](#assert-not-focused)
+[assertAuthenticated](#assert-authenticated)
+[assertGuest](#assert-guest)
+[assertAuthenticatedAs](#assert-authenticated-as)
+[assertVue](#assert-vue)
+[assertVueIsNot](#assert-vue-is-not)
+[assertVueContains](#assert-vue-contains)
+[assertVueDoesNotContain](#assert-vue-does-not-contain)
+</div>
+
+<p><a name="assert-title"></a></p>
+<h4 id="asserttitle">assertTitle</h4>
+<p>Assert that the page title matches the given text:</p>
+<pre><code>$browser-&gt;assertTitle($title);
+</code></pre>
+<p><a name="assert-title-contains"></a></p>
+<h4 id="asserttitlecontains">assertTitleContains</h4>
+<p>Assert that the page title contains the given text:</p>
+<pre><code>$browser-&gt;assertTitleContains($title);
+</code></pre>
+<p><a name="assert-url-is"></a></p>
+<h4 id="asserturlis">assertUrlIs</h4>
+<p>Assert that the current URL (without the query string) matches the given string:</p>
+<pre><code>$browser-&gt;assertUrlIs($url);
+</code></pre>
+<p><a name="assert-scheme-is"></a></p>
+<h4 id="assertschemeis">assertSchemeIs</h4>
+<p>Assert that the current URL scheme matches the given scheme:</p>
+<pre><code>$browser-&gt;assertSchemeIs($scheme);
+</code></pre>
+<p><a name="assert-scheme-is-not"></a></p>
+<h4 id="assertschemeisnot">assertSchemeIsNot</h4>
+<p>Assert that the current URL scheme does not match the given scheme:</p>
+<pre><code>$browser-&gt;assertSchemeIsNot($scheme);
+</code></pre>
+<p><a name="assert-host-is"></a></p>
+<h4 id="asserthostis">assertHostIs</h4>
+<p>Assert that the current URL host matches the given host:</p>
+<pre><code>$browser-&gt;assertHostIs($host);
+</code></pre>
+<p><a name="assert-host-is-not"></a></p>
+<h4 id="asserthostisnot">assertHostIsNot</h4>
+<p>Assert that the current URL host does not match the given host:</p>
+<pre><code>$browser-&gt;assertHostIsNot($host);
+</code></pre>
+<p><a name="assert-port-is"></a></p>
+<h4 id="assertportis">assertPortIs</h4>
+<p>Assert that the current URL port matches the given port:</p>
+<pre><code>$browser-&gt;assertPortIs($port);
+</code></pre>
+<p><a name="assert-port-is-not"></a></p>
+<h4 id="assertportisnot">assertPortIsNot</h4>
+<p>Assert that the current URL port does not match the given port:</p>
+<pre><code>$browser-&gt;assertPortIsNot($port);
+</code></pre>
+<p><a name="assert-path-begins-with"></a></p>
+<h4 id="assertpathbeginswith">assertPathBeginsWith</h4>
+<p>Assert that the current URL path begins with the given path:</p>
+<pre><code>$browser-&gt;assertPathBeginsWith('/home');
+</code></pre>
+<p><a name="assert-path-is"></a></p>
+<h4 id="assertpathis">assertPathIs</h4>
+<p>Assert that the current path matches the given path:</p>
+<pre><code>$browser-&gt;assertPathIs('/home');
+</code></pre>
+<p><a name="assert-path-is-not"></a></p>
+<h4 id="assertpathisnot">assertPathIsNot</h4>
+<p>Assert that the current path does not match the given path:</p>
+<pre><code>$browser-&gt;assertPathIsNot('/home');
+</code></pre>
+<p><a name="assert-route-is"></a></p>
+<h4 id="assertrouteis">assertRouteIs</h4>
+<p>Assert that the current URL matches the given <a href="/docs/{{version}}/routing#named-routes">named route's</a> URL:</p>
+<pre><code>$browser-&gt;assertRouteIs($name, $parameters);
+</code></pre>
+<p><a name="assert-query-string-has"></a></p>
+<h4 id="assertquerystringhas">assertQueryStringHas</h4>
+<p>Assert that the given query string parameter is present:</p>
+<pre><code>$browser-&gt;assertQueryStringHas($name);
+</code></pre>
+<p>Assert that the given query string parameter is present and has a given value:</p>
+<pre><code>$browser-&gt;assertQueryStringHas($name, $value);
+</code></pre>
+<p><a name="assert-query-string-missing"></a></p>
+<h4 id="assertquerystringmissing">assertQueryStringMissing</h4>
+<p>Assert that the given query string parameter is missing:</p>
+<pre><code>$browser-&gt;assertQueryStringMissing($name);
+</code></pre>
+<p><a name="assert-fragment-is"></a></p>
+<h4 id="assertfragmentis">assertFragmentIs</h4>
+<p>Assert that the URL's current hash fragment matches the given fragment:</p>
+<pre><code>$browser-&gt;assertFragmentIs('anchor');
+</code></pre>
+<p><a name="assert-fragment-begins-with"></a></p>
+<h4 id="assertfragmentbeginswith">assertFragmentBeginsWith</h4>
+<p>Assert that the URL's current hash fragment begins with the given fragment:</p>
+<pre><code>$browser-&gt;assertFragmentBeginsWith('anchor');
+</code></pre>
+<p><a name="assert-fragment-is-not"></a></p>
+<h4 id="assertfragmentisnot">assertFragmentIsNot</h4>
+<p>Assert that the URL's current hash fragment does not match the given fragment:</p>
+<pre><code>$browser-&gt;assertFragmentIsNot('anchor');
+</code></pre>
+<p><a name="assert-has-cookie"></a></p>
+<h4 id="asserthascookie">assertHasCookie</h4>
+<p>Assert that the given encrypted cookie is present:</p>
+<pre><code>$browser-&gt;assertHasCookie($name);
+</code></pre>
+<p><a name="assert-has-plain-cookie"></a></p>
+<h4 id="asserthasplaincookie">assertHasPlainCookie</h4>
+<p>Assert that the given unencrypted cookie is present:</p>
+<pre><code>$browser-&gt;assertHasPlainCookie($name);
+</code></pre>
+<p><a name="assert-cookie-missing"></a></p>
+<h4 id="assertcookiemissing">assertCookieMissing</h4>
+<p>Assert that the given encrypted cookie is not present:</p>
+<pre><code>$browser-&gt;assertCookieMissing($name);
+</code></pre>
+<p><a name="assert-plain-cookie-missing"></a></p>
+<h4 id="assertplaincookiemissing">assertPlainCookieMissing</h4>
+<p>Assert that the given unencrypted cookie is not present:</p>
+<pre><code>$browser-&gt;assertPlainCookieMissing($name);
+</code></pre>
+<p><a name="assert-cookie-value"></a></p>
+<h4 id="assertcookievalue">assertCookieValue</h4>
+<p>Assert that an encrypted cookie has a given value:</p>
+<pre><code>$browser-&gt;assertCookieValue($name, $value);
+</code></pre>
+<p><a name="assert-plain-cookie-value"></a></p>
+<h4 id="assertplaincookievalue">assertPlainCookieValue</h4>
+<p>Assert that an unencrypted cookie has a given value:</p>
+<pre><code>$browser-&gt;assertPlainCookieValue($name, $value);
+</code></pre>
+<p><a name="assert-see"></a></p>
+<h4 id="assertsee">assertSee</h4>
+<p>Assert that the given text is present on the page:</p>
+<pre><code>$browser-&gt;assertSee($text);
+</code></pre>
+<p><a name="assert-dont-see"></a></p>
+<h4 id="assertdontsee">assertDontSee</h4>
+<p>Assert that the given text is not present on the page:</p>
+<pre><code>$browser-&gt;assertDontSee($text);
+</code></pre>
+<p><a name="assert-see-in"></a></p>
+<h4 id="assertseein">assertSeeIn</h4>
+<p>Assert that the given text is present within the selector:</p>
+<pre><code>$browser-&gt;assertSeeIn($selector, $text);
+</code></pre>
+<p><a name="assert-dont-see-in"></a></p>
+<h4 id="assertdontseein">assertDontSeeIn</h4>
+<p>Assert that the given text is not present within the selector:</p>
+<pre><code>$browser-&gt;assertDontSeeIn($selector, $text);
+</code></pre>
+<p><a name="assert-see-anything-in"></a></p>
+<h4 id="assertseeanythingin">assertSeeAnythingIn</h4>
+<p>Assert that any text is present within the selector:</p>
+<pre><code>$browser-&gt;assertSeeAnythingIn($selector);
+</code></pre>
+<p><a name="assert-see-nothing-in"></a></p>
+<h4 id="assertseenothingin">assertSeeNothingIn</h4>
+<p>Assert that no text is present within the selector:</p>
+<pre><code>$browser-&gt;assertSeeNothingIn($selector);
+</code></pre>
+<p><a name="assert-script"></a></p>
+<h4 id="assertscript">assertScript</h4>
+<p>Assert that the given JavaScript expression evaluates to the given value:</p>
+<pre><code>$browser-&gt;assertScript('window.isLoaded')
+        -&gt;assertScript('document.readyState', 'complete');
+</code></pre>
+<p><a name="assert-source-has"></a></p>
+<h4 id="assertsourcehas">assertSourceHas</h4>
+<p>Assert that the given source code is present on the page:</p>
+<pre><code>$browser-&gt;assertSourceHas($code);
+</code></pre>
+<p><a name="assert-source-missing"></a></p>
+<h4 id="assertsourcemissing">assertSourceMissing</h4>
+<p>Assert that the given source code is not present on the page:</p>
+<pre><code>$browser-&gt;assertSourceMissing($code);
+</code></pre>
+<p><a name="assert-see-link"></a></p>
+<h4 id="assertseelink">assertSeeLink</h4>
+<p>Assert that the given link is present on the page:</p>
+<pre><code>$browser-&gt;assertSeeLink($linkText);
+</code></pre>
+<p><a name="assert-dont-see-link"></a></p>
+<h4 id="assertdontseelink">assertDontSeeLink</h4>
+<p>Assert that the given link is not present on the page:</p>
+<pre><code>$browser-&gt;assertDontSeeLink($linkText);
+</code></pre>
+<p><a name="assert-input-value"></a></p>
+<h4 id="assertinputvalue">assertInputValue</h4>
+<p>Assert that the given input field has the given value:</p>
+<pre><code>$browser-&gt;assertInputValue($field, $value);
+</code></pre>
+<p><a name="assert-input-value-is-not"></a></p>
+<h4 id="assertinputvalueisnot">assertInputValueIsNot</h4>
+<p>Assert that the given input field does not have the given value:</p>
+<pre><code>$browser-&gt;assertInputValueIsNot($field, $value);
+</code></pre>
+<p><a name="assert-checked"></a></p>
+<h4 id="assertchecked">assertChecked</h4>
+<p>Assert that the given checkbox is checked:</p>
+<pre><code>$browser-&gt;assertChecked($field);
+</code></pre>
+<p><a name="assert-not-checked"></a></p>
+<h4 id="assertnotchecked">assertNotChecked</h4>
+<p>Assert that the given checkbox is not checked:</p>
+<pre><code>$browser-&gt;assertNotChecked($field);
+</code></pre>
+<p><a name="assert-radio-selected"></a></p>
+<h4 id="assertradioselected">assertRadioSelected</h4>
+<p>Assert that the given radio field is selected:</p>
+<pre><code>$browser-&gt;assertRadioSelected($field, $value);
+</code></pre>
+<p><a name="assert-radio-not-selected"></a></p>
+<h4 id="assertradionotselected">assertRadioNotSelected</h4>
+<p>Assert that the given radio field is not selected:</p>
+<pre><code>$browser-&gt;assertRadioNotSelected($field, $value);
+</code></pre>
+<p><a name="assert-selected"></a></p>
+<h4 id="assertselected">assertSelected</h4>
+<p>Assert that the given dropdown has the given value selected:</p>
+<pre><code>$browser-&gt;assertSelected($field, $value);
+</code></pre>
+<p><a name="assert-not-selected"></a></p>
+<h4 id="assertnotselected">assertNotSelected</h4>
+<p>Assert that the given dropdown does not have the given value selected:</p>
+<pre><code>$browser-&gt;assertNotSelected($field, $value);
+</code></pre>
+<p><a name="assert-select-has-options"></a></p>
+<h4 id="assertselecthasoptions">assertSelectHasOptions</h4>
+<p>Assert that the given array of values are available to be selected:</p>
+<pre><code>$browser-&gt;assertSelectHasOptions($field, $values);
+</code></pre>
+<p><a name="assert-select-missing-options"></a></p>
+<h4 id="assertselectmissingoptions">assertSelectMissingOptions</h4>
+<p>Assert that the given array of values are not available to be selected:</p>
+<pre><code>$browser-&gt;assertSelectMissingOptions($field, $values);
+</code></pre>
+<p><a name="assert-select-has-option"></a></p>
+<h4 id="assertselecthasoption">assertSelectHasOption</h4>
+<p>Assert that the given value is available to be selected on the given field:</p>
+<pre><code>$browser-&gt;assertSelectHasOption($field, $value);
+</code></pre>
+<p><a name="assert-select-missing-option"></a></p>
+<h4 id="assertselectmissingoption">assertSelectMissingOption</h4>
+<p>Assert that the given value is not available to be selected:</p>
+<pre><code>$browser-&gt;assertSelectMissingOption($field, $value);
+</code></pre>
+<p><a name="assert-value"></a></p>
+<h4 id="assertvalue">assertValue</h4>
+<p>Assert that the element matching the given selector has the given value:</p>
+<pre><code>$browser-&gt;assertValue($selector, $value);
+</code></pre>
+<p><a name="assert-attribute"></a></p>
+<h4 id="assertattribute">assertAttribute</h4>
+<p>Assert that the element matching the given selector has the given value in the provided attribute:</p>
+<pre><code>$browser-&gt;assertAttribute($selector, $attribute, $value);
+</code></pre>
+<p><a name="assert-aria-attribute"></a></p>
+<h4 id="assertariaattribute">assertAriaAttribute</h4>
+<p>Assert that the element matching the given selector has the given value in the provided aria attribute:</p>
+<pre><code>$browser-&gt;assertAriaAttribute($selector, $attribute, $value);
+</code></pre>
+<p>For example, given the markup <code>&lt;button aria-label="Add"&gt;&lt;/button&gt;</code>, you may assert against the <code>aria-label</code> attribute like so:</p>
+<pre><code>$browser-&gt;assertAriaAttribute('button', 'label', 'Add')
+</code></pre>
+<p><a name="assert-data-attribute"></a></p>
+<h4 id="assertdataattribute">assertDataAttribute</h4>
+<p>Assert that the element matching the given selector has the given value in the provided data attribute:</p>
+<pre><code>$browser-&gt;assertDataAttribute($selector, $attribute, $value);
+</code></pre>
+<p>For example, given the markup <code>&lt;tr id="row-1" data-content="attendees"&gt;&lt;/tr&gt;</code>, you may assert against the <code>data-label</code> attribute like so:</p>
+<pre><code>$browser-&gt;assertDataAttribute('#row-1', 'content', 'attendees')
+</code></pre>
+<p><a name="assert-visible"></a></p>
+<h4 id="assertvisible">assertVisible</h4>
+<p>Assert that the element matching the given selector is visible:</p>
+<pre><code>$browser-&gt;assertVisible($selector);
+</code></pre>
+<p><a name="assert-present"></a></p>
+<h4 id="assertpresent">assertPresent</h4>
+<p>Assert that the element matching the given selector is present:</p>
+<pre><code>$browser-&gt;assertPresent($selector);
+</code></pre>
+<p><a name="assert-not-present"></a></p>
+<h4 id="assertnotpresent">assertNotPresent</h4>
+<p>Assert that the element matching the given selector is not present in the source:</p>
+<pre><code>$browser-&gt;assertNotPresent($selector);
+</code></pre>
+<p><a name="assert-missing"></a></p>
+<h4 id="assertmissing">assertMissing</h4>
+<p>Assert that the element matching the given selector is not visible:</p>
+<pre><code>$browser-&gt;assertMissing($selector);
+</code></pre>
+<p><a name="assert-dialog-opened"></a></p>
+<h4 id="assertdialogopened">assertDialogOpened</h4>
+<p>Assert that a JavaScript dialog with the given message has been opened:</p>
+<pre><code>$browser-&gt;assertDialogOpened($message);
+</code></pre>
+<p><a name="assert-enabled"></a></p>
+<h4 id="assertenabled">assertEnabled</h4>
+<p>Assert that the given field is enabled:</p>
+<pre><code>$browser-&gt;assertEnabled($field);
+</code></pre>
+<p><a name="assert-disabled"></a></p>
+<h4 id="assertdisabled">assertDisabled</h4>
+<p>Assert that the given field is disabled:</p>
+<pre><code>$browser-&gt;assertDisabled($field);
+</code></pre>
+<p><a name="assert-button-enabled"></a></p>
+<h4 id="assertbuttonenabled">assertButtonEnabled</h4>
+<p>Assert that the given button is enabled:</p>
+<pre><code>$browser-&gt;assertButtonEnabled($button);
+</code></pre>
+<p><a name="assert-button-disabled"></a></p>
+<h4 id="assertbuttondisabled">assertButtonDisabled</h4>
+<p>Assert that the given button is disabled:</p>
+<pre><code>$browser-&gt;assertButtonDisabled($button);
+</code></pre>
+<p><a name="assert-focused"></a></p>
+<h4 id="assertfocused">assertFocused</h4>
+<p>Assert that the given field is focused:</p>
+<pre><code>$browser-&gt;assertFocused($field);
+</code></pre>
+<p><a name="assert-not-focused"></a></p>
+<h4 id="assertnotfocused">assertNotFocused</h4>
+<p>Assert that the given field is not focused:</p>
+<pre><code>$browser-&gt;assertNotFocused($field);
+</code></pre>
+<p><a name="assert-authenticated"></a></p>
+<h4 id="assertauthenticated">assertAuthenticated</h4>
+<p>Assert that the user is authenticated:</p>
+<pre><code>$browser-&gt;assertAuthenticated();
+</code></pre>
+<p><a name="assert-guest"></a></p>
+<h4 id="assertguest">assertGuest</h4>
+<p>Assert that the user is not authenticated:</p>
+<pre><code>$browser-&gt;assertGuest();
+</code></pre>
+<p><a name="assert-authenticated-as"></a></p>
+<h4 id="assertauthenticatedas">assertAuthenticatedAs</h4>
+<p>Assert that the user is authenticated as the given user:</p>
+<pre><code>$browser-&gt;assertAuthenticatedAs($user);
+</code></pre>
+<p><a name="assert-vue"></a></p>
+<h4 id="assertvue">assertVue</h4>
+<p>Dusk even allows you to make assertions on the state of <a href="https://vuejs.org">Vue component</a> data. For example, imagine your application contains the following Vue component:</p>
+<pre><code>// HTML...
+
+&lt;profile dusk="profile-component"&gt;&lt;/profile&gt;
+
+// Component Definition...
+
+Vue.component('profile', {
+    template: '&lt;div&gt;{{ user.name }}&lt;/div&gt;',
+
+    data: function () {
+        return {
+            user: {
+                name: 'Taylor'
+            }
+        };
+    }
+});
+</code></pre>
+<p>You may assert on the state of the Vue component like so:</p>
+<pre><code>/**
+ * A basic Vue test example.
+ *
+ * @return void
+ */
+public function testVue()
+{
+    $this-&gt;browse(function (Browser $browser) {
+        $browser-&gt;visit('/')
+                -&gt;assertVue('user.name', 'Taylor', '@profile-component');
+    });
+}
+</code></pre>
+<p><a name="assert-vue-is-not"></a></p>
+<h4 id="assertvueisnot">assertVueIsNot</h4>
+<p>Assert that a given Vue component data property does not match the given value:</p>
+<pre><code>$browser-&gt;assertVueIsNot($property, $value, $componentSelector = null);
+</code></pre>
+<p><a name="assert-vue-contains"></a></p>
+<h4 id="assertvuecontains">assertVueContains</h4>
+<p>Assert that a given Vue component data property is an array and contains the given value:</p>
+<pre><code>$browser-&gt;assertVueContains($property, $value, $componentSelector = null);
+</code></pre>
+<p><a name="assert-vue-does-not-contain"></a></p>
+<h4 id="assertvuedoesnotcontain">assertVueDoesNotContain</h4>
+<p>Assert that a given Vue component data property is an array and does not contain the given value:</p>
+<pre><code>$browser-&gt;assertVueDoesNotContain($property, $value, $componentSelector = null);
+</code></pre>
+<p><a name="pages"></a></p>
+<h2 id="pages">Pages</h2>
+<p>Sometimes, tests require several complicated actions to be performed in sequence. This can make your tests harder to read and understand. Dusk Pages allow you to define expressive actions that may then be performed on a given page via a single method. Pages also allow you to define short-cuts to common selectors for your application or for a single page.</p>
+<p><a name="generating-pages"></a></p>
+<h3 id="generating-pages">Generating Pages</h3>
+<p>To generate a page object, execute the <code>dusk:page</code> Artisan command. All page objects will be placed in your application's <code>tests/Browser/Pages</code> directory:</p>
+<pre><code>php artisan dusk:page Login
+</code></pre>
+<p><a name="configuring-pages"></a></p>
+<h3 id="configuring-pages">Configuring Pages</h3>
+<p>By default, pages have three methods: <code>url</code>, <code>assert</code>, and <code>elements</code>. We will discuss the <code>url</code> and <code>assert</code> methods now. The <code>elements</code> method will be <a href="#shorthand-selectors">discussed in more detail below</a>.</p>
+<p><a name="the-url-method"></a></p>
+<h4 id="the-url-method">The <code>url</code> Method</h4>
+<p>The <code>url</code> method should return the path of the URL that represents the page. Dusk will use this URL when navigating to the page in the browser:</p>
+<pre><code>/**
+ * Get the URL for the page.
+ *
+ * @return string
+ */
+public function url()
+{
+    return '/login';
+}
+</code></pre>
+<p><a name="the-assert-method"></a></p>
+<h4 id="the-assert-method">The <code>assert</code> Method</h4>
+<p>The <code>assert</code> method may make any assertions necessary to verify that the browser is actually on the given page. It is not actually necessary to place anything within this method; however, you are free to make these assertions if you wish. These assertions will be run automatically when navigating to the page:</p>
+<pre><code>/**
+ * Assert that the browser is on the page.
+ *
+ * @return void
+ */
+public function assert(Browser $browser)
+{
+    $browser-&gt;assertPathIs($this-&gt;url());
+}
+</code></pre>
+<p><a name="navigating-to-pages"></a></p>
+<h3 id="navigating-to-pages">Navigating To Pages</h3>
+<p>Once a page has been defined, you may navigate to it using the <code>visit</code> method:</p>
+<pre><code>use Tests\Browser\Pages\Login;
+
+$browser-&gt;visit(new Login);
+</code></pre>
+<p>Sometimes you may already be on a given page and need to "load" the page's selectors and methods into the current test context. This is common when pressing a button and being redirected to a given page without explicitly navigating to it. In this situation, you may use the <code>on</code> method to load the page:</p>
+<pre><code>use Tests\Browser\Pages\CreatePlaylist;
+
+$browser-&gt;visit('/dashboard')
+        -&gt;clickLink('Create Playlist')
+        -&gt;on(new CreatePlaylist)
+        -&gt;assertSee('@create');
+</code></pre>
+<p><a name="shorthand-selectors"></a></p>
+<h3 id="shorthand-selectors">Shorthand Selectors</h3>
+<p>The <code>elements</code> method within page classes allows you to define quick, easy-to-remember shortcuts for any CSS selector on your page. For example, let's define a shortcut for the "email" input field of the application's login page:</p>
+<pre><code>/**
+ * Get the element shortcuts for the page.
+ *
+ * @return array
+ */
+public function elements()
+{
+    return [
+        '@email' =&gt; 'input[name=email]',
+    ];
+}
+</code></pre>
+<p>Once the shortcut has been defined, you may use the shorthand selector anywhere you would typically use a full CSS selector:</p>
+<pre><code>$browser-&gt;type('@email', 'taylor@laravel.com');
+</code></pre>
+<p><a name="global-shorthand-selectors"></a></p>
+<h4 id="global-shorthand-selectors">Global Shorthand Selectors</h4>
+<p>After installing Dusk, a base <code>Page</code> class will be placed in your <code>tests/Browser/Pages</code> directory. This class contains a <code>siteElements</code> method which may be used to define global shorthand selectors that should be available on every page throughout your application:</p>
+<pre><code>/**
+ * Get the global element shortcuts for the site.
+ *
+ * @return array
+ */
+public static function siteElements()
+{
+    return [
+        '@element' =&gt; '#selector',
+    ];
+}
+</code></pre>
+<p><a name="page-methods"></a></p>
+<h3 id="page-methods">Page Methods</h3>
+<p>In addition to the default methods defined on pages, you may define additional methods which may be used throughout your tests. For example, let's imagine we are building a music management application. A common action for one page of the application might be to create a playlist. Instead of re-writing the logic to create a playlist in each test, you may define a <code>createPlaylist</code> method on a page class:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Browser\Pages;
+
+use Laravel\Dusk\Browser;
+
+class Dashboard extends Page
+{
+    // Other page methods...
+
+    /**
+     * Create a new playlist.
+     *
+     * @param  \Laravel\Dusk\Browser  $browser
+     * @param  string  $name
+     * @return void
+     */
+    public function createPlaylist(Browser $browser, $name)
+    {
+        $browser-&gt;type('name', $name)
+                -&gt;check('share')
+                -&gt;press('Create Playlist');
+    }
+}
+</code></pre>
+<p>Once the method has been defined, you may use it within any test that utilizes the page. The browser instance will automatically be passed as the first argument to custom page methods:</p>
+<pre><code>use Tests\Browser\Pages\Dashboard;
+
+$browser-&gt;visit(new Dashboard)
+        -&gt;createPlaylist('My Playlist')
+        -&gt;assertSee('My Playlist');
+</code></pre>
+<p><a name="components"></a></p>
+<h2 id="components">Components</h2>
+<p>Components are similar to Dusk’s “page objects”, but are intended for pieces of UI and functionality that are re-used throughout your application, such as a navigation bar or notification window. As such, components are not bound to specific URLs.</p>
+<p><a name="generating-components"></a></p>
+<h3 id="generating-components">Generating Components</h3>
+<p>To generate a component, execute the <code>dusk:component</code> Artisan command. New components are placed in the <code>tests/Browser/Components</code> directory:</p>
+<pre><code>php artisan dusk:component DatePicker
+</code></pre>
+<p>As shown above, a "date picker" is an example of a component that might exist throughout your application on a variety of pages. It can become cumbersome to manually write the browser automation logic to select a date in dozens of tests throughout your test suite. Instead, we can define a Dusk component to represent the date picker, allowing us to encapsulate that logic within the component:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Browser\Components;
+
+use Laravel\Dusk\Browser;
+use Laravel\Dusk\Component as BaseComponent;
+
+class DatePicker extends BaseComponent
+{
+    /**
+     * Get the root selector for the component.
+     *
+     * @return string
+     */
+    public function selector()
+    {
+        return '.date-picker';
+    }
+
+    /**
+     * Assert that the browser page contains the component.
+     *
+     * @param  Browser  $browser
+     * @return void
+     */
+    public function assert(Browser $browser)
+    {
+        $browser-&gt;assertVisible($this-&gt;selector());
+    }
+
+    /**
+     * Get the element shortcuts for the component.
+     *
+     * @return array
+     */
+    public function elements()
+    {
+        return [
+            '@date-field' =&gt; 'input.datepicker-input',
+            '@year-list' =&gt; 'div &gt; div.datepicker-years',
+            '@month-list' =&gt; 'div &gt; div.datepicker-months',
+            '@day-list' =&gt; 'div &gt; div.datepicker-days',
+        ];
+    }
+
+    /**
+     * Select the given date.
+     *
+     * @param  \Laravel\Dusk\Browser  $browser
+     * @param  int  $year
+     * @param  int  $month
+     * @param  int  $day
+     * @return void
+     */
+    public function selectDate(Browser $browser, $year, $month, $day)
+    {
+        $browser-&gt;click('@date-field')
+                -&gt;within('@year-list', function ($browser) use ($year) {
+                    $browser-&gt;click($year);
+                })
+                -&gt;within('@month-list', function ($browser) use ($month) {
+                    $browser-&gt;click($month);
+                })
+                -&gt;within('@day-list', function ($browser) use ($day) {
+                    $browser-&gt;click($day);
+                });
+    }
+}
+</code></pre>
+<p><a name="using-components"></a></p>
+<h3 id="using-components">Using Components</h3>
+<p>Once the component has been defined, we can easily select a date within the date picker from any test. And, if the logic necessary to select a date changes, we only need to update the component:</p>
+<pre><code>&lt;?php
+
+namespace Tests\Browser;
+
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\Dusk\Browser;
+use Tests\Browser\Components\DatePicker;
+use Tests\DuskTestCase;
+
+class ExampleTest extends DuskTestCase
+{
+    /**
+     * A basic component test example.
+     *
+     * @return void
+     */
+    public function testBasicExample()
+    {
+        $this-&gt;browse(function (Browser $browser) {
+            $browser-&gt;visit('/')
+                    -&gt;within(new DatePicker, function ($browser) {
+                        $browser-&gt;selectDate(2019, 1, 30);
+                    })
+                    -&gt;assertSee('January');
+        });
+    }
+}
+</code></pre>
+<p><a name="continuous-integration"></a></p>
+<h2 id="continuous-integration">Continuous Integration</h2>
+<blockquote>
+<p>{note} Most Dusk continuous integration configurations expect your Laravel application to be served using the built-in PHP development server on port 8000. Therefore, before continuing, you should ensure that your continuous integration environment has an <code>APP_URL</code> environment variable value of <code>http://127.0.0.1:8000</code>.</p>
+</blockquote>
+<p><a name="running-tests-on-heroku-ci"></a></p>
+<h3 id="heroku-ci">Heroku CI</h3>
+<p>To run Dusk tests on <a href="https://www.heroku.com/continuous-integration">Heroku CI</a>, add the following Google Chrome buildpack and scripts to your Heroku <code>app.json</code> file:</p>
+<pre><code>{
+  "environments": {
+    "test": {
+      "buildpacks": [
+        { "url": "heroku/php" },
+        { "url": "https://github.com/heroku/heroku-buildpack-google-chrome" }
+      ],
+      "scripts": {
+        "test-setup": "cp .env.testing .env",
+        "test": "nohup bash -c './vendor/laravel/dusk/bin/chromedriver-linux &gt; /dev/null 2&gt;&amp;1 &amp;' &amp;&amp; nohup bash -c 'php artisan serve --no-reload &gt; /dev/null 2&gt;&amp;1 &amp;' &amp;&amp; php artisan dusk"
+      }
+    }
+  }
+}
+</code></pre>
+<p><a name="running-tests-on-travis-ci"></a></p>
+<h3 id="travis-ci">Travis CI</h3>
+<p>To run your Dusk tests on <a href="https://travis-ci.org">Travis CI</a>, use the following <code>.travis.yml</code> configuration. Since Travis CI is not a graphical environment, we will need to take some extra steps in order to launch a Chrome browser. In addition, we will use <code>php artisan serve</code> to launch PHP's built-in web server:</p>
+<pre><code>language: php
+
+php:
+  - 7.3
+
+addons:
+  chrome: stable
+
+install:
+  - cp .env.testing .env
+  - travis_retry composer install --no-interaction --prefer-dist --no-suggest
+  - php artisan key:generate
+  - php artisan dusk:chrome-driver
+
+before_script:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &amp;
+  - php artisan serve --no-reload &amp;
+
+script:
+  - php artisan dusk
+</code></pre>
+<p><a name="running-tests-on-github-actions"></a></p>
+<h3 id="github-actions">GitHub Actions</h3>
+<p>If you are using <a href="https://github.com/features/actions">Github Actions</a> to run your Dusk tests, you may use the following configuration file as a starting point. Like TravisCI, we will use the <code>php artisan serve</code> command to launch PHP's built-in web server:</p>
+<pre><code>name: CI
+on: [push]
+jobs:
+
+  dusk-php:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prepare The Environment
+        run: cp .env.example .env
+      - name: Create Database
+        run: |
+          sudo systemctl start mysql
+          mysql --user="root" --password="root" -e "CREATE DATABASE 'my-database' character set UTF8mb4 collate utf8mb4_bin;"
+      - name: Install Composer Dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+      - name: Generate Application Key
+        run: php artisan key:generate
+      - name: Upgrade Chrome Driver
+        run: php artisan dusk:chrome-driver `/opt/google/chrome/chrome --version | cut -d " " -f3 | cut -d "." -f1`
+      - name: Start Chrome Driver
+        run: ./vendor/laravel/dusk/bin/chromedriver-linux &amp;
+      - name: Run Laravel Server
+        run: php artisan serve --no-reload &amp;
+      - name: Run Dusk Tests
+        env:
+          APP_URL: "http://127.0.0.1:8000"
+        run: php artisan dusk
+      - name: Upload Screenshots
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: tests/Browser/screenshots
+      - name: Upload Console Logs
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: console
+          path: tests/Browser/console
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../eloquent-collections/" class="btn btn-neutral float-right" title="Eloquent: Collections">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../documentation/" class="btn btn-neutral" title="Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../documentation/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../eloquent-collections/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

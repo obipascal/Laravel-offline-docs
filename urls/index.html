@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>URL Generation - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "URL Generation";
+    var mkdocs_page_input_path = "urls.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">URL Generation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-basics">The Basics</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#generating-urls">Generating URLs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#accessing-the-current-url">Accessing The Current URL</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#urls-for-named-routes">URLs For Named Routes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#eloquent-models">Eloquent Models</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#signed-urls">Signed URLs</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#validating-signed-route-requests">Validating Signed Route Requests</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#responding-to-invalid-signed-routes">Responding To Invalid Signed Routes</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#urls-for-controller-actions">URLs For Controller Actions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#default-values">Default Values</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#url-defaults-middleware-priority">URL Defaults &amp; Middleware Priority</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>URL Generation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="url-generation">URL Generation</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-basics">The Basics</a><ul>
+<li><a href="#generating-urls">Generating URLs</a></li>
+<li><a href="#accessing-the-current-url">Accessing The Current URL</a></li>
+</ul>
+</li>
+<li><a href="#urls-for-named-routes">URLs For Named Routes</a><ul>
+<li><a href="#signed-urls">Signed URLs</a></li>
+</ul>
+</li>
+<li><a href="#urls-for-controller-actions">URLs For Controller Actions</a></li>
+<li><a href="#default-values">Default Values</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Laravel provides several helpers to assist you in generating URLs for your application. These helpers are primarily helpful when building links in your templates and API responses, or when generating redirect responses to another part of your application.</p>
+<p><a name="the-basics"></a></p>
+<h2 id="the-basics">The Basics</h2>
+<p><a name="generating-urls"></a></p>
+<h3 id="generating-urls">Generating URLs</h3>
+<p>The <code>url</code> helper may be used to generate arbitrary URLs for your application. The generated URL will automatically use the scheme (HTTP or HTTPS) and host from the current request being handled by the application:</p>
+<pre><code>$post = App\Models\Post::find(1);
+
+echo url("/posts/{$post-&gt;id}");
+
+// http://example.com/posts/1
+</code></pre>
+<p><a name="accessing-the-current-url"></a></p>
+<h3 id="accessing-the-current-url">Accessing The Current URL</h3>
+<p>If no path is provided to the <code>url</code> helper, an <code>Illuminate\Routing\UrlGenerator</code> instance is returned, allowing you to access information about the current URL:</p>
+<pre><code>// Get the current URL without the query string...
+echo url()-&gt;current();
+
+// Get the current URL including the query string...
+echo url()-&gt;full();
+
+// Get the full URL for the previous request...
+echo url()-&gt;previous();
+</code></pre>
+<p>Each of these methods may also be accessed via the <code>URL</code> <a href="/docs/{{version}}/facades">facade</a>:</p>
+<pre><code>use Illuminate\Support\Facades\URL;
+
+echo URL::current();
+</code></pre>
+<p><a name="urls-for-named-routes"></a></p>
+<h2 id="urls-for-named-routes">URLs For Named Routes</h2>
+<p>The <code>route</code> helper may be used to generate URLs to <a href="/docs/{{version}}/routing#named-routes">named routes</a>. Named routes allow you to generate URLs without being coupled to the actual URL defined on the route. Therefore, if the route's URL changes, no changes need to be made to your calls to the <code>route</code> function. For example, imagine your application contains a route defined like the following:</p>
+<pre><code>Route::get('/post/{post}', function () {
+    //
+})-&gt;name('post.show');
+</code></pre>
+<p>To generate a URL to this route, you may use the <code>route</code> helper like so:</p>
+<pre><code>echo route('post.show', ['post' =&gt; 1]);
+
+// http://example.com/post/1
+</code></pre>
+<p>Of course, the <code>route</code> helper may also be used to generate URLs for routes with multiple parameters:</p>
+<pre><code>Route::get('/post/{post}/comment/{comment}', function () {
+    //
+})-&gt;name('comment.show');
+
+echo route('comment.show', ['post' =&gt; 1, 'comment' =&gt; 3]);
+
+// http://example.com/post/1/comment/3
+</code></pre>
+<p>Any additional array elements that do not correspond to the route's definition parameters will be added to the URL's query string:</p>
+<pre><code>echo route('post.show', ['post' =&gt; 1, 'search' =&gt; 'rocket']);
+
+// http://example.com/post/1?search=rocket
+</code></pre>
+<p><a name="eloquent-models"></a></p>
+<h4 id="eloquent-models">Eloquent Models</h4>
+<p>You will often be generating URLs using the primary key of <a href="/docs/{{version}}/eloquent">Eloquent models</a>. For this reason, you may pass Eloquent models as parameter values. The <code>route</code> helper will automatically extract the model's primary key:</p>
+<pre><code>echo route('post.show', ['post' =&gt; $post]);
+</code></pre>
+<p><a name="signed-urls"></a></p>
+<h3 id="signed-urls">Signed URLs</h3>
+<p>Laravel allows you to easily create "signed" URLs to named routes. These URLs have a "signature" hash appended to the query string which allows Laravel to verify that the URL has not been modified since it was created. Signed URLs are especially useful for routes that are publicly accessible yet need a layer of protection against URL manipulation.</p>
+<p>For example, you might use signed URLs to implement a public "unsubscribe" link that is emailed to your customers. To create a signed URL to a named route, use the <code>signedRoute</code> method of the <code>URL</code> facade:</p>
+<pre><code>use Illuminate\Support\Facades\URL;
+
+return URL::signedRoute('unsubscribe', ['user' =&gt; 1]);
+</code></pre>
+<p>If you would like to generate a temporary signed route URL that expires after a specified amount of time, you may use the <code>temporarySignedRoute</code> method. When Laravel validates a temporary signed route URL, it will ensure that the expiration timestamp that is encoded into the signed URL has not elapsed:</p>
+<pre><code>use Illuminate\Support\Facades\URL;
+
+return URL::temporarySignedRoute(
+    'unsubscribe', now()-&gt;addMinutes(30), ['user' =&gt; 1]
+);
+</code></pre>
+<p><a name="validating-signed-route-requests"></a></p>
+<h4 id="validating-signed-route-requests">Validating Signed Route Requests</h4>
+<p>To verify that an incoming request has a valid signature, you should call the <code>hasValidSignature</code> method on the incoming <code>Request</code>:</p>
+<pre><code>use Illuminate\Http\Request;
+
+Route::get('/unsubscribe/{user}', function (Request $request) {
+    if (! $request-&gt;hasValidSignature()) {
+        abort(401);
+    }
+
+    // ...
+})-&gt;name('unsubscribe');
+</code></pre>
+<p>Alternatively, you may assign the <code>Illuminate\Routing\Middleware\ValidateSignature</code> <a href="/docs/{{version}}/middleware">middleware</a> to the route. If it is not already present, you should assign this middleware a key in your HTTP kernel's <code>routeMiddleware</code> array:</p>
+<pre><code>/**
+ * The application's route middleware.
+ *
+ * These middleware may be assigned to groups or used individually.
+ *
+ * @var array
+ */
+protected $routeMiddleware = [
+    'signed' =&gt; \Illuminate\Routing\Middleware\ValidateSignature::class,
+];
+</code></pre>
+<p>Once you have registered the middleware in your kernel, you may attach it to a route. If the incoming request does not have a valid signature, the middleware will automatically return a <code>403</code> HTTP response:</p>
+<pre><code>Route::post('/unsubscribe/{user}', function (Request $request) {
+    // ...
+})-&gt;name('unsubscribe')-&gt;middleware('signed');
+</code></pre>
+<p><a name="responding-to-invalid-signed-routes"></a></p>
+<h4 id="responding-to-invalid-signed-routes">Responding To Invalid Signed Routes</h4>
+<p>When someone visits a signed URL that has expired, they will receive a generic error page for the <code>403</code> HTTP status code. However, you can customize this behavior by defining a custom "renderable" closure for the <code>InvalidSignatureException</code> exception in your exception handler. This closure should return an HTTP response:</p>
+<pre><code>use Illuminate\Routing\Exceptions\InvalidSignatureException;
+
+/**
+ * Register the exception handling callbacks for the application.
+ *
+ * @return void
+ */
+public function register()
+{
+    $this-&gt;renderable(function (InvalidSignatureException $e) {
+        return response()-&gt;view('error.link-expired', [], 403);
+    });
+}
+</code></pre>
+<p><a name="urls-for-controller-actions"></a></p>
+<h2 id="urls-for-controller-actions">URLs For Controller Actions</h2>
+<p>The <code>action</code> function generates a URL for the given controller action:</p>
+<pre><code>use App\Http\Controllers\HomeController;
+
+$url = action([HomeController::class, 'index']);
+</code></pre>
+<p>If the controller method accepts route parameters, you may pass an associative array of route parameters as the second argument to the function:</p>
+<pre><code>$url = action([UserController::class, 'profile'], ['id' =&gt; 1]);
+</code></pre>
+<p><a name="default-values"></a></p>
+<h2 id="default-values">Default Values</h2>
+<p>For some applications, you may wish to specify request-wide default values for certain URL parameters. For example, imagine many of your routes define a <code>{locale}</code> parameter:</p>
+<pre><code>Route::get('/{locale}/posts', function () {
+    //
+})-&gt;name('post.index');
+</code></pre>
+<p>It is cumbersome to always pass the <code>locale</code> every time you call the <code>route</code> helper. So, you may use the <code>URL::defaults</code> method to define a default value for this parameter that will always be applied during the current request. You may wish to call this method from a <a href="/docs/{{version}}/middleware#assigning-middleware-to-routes">route middleware</a> so that you have access to the current request:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Support\Facades\URL;
+
+class SetDefaultLocaleForUrls
+{
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return \Illuminate\Http\Response
+     */
+    public function handle($request, Closure $next)
+    {
+        URL::defaults(['locale' =&gt; $request-&gt;user()-&gt;locale]);
+
+        return $next($request);
+    }
+}
+</code></pre>
+<p>Once the default value for the <code>locale</code> parameter has been set, you are no longer required to pass its value when generating URLs via the <code>route</code> helper.</p>
+<p><a name="url-defaults-middleware-priority"></a></p>
+<h4 id="url-defaults-middleware-priority">URL Defaults &amp; Middleware Priority</h4>
+<p>Setting URL default values can interfere with Laravel's handling of implicit model bindings. Therefore, you should <a href="/docs/{{version}}/middleware#sorting-middleware">prioritize your middleware</a> that set URL defaults to be executed before Laravel's own <code>SubstituteBindings</code> middleware. You can accomplish this by making sure your middleware occurs before the <code>SubstituteBindings</code> middleware within the <code>$middlewarePriority</code> property of your application's HTTP kernel.</p>
+<p>The <code>$middlewarePriority</code> property is defined in the base <code>Illuminate\Foundation\Http\Kernel</code> class. You may copy its definition from that class and overwrite it in your application's HTTP kernel in order to modify it:</p>
+<pre><code>/**
+ * The priority-sorted list of middleware.
+ *
+ * This forces non-global middleware to always be in the given order.
+ *
+ * @var array
+ */
+protected $middlewarePriority = [
+    // ...
+     \App\Http\Middleware\SetDefaultLocaleForUrls::class,
+     \Illuminate\Routing\Middleware\SubstituteBindings::class,
+     // ...
+];
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../valet/" class="btn btn-neutral float-right" title="Laravel Valet">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../upgrade/" class="btn btn-neutral" title="Upgrade Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../upgrade/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../valet/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Blade Templates - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Blade Templates";
+    var mkdocs_page_input_path = "blade.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Blade Templates</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#displaying-data">Displaying Data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#rendering-json">Rendering JSON</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#html-entity-encoding">HTML Entity Encoding</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#displaying-unescaped-data">Displaying Unescaped Data</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#blade-javascript-frameworks">Blade &amp; JavaScript Frameworks</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#the-verbatim-directive">The @verbatim Directive</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blade-directives">Blade Directives</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#if-statements">If Statements</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#authentication-directives">Authentication Directives</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#environment-directives">Environment Directives</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#section-directives">Section Directives</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#switch-statements">Switch Statements</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#loops">Loops</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-loop-variable">The Loop Variable</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comments">Comments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#including-subviews">Including Subviews</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#rendering-views-for-collections">Rendering Views For Collections</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-once-directive">The @once Directive</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#raw-php">Raw PHP</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#components">Components</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#manually-registering-package-components">Manually Registering Package Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rendering-components">Rendering Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#passing-data-to-components">Passing Data To Components</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#casing">Casing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#escaping-attribute-rendering">Escaping Attribute Rendering</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#component-methods">Component Methods</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#accessing-attributes-slots-within-component-classes">Accessing Attributes &amp; Slots Within Component Classes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#additional-dependencies">Additional Dependencies</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#hiding-attributes-methods">Hiding Attributes / Methods</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#component-attributes">Component Attributes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#default-merged-attributes">Default / Merged Attributes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#conditionally-merge-classes">Conditionally Merge Classes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#non-class-attribute-merging">Non-Class Attribute Merging</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#retrieving-filtering-attributes">Retrieving &amp; Filtering Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reserved-keywords">Reserved Keywords</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slots">Slots</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#scoped-slots">Scoped Slots</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inline-component-views">Inline Component Views</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#generating-inline-view-components">Generating Inline View Components</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#anonymous-components">Anonymous Components</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#data-properties-attributes">Data Properties / Attributes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dynamic-components">Dynamic Components</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#manually-registering-components">Manually Registering Components</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#autoloading-package-components">Autoloading Package Components</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#building-layouts">Building Layouts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#layouts-using-components">Layouts Using Components</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#defining-the-layout-component">Defining The Layout Component</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#applying-the-layout-component">Applying The Layout Component</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#layouts-using-template-inheritance">Layouts Using Template Inheritance</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#defining-a-layout">Defining A Layout</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#extending-a-layout">Extending A Layout</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#forms">Forms</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#csrf-field">CSRF Field</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#method-field">Method Field</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#validation-errors">Validation Errors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#stacks">Stacks</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#service-injection">Service Injection</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#extending-blade">Extending Blade</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#custom-if-statements">Custom If Statements</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../collections/">Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Blade Templates</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="blade-templates">Blade Templates</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#displaying-data">Displaying Data</a><ul>
+<li><a href="#html-entity-encoding">HTML Entity Encoding</a></li>
+<li><a href="#blade-and-javascript-frameworks">Blade &amp; JavaScript Frameworks</a></li>
+</ul>
+</li>
+<li><a href="#blade-directives">Blade Directives</a><ul>
+<li><a href="#if-statements">If Statements</a></li>
+<li><a href="#switch-statements">Switch Statements</a></li>
+<li><a href="#loops">Loops</a></li>
+<li><a href="#the-loop-variable">The Loop Variable</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#including-subviews">Including Subviews</a></li>
+<li><a href="#the-once-directive">The <code>@once</code> Directive</a></li>
+<li><a href="#raw-php">Raw PHP</a></li>
+</ul>
+</li>
+<li><a href="#components">Components</a><ul>
+<li><a href="#rendering-components">Rendering Components</a></li>
+<li><a href="#passing-data-to-components">Passing Data To Components</a></li>
+<li><a href="#component-attributes">Component Attributes</a></li>
+<li><a href="#reserved-keywords">Reserved Keywords</a></li>
+<li><a href="#slots">Slots</a></li>
+<li><a href="#inline-component-views">Inline Component Views</a></li>
+<li><a href="#anonymous-components">Anonymous Components</a></li>
+<li><a href="#dynamic-components">Dynamic Components</a></li>
+<li><a href="#manually-registering-components">Manually Registering Components</a></li>
+</ul>
+</li>
+<li><a href="#building-layouts">Building Layouts</a><ul>
+<li><a href="#layouts-using-components">Layouts Using Components</a></li>
+<li><a href="#layouts-using-template-inheritance">Layouts Using Template Inheritance</a></li>
+</ul>
+</li>
+<li><a href="#forms">Forms</a><ul>
+<li><a href="#csrf-field">CSRF Field</a></li>
+<li><a href="#method-field">Method Field</a></li>
+<li><a href="#validation-errors">Validation Errors</a></li>
+</ul>
+</li>
+<li><a href="#stacks">Stacks</a></li>
+<li><a href="#service-injection">Service Injection</a></li>
+<li><a href="#extending-blade">Extending Blade</a><ul>
+<li><a href="#custom-if-statements">Custom If Statements</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>Blade is the simple, yet powerful templating engine that is included with Laravel. Unlike some PHP templating engines, Blade does not restrict you from using plain PHP code in your templates. In fact, all Blade templates are compiled into plain PHP code and cached until they are modified, meaning Blade adds essentially zero overhead to your application. Blade template files use the <code>.blade.php</code> file extension and are typically stored in the <code>resources/views</code> directory.</p>
+<p>Blade views may be returned from routes or controller using the global <code>view</code> helper. Of course, as mentioned in the documentation on <a href="/docs/{{version}}/views">views</a>, data may be passed to the Blade view using the <code>view</code> helper's second argument:</p>
+<pre><code>Route::get('/', function () {
+    return view('greeting', ['name' =&gt; 'Finn']);
+});
+</code></pre>
+<blockquote>
+<p>{tip} Before digging deeper into Blade, make sure to read the Laravel <a href="/docs/{{version}}/views">view documentation</a>.</p>
+</blockquote>
+<p><a name="displaying-data"></a></p>
+<h2 id="displaying-data">Displaying Data</h2>
+<p>You may display data that is passed to your Blade views by wrapping the variable in curly braces. For example, given the following route:</p>
+<pre><code>Route::get('/', function () {
+    return view('welcome', ['name' =&gt; 'Samantha']);
+});
+</code></pre>
+<p>You may display the contents of the <code>name</code> variable like so:</p>
+<pre><code>Hello, {{ $name }}.
+</code></pre>
+<blockquote>
+<p>{tip} Blade's <code>{{ }}</code> echo statements are automatically sent through PHP's <code>htmlspecialchars</code> function to prevent XSS attacks.</p>
+</blockquote>
+<p>You are not limited to displaying the contents of the variables passed to the view. You may also echo the results of any PHP function. In fact, you can put any PHP code you wish inside of a Blade echo statement:</p>
+<pre><code>The current UNIX timestamp is {{ time() }}.
+</code></pre>
+<p><a name="rendering-json"></a></p>
+<h4 id="rendering-json">Rendering JSON</h4>
+<p>Sometimes you may pass an array to your view with the intention of rendering it as JSON in order to initialize a JavaScript variable. For example:</p>
+<pre><code>&lt;script&gt;
+    var app = &lt;?php echo json_encode($array); ?&gt;;
+&lt;/script&gt;
+</code></pre>
+<p>However, instead of manually calling <code>json_encode</code>, you may use the <code>@json</code> Blade directive. The <code>@json</code> directive accepts the same arguments as PHP's <code>json_encode</code> function. By default, the <code>@json</code> directive calls the <code>json_encode</code> function with the <code>JSON_HEX_TAG</code>, <code>JSON_HEX_APOS</code>, <code>JSON_HEX_AMP</code>, and <code>JSON_HEX_QUOT</code> flags:</p>
+<pre><code>&lt;script&gt;
+    var app = @json($array);
+
+    var app = @json($array, JSON_PRETTY_PRINT);
+&lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>{note} You should only use the <code>@json</code> directive to render existing variables as JSON. The Blade templating is based on regular expressions and attempts to pass a complex expression to the directive may cause unexpected failures.</p>
+</blockquote>
+<p><a name="html-entity-encoding"></a></p>
+<h3 id="html-entity-encoding">HTML Entity Encoding</h3>
+<p>By default, Blade (and the Laravel <code>e</code> helper) will double encode HTML entities. If you would like to disable double encoding, call the <code>Blade::withoutDoubleEncoding</code> method from the <code>boot</code> method of your <code>AppServiceProvider</code>:</p>
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Blade::withoutDoubleEncoding();
+    }
+}
+</code></pre>
+<p><a name="displaying-unescaped-data"></a></p>
+<h4 id="displaying-unescaped-data">Displaying Unescaped Data</h4>
+<p>By default, Blade <code>{{ }}</code> statements are automatically sent through PHP's <code>htmlspecialchars</code> function to prevent XSS attacks. If you do not want your data to be escaped, you may use the following syntax:</p>
+<pre><code>Hello, {!! $name !!}.
+</code></pre>
+<blockquote>
+<p>{note} Be very careful when echoing content that is supplied by users of your application. You should typically use the escaped, double curly brace syntax to prevent XSS attacks when displaying user supplied data.</p>
+</blockquote>
+<p><a name="blade-and-javascript-frameworks"></a></p>
+<h3 id="blade-javascript-frameworks">Blade &amp; JavaScript Frameworks</h3>
+<p>Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the <code>@</code> symbol to inform the Blade rendering engine an expression should remain untouched. For example:</p>
+<pre><code>&lt;h1&gt;Laravel&lt;/h1&gt;
+
+Hello, @{{ name }}.
+</code></pre>
+<p>In this example, the <code>@</code> symbol will be removed by Blade; however, <code>{{ name }}</code> expression will remain untouched by the Blade engine, allowing it to be rendered by your JavaScript framework.</p>
+<p>The <code>@</code> symbol may also be used to escape Blade directives:</p>
+<pre><code>{{-- Blade template --}}
+@@json()
+
+&lt;!-- HTML output --&gt;
+@json()
+</code></pre>
+<p><a name="the-at-verbatim-directive"></a></p>
+<h4 id="the-verbatim-directive">The <code>@verbatim</code> Directive</h4>
+<p>If you are displaying JavaScript variables in a large portion of your template, you may wrap the HTML in the <code>@verbatim</code> directive so that you do not have to prefix each Blade echo statement with an <code>@</code> symbol:</p>
+<pre><code>@verbatim
+    &lt;div class="container"&gt;
+        Hello, {{ name }}.
+    &lt;/div&gt;
+@endverbatim
+</code></pre>
+<p><a name="blade-directives"></a></p>
+<h2 id="blade-directives">Blade Directives</h2>
+<p>In addition to template inheritance and displaying data, Blade also provides convenient shortcuts for common PHP control structures, such as conditional statements and loops. These shortcuts provide a very clean, terse way of working with PHP control structures while also remaining familiar to their PHP counterparts.</p>
+<p><a name="if-statements"></a></p>
+<h3 id="if-statements">If Statements</h3>
+<p>You may construct <code>if</code> statements using the <code>@if</code>, <code>@elseif</code>, <code>@else</code>, and <code>@endif</code> directives. These directives function identically to their PHP counterparts:</p>
+<pre><code>@if (count($records) === 1)
+    I have one record!
+@elseif (count($records) &gt; 1)
+    I have multiple records!
+@else
+    I don't have any records!
+@endif
+</code></pre>
+<p>For convenience, Blade also provides an <code>@unless</code> directive:</p>
+<pre><code>@unless (Auth::check())
+    You are not signed in.
+@endunless
+</code></pre>
+<p>In addition to the conditional directives already discussed, the <code>@isset</code> and <code>@empty</code> directives may be used as convenient shortcuts for their respective PHP functions:</p>
+<pre><code>@isset($records)
+    // $records is defined and is not null...
+@endisset
+
+@empty($records)
+    // $records is "empty"...
+@endempty
+</code></pre>
+<p><a name="authentication-directives"></a></p>
+<h4 id="authentication-directives">Authentication Directives</h4>
+<p>The <code>@auth</code> and <code>@guest</code> directives may be used to quickly determine if the current user is <a href="/docs/{{version}}/authentication">authenticated</a> or is a guest:</p>
+<pre><code>@auth
+    // The user is authenticated...
+@endauth
+
+@guest
+    // The user is not authenticated...
+@endguest
+</code></pre>
+<p>If needed, you may specify the authentication guard that should be checked when using the <code>@auth</code> and <code>@guest</code> directives:</p>
+<pre><code>@auth('admin')
+    // The user is authenticated...
+@endauth
+
+@guest('admin')
+    // The user is not authenticated...
+@endguest
+</code></pre>
+<p><a name="environment-directives"></a></p>
+<h4 id="environment-directives">Environment Directives</h4>
+<p>You may check if the application is running in the production environment using the <code>@production</code> directive:</p>
+<pre><code>@production
+    // Production specific content...
+@endproduction
+</code></pre>
+<p>Or, you may determine if the application is running in a specific environment using the <code>@env</code> directive:</p>
+<pre><code>@env('staging')
+    // The application is running in "staging"...
+@endenv
+
+@env(['staging', 'production'])
+    // The application is running in "staging" or "production"...
+@endenv
+</code></pre>
+<p><a name="section-directives"></a></p>
+<h4 id="section-directives">Section Directives</h4>
+<p>You may determine if a template inheritance section has content using the <code>@hasSection</code> directive:</p>
+<pre><code class="language-html">@hasSection('navigation')
+    &lt;div class=&quot;pull-right&quot;&gt;
+        @yield('navigation')
+    &lt;/div&gt;
+
+    &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;
+@endif
+</code></pre>
+<p>You may use the <code>sectionMissing</code> directive to determine if a section does not have content:</p>
+<pre><code class="language-html">@sectionMissing('navigation')
+    &lt;div class=&quot;pull-right&quot;&gt;
+        @include('default-navigation')
+    &lt;/div&gt;
+@endif
+</code></pre>
+<p><a name="switch-statements"></a></p>
+<h3 id="switch-statements">Switch Statements</h3>
+<p>Switch statements can be constructed using the <code>@switch</code>, <code>@case</code>, <code>@break</code>, <code>@default</code> and <code>@endswitch</code> directives:</p>
+<pre><code>@switch($i)
+    @case(1)
+        First case...
+        @break
+
+    @case(2)
+        Second case...
+        @break
+
+    @default
+        Default case...
+@endswitch
+</code></pre>
+<p><a name="loops"></a></p>
+<h3 id="loops">Loops</h3>
+<p>In addition to conditional statements, Blade provides simple directives for working with PHP's loop structures. Again, each of these directives functions identically to their PHP counterparts:</p>
+<pre><code>@for ($i = 0; $i &lt; 10; $i++)
+    The current value is {{ $i }}
+@endfor
+
+@foreach ($users as $user)
+    &lt;p&gt;This is user {{ $user-&gt;id }}&lt;/p&gt;
+@endforeach
+
+@forelse ($users as $user)
+    &lt;li&gt;{{ $user-&gt;name }}&lt;/li&gt;
+@empty
+    &lt;p&gt;No users&lt;/p&gt;
+@endforelse
+
+@while (true)
+    &lt;p&gt;I'm looping forever.&lt;/p&gt;
+@endwhile
+</code></pre>
+<blockquote>
+<p>{tip} When looping, you may use the <a href="#the-loop-variable">loop variable</a> to gain valuable information about the loop, such as whether you are in the first or last iteration through the loop.</p>
+</blockquote>
+<p>When using loops you may also end the loop or skip the current iteration using the <code>@continue</code> and <code>@break</code> directives:</p>
+<pre><code>@foreach ($users as $user)
+    @if ($user-&gt;type == 1)
+        @continue
+    @endif
+
+    &lt;li&gt;{{ $user-&gt;name }}&lt;/li&gt;
+
+    @if ($user-&gt;number == 5)
+        @break
+    @endif
+@endforeach
+</code></pre>
+<p>You may also include the continuation or break condition within the directive declaration:</p>
+<pre><code>@foreach ($users as $user)
+    @continue($user-&gt;type == 1)
+
+    &lt;li&gt;{{ $user-&gt;name }}&lt;/li&gt;
+
+    @break($user-&gt;number == 5)
+@endforeach
+</code></pre>
+<p><a name="the-loop-variable"></a></p>
+<h3 id="the-loop-variable">The Loop Variable</h3>
+<p>When looping, a <code>$loop</code> variable will be available inside of your loop. This variable provides access to some useful bits of information such as the current loop index and whether this is the first or last iteration through the loop:</p>
+<pre><code>@foreach ($users as $user)
+    @if ($loop-&gt;first)
+        This is the first iteration.
+    @endif
+
+    @if ($loop-&gt;last)
+        This is the last iteration.
+    @endif
+
+    &lt;p&gt;This is user {{ $user-&gt;id }}&lt;/p&gt;
+@endforeach
+</code></pre>
+<p>If you are in a nested loop, you may access the parent loop's <code>$loop</code> variable via the <code>parent</code> property:</p>
+<pre><code>@foreach ($users as $user)
+    @foreach ($user-&gt;posts as $post)
+        @if ($loop-&gt;parent-&gt;first)
+            This is the first iteration of the parent loop.
+        @endif
+    @endforeach
+@endforeach
+</code></pre>
+<p>The <code>$loop</code> variable also contains a variety of other useful properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$loop-&gt;index</code></td>
+<td>The index of the current loop iteration (starts at 0).</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;iteration</code></td>
+<td>The current loop iteration (starts at 1).</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;remaining</code></td>
+<td>The iterations remaining in the loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;count</code></td>
+<td>The total number of items in the array being iterated.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;first</code></td>
+<td>Whether this is the first iteration through the loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;last</code></td>
+<td>Whether this is the last iteration through the loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;even</code></td>
+<td>Whether this is an even iteration through the loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;odd</code></td>
+<td>Whether this is an odd iteration through the loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;depth</code></td>
+<td>The nesting level of the current loop.</td>
+</tr>
+<tr>
+<td><code>$loop-&gt;parent</code></td>
+<td>When in a nested loop, the parent's loop variable.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="comments"></a></p>
+<h3 id="comments">Comments</h3>
+<p>Blade also allows you to define comments in your views. However, unlike HTML comments, Blade comments are not included in the HTML returned by your application:</p>
+<pre><code>{{-- This comment will not be present in the rendered HTML --}}
+</code></pre>
+<p><a name="including-subviews"></a></p>
+<h3 id="including-subviews">Including Subviews</h3>
+<blockquote>
+<p>{tip} While you're free to use the <code>@include</code> directive, Blade <a href="#components">components</a> provide similar functionality and offer several benefits over the <code>@include</code> directive such as data and attribute binding.</p>
+</blockquote>
+<p>Blade's <code>@include</code> directive allows you to include a Blade view from within another view. All variables that are available to the parent view will be made available to the included view:</p>
+<pre><code class="language-html">&lt;div&gt;
+    @include('shared.errors')
+
+    &lt;form&gt;
+        &lt;!-- Form Contents --&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Even though the included view will inherit all data available in the parent view, you may also pass an array of additional data that should be made available to the included view:</p>
+<pre><code>@include('view.name', ['status' =&gt; 'complete'])
+</code></pre>
+<p>If you attempt to <code>@include</code> a view which does not exist, Laravel will throw an error. If you would like to include a view that may or may not be present, you should use the <code>@includeIf</code> directive:</p>
+<pre><code>@includeIf('view.name', ['status' =&gt; 'complete'])
+</code></pre>
+<p>If you would like to <code>@include</code> a view if a given boolean expression evaluates to <code>true</code> or <code>false</code>, you may use the <code>@includeWhen</code> and <code>@includeUnless</code> directives:</p>
+<pre><code>@includeWhen($boolean, 'view.name', ['status' =&gt; 'complete'])
+
+@includeUnless($boolean, 'view.name', ['status' =&gt; 'complete'])
+</code></pre>
+<p>To include the first view that exists from a given array of views, you may use the <code>includeFirst</code> directive:</p>
+<pre><code>@includeFirst(['custom.admin', 'admin'], ['status' =&gt; 'complete'])
+</code></pre>
+<blockquote>
+<p>{note} You should avoid using the <code>__DIR__</code> and <code>__FILE__</code> constants in your Blade views, since they will refer to the location of the cached, compiled view.</p>
+</blockquote>
+<p><a name="rendering-views-for-collections"></a></p>
+<h4 id="rendering-views-for-collections">Rendering Views For Collections</h4>
+<p>You may combine loops and includes into one line with Blade's <code>@each</code> directive:</p>
+<pre><code>@each('view.name', $jobs, 'job')
+</code></pre>
+<p>The <code>@each</code> directive's first argument is the view to render for each element in the array or collection. The second argument is the array or collection you wish to iterate over, while the third argument is the variable name that will be assigned to the current iteration within the view. So, for example, if you are iterating over an array of <code>jobs</code>, typically you will want to access each job as a <code>job</code> variable within the view. The array key for the current iteration will be available as the <code>key</code> variable within the view.</p>
+<p>You may also pass a fourth argument to the <code>@each</code> directive. This argument determines the view that will be rendered if the given array is empty.</p>
+<pre><code>@each('view.name', $jobs, 'job', 'view.empty')
+</code></pre>
+<blockquote>
+<p>{note} Views rendered via <code>@each</code> do not inherit the variables from the parent view. If the child view requires these variables, you should use the <code>@foreach</code> and <code>@include</code> directives instead.</p>
+</blockquote>
+<p><a name="the-once-directive"></a></p>
+<h3 id="the-once-directive">The <code>@once</code> Directive</h3>
+<p>The <code>@once</code> directive allows you to define a portion of the template that will only be evaluated once per rendering cycle. This may be useful for pushing a given piece of JavaScript into the page's header using <a href="#stacks">stacks</a>. For example, if you are rendering a given <a href="#components">component</a> within a loop, you may wish to only push the JavaScript to the header the first time the component is rendered:</p>
+<pre><code>@once
+    @push('scripts')
+        &lt;script&gt;
+            // Your custom JavaScript...
+        &lt;/script&gt;
+    @endpush
+@endonce
+</code></pre>
+<p><a name="raw-php"></a></p>
+<h3 id="raw-php">Raw PHP</h3>
+<p>In some situations, it's useful to embed PHP code into your views. You can use the Blade <code>@php</code> directive to execute a block of plain PHP within your template:</p>
+<pre><code>@php
+    $counter = 1;
+@endphp
+</code></pre>
+<p><a name="components"></a></p>
+<h2 id="components">Components</h2>
+<p>Components and slots provide similar benefits to sections, layouts, and includes; however, some may find the mental model of components and slots easier to understand. There are two approaches to writing components: class based components and anonymous components.</p>
+<p>To create a class based component, you may use the <code>make:component</code> Artisan command. To illustrate how to use components, we will create a simple <code>Alert</code> component. The <code>make:component</code> command will place the component in the <code>App\View\Components</code> directory:</p>
+<pre><code>php artisan make:component Alert
+</code></pre>
+<p>The <code>make:component</code> command will also create a view template for the component. The view will be placed in the <code>resources/views/components</code> directory. When writing components for your own application, components are automatically discovered within the <code>app/View/Components</code> directory and <code>resources/views/components</code> directory, so no further component registration is typically required.</p>
+<p>You may also create components within subdirectories:</p>
+<pre><code>php artisan make:component Forms/Input
+</code></pre>
+<p>The command above will create an <code>Input</code> component in the <code>App\View\Components\Forms</code> directory and the view will be placed in the <code>resources/views/components/forms</code> directory.</p>
+<p><a name="manually-registering-package-components"></a></p>
+<h4 id="manually-registering-package-components">Manually Registering Package Components</h4>
+<p>When writing components for your own application, components are automatically discovered within the <code>app/View/Components</code> directory and <code>resources/views/components</code> directory.</p>
+<p>However, if you are building a package that utilizes Blade components, you will need to manually register your component class and its HTML tag alias. You should typically register your components in the <code>boot</code> method of your package's service provider:</p>
+<pre><code>use Illuminate\Support\Facades\Blade;
+
+/**
+ * Bootstrap your package's services.
+ */
+public function boot()
+{
+    Blade::component('package-alert', Alert::class);
+}
+</code></pre>
+<p>Once your component has been registered, it may be rendered using its tag alias:</p>
+<pre><code>&lt;x-package-alert/&gt;
+</code></pre>
+<p>Alternatively, you may use the <code>componentNamespace</code> method to autoload component classes by convention. For example, a <code>Nightshade</code> package might have <code>Calendar</code> and <code>ColorPicker</code> components that reside within the <code>Package\Views\Components</code> namespace:</p>
+<pre><code>use Illuminate\Support\Facades\Blade;
+
+/**
+ * Bootstrap your package's services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');
+}
+</code></pre>
+<p>This will allow the usage of package components by their vendor namespace using the <code>package-name::</code> syntax:</p>
+<pre><code>&lt;x-nightshade::calendar /&gt;
+&lt;x-nightshade::color-picker /&gt;
+</code></pre>
+<p>Blade will automatically detect the class that's linked to this component by pascal-casing the component name. Subdirectories are also supported using "dot" notation.</p>
+<p><a name="rendering-components"></a></p>
+<h3 id="rendering-components">Rendering Components</h3>
+<p>To display a component, you may use a Blade component tag within one of your Blade templates. Blade component tags start with the string <code>x-</code> followed by the kebab case name of the component class:</p>
+<pre><code>&lt;x-alert/&gt;
+
+&lt;x-user-profile/&gt;
+</code></pre>
+<p>If the component class is nested deeper within the <code>App\View\Components</code> directory, you may use the <code>.</code> character to indicate directory nesting. For example, if we assume a component is located at <code>App\View\Components\Inputs\Button.php</code>, we may render it like so:</p>
+<pre><code>&lt;x-inputs.button/&gt;
+</code></pre>
+<p><a name="passing-data-to-components"></a></p>
+<h3 id="passing-data-to-components">Passing Data To Components</h3>
+<p>You may pass data to Blade components using HTML attributes. Hard-coded, primitive values may be passed to the component using simple HTML attribute strings. PHP expressions and variables should be passed to the component via attributes that use the <code>:</code> character as a prefix:</p>
+<pre><code>&lt;x-alert type="error" :message="$message"/&gt;
+</code></pre>
+<p>You should define the component's required data in its class constructor. All public properties on a component will automatically be made available to the component's view. It is not necessary to pass the data to the view from the component's <code>render</code> method:</p>
+<pre><code>&lt;?php
+
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+
+class Alert extends Component
+{
+    /**
+     * The alert type.
+     *
+     * @var string
+     */
+    public $type;
+
+    /**
+     * The alert message.
+     *
+     * @var string
+     */
+    public $message;
+
+    /**
+     * Create the component instance.
+     *
+     * @param  string  $type
+     * @param  string  $message
+     * @return void
+     */
+    public function __construct($type, $message)
+    {
+        $this-&gt;type = $type;
+        $this-&gt;message = $message;
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\View\View|\Closure|string
+     */
+    public function render()
+    {
+        return view('components.alert');
+    }
+}
+</code></pre>
+<p>When your component is rendered, you may display the contents of your component's public variables by echoing the variables by name:</p>
+<pre><code class="language-html">&lt;div class=&quot;alert alert-{{ $type }}&quot;&gt;
+    {{ $message }}
+&lt;/div&gt;
+</code></pre>
+<p><a name="casing"></a></p>
+<h4 id="casing">Casing</h4>
+<p>Component constructor arguments should be specified using <code>camelCase</code>, while <code>kebab-case</code> should be used when referencing the argument names in your HTML attributes. For example, given the following component constructor:</p>
+<pre><code>/**
+ * Create the component instance.
+ *
+ * @param  string  $alertType
+ * @return void
+ */
+public function __construct($alertType)
+{
+    $this-&gt;alertType = $alertType;
+}
+</code></pre>
+<p>The <code>$alertType</code> argument may be provided to the component like so:</p>
+<pre><code>&lt;x-alert alert-type="danger" /&gt;
+</code></pre>
+<p><a name="escaping-attribute-rendering"></a></p>
+<h4 id="escaping-attribute-rendering">Escaping Attribute Rendering</h4>
+<p>Since some JavaScript frameworks such as Alpine.js also use colon-prefixed attributes, you may use a double colon (<code>::</code>) prefix to inform Blade that the attribute is not a PHP expression. For example, given the following component:</p>
+<pre><code>&lt;x-button ::class="{ danger: isDeleting }"&gt;
+    Submit
+&lt;/x-button&gt;
+</code></pre>
+<p>The following HTML will be rendered by Blade:</p>
+<pre><code>&lt;button :class="{ danger: isDeleting }"&gt;
+    Submit
+&lt;/button&gt;
+</code></pre>
+<p><a name="component-methods"></a></p>
+<h4 id="component-methods">Component Methods</h4>
+<p>In addition to public variables being available to your component template, any public methods on the component may be invoked. For example, imagine a component that has an <code>isSelected</code> method:</p>
+<pre><code>/**
+ * Determine if the given option is the currently selected option.
+ *
+ * @param  string  $option
+ * @return bool
+ */
+public function isSelected($option)
+{
+    return $option === $this-&gt;selected;
+}
+</code></pre>
+<p>You may execute this method from your component template by invoking the variable matching the name of the method:</p>
+<pre><code>&lt;option {{ $isSelected($value) ? 'selected="selected"' : '' }} value="{{ $value }}"&gt;
+    {{ $label }}
+&lt;/option&gt;
+</code></pre>
+<p><a name="using-attributes-slots-within-component-class"></a></p>
+<h4 id="accessing-attributes-slots-within-component-classes">Accessing Attributes &amp; Slots Within Component Classes</h4>
+<p>Blade components also allow you to access the component name, attributes, and slot inside the class's render method. However, in order to access this data, you should return a closure from your component's <code>render</code> method. The closure will receive a <code>$data</code> array as its only argument. This array will contain several elements that provide information about the component:</p>
+<pre><code>/**
+ * Get the view / contents that represent the component.
+ *
+ * @return \Illuminate\View\View|\Closure|string
+ */
+public function render()
+{
+    return function (array $data) {
+        // $data['componentName'];
+        // $data['attributes'];
+        // $data['slot'];
+
+        return '&lt;div&gt;Components content&lt;/div&gt;';
+    };
+}
+</code></pre>
+<p>The <code>componentName</code> is equal to the name used in the HTML tag after the <code>x-</code> prefix. So <code>&lt;x-alert /&gt;</code>'s <code>componentName</code> will be <code>alert</code>. The <code>attributes</code> element will contain all of the attributes that were present on the HTML tag. The <code>slot</code> element is an <code>Illuminate\Support\HtmlString</code> instance with the contents of the component's slot.</p>
+<p>The closure should return a string. If the returned string corresponds to an existing view, that view will be rendered; otherwise, the returned string will be evaluated as an inline Blade view.</p>
+<p><a name="additional-dependencies"></a></p>
+<h4 id="additional-dependencies">Additional Dependencies</h4>
+<p>If your component requires dependencies from Laravel's <a href="/docs/{{version}}/container">service container</a>, you may list them before any of the component's data attributes and they will automatically be injected by the container:</p>
+<pre><code>use App\Services\AlertCreator
+
+/**
+ * Create the component instance.
+ *
+ * @param  \App\Services\AlertCreator  $creator
+ * @param  string  $type
+ * @param  string  $message
+ * @return void
+ */
+public function __construct(AlertCreator $creator, $type, $message)
+{
+    $this-&gt;creator = $creator;
+    $this-&gt;type = $type;
+    $this-&gt;message = $message;
+}
+</code></pre>
+<p><a name="hiding-attributes-and-methods"></a></p>
+<h4 id="hiding-attributes-methods">Hiding Attributes / Methods</h4>
+<p>If you would like to prevent some public methods or properties from being exposed as variables to your component template, you may add them to an <code>$except</code> array property on your component:</p>
+<pre><code>&lt;?php
+
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+
+class Alert extends Component
+{
+    /**
+     * The alert type.
+     *
+     * @var string
+     */
+    public $type;
+
+    /**
+     * The properties / methods that should not be exposed to the component template.
+     *
+     * @var array
+     */
+    protected $except = ['type'];
+}
+</code></pre>
+<p><a name="component-attributes"></a></p>
+<h3 id="component-attributes">Component Attributes</h3>
+<p>We've already examined how to pass data attributes to a component; however, sometimes you may need to specify additional HTML attributes, such as <code>class</code>, that are not part of the data required for a component to function. Typically, you want to pass these additional attributes down to the root element of the component template. For example, imagine we want to render an <code>alert</code> component like so:</p>
+<pre><code>&lt;x-alert type="error" :message="$message" class="mt-4"/&gt;
+</code></pre>
+<p>All of the attributes that are not part of the component's constructor will automatically be added to the component's "attribute bag". This attribute bag is automatically made available to the component via the <code>$attributes</code> variable. All of the attributes may be rendered within the component by echoing this variable:</p>
+<pre><code>&lt;div {{ $attributes }}&gt;
+    &lt;!-- Component content --&gt;
+&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p>{note} Using directives such as <code>@env</code> within component tags is not supported at this time. For example, <code>&lt;x-alert :live="@env('production')"/&gt;</code> will not be compiled.</p>
+</blockquote>
+<p><a name="default-merged-attributes"></a></p>
+<h4 id="default-merged-attributes">Default / Merged Attributes</h4>
+<p>Sometimes you may need to specify default values for attributes or merge additional values into some of the component's attributes. To accomplish this, you may use the attribute bag's <code>merge</code> method. This method is particularly useful for defining a set of default CSS classes that should always be applied to a component:</p>
+<pre><code>&lt;div {{ $attributes-&gt;merge(['class' =&gt; 'alert alert-'.$type]) }}&gt;
+    {{ $message }}
+&lt;/div&gt;
+</code></pre>
+<p>If we assume this component is utilized like so:</p>
+<pre><code>&lt;x-alert type="error" :message="$message" class="mb-4"/&gt;
+</code></pre>
+<p>The final, rendered HTML of the component will appear like the following:</p>
+<pre><code class="language-html">&lt;div class=&quot;alert alert-error mb-4&quot;&gt;
+    &lt;!-- Contents of the $message variable --&gt;
+&lt;/div&gt;
+</code></pre>
+<p><a name="conditionally-merge-classes"></a></p>
+<h4 id="conditionally-merge-classes">Conditionally Merge Classes</h4>
+<p>Sometimes you may wish to merge classes if a given condition is <code>true</code>. You can accomplish this via the <code>class</code> method, which accepts an array of classes where the array key contains the class or classes you wish to add, while the value is a boolean expression. If the array element has a numeric key, it will always be included in the rendered class list:</p>
+<pre><code>&lt;div {{ $attributes-&gt;class(['p-4', 'bg-red' =&gt; $hasError]) }}&gt;
+    {{ $message }}
+&lt;/div&gt;
+</code></pre>
+<p>If you need to merge other attributes onto your component, you can chain the <code>merge</code> method onto the <code>class</code> method:</p>
+<pre><code>&lt;button {{ $attributes-&gt;class(['p-4'])-&gt;merge(['type' =&gt; 'button']) }}&gt;
+    {{ $slot }}
+&lt;/button&gt;
+</code></pre>
+<p><a name="non-class-attribute-merging"></a></p>
+<h4 id="non-class-attribute-merging">Non-Class Attribute Merging</h4>
+<p>When merging attributes that are not <code>class</code> attributes, the values provided to the <code>merge</code> method will be considered the "default" values of the attribute. However, unlike the <code>class</code> attribute, these attributes will not be merged with injected attribute values. Instead, they will be overwritten. For example, a <code>button</code> component's implementation may look like the following:</p>
+<pre><code>&lt;button {{ $attributes-&gt;merge(['type' =&gt; 'button']) }}&gt;
+    {{ $slot }}
+&lt;/button&gt;
+</code></pre>
+<p>To render the button component with a custom <code>type</code>, it may be specified when consuming the component. If no type is specified, the <code>button</code> type will be used:</p>
+<pre><code>&lt;x-button type="submit"&gt;
+    Submit
+&lt;/x-button&gt;
+</code></pre>
+<p>The rendered HTML of the <code>button</code> component in this example would be:</p>
+<pre><code>&lt;button type="submit"&gt;
+    Submit
+&lt;/button&gt;
+</code></pre>
+<p>If you would like an attribute other than <code>class</code> to have its default value and injected values joined together, you may use the <code>prepends</code> method. In this example, the <code>data-controller</code> attribute will always begin with <code>profile-controller</code> and any additional injected <code>data-controller</code> values will be placed after this default value:</p>
+<pre><code>&lt;div {{ $attributes-&gt;merge(['data-controller' =&gt; $attributes-&gt;prepends('profile-controller')]) }}&gt;
+    {{ $slot }}
+&lt;/div&gt;
+</code></pre>
+<p><a name="filtering-attributes"></a></p>
+<h4 id="retrieving-filtering-attributes">Retrieving &amp; Filtering Attributes</h4>
+<p>You may filter attributes using the <code>filter</code> method. This method accepts a closure which should return <code>true</code> if you wish to retain the attribute in the attribute bag:</p>
+<pre><code>{{ $attributes-&gt;filter(fn ($value, $key) =&gt; $key == 'foo') }}
+</code></pre>
+<p>For convenience, you may use the <code>whereStartsWith</code> method to retrieve all attributes whose keys begin with a given string:</p>
+<pre><code>{{ $attributes-&gt;whereStartsWith('wire:model') }}
+</code></pre>
+<p>Conversely, the <code>whereDoesntStartWith</code> method may be used to exclude all attributes whose keys begin with a given string:</p>
+<pre><code>{{ $attributes-&gt;whereDoesntStartWith('wire:model') }}
+</code></pre>
+<p>Using the <code>first</code> method, you may render the first attribute in a given attribute bag:</p>
+<pre><code>{{ $attributes-&gt;whereStartsWith('wire:model')-&gt;first() }}
+</code></pre>
+<p>If you would like to check if an attribute is present on the component, you may use the <code>has</code> method. This method accepts the attribute name as its only argument and returns a boolean indicating whether or not the attribute is present:</p>
+<pre><code>@if ($attributes-&gt;has('class'))
+    &lt;div&gt;Class attribute is present&lt;/div&gt;
+@endif
+</code></pre>
+<p>You may retrieve a specific attribute's value using the <code>get</code> method:</p>
+<pre><code>{{ $attributes-&gt;get('class') }}
+</code></pre>
+<p><a name="reserved-keywords"></a></p>
+<h3 id="reserved-keywords">Reserved Keywords</h3>
+<p>By default, some keywords are reserved for Blade's internal use in order to render components. The following keywords cannot be defined as public properties or method names within your components:</p>
+<div class="content-list" markdown="1">
+- `data`
+- `render`
+- `resolveView`
+- `shouldRender`
+- `view`
+- `withAttributes`
+- `withName`
+</div>
+
+<p><a name="slots"></a></p>
+<h3 id="slots">Slots</h3>
+<p>You will often need to pass additional content to your component via "slots". Component slots are rendered by echoing the <code>$slot</code> variable. To explore this concept, let's imagine that an <code>alert</code> component has the following markup:</p>
+<pre><code class="language-html">&lt;!-- /resources/views/components/alert.blade.php --&gt;
+
+&lt;div class=&quot;alert alert-danger&quot;&gt;
+    {{ $slot }}
+&lt;/div&gt;
+</code></pre>
+<p>We may pass content to the <code>slot</code> by injecting content into the component:</p>
+<pre><code class="language-html">&lt;x-alert&gt;
+    &lt;strong&gt;Whoops!&lt;/strong&gt; Something went wrong!
+&lt;/x-alert&gt;
+</code></pre>
+<p>Sometimes a component may need to render multiple different slots in different locations within the component. Let's modify our alert component to allow for the injection of a "title" slot:</p>
+<pre><code class="language-html">&lt;!-- /resources/views/components/alert.blade.php --&gt;
+
+&lt;span class=&quot;alert-title&quot;&gt;{{ $title }}&lt;/span&gt;
+
+&lt;div class=&quot;alert alert-danger&quot;&gt;
+    {{ $slot }}
+&lt;/div&gt;
+</code></pre>
+<p>You may define the content of the named slot using the <code>x-slot</code> tag. Any content not within an explicit <code>x-slot</code> tag will be passed to the component in the <code>$slot</code> variable:</p>
+<pre><code class="language-html">&lt;x-alert&gt;
+    &lt;x-slot name=&quot;title&quot;&gt;
+        Server Error
+    &lt;/x-slot&gt;
+
+    &lt;strong&gt;Whoops!&lt;/strong&gt; Something went wrong!
+&lt;/x-alert&gt;
+</code></pre>
+<p><a name="scoped-slots"></a></p>
+<h4 id="scoped-slots">Scoped Slots</h4>
+<p>If you have used a JavaScript framework such as Vue, you may be familiar with "scoped slots", which allow you to access data or methods from the component within your slot. You may achieve similar behavior in Laravel by defining public methods or properties on your component and accessing the component within your slot via the <code>$component</code> variable. In this example, we will assume that the <code>x-alert</code> component has a public <code>formatAlert</code> method defined on its component class:</p>
+<pre><code class="language-html">&lt;x-alert&gt;
+    &lt;x-slot name=&quot;title&quot;&gt;
+        {{ $component-&gt;formatAlert('Server Error') }}
+    &lt;/x-slot&gt;
+
+    &lt;strong&gt;Whoops!&lt;/strong&gt; Something went wrong!
+&lt;/x-alert&gt;
+</code></pre>
+<p><a name="inline-component-views"></a></p>
+<h3 id="inline-component-views">Inline Component Views</h3>
+<p>For very small components, it may feel cumbersome to manage both the component class and the component's view template. For this reason, you may return the component's markup directly from the <code>render</code> method:</p>
+<pre><code>/**
+ * Get the view / contents that represent the component.
+ *
+ * @return \Illuminate\View\View|\Closure|string
+ */
+public function render()
+{
+    return &lt;&lt;&lt;'blade'
+        &lt;div class="alert alert-danger"&gt;
+            {{ $slot }}
+        &lt;/div&gt;
+    blade;
+}
+</code></pre>
+<p><a name="generating-inline-view-components"></a></p>
+<h4 id="generating-inline-view-components">Generating Inline View Components</h4>
+<p>To create a component that renders an inline view, you may use the <code>inline</code> option when executing the <code>make:component</code> command:</p>
+<pre><code>php artisan make:component Alert --inline
+</code></pre>
+<p><a name="anonymous-components"></a></p>
+<h3 id="anonymous-components">Anonymous Components</h3>
+<p>Similar to inline components, anonymous components provide a mechanism for managing a component via a single file. However, anonymous components utilize a single view file and have no associated class. To define an anonymous component, you only need to place a Blade template within your <code>resources/views/components</code> directory. For example, assuming you have defined a component at <code>resources/views/components/alert.blade.php</code>, you may simply render it like so:</p>
+<pre><code>&lt;x-alert/&gt;
+</code></pre>
+<p>You may use the <code>.</code> character to indicate if a component is nested deeper inside the <code>components</code> directory. For example, assuming the component is defined at <code>resources/views/components/inputs/button.blade.php</code>, you may render it like so:</p>
+<pre><code>&lt;x-inputs.button/&gt;
+</code></pre>
+<p><a name="data-properties-attributes"></a></p>
+<h4 id="data-properties-attributes">Data Properties / Attributes</h4>
+<p>Since anonymous components do not have any associated class, you may wonder how you may differentiate which data should be passed to the component as variables and which attributes should be placed in the component's <a href="#component-attributes">attribute bag</a>.</p>
+<p>You may specify which attributes should be considered data variables using the <code>@props</code> directive at the top of your component's Blade template. All other attributes on the component will be available via the component's attribute bag. If you wish to give a data variable a default value, you may specify the variable's name as the array key and the default value as the array value:</p>
+<pre><code>&lt;!-- /resources/views/components/alert.blade.php --&gt;
+
+@props(['type' =&gt; 'info', 'message'])
+
+&lt;div {{ $attributes-&gt;merge(['class' =&gt; 'alert alert-'.$type]) }}&gt;
+    {{ $message }}
+&lt;/div&gt;
+</code></pre>
+<p>Given the component definition above, we may render the component like so:</p>
+<pre><code>&lt;x-alert type="error" :message="$message" class="mb-4"/&gt;
+</code></pre>
+<p><a name="dynamic-components"></a></p>
+<h3 id="dynamic-components">Dynamic Components</h3>
+<p>Sometimes you may need to render a component but not know which component should be rendered until runtime. In this situation, you may use Laravel's built-in <code>dynamic-component</code> component to render the component based on a runtime value or variable:</p>
+<pre><code>&lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;
+</code></pre>
+<p><a name="manually-registering-components"></a></p>
+<h3 id="manually-registering-components">Manually Registering Components</h3>
+<blockquote>
+<p>{note} The following documentation on manually registering components is primarily applicable to those who are writing Laravel packages that include view components. If you are not writing a package, this portion of the component documentation may not be relevant to you.</p>
+</blockquote>
+<p>When writing components for your own application, components are automatically discovered within the <code>app/View/Components</code> directory and <code>resources/views/components</code> directory.</p>
+<p>However, if you are building a package that utilizes Blade components or placing components in non-conventional directories, you will need to manually register your component class and its HTML tag alias so that Laravel knows where to find the component. You should typically register your components in the <code>boot</code> method of your package's service provider:</p>
+<pre><code>use Illuminate\Support\Facades\Blade;
+use VendorPackage\View\Components\AlertComponent;
+
+/**
+ * Bootstrap your package's services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    Blade::component('package-alert', AlertComponent::class);
+}
+</code></pre>
+<p>Once your component has been registered, it may be rendered using its tag alias:</p>
+<pre><code>&lt;x-package-alert/&gt;
+</code></pre>
+<h4 id="autoloading-package-components">Autoloading Package Components</h4>
+<p>Alternatively, you may use the <code>componentNamespace</code> method to autoload component classes by convention. For example, a <code>Nightshade</code> package might have <code>Calendar</code> and <code>ColorPicker</code> components that reside within the <code>Package\Views\Components</code> namespace:</p>
+<pre><code>use Illuminate\Support\Facades\Blade;
+
+/**
+ * Bootstrap your package's services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');
+}
+</code></pre>
+<p>This will allow the usage of package components by their vendor namespace using the <code>package-name::</code> syntax:</p>
+<pre><code>&lt;x-nightshade::calendar /&gt;
+&lt;x-nightshade::color-picker /&gt;
+</code></pre>
+<p>Blade will automatically detect the class that's linked to this component by pascal-casing the component name. Subdirectories are also supported using "dot" notation.</p>
+<p><a name="building-layouts"></a></p>
+<h2 id="building-layouts">Building Layouts</h2>
+<p><a name="layouts-using-components"></a></p>
+<h3 id="layouts-using-components">Layouts Using Components</h3>
+<p>Most web applications maintain the same general layout across various pages. It would be incredibly cumbersome and hard to maintain our application if we had to repeat the entire layout HTML in every view we create. Thankfully, it's convenient to define this layout as a single <a href="#components">Blade component</a> and then use it throughout our application.</p>
+<p><a name="defining-the-layout-component"></a></p>
+<h4 id="defining-the-layout-component">Defining The Layout Component</h4>
+<p>For example, imagine we are building a "todo" list application. We might define a <code>layout</code> component that looks like the following:</p>
+<pre><code class="language-html">&lt;!-- resources/views/components/layout.blade.php --&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;{{ $title ?? 'Todo Manager' }}&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Todos&lt;/h1&gt;
+        &lt;hr/&gt;
+        {{ $slot }}
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><a name="applying-the-layout-component"></a></p>
+<h4 id="applying-the-layout-component">Applying The Layout Component</h4>
+<p>Once the <code>layout</code> component has been defined, we may create a Blade view that utilizes the component. In this example, we will define a simple view that displays our task list:</p>
+<pre><code class="language-html">&lt;!-- resources/views/tasks.blade.php --&gt;
+
+&lt;x-layout&gt;
+    @foreach ($tasks as $task)
+        {{ $task }}
+    @endforeach
+&lt;/x-layout&gt;
+</code></pre>
+<p>Remember, content that is injected into a component will be supplied to the default <code>$slot</code> variable within our <code>layout</code> component. As you may have noticed, our <code>layout</code> also respects a <code>$title</code> slot if one is provided; otherwise, a default title is shown. We may inject a custom title from our task list view using the standard slot syntax discussed in the <a href="#components">component documentation</a>:</p>
+<pre><code class="language-html">&lt;!-- resources/views/tasks.blade.php --&gt;
+
+&lt;x-layout&gt;
+    &lt;x-slot name=&quot;title&quot;&gt;
+        Custom Title
+    &lt;/x-slot&gt;
+
+    @foreach ($tasks as $task)
+        {{ $task }}
+    @endforeach
+&lt;/x-layout&gt;
+</code></pre>
+<p>Now that we have defined our layout and task list views, we just need to return the <code>task</code> view from a route:</p>
+<pre><code>use App\Models\Task;
+
+Route::get('/tasks', function () {
+    return view('tasks', ['tasks' =&gt; Task::all()]);
+});
+</code></pre>
+<p><a name="layouts-using-template-inheritance"></a></p>
+<h3 id="layouts-using-template-inheritance">Layouts Using Template Inheritance</h3>
+<p><a name="defining-a-layout"></a></p>
+<h4 id="defining-a-layout">Defining A Layout</h4>
+<p>Layouts may also be created via "template inheritance". This was the primary way of building applications prior to the introduction of <a href="#components">components</a>.</p>
+<p>To get started, let's take a look at a simple example. First, we will examine a page layout. Since most web applications maintain the same general layout across various pages, it's convenient to define this layout as a single Blade view:</p>
+<pre><code class="language-html">&lt;!-- resources/views/layouts/app.blade.php --&gt;
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;App Name - @yield('title')&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        @section('sidebar')
+            This is the master sidebar.
+        @show
+
+        &lt;div class=&quot;container&quot;&gt;
+            @yield('content')
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>As you can see, this file contains typical HTML mark-up. However, take note of the <code>@section</code> and <code>@yield</code> directives. The <code>@section</code> directive, as the name implies, defines a section of content, while the <code>@yield</code> directive is used to display the contents of a given section.</p>
+<p>Now that we have defined a layout for our application, let's define a child page that inherits the layout.</p>
+<p><a name="extending-a-layout"></a></p>
+<h4 id="extending-a-layout">Extending A Layout</h4>
+<p>When defining a child view, use the <code>@extends</code> Blade directive to specify which layout the child view should "inherit". Views which extend a Blade layout may inject content into the layout's sections using <code>@section</code> directives. Remember, as seen in the example above, the contents of these sections will be displayed in the layout using <code>@yield</code>:</p>
+<pre><code class="language-html">&lt;!-- resources/views/child.blade.php --&gt;
+
+@extends('layouts.app')
+
+@section('title', 'Page Title')
+
+@section('sidebar')
+    @@parent
+
+    &lt;p&gt;This is appended to the master sidebar.&lt;/p&gt;
+@endsection
+
+@section('content')
+    &lt;p&gt;This is my body content.&lt;/p&gt;
+@endsection
+</code></pre>
+<p>In this example, the <code>sidebar</code> section is utilizing the <code>@@parent</code> directive to append (rather than overwriting) content to the layout's sidebar. The <code>@@parent</code> directive will be replaced by the content of the layout when the view is rendered.</p>
+<blockquote>
+<p>{tip} Contrary to the previous example, this <code>sidebar</code> section ends with <code>@endsection</code> instead of <code>@show</code>. The <code>@endsection</code> directive will only define a section while <code>@show</code> will define and <strong>immediately yield</strong> the section.</p>
+</blockquote>
+<p>The <code>@yield</code> directive also accepts a default value as its second parameter. This value will be rendered if the section being yielded is undefined:</p>
+<pre><code>@yield('content', 'Default content')
+</code></pre>
+<p><a name="forms"></a></p>
+<h2 id="forms">Forms</h2>
+<p><a name="csrf-field"></a></p>
+<h3 id="csrf-field">CSRF Field</h3>
+<p>Anytime you define an HTML form in your application, you should include a hidden CSRF token field in the form so that <a href="/docs/{{version}}/csrf">the CSRF protection</a> middleware can validate the request. You may use the <code>@csrf</code> Blade directive to generate the token field:</p>
+<pre><code class="language-html">&lt;form method=&quot;POST&quot; action=&quot;/profile&quot;&gt;
+    @csrf
+
+    ...
+&lt;/form&gt;
+</code></pre>
+<p><a name="method-field"></a></p>
+<h3 id="method-field">Method Field</h3>
+<p>Since HTML forms can't make <code>PUT</code>, <code>PATCH</code>, or <code>DELETE</code> requests, you will need to add a hidden <code>_method</code> field to spoof these HTTP verbs. The <code>@method</code> Blade directive can create this field for you:</p>
+<pre><code class="language-html">&lt;form action=&quot;/foo/bar&quot; method=&quot;POST&quot;&gt;
+    @method('PUT')
+
+    ...
+&lt;/form&gt;
+</code></pre>
+<p><a name="validation-errors"></a></p>
+<h3 id="validation-errors">Validation Errors</h3>
+<p>The <code>@error</code> directive may be used to quickly check if <a href="/docs/{{version}}/validation#quick-displaying-the-validation-errors">validation error messages</a> exist for a given attribute. Within an <code>@error</code> directive, you may echo the <code>$message</code> variable to display the error message:</p>
+<pre><code class="language-html">&lt;!-- /resources/views/post/create.blade.php --&gt;
+
+&lt;label for=&quot;title&quot;&gt;Post Title&lt;/label&gt;
+
+&lt;input id=&quot;title&quot; type=&quot;text&quot; class=&quot;@error('title') is-invalid @enderror&quot;&gt;
+
+@error('title')
+    &lt;div class=&quot;alert alert-danger&quot;&gt;{{ $message }}&lt;/div&gt;
+@enderror
+</code></pre>
+<p>Since the <code>@error</code> directive compiles to an "if" statement, you may use the <code>@else</code> directive to render content when there is not an error for an attribute:</p>
+<pre><code class="language-html">&lt;!-- /resources/views/auth.blade.php --&gt;
+
+&lt;label for=&quot;email&quot;&gt;Email address&lt;/label&gt;
+
+&lt;input id=&quot;email&quot; type=&quot;email&quot; class=&quot;@error('email') is-invalid @else is-valid @enderror&quot;&gt;
+</code></pre>
+<p>You may pass <a href="/docs/{{version}}/validation#named-error-bags">the name of a specific error bag</a> as the second parameter to the <code>@error</code> directive to retrieve validation error messages on pages containing multiple forms:</p>
+<pre><code class="language-html">&lt;!-- /resources/views/auth.blade.php --&gt;
+
+&lt;label for=&quot;email&quot;&gt;Email address&lt;/label&gt;
+
+&lt;input id=&quot;email&quot; type=&quot;email&quot; class=&quot;@error('email', 'login') is-invalid @enderror&quot;&gt;
+
+@error('email', 'login')
+    &lt;div class=&quot;alert alert-danger&quot;&gt;{{ $message }}&lt;/div&gt;
+@enderror
+</code></pre>
+<p><a name="stacks"></a></p>
+<h2 id="stacks">Stacks</h2>
+<p>Blade allows you to push to named stacks which can be rendered somewhere else in another view or layout. This can be particularly useful for specifying any JavaScript libraries required by your child views:</p>
+<pre><code class="language-html">@push('scripts')
+    &lt;script src=&quot;/example.js&quot;&gt;&lt;/script&gt;
+@endpush
+</code></pre>
+<p>You may push to a stack as many times as needed. To render the complete stack contents, pass the name of the stack to the <code>@stack</code> directive:</p>
+<pre><code class="language-html">&lt;head&gt;
+    &lt;!-- Head Contents --&gt;
+
+    @stack('scripts')
+&lt;/head&gt;
+</code></pre>
+<p>If you would like to prepend content onto the beginning of a stack, you should use the <code>@prepend</code> directive:</p>
+<pre><code class="language-html">@push('scripts')
+    This will be second...
+@endpush
+
+// Later...
+
+@prepend('scripts')
+    This will be first...
+@endprepend
+</code></pre>
+<p><a name="service-injection"></a></p>
+<h2 id="service-injection">Service Injection</h2>
+<p>The <code>@inject</code> directive may be used to retrieve a service from the Laravel <a href="/docs/{{version}}/container">service container</a>. The first argument passed to <code>@inject</code> is the name of the variable the service will be placed into, while the second argument is the class or interface name of the service you wish to resolve:</p>
+<pre><code class="language-html">@inject('metrics', 'App\Services\MetricsService')
+
+&lt;div&gt;
+    Monthly Revenue: {{ $metrics-&gt;monthlyRevenue() }}.
+&lt;/div&gt;
+</code></pre>
+<p><a name="extending-blade"></a></p>
+<h2 id="extending-blade">Extending Blade</h2>
+<p>Blade allows you to define your own custom directives using the <code>directive</code> method. When the Blade compiler encounters the custom directive, it will call the provided callback with the expression that the directive contains.</p>
+<p>The following example creates a <code>@datetime($var)</code> directive which formats a given <code>$var</code>, which should be an instance of <code>DateTime</code>:</p>
+<pre><code>&lt;?php
+
+namespace App\Providers;
+
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Blade::directive('datetime', function ($expression) {
+            return "&lt;?php echo ($expression)-&gt;format('m/d/Y H:i'); ?&gt;";
+        });
+    }
+}
+</code></pre>
+<p>As you can see, we will chain the <code>format</code> method onto whatever expression is passed into the directive. So, in this example, the final PHP generated by this directive will be:</p>
+<pre><code>&lt;?php echo ($var)-&gt;format('m/d/Y H:i'); ?&gt;
+</code></pre>
+<blockquote>
+<p>{note} After updating the logic of a Blade directive, you will need to delete all of the cached Blade views. The cached Blade views may be removed using the <code>view:clear</code> Artisan command.</p>
+</blockquote>
+<p><a name="custom-if-statements"></a></p>
+<h3 id="custom-if-statements">Custom If Statements</h3>
+<p>Programming a custom directive is sometimes more complex than necessary when defining simple, custom conditional statements. For that reason, Blade provides a <code>Blade::if</code> method which allows you to quickly define custom conditional directives using closures. For example, let's define a custom conditional that checks the configured default "disk" for the application. We may do this in the <code>boot</code> method of our <code>AppServiceProvider</code>:</p>
+<pre><code>use Illuminate\Support\Facades\Blade;
+
+/**
+ * Bootstrap any application services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    Blade::if('disk', function ($value) {
+        return config('filesystems.default') === $value;
+    });
+}
+</code></pre>
+<p>Once the custom conditional has been defined, you can use it within your templates:</p>
+<pre><code class="language-html">@disk('local')
+    &lt;!-- The application is using the local disk... --&gt;
+@elsedisk('s3')
+    &lt;!-- The application is using the s3 disk... --&gt;
+@else
+    &lt;!-- The application is using some other disk... --&gt;
+@enddisk
+
+@unlessdisk('local')
+    &lt;!-- The application is not using the local disk... --&gt;
+@enddisk
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../broadcasting/" class="btn btn-neutral float-right" title="Broadcasting">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../billing/" class="btn btn-neutral" title="Laravel Cashier (Stripe)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../billing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../broadcasting/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

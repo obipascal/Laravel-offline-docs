@@ -1,0 +1,3606 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Collections - Laravel Documentations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Collections";
+    var mkdocs_page_input_path = "collections.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Laravel Documentations</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../artisan/">Artisan Console</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authentication/">Authentication</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../authorization/">Authorization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../billing/">Laravel Cashier (Stripe)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../blade/">Blade Templates</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../broadcasting/">Broadcasting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cache/">Cache</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../cashier-paddle/">Laravel Cashier (Paddle)</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Collections</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-collections">Creating Collections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#extending-collections">Extending Collections</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#macro-arguments">Macro Arguments</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#available-methods">Available Methods</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#method-listing">Method Listing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#all-collection-method-first-collection-method">all() {#collection-method .first-collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#average-collection-method">average() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#avg-collection-method">avg() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#chunk-collection-method">chunk() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#chunkwhile-collection-method">chunkWhile() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#collapse-collection-method">collapse() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#collect-collection-method">collect() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#combine-collection-method">combine() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#concat-collection-method">concat() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#contains-collection-method">contains() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#containsstrict-collection-method">containsStrict() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#count-collection-method">count() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#countby-collection-method">countBy() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#crossjoin-collection-method">crossJoin() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dd-collection-method">dd() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#diff-collection-method">diff() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#diffassoc-collection-method">diffAssoc() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#diffkeys-collection-method">diffKeys() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dump-collection-method">dump() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#duplicates-collection-method">duplicates() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#duplicatesstrict-collection-method">duplicatesStrict() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#each-collection-method">each() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#eachspread-collection-method">eachSpread() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#every-collection-method">every() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#except-collection-method">except() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#filter-collection-method">filter() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#first-collection-method">first() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#firstwhere-collection-method">firstWhere() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flatmap-collection-method">flatMap() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flatten-collection-method">flatten() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flip-collection-method">flip() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#forget-collection-method">forget() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#forpage-collection-method">forPage() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#get-collection-method">get() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#groupby-collection-method">groupBy() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#has-collection-method">has() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#implode-collection-method">implode() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#intersect-collection-method">intersect() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#intersectbykeys-collection-method">intersectByKeys() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isempty-collection-method">isEmpty() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isnotempty-collection-method">isNotEmpty() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#join-collection-method">join() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#keyby-collection-method">keyBy() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#keys-collection-method">keys() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#last-collection-method">last() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#macro-collection-method">macro() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#make-collection-method">make() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#map-collection-method">map() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mapinto-collection-method">mapInto() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mapspread-collection-method">mapSpread() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#maptogroups-collection-method">mapToGroups() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mapwithkeys-collection-method">mapWithKeys() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#max-collection-method">max() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#median-collection-method">median() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#merge-collection-method">merge() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mergerecursive-collection-method">mergeRecursive() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#min-collection-method">min() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mode-collection-method">mode() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nth-collection-method">nth() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#only-collection-method">only() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pad-collection-method">pad() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#partition-collection-method">partition() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pipe-collection-method">pipe() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pipeinto-collection-method">pipeInto() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pluck-collection-method">pluck() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pop-collection-method">pop() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#prepend-collection-method">prepend() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pull-collection-method">pull() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#push-collection-method">push() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#put-collection-method">put() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#random-collection-method">random() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reduce-collection-method">reduce() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reject-collection-method">reject() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#replace-collection-method">replace() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#replacerecursive-collection-method">replaceRecursive() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reverse-collection-method">reverse() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#search-collection-method">search() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shift-collection-method">shift() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#shuffle-collection-method">shuffle() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#skip-collection-method">skip() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#skipuntil-collection-method">skipUntil() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#skipwhile-collection-method">skipWhile() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slice-collection-method">slice() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sole-collection-method">sole() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#some-collection-method">some() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sort-collection-method">sort() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sortby-collection-method">sortBy() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sortbydesc-collection-method">sortByDesc() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sortdesc-collection-method">sortDesc() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sortkeys-collection-method">sortKeys() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sortkeysdesc-collection-method">sortKeysDesc() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#splice-collection-method">splice() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#split-collection-method">split() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#splitin-collection-method">splitIn() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sum-collection-method">sum() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#take-collection-method">take() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#takeuntil-collection-method">takeUntil() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#takewhile-collection-method">takeWhile() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tap-collection-method">tap() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#times-collection-method">times() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#toarray-collection-method">toArray() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tojson-collection-method">toJson() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#transform-collection-method">transform() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#union-collection-method">union() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unique-collection-method">unique() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#uniquestrict-collection-method">uniqueStrict() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unless-collection-method">unless() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unlessempty-collection-method">unlessEmpty() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unlessnotempty-collection-method">unlessNotEmpty() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#unwrap-collection-method">unwrap() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#values-collection-method">values() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#when-collection-method">when() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#whenempty-collection-method">whenEmpty() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#whennotempty-collection-method">whenNotEmpty() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#where-collection-method">where() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wherestrict-collection-method">whereStrict() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wherebetween-collection-method">whereBetween() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wherein-collection-method">whereIn() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#whereinstrict-collection-method">whereInStrict() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#whereinstanceof-collection-method">whereInstanceOf() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wherenotbetween-collection-method">whereNotBetween() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wherenotin-collection-method">whereNotIn() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wherenotinstrict-collection-method">whereNotInStrict() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wherenotnull-collection-method">whereNotNull() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wherenull-collection-method">whereNull() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wrap-collection-method">wrap() {#collection-method}</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zip-collection-method">zip() {#collection-method}</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#higher-order-messages">Higher Order Messages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lazy-collections">Lazy Collections</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#introduction_1">Introduction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-lazy-collections">Creating Lazy Collections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-enumerable-contract">The Enumerable Contract</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lazy-collection-methods">Lazy Collection Methods</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#takeuntiltimeout-collection-method">takeUntilTimeout() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tapeach-collection-method">tapEach() {#collection-method}</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#remember-collection-method">remember() {#collection-method}</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../configuration/">Configuration</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../console-tests/">Console Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../container/">Service Container</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contracts/">Contracts</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../contributions/">Contribution Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../controllers/">Controllers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../csrf/">CSRF Protection</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database-testing/">Database Testing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../database/">Database: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../deployment/">Deployment</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../documentation/">Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dusk/">Laravel Dusk</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-collections/">Eloquent: Collections</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-mutators/">Eloquent: Mutators & Casting</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-relationships/">Eloquent: Relationships</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-resources/">Eloquent: API Resources</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent-serialization/">Eloquent: Serialization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../eloquent/">Eloquent: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../encryption/">Encryption</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../envoy/">Laravel Envoy</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Error Handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../events/">Events</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../facades/">Facades</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../filesystem/">File Storage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../fortify/">Laravel Fortify</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hashing/">Hashing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../helpers/">Helpers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../homestead/">Laravel Homestead</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../horizon/">Laravel Horizon</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-client/">HTTP Client</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../http-tests/">HTTP Tests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Welcome to Laravel Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../license/">License</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../lifecycle/">Request Lifecycle</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../localization/">Localization</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../logging/">Logging</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mail/">Mail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../middleware/">Middleware</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Database: Migrations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mix/">Compiling Assets (Mix)</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mocking/">Mocking</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../notifications/">Notifications</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../octane/">Laravel Octane</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../packages/">Package Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pagination/">Database: Pagination</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passport/">Laravel Passport</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../passwords/">Resetting Passwords</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../providers/">Service Providers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queries/">Database: Query Builder</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../queues/">Queues</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../readme.md">None</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redirects/">HTTP Redirects</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../redis/">Redis</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../releases/">Release Notes</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../requests/">HTTP Requests</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../responses/">HTTP Responses</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../routing/">Routing</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sail/">Laravel Sail</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../sanctum/">Laravel Sanctum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scheduling/">Task Scheduling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../scout/">Laravel Scout</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../seeding/">Database: Seeding</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../session/">HTTP Session</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../socialite/">Laravel Socialite</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../starter-kits/">Starter Kits</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../structure/">Directory Structure</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../telescope/">Laravel Telescope</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../testing/">Testing: Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../upgrade/">Upgrade Guide</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../urls/">URL Generation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../valet/">Laravel Valet</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../validation/">Validation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../verification/">Email Verification</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../views/">Views</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Laravel Documentations</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Collections</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="collections">Collections</h1>
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#creating-collections">Creating Collections</a></li>
+<li><a href="#extending-collections">Extending Collections</a></li>
+</ul>
+</li>
+<li><a href="#available-methods">Available Methods</a></li>
+<li><a href="#higher-order-messages">Higher Order Messages</a></li>
+<li><a href="#lazy-collections">Lazy Collections</a><ul>
+<li><a href="#lazy-collection-introduction">Introduction</a></li>
+<li><a href="#creating-lazy-collections">Creating Lazy Collections</a></li>
+<li><a href="#the-enumerable-contract">The Enumerable Contract</a></li>
+<li><a href="#lazy-collection-methods">Lazy Collection Methods</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2 id="introduction">Introduction</h2>
+<p>The <code>Illuminate\Support\Collection</code> class provides a fluent, convenient wrapper for working with arrays of data. For example, check out the following code. We'll use the <code>collect</code> helper to create a new collection instance from the array, run the <code>strtoupper</code> function on each element, and then remove all empty elements:</p>
+<pre><code>$collection = collect(['taylor', 'abigail', null])-&gt;map(function ($name) {
+    return strtoupper($name);
+})-&gt;reject(function ($name) {
+    return empty($name);
+});
+</code></pre>
+<p>As you can see, the <code>Collection</code> class allows you to chain its methods to perform fluent mapping and reducing of the underlying array. In general, collections are immutable, meaning every <code>Collection</code> method returns an entirely new <code>Collection</code> instance.</p>
+<p><a name="creating-collections"></a></p>
+<h3 id="creating-collections">Creating Collections</h3>
+<p>As mentioned above, the <code>collect</code> helper returns a new <code>Illuminate\Support\Collection</code> instance for the given array. So, creating a collection is as simple as:</p>
+<pre><code>$collection = collect([1, 2, 3]);
+</code></pre>
+<blockquote>
+<p>{tip} The results of <a href="/docs/{{version}}/eloquent">Eloquent</a> queries are always returned as <code>Collection</code> instances.</p>
+</blockquote>
+<p><a name="extending-collections"></a></p>
+<h3 id="extending-collections">Extending Collections</h3>
+<p>Collections are "macroable", which allows you to add additional methods to the <code>Collection</code> class at run time. The <code>Illuminate\Support\Collection</code> class' <code>macro</code> method accepts a closure that will be executed when your macro is called. The macro closure may access the collection's other methods via <code>$this</code>, just as if it were a real method of the collection class. For example, the following code adds a <code>toUpper</code> method to the <code>Collection</code> class:</p>
+<pre><code>use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+
+Collection::macro('toUpper', function () {
+    return $this-&gt;map(function ($value) {
+        return Str::upper($value);
+    });
+});
+
+$collection = collect(['first', 'second']);
+
+$upper = $collection-&gt;toUpper();
+
+// ['FIRST', 'SECOND']
+</code></pre>
+<p>Typically, you should declare collection macros in the <code>boot</code> method of a <a href="/docs/{{version}}/providers">service provider</a>.</p>
+<p><a name="macro-arguments"></a></p>
+<h4 id="macro-arguments">Macro Arguments</h4>
+<p>If necessary, you may define macros that accept additional arguments:</p>
+<pre><code>use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Str;
+
+Collection::macro('toLocale', function ($locale) {
+    return $this-&gt;map(function ($value) use ($locale) {
+        return Lang::get($value, [], $locale);
+    });
+});
+
+$collection = collect(['first', 'second']);
+
+$translated = $collection-&gt;toLocale('es');
+</code></pre>
+<p><a name="available-methods"></a></p>
+<h2 id="available-methods">Available Methods</h2>
+<p>For the majority of the remaining collection documentation, we'll discuss each method available on the <code>Collection</code> class. Remember, all of these methods may be chained to fluently manipulate the underlying array. Furthermore, almost every method returns a new <code>Collection</code> instance, allowing you to preserve the original copy of the collection when necessary:</p>
+<style>
+    #collection-method-list > p {
+        column-count: 3; -moz-column-count: 3; -webkit-column-count: 3;
+        column-gap: 2em; -moz-column-gap: 2em; -webkit-column-gap: 2em;
+    }
+
+    #collection-method-list a {
+        display: block;
+    }
+</style>
+
+<div id="collection-method-list" markdown="1">
+
+[all](#method-all)
+[average](#method-average)
+[avg](#method-avg)
+[chunk](#method-chunk)
+[chunkWhile](#method-chunkwhile)
+[collapse](#method-collapse)
+[collect](#method-collect)
+[combine](#method-combine)
+[concat](#method-concat)
+[contains](#method-contains)
+[containsStrict](#method-containsstrict)
+[count](#method-count)
+[countBy](#method-countBy)
+[crossJoin](#method-crossjoin)
+[dd](#method-dd)
+[diff](#method-diff)
+[diffAssoc](#method-diffassoc)
+[diffKeys](#method-diffkeys)
+[dump](#method-dump)
+[duplicates](#method-duplicates)
+[duplicatesStrict](#method-duplicatesstrict)
+[each](#method-each)
+[eachSpread](#method-eachspread)
+[every](#method-every)
+[except](#method-except)
+[filter](#method-filter)
+[first](#method-first)
+[firstWhere](#method-first-where)
+[flatMap](#method-flatmap)
+[flatten](#method-flatten)
+[flip](#method-flip)
+[forget](#method-forget)
+[forPage](#method-forpage)
+[get](#method-get)
+[groupBy](#method-groupby)
+[has](#method-has)
+[implode](#method-implode)
+[intersect](#method-intersect)
+[intersectByKeys](#method-intersectbykeys)
+[isEmpty](#method-isempty)
+[isNotEmpty](#method-isnotempty)
+[join](#method-join)
+[keyBy](#method-keyby)
+[keys](#method-keys)
+[last](#method-last)
+[macro](#method-macro)
+[make](#method-make)
+[map](#method-map)
+[mapInto](#method-mapinto)
+[mapSpread](#method-mapspread)
+[mapToGroups](#method-maptogroups)
+[mapWithKeys](#method-mapwithkeys)
+[max](#method-max)
+[median](#method-median)
+[merge](#method-merge)
+[mergeRecursive](#method-mergerecursive)
+[min](#method-min)
+[mode](#method-mode)
+[nth](#method-nth)
+[only](#method-only)
+[pad](#method-pad)
+[partition](#method-partition)
+[pipe](#method-pipe)
+[pipeInto](#method-pipeinto)
+[pluck](#method-pluck)
+[pop](#method-pop)
+[prepend](#method-prepend)
+[pull](#method-pull)
+[push](#method-push)
+[put](#method-put)
+[random](#method-random)
+[reduce](#method-reduce)
+[reject](#method-reject)
+[replace](#method-replace)
+[replaceRecursive](#method-replacerecursive)
+[reverse](#method-reverse)
+[search](#method-search)
+[shift](#method-shift)
+[shuffle](#method-shuffle)
+[skip](#method-skip)
+[skipUntil](#method-skipuntil)
+[skipWhile](#method-skipwhile)
+[slice](#method-slice)
+[sole](#method-sole)
+[some](#method-some)
+[sort](#method-sort)
+[sortBy](#method-sortby)
+[sortByDesc](#method-sortbydesc)
+[sortDesc](#method-sortdesc)
+[sortKeys](#method-sortkeys)
+[sortKeysDesc](#method-sortkeysdesc)
+[splice](#method-splice)
+[split](#method-split)
+[splitIn](#method-splitin)
+[sum](#method-sum)
+[take](#method-take)
+[takeUntil](#method-takeuntil)
+[takeWhile](#method-takewhile)
+[tap](#method-tap)
+[times](#method-times)
+[toArray](#method-toarray)
+[toJson](#method-tojson)
+[transform](#method-transform)
+[union](#method-union)
+[unique](#method-unique)
+[uniqueStrict](#method-uniquestrict)
+[unless](#method-unless)
+[unlessEmpty](#method-unlessempty)
+[unlessNotEmpty](#method-unlessnotempty)
+[unwrap](#method-unwrap)
+[values](#method-values)
+[when](#method-when)
+[whenEmpty](#method-whenempty)
+[whenNotEmpty](#method-whennotempty)
+[where](#method-where)
+[whereStrict](#method-wherestrict)
+[whereBetween](#method-wherebetween)
+[whereIn](#method-wherein)
+[whereInStrict](#method-whereinstrict)
+[whereInstanceOf](#method-whereinstanceof)
+[whereNotBetween](#method-wherenotbetween)
+[whereNotIn](#method-wherenotin)
+[whereNotInStrict](#method-wherenotinstrict)
+[whereNotNull](#method-wherenotnull)
+[whereNull](#method-wherenull)
+[wrap](#method-wrap)
+[zip](#method-zip)
+
+</div>
+
+<p><a name="method-listing"></a></p>
+<h2 id="method-listing">Method Listing</h2>
+<style>
+    #collection-method code {
+        font-size: 14px;
+    }
+
+    #collection-method:not(.first-collection-method) {
+        margin-top: 50px;
+    }
+</style>
+
+<p><a name="method-all"></a></p>
+<h4 id="all-collection-method-first-collection-method"><code>all()</code> {#collection-method .first-collection-method}</h4>
+<p>The <code>all</code> method returns the underlying array represented by the collection:</p>
+<pre><code>collect([1, 2, 3])-&gt;all();
+
+// [1, 2, 3]
+</code></pre>
+<p><a name="method-average"></a></p>
+<h4 id="average-collection-method"><code>average()</code> {#collection-method}</h4>
+<p>Alias for the <a href="#method-avg"><code>avg</code></a> method.</p>
+<p><a name="method-avg"></a></p>
+<h4 id="avg-collection-method"><code>avg()</code> {#collection-method}</h4>
+<p>The <code>avg</code> method returns the <a href="https://en.wikipedia.org/wiki/Average">average value</a> of a given key:</p>
+<pre><code>$average = collect([
+    ['foo' =&gt; 10],
+    ['foo' =&gt; 10],
+    ['foo' =&gt; 20],
+    ['foo' =&gt; 40]
+])-&gt;avg('foo');
+
+// 20
+
+$average = collect([1, 1, 2, 4])-&gt;avg();
+
+// 2
+</code></pre>
+<p><a name="method-chunk"></a></p>
+<h4 id="chunk-collection-method"><code>chunk()</code> {#collection-method}</h4>
+<p>The <code>chunk</code> method breaks the collection into multiple, smaller collections of a given size:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5, 6, 7]);
+
+$chunks = $collection-&gt;chunk(4);
+
+$chunks-&gt;all();
+
+// [[1, 2, 3, 4], [5, 6, 7]]
+</code></pre>
+<p>This method is especially useful in <a href="/docs/{{version}}/views">views</a> when working with a grid system such as <a href="https://getbootstrap.com/docs/4.1/layout/grid/">Bootstrap</a>. For example, imagine you have a collection of <a href="/docs/{{version}}/eloquent">Eloquent</a> models you want to display in a grid:</p>
+<pre><code>@foreach ($products-&gt;chunk(3) as $chunk)
+    &lt;div class="row"&gt;
+        @foreach ($chunk as $product)
+            &lt;div class="col-xs-4"&gt;{{ $product-&gt;name }}&lt;/div&gt;
+        @endforeach
+    &lt;/div&gt;
+@endforeach
+</code></pre>
+<p><a name="method-chunkwhile"></a></p>
+<h4 id="chunkwhile-collection-method"><code>chunkWhile()</code> {#collection-method}</h4>
+<p>The <code>chunkWhile</code> method breaks the collection into multiple, smaller collections based on the evaluation of the given callback. The <code>$chunk</code> variable passed to the closure may be used to inspect the previous element:</p>
+<pre><code>$collection = collect(str_split('AABBCCCD'));
+
+$chunks = $collection-&gt;chunkWhile(function ($value, $key, $chunk) {
+    return $value === $chunk-&gt;last();
+});
+
+$chunks-&gt;all();
+
+// [['A', 'A'], ['B', 'B'], ['C', 'C', 'C'], ['D']]
+</code></pre>
+<p><a name="method-collapse"></a></p>
+<h4 id="collapse-collection-method"><code>collapse()</code> {#collection-method}</h4>
+<p>The <code>collapse</code> method collapses a collection of arrays into a single, flat collection:</p>
+<pre><code>$collection = collect([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]);
+
+$collapsed = $collection-&gt;collapse();
+
+$collapsed-&gt;all();
+
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
+<p><a name="method-collect"></a></p>
+<h4 id="collect-collection-method"><code>collect()</code> {#collection-method}</h4>
+<p>The <code>collect</code> method returns a new <code>Collection</code> instance with the items currently in the collection:</p>
+<pre><code>$collectionA = collect([1, 2, 3]);
+
+$collectionB = $collectionA-&gt;collect();
+
+$collectionB-&gt;all();
+
+// [1, 2, 3]
+</code></pre>
+<p>The <code>collect</code> method is primarily useful for converting <a href="#lazy-collections">lazy collections</a> into standard <code>Collection</code> instances:</p>
+<pre><code>$lazyCollection = LazyCollection::make(function () {
+    yield 1;
+    yield 2;
+    yield 3;
+});
+
+$collection = $lazyCollection-&gt;collect();
+
+get_class($collection);
+
+// 'Illuminate\Support\Collection'
+
+$collection-&gt;all();
+
+// [1, 2, 3]
+</code></pre>
+<blockquote>
+<p>{tip} The <code>collect</code> method is especially useful when you have an instance of <code>Enumerable</code> and need a non-lazy collection instance. Since <code>collect()</code> is part of the <code>Enumerable</code> contract, you can safely use it to get a <code>Collection</code> instance.</p>
+</blockquote>
+<p><a name="method-combine"></a></p>
+<h4 id="combine-collection-method"><code>combine()</code> {#collection-method}</h4>
+<p>The <code>combine</code> method combines the values of the collection, as keys, with the values of another array or collection:</p>
+<pre><code>$collection = collect(['name', 'age']);
+
+$combined = $collection-&gt;combine(['George', 29]);
+
+$combined-&gt;all();
+
+// ['name' =&gt; 'George', 'age' =&gt; 29]
+</code></pre>
+<p><a name="method-concat"></a></p>
+<h4 id="concat-collection-method"><code>concat()</code> {#collection-method}</h4>
+<p>The <code>concat</code> method appends the given <code>array</code> or collection's values onto the end of another collection:</p>
+<pre><code>$collection = collect(['John Doe']);
+
+$concatenated = $collection-&gt;concat(['Jane Doe'])-&gt;concat(['name' =&gt; 'Johnny Doe']);
+
+$concatenated-&gt;all();
+
+// ['John Doe', 'Jane Doe', 'Johnny Doe']
+</code></pre>
+<p><a name="method-contains"></a></p>
+<h4 id="contains-collection-method"><code>contains()</code> {#collection-method}</h4>
+<p>The <code>contains</code> method determines whether the collection contains a given item. You may pass a closure to the <code>contains</code> method to determine if an element exists in the collection matching a given truth test:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$collection-&gt;contains(function ($value, $key) {
+    return $value &gt; 5;
+});
+
+// false
+</code></pre>
+<p>Alternatively, you may pass a string to the <code>contains</code> method to determine whether the collection contains a given item value:</p>
+<pre><code>$collection = collect(['name' =&gt; 'Desk', 'price' =&gt; 100]);
+
+$collection-&gt;contains('Desk');
+
+// true
+
+$collection-&gt;contains('New York');
+
+// false
+</code></pre>
+<p>You may also pass a key / value pair to the <code>contains</code> method, which will determine if the given pair exists in the collection:</p>
+<pre><code>$collection = collect([
+    ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    ['product' =&gt; 'Chair', 'price' =&gt; 100],
+]);
+
+$collection-&gt;contains('product', 'Bookcase');
+
+// false
+</code></pre>
+<p>The <code>contains</code> method uses "loose" comparisons when checking item values, meaning a string with an integer value will be considered equal to an integer of the same value. Use the <a href="#method-containsstrict"><code>containsStrict</code></a> method to filter using "strict" comparisons.</p>
+<p><a name="method-containsstrict"></a></p>
+<h4 id="containsstrict-collection-method"><code>containsStrict()</code> {#collection-method}</h4>
+<p>This method has the same signature as the <a href="#method-contains"><code>contains</code></a> method; however, all values are compared using "strict" comparisons.</p>
+<blockquote>
+<p>{tip} This method's behavior is modified when using <a href="/docs/{{version}}/eloquent-collections#method-contains">Eloquent Collections</a>.</p>
+</blockquote>
+<p><a name="method-count"></a></p>
+<h4 id="count-collection-method"><code>count()</code> {#collection-method}</h4>
+<p>The <code>count</code> method returns the total number of items in the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$collection-&gt;count();
+
+// 4
+</code></pre>
+<p><a name="method-countBy"></a></p>
+<h4 id="countby-collection-method"><code>countBy()</code> {#collection-method}</h4>
+<p>The <code>countBy</code> method counts the occurrences of values in the collection. By default, the method counts the occurrences of every element, allowing you to count certain "types" of elements in the collection:</p>
+<pre><code>$collection = collect([1, 2, 2, 2, 3]);
+
+$counted = $collection-&gt;countBy();
+
+$counted-&gt;all();
+
+// [1 =&gt; 1, 2 =&gt; 3, 3 =&gt; 1]
+</code></pre>
+<p>You pass a closure to the <code>countBy</code> method to count all items by a custom value:</p>
+<pre><code>$collection = collect(['alice@gmail.com', 'bob@yahoo.com', 'carlos@gmail.com']);
+
+$counted = $collection-&gt;countBy(function ($email) {
+    return substr(strrchr($email, "@"), 1);
+});
+
+$counted-&gt;all();
+
+// ['gmail.com' =&gt; 2, 'yahoo.com' =&gt; 1]
+</code></pre>
+<p><a name="method-crossjoin"></a></p>
+<h4 id="crossjoin-collection-method"><code>crossJoin()</code> {#collection-method}</h4>
+<p>The <code>crossJoin</code> method cross joins the collection's values among the given arrays or collections, returning a Cartesian product with all possible permutations:</p>
+<pre><code>$collection = collect([1, 2]);
+
+$matrix = $collection-&gt;crossJoin(['a', 'b']);
+
+$matrix-&gt;all();
+
+/*
+    [
+        [1, 'a'],
+        [1, 'b'],
+        [2, 'a'],
+        [2, 'b'],
+    ]
+*/
+
+$collection = collect([1, 2]);
+
+$matrix = $collection-&gt;crossJoin(['a', 'b'], ['I', 'II']);
+
+$matrix-&gt;all();
+
+/*
+    [
+        [1, 'a', 'I'],
+        [1, 'a', 'II'],
+        [1, 'b', 'I'],
+        [1, 'b', 'II'],
+        [2, 'a', 'I'],
+        [2, 'a', 'II'],
+        [2, 'b', 'I'],
+        [2, 'b', 'II'],
+    ]
+*/
+</code></pre>
+<p><a name="method-dd"></a></p>
+<h4 id="dd-collection-method"><code>dd()</code> {#collection-method}</h4>
+<p>The <code>dd</code> method dumps the collection's items and ends execution of the script:</p>
+<pre><code>$collection = collect(['John Doe', 'Jane Doe']);
+
+$collection-&gt;dd();
+
+/*
+    Collection {
+        #items: array:2 [
+            0 =&gt; "John Doe"
+            1 =&gt; "Jane Doe"
+        ]
+    }
+*/
+</code></pre>
+<p>If you do not want to stop executing the script, use the <a href="#method-dump"><code>dump</code></a> method instead.</p>
+<p><a name="method-diff"></a></p>
+<h4 id="diff-collection-method"><code>diff()</code> {#collection-method}</h4>
+<p>The <code>diff</code> method compares the collection against another collection or a plain PHP <code>array</code> based on its values. This method will return the values in the original collection that are not present in the given collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$diff = $collection-&gt;diff([2, 4, 6, 8]);
+
+$diff-&gt;all();
+
+// [1, 3, 5]
+</code></pre>
+<blockquote>
+<p>{tip} This method's behavior is modified when using <a href="/docs/{{version}}/eloquent-collections#method-diff">Eloquent Collections</a>.</p>
+</blockquote>
+<p><a name="method-diffassoc"></a></p>
+<h4 id="diffassoc-collection-method"><code>diffAssoc()</code> {#collection-method}</h4>
+<p>The <code>diffAssoc</code> method compares the collection against another collection or a plain PHP <code>array</code> based on its keys and values. This method will return the key / value pairs in the original collection that are not present in the given collection:</p>
+<pre><code>$collection = collect([
+    'color' =&gt; 'orange',
+    'type' =&gt; 'fruit',
+    'remain' =&gt; 6,
+]);
+
+$diff = $collection-&gt;diffAssoc([
+    'color' =&gt; 'yellow',
+    'type' =&gt; 'fruit',
+    'remain' =&gt; 3,
+    'used' =&gt; 6,
+]);
+
+$diff-&gt;all();
+
+// ['color' =&gt; 'orange', 'remain' =&gt; 6]
+</code></pre>
+<p><a name="method-diffkeys"></a></p>
+<h4 id="diffkeys-collection-method"><code>diffKeys()</code> {#collection-method}</h4>
+<p>The <code>diffKeys</code> method compares the collection against another collection or a plain PHP <code>array</code> based on its keys. This method will return the key / value pairs in the original collection that are not present in the given collection:</p>
+<pre><code>$collection = collect([
+    'one' =&gt; 10,
+    'two' =&gt; 20,
+    'three' =&gt; 30,
+    'four' =&gt; 40,
+    'five' =&gt; 50,
+]);
+
+$diff = $collection-&gt;diffKeys([
+    'two' =&gt; 2,
+    'four' =&gt; 4,
+    'six' =&gt; 6,
+    'eight' =&gt; 8,
+]);
+
+$diff-&gt;all();
+
+// ['one' =&gt; 10, 'three' =&gt; 30, 'five' =&gt; 50]
+</code></pre>
+<p><a name="method-dump"></a></p>
+<h4 id="dump-collection-method"><code>dump()</code> {#collection-method}</h4>
+<p>The <code>dump</code> method dumps the collection's items:</p>
+<pre><code>$collection = collect(['John Doe', 'Jane Doe']);
+
+$collection-&gt;dump();
+
+/*
+    Collection {
+        #items: array:2 [
+            0 =&gt; "John Doe"
+            1 =&gt; "Jane Doe"
+        ]
+    }
+*/
+</code></pre>
+<p>If you want to stop executing the script after dumping the collection, use the <a href="#method-dd"><code>dd</code></a> method instead.</p>
+<p><a name="method-duplicates"></a></p>
+<h4 id="duplicates-collection-method"><code>duplicates()</code> {#collection-method}</h4>
+<p>The <code>duplicates</code> method retrieves and returns duplicate values from the collection:</p>
+<pre><code>$collection = collect(['a', 'b', 'a', 'c', 'b']);
+
+$collection-&gt;duplicates();
+
+// [2 =&gt; 'a', 4 =&gt; 'b']
+</code></pre>
+<p>If the collection contains arrays or objects, you can pass the key of the attributes that you wish to check for duplicate values:</p>
+<pre><code>$employees = collect([
+    ['email' =&gt; 'abigail@example.com', 'position' =&gt; 'Developer'],
+    ['email' =&gt; 'james@example.com', 'position' =&gt; 'Designer'],
+    ['email' =&gt; 'victoria@example.com', 'position' =&gt; 'Developer'],
+])
+
+$employees-&gt;duplicates('position');
+
+// [2 =&gt; 'Developer']
+</code></pre>
+<p><a name="method-duplicatesstrict"></a></p>
+<h4 id="duplicatesstrict-collection-method"><code>duplicatesStrict()</code> {#collection-method}</h4>
+<p>This method has the same signature as the <a href="#method-duplicates"><code>duplicates</code></a> method; however, all values are compared using "strict" comparisons.</p>
+<p><a name="method-each"></a></p>
+<h4 id="each-collection-method"><code>each()</code> {#collection-method}</h4>
+<p>The <code>each</code> method iterates over the items in the collection and passes each item to a closure:</p>
+<pre><code>$collection-&gt;each(function ($item, $key) {
+    //
+});
+</code></pre>
+<p>If you would like to stop iterating through the items, you may return <code>false</code> from your closure:</p>
+<pre><code>$collection-&gt;each(function ($item, $key) {
+    if (/* condition */) {
+        return false;
+    }
+});
+</code></pre>
+<p><a name="method-eachspread"></a></p>
+<h4 id="eachspread-collection-method"><code>eachSpread()</code> {#collection-method}</h4>
+<p>The <code>eachSpread</code> method iterates over the collection's items, passing each nested item value into the given callback:</p>
+<pre><code>$collection = collect([['John Doe', 35], ['Jane Doe', 33]]);
+
+$collection-&gt;eachSpread(function ($name, $age) {
+    //
+});
+</code></pre>
+<p>You may stop iterating through the items by returning <code>false</code> from the callback:</p>
+<pre><code>$collection-&gt;eachSpread(function ($name, $age) {
+    return false;
+});
+</code></pre>
+<p><a name="method-every"></a></p>
+<h4 id="every-collection-method"><code>every()</code> {#collection-method}</h4>
+<p>The <code>every</code> method may be used to verify that all elements of a collection pass a given truth test:</p>
+<pre><code>collect([1, 2, 3, 4])-&gt;every(function ($value, $key) {
+    return $value &gt; 2;
+});
+
+// false
+</code></pre>
+<p>If the collection is empty, the <code>every</code> method will return true:</p>
+<pre><code>$collection = collect([]);
+
+$collection-&gt;every(function ($value, $key) {
+    return $value &gt; 2;
+});
+
+// true
+</code></pre>
+<p><a name="method-except"></a></p>
+<h4 id="except-collection-method"><code>except()</code> {#collection-method}</h4>
+<p>The <code>except</code> method returns all items in the collection except for those with the specified keys:</p>
+<pre><code>$collection = collect(['product_id' =&gt; 1, 'price' =&gt; 100, 'discount' =&gt; false]);
+
+$filtered = $collection-&gt;except(['price', 'discount']);
+
+$filtered-&gt;all();
+
+// ['product_id' =&gt; 1]
+</code></pre>
+<p>For the inverse of <code>except</code>, see the <a href="#method-only">only</a> method.</p>
+<blockquote>
+<p>{tip} This method's behavior is modified when using <a href="/docs/{{version}}/eloquent-collections#method-except">Eloquent Collections</a>.</p>
+</blockquote>
+<p><a name="method-filter"></a></p>
+<h4 id="filter-collection-method"><code>filter()</code> {#collection-method}</h4>
+<p>The <code>filter</code> method filters the collection using the given callback, keeping only those items that pass a given truth test:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$filtered = $collection-&gt;filter(function ($value, $key) {
+    return $value &gt; 2;
+});
+
+$filtered-&gt;all();
+
+// [3, 4]
+</code></pre>
+<p>If no callback is supplied, all entries of the collection that are equivalent to <code>false</code> will be removed:</p>
+<pre><code>$collection = collect([1, 2, 3, null, false, '', 0, []]);
+
+$collection-&gt;filter()-&gt;all();
+
+// [1, 2, 3]
+</code></pre>
+<p>For the inverse of <code>filter</code>, see the <a href="#method-reject">reject</a> method.</p>
+<p><a name="method-first"></a></p>
+<h4 id="first-collection-method"><code>first()</code> {#collection-method}</h4>
+<p>The <code>first</code> method returns the first element in the collection that passes a given truth test:</p>
+<pre><code>collect([1, 2, 3, 4])-&gt;first(function ($value, $key) {
+    return $value &gt; 2;
+});
+
+// 3
+</code></pre>
+<p>You may also call the <code>first</code> method with no arguments to get the first element in the collection. If the collection is empty, <code>null</code> is returned:</p>
+<pre><code>collect([1, 2, 3, 4])-&gt;first();
+
+// 1
+</code></pre>
+<p><a name="method-first-where"></a></p>
+<h4 id="firstwhere-collection-method"><code>firstWhere()</code> {#collection-method}</h4>
+<p>The <code>firstWhere</code> method returns the first element in the collection with the given key / value pair:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Regena', 'age' =&gt; null],
+    ['name' =&gt; 'Linda', 'age' =&gt; 14],
+    ['name' =&gt; 'Diego', 'age' =&gt; 23],
+    ['name' =&gt; 'Linda', 'age' =&gt; 84],
+]);
+
+$collection-&gt;firstWhere('name', 'Linda');
+
+// ['name' =&gt; 'Linda', 'age' =&gt; 14]
+</code></pre>
+<p>You may also call the <code>firstWhere</code> method with a comparison operator:</p>
+<pre><code>$collection-&gt;firstWhere('age', '&gt;=', 18);
+
+// ['name' =&gt; 'Diego', 'age' =&gt; 23]
+</code></pre>
+<p>Like the <a href="#method-where">where</a> method, you may pass one argument to the <code>firstWhere</code> method. In this scenario, the <code>firstWhere</code> method will return the first item where the given item key's value is "truthy":</p>
+<pre><code>$collection-&gt;firstWhere('age');
+
+// ['name' =&gt; 'Linda', 'age' =&gt; 14]
+</code></pre>
+<p><a name="method-flatmap"></a></p>
+<h4 id="flatmap-collection-method"><code>flatMap()</code> {#collection-method}</h4>
+<p>The <code>flatMap</code> method iterates through the collection and passes each value to the given closure. The closure is free to modify the item and return it, thus forming a new collection of modified items. Then, the array is flattened by one level:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Sally'],
+    ['school' =&gt; 'Arkansas'],
+    ['age' =&gt; 28]
+]);
+
+$flattened = $collection-&gt;flatMap(function ($values) {
+    return array_map('strtoupper', $values);
+});
+
+$flattened-&gt;all();
+
+// ['name' =&gt; 'SALLY', 'school' =&gt; 'ARKANSAS', 'age' =&gt; '28'];
+</code></pre>
+<p><a name="method-flatten"></a></p>
+<h4 id="flatten-collection-method"><code>flatten()</code> {#collection-method}</h4>
+<p>The <code>flatten</code> method flattens a multi-dimensional collection into a single dimension:</p>
+<pre><code>$collection = collect([
+    'name' =&gt; 'taylor',
+    'languages' =&gt; [
+        'php', 'javascript'
+    ]
+]);
+
+$flattened = $collection-&gt;flatten();
+
+$flattened-&gt;all();
+
+// ['taylor', 'php', 'javascript'];
+</code></pre>
+<p>If necessary, you may pass the <code>flatten</code> method a "depth" argument:</p>
+<pre><code>$collection = collect([
+    'Apple' =&gt; [
+        [
+            'name' =&gt; 'iPhone 6S',
+            'brand' =&gt; 'Apple'
+        ],
+    ],
+    'Samsung' =&gt; [
+        [
+            'name' =&gt; 'Galaxy S7',
+            'brand' =&gt; 'Samsung'
+        ],
+    ],
+]);
+
+$products = $collection-&gt;flatten(1);
+
+$products-&gt;values()-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'iPhone 6S', 'brand' =&gt; 'Apple'],
+        ['name' =&gt; 'Galaxy S7', 'brand' =&gt; 'Samsung'],
+    ]
+*/
+</code></pre>
+<p>In this example, calling <code>flatten</code> without providing the depth would have also flattened the nested arrays, resulting in <code>['iPhone 6S', 'Apple', 'Galaxy S7', 'Samsung']</code>. Providing a depth allows you to specify the number of levels nested arrays will be flattened.</p>
+<p><a name="method-flip"></a></p>
+<h4 id="flip-collection-method"><code>flip()</code> {#collection-method}</h4>
+<p>The <code>flip</code> method swaps the collection's keys with their corresponding values:</p>
+<pre><code>$collection = collect(['name' =&gt; 'taylor', 'framework' =&gt; 'laravel']);
+
+$flipped = $collection-&gt;flip();
+
+$flipped-&gt;all();
+
+// ['taylor' =&gt; 'name', 'laravel' =&gt; 'framework']
+</code></pre>
+<p><a name="method-forget"></a></p>
+<h4 id="forget-collection-method"><code>forget()</code> {#collection-method}</h4>
+<p>The <code>forget</code> method removes an item from the collection by its key:</p>
+<pre><code>$collection = collect(['name' =&gt; 'taylor', 'framework' =&gt; 'laravel']);
+
+$collection-&gt;forget('name');
+
+$collection-&gt;all();
+
+// ['framework' =&gt; 'laravel']
+</code></pre>
+<blockquote>
+<p>{note} Unlike most other collection methods, <code>forget</code> does not return a new modified collection; it modifies the collection it is called on.</p>
+</blockquote>
+<p><a name="method-forpage"></a></p>
+<h4 id="forpage-collection-method"><code>forPage()</code> {#collection-method}</h4>
+<p>The <code>forPage</code> method returns a new collection containing the items that would be present on a given page number. The method accepts the page number as its first argument and the number of items to show per page as its second argument:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+$chunk = $collection-&gt;forPage(2, 3);
+
+$chunk-&gt;all();
+
+// [4, 5, 6]
+</code></pre>
+<p><a name="method-get"></a></p>
+<h4 id="get-collection-method"><code>get()</code> {#collection-method}</h4>
+<p>The <code>get</code> method returns the item at a given key. If the key does not exist, <code>null</code> is returned:</p>
+<pre><code>$collection = collect(['name' =&gt; 'taylor', 'framework' =&gt; 'laravel']);
+
+$value = $collection-&gt;get('name');
+
+// taylor
+</code></pre>
+<p>You may optionally pass a default value as the second argument:</p>
+<pre><code>$collection = collect(['name' =&gt; 'taylor', 'framework' =&gt; 'laravel']);
+
+$value = $collection-&gt;get('age', 34);
+
+// 34
+</code></pre>
+<p>You may even pass a callback as the method's default value. The result of the callback will be returned if the specified key does not exist:</p>
+<pre><code>$collection-&gt;get('email', function () {
+    return 'taylor@example.com';
+});
+
+// taylor@example.com
+</code></pre>
+<p><a name="method-groupby"></a></p>
+<h4 id="groupby-collection-method"><code>groupBy()</code> {#collection-method}</h4>
+<p>The <code>groupBy</code> method groups the collection's items by a given key:</p>
+<pre><code>$collection = collect([
+    ['account_id' =&gt; 'account-x10', 'product' =&gt; 'Chair'],
+    ['account_id' =&gt; 'account-x10', 'product' =&gt; 'Bookcase'],
+    ['account_id' =&gt; 'account-x11', 'product' =&gt; 'Desk'],
+]);
+
+$grouped = $collection-&gt;groupBy('account_id');
+
+$grouped-&gt;all();
+
+/*
+    [
+        'account-x10' =&gt; [
+            ['account_id' =&gt; 'account-x10', 'product' =&gt; 'Chair'],
+            ['account_id' =&gt; 'account-x10', 'product' =&gt; 'Bookcase'],
+        ],
+        'account-x11' =&gt; [
+            ['account_id' =&gt; 'account-x11', 'product' =&gt; 'Desk'],
+        ],
+    ]
+*/
+</code></pre>
+<p>Instead of passing a string <code>key</code>, you may pass a callback. The callback should return the value you wish to key the group by:</p>
+<pre><code>$grouped = $collection-&gt;groupBy(function ($item, $key) {
+    return substr($item['account_id'], -3);
+});
+
+$grouped-&gt;all();
+
+/*
+    [
+        'x10' =&gt; [
+            ['account_id' =&gt; 'account-x10', 'product' =&gt; 'Chair'],
+            ['account_id' =&gt; 'account-x10', 'product' =&gt; 'Bookcase'],
+        ],
+        'x11' =&gt; [
+            ['account_id' =&gt; 'account-x11', 'product' =&gt; 'Desk'],
+        ],
+    ]
+*/
+</code></pre>
+<p>Multiple grouping criteria may be passed as an array. Each array element will be applied to the corresponding level within a multi-dimensional array:</p>
+<pre><code>$data = new Collection([
+    10 =&gt; ['user' =&gt; 1, 'skill' =&gt; 1, 'roles' =&gt; ['Role_1', 'Role_3']],
+    20 =&gt; ['user' =&gt; 2, 'skill' =&gt; 1, 'roles' =&gt; ['Role_1', 'Role_2']],
+    30 =&gt; ['user' =&gt; 3, 'skill' =&gt; 2, 'roles' =&gt; ['Role_1']],
+    40 =&gt; ['user' =&gt; 4, 'skill' =&gt; 2, 'roles' =&gt; ['Role_2']],
+]);
+
+$result = $data-&gt;groupBy(['skill', function ($item) {
+    return $item['roles'];
+}], $preserveKeys = true);
+
+/*
+[
+    1 =&gt; [
+        'Role_1' =&gt; [
+            10 =&gt; ['user' =&gt; 1, 'skill' =&gt; 1, 'roles' =&gt; ['Role_1', 'Role_3']],
+            20 =&gt; ['user' =&gt; 2, 'skill' =&gt; 1, 'roles' =&gt; ['Role_1', 'Role_2']],
+        ],
+        'Role_2' =&gt; [
+            20 =&gt; ['user' =&gt; 2, 'skill' =&gt; 1, 'roles' =&gt; ['Role_1', 'Role_2']],
+        ],
+        'Role_3' =&gt; [
+            10 =&gt; ['user' =&gt; 1, 'skill' =&gt; 1, 'roles' =&gt; ['Role_1', 'Role_3']],
+        ],
+    ],
+    2 =&gt; [
+        'Role_1' =&gt; [
+            30 =&gt; ['user' =&gt; 3, 'skill' =&gt; 2, 'roles' =&gt; ['Role_1']],
+        ],
+        'Role_2' =&gt; [
+            40 =&gt; ['user' =&gt; 4, 'skill' =&gt; 2, 'roles' =&gt; ['Role_2']],
+        ],
+    ],
+];
+*/
+</code></pre>
+<p><a name="method-has"></a></p>
+<h4 id="has-collection-method"><code>has()</code> {#collection-method}</h4>
+<p>The <code>has</code> method determines if a given key exists in the collection:</p>
+<pre><code>$collection = collect(['account_id' =&gt; 1, 'product' =&gt; 'Desk', 'amount' =&gt; 5]);
+
+$collection-&gt;has('product');
+
+// true
+
+$collection-&gt;has(['product', 'amount']);
+
+// true
+
+$collection-&gt;has(['amount', 'price']);
+
+// false
+</code></pre>
+<p><a name="method-implode"></a></p>
+<h4 id="implode-collection-method"><code>implode()</code> {#collection-method}</h4>
+<p>The <code>implode</code> method joins items in a collection. Its arguments depend on the type of items in the collection. If the collection contains arrays or objects, you should pass the key of the attributes you wish to join, and the "glue" string you wish to place between the values:</p>
+<pre><code>$collection = collect([
+    ['account_id' =&gt; 1, 'product' =&gt; 'Desk'],
+    ['account_id' =&gt; 2, 'product' =&gt; 'Chair'],
+]);
+
+$collection-&gt;implode('product', ', ');
+
+// Desk, Chair
+</code></pre>
+<p>If the collection contains simple strings or numeric values, you should pass the "glue" as the only argument to the method:</p>
+<pre><code>collect([1, 2, 3, 4, 5])-&gt;implode('-');
+
+// '1-2-3-4-5'
+</code></pre>
+<p><a name="method-intersect"></a></p>
+<h4 id="intersect-collection-method"><code>intersect()</code> {#collection-method}</h4>
+<p>The <code>intersect</code> method removes any values from the original collection that are not present in the given <code>array</code> or collection. The resulting collection will preserve the original collection's keys:</p>
+<pre><code>$collection = collect(['Desk', 'Sofa', 'Chair']);
+
+$intersect = $collection-&gt;intersect(['Desk', 'Chair', 'Bookcase']);
+
+$intersect-&gt;all();
+
+// [0 =&gt; 'Desk', 2 =&gt; 'Chair']
+</code></pre>
+<blockquote>
+<p>{tip} This method's behavior is modified when using <a href="/docs/{{version}}/eloquent-collections#method-intersect">Eloquent Collections</a>.</p>
+</blockquote>
+<p><a name="method-intersectbykeys"></a></p>
+<h4 id="intersectbykeys-collection-method"><code>intersectByKeys()</code> {#collection-method}</h4>
+<p>The <code>intersectByKeys</code> method removes any keys and their corresponding values from the original collection that are not present in the given <code>array</code> or collection:</p>
+<pre><code>$collection = collect([
+    'serial' =&gt; 'UX301', 'type' =&gt; 'screen', 'year' =&gt; 2009,
+]);
+
+$intersect = $collection-&gt;intersectByKeys([
+    'reference' =&gt; 'UX404', 'type' =&gt; 'tab', 'year' =&gt; 2011,
+]);
+
+$intersect-&gt;all();
+
+// ['type' =&gt; 'screen', 'year' =&gt; 2009]
+</code></pre>
+<p><a name="method-isempty"></a></p>
+<h4 id="isempty-collection-method"><code>isEmpty()</code> {#collection-method}</h4>
+<p>The <code>isEmpty</code> method returns <code>true</code> if the collection is empty; otherwise, <code>false</code> is returned:</p>
+<pre><code>collect([])-&gt;isEmpty();
+
+// true
+</code></pre>
+<p><a name="method-isnotempty"></a></p>
+<h4 id="isnotempty-collection-method"><code>isNotEmpty()</code> {#collection-method}</h4>
+<p>The <code>isNotEmpty</code> method returns <code>true</code> if the collection is not empty; otherwise, <code>false</code> is returned:</p>
+<pre><code>collect([])-&gt;isNotEmpty();
+
+// false
+</code></pre>
+<p><a name="method-join"></a></p>
+<h4 id="join-collection-method"><code>join()</code> {#collection-method}</h4>
+<p>The <code>join</code> method joins the collection's values with a string. Using this method's second argument, you may also specify how the final element should be appended to the string:</p>
+<pre><code>collect(['a', 'b', 'c'])-&gt;join(', '); // 'a, b, c'
+collect(['a', 'b', 'c'])-&gt;join(', ', ', and '); // 'a, b, and c'
+collect(['a', 'b'])-&gt;join(', ', ' and '); // 'a and b'
+collect(['a'])-&gt;join(', ', ' and '); // 'a'
+collect([])-&gt;join(', ', ' and '); // ''
+</code></pre>
+<p><a name="method-keyby"></a></p>
+<h4 id="keyby-collection-method"><code>keyBy()</code> {#collection-method}</h4>
+<p>The <code>keyBy</code> method keys the collection by the given key. If multiple items have the same key, only the last one will appear in the new collection:</p>
+<pre><code>$collection = collect([
+    ['product_id' =&gt; 'prod-100', 'name' =&gt; 'Desk'],
+    ['product_id' =&gt; 'prod-200', 'name' =&gt; 'Chair'],
+]);
+
+$keyed = $collection-&gt;keyBy('product_id');
+
+$keyed-&gt;all();
+
+/*
+    [
+        'prod-100' =&gt; ['product_id' =&gt; 'prod-100', 'name' =&gt; 'Desk'],
+        'prod-200' =&gt; ['product_id' =&gt; 'prod-200', 'name' =&gt; 'Chair'],
+    ]
+*/
+</code></pre>
+<p>You may also pass a callback to the method. The callback should return the value to key the collection by:</p>
+<pre><code>$keyed = $collection-&gt;keyBy(function ($item) {
+    return strtoupper($item['product_id']);
+});
+
+$keyed-&gt;all();
+
+/*
+    [
+        'PROD-100' =&gt; ['product_id' =&gt; 'prod-100', 'name' =&gt; 'Desk'],
+        'PROD-200' =&gt; ['product_id' =&gt; 'prod-200', 'name' =&gt; 'Chair'],
+    ]
+*/
+</code></pre>
+<p><a name="method-keys"></a></p>
+<h4 id="keys-collection-method"><code>keys()</code> {#collection-method}</h4>
+<p>The <code>keys</code> method returns all of the collection's keys:</p>
+<pre><code>$collection = collect([
+    'prod-100' =&gt; ['product_id' =&gt; 'prod-100', 'name' =&gt; 'Desk'],
+    'prod-200' =&gt; ['product_id' =&gt; 'prod-200', 'name' =&gt; 'Chair'],
+]);
+
+$keys = $collection-&gt;keys();
+
+$keys-&gt;all();
+
+// ['prod-100', 'prod-200']
+</code></pre>
+<p><a name="method-last"></a></p>
+<h4 id="last-collection-method"><code>last()</code> {#collection-method}</h4>
+<p>The <code>last</code> method returns the last element in the collection that passes a given truth test:</p>
+<pre><code>collect([1, 2, 3, 4])-&gt;last(function ($value, $key) {
+    return $value &lt; 3;
+});
+
+// 2
+</code></pre>
+<p>You may also call the <code>last</code> method with no arguments to get the last element in the collection. If the collection is empty, <code>null</code> is returned:</p>
+<pre><code>collect([1, 2, 3, 4])-&gt;last();
+
+// 4
+</code></pre>
+<p><a name="method-macro"></a></p>
+<h4 id="macro-collection-method"><code>macro()</code> {#collection-method}</h4>
+<p>The static <code>macro</code> method allows you to add methods to the <code>Collection</code> class at run time. Refer to the documentation on <a href="#extending-collections">extending collections</a> for more information.</p>
+<p><a name="method-make"></a></p>
+<h4 id="make-collection-method"><code>make()</code> {#collection-method}</h4>
+<p>The static <code>make</code> method creates a new collection instance. See the <a href="#creating-collections">Creating Collections</a> section.</p>
+<p><a name="method-map"></a></p>
+<h4 id="map-collection-method"><code>map()</code> {#collection-method}</h4>
+<p>The <code>map</code> method iterates through the collection and passes each value to the given callback. The callback is free to modify the item and return it, thus forming a new collection of modified items:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$multiplied = $collection-&gt;map(function ($item, $key) {
+    return $item * 2;
+});
+
+$multiplied-&gt;all();
+
+// [2, 4, 6, 8, 10]
+</code></pre>
+<blockquote>
+<p>{note} Like most other collection methods, <code>map</code> returns a new collection instance; it does not modify the collection it is called on. If you want to transform the original collection, use the <a href="#method-transform"><code>transform</code></a> method.</p>
+</blockquote>
+<p><a name="method-mapinto"></a></p>
+<h4 id="mapinto-collection-method"><code>mapInto()</code> {#collection-method}</h4>
+<p>The <code>mapInto()</code> method iterates over the collection, creating a new instance of the given class by passing the value into the constructor:</p>
+<pre><code>class Currency
+{
+    /**
+     * Create a new currency instance.
+     *
+     * @param  string  $code
+     * @return void
+     */
+    function __construct(string $code)
+    {
+        $this-&gt;code = $code;
+    }
+}
+
+$collection = collect(['USD', 'EUR', 'GBP']);
+
+$currencies = $collection-&gt;mapInto(Currency::class);
+
+$currencies-&gt;all();
+
+// [Currency('USD'), Currency('EUR'), Currency('GBP')]
+</code></pre>
+<p><a name="method-mapspread"></a></p>
+<h4 id="mapspread-collection-method"><code>mapSpread()</code> {#collection-method}</h4>
+<p>The <code>mapSpread</code> method iterates over the collection's items, passing each nested item value into the given closure. The closure is free to modify the item and return it, thus forming a new collection of modified items:</p>
+<pre><code>$collection = collect([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+$chunks = $collection-&gt;chunk(2);
+
+$sequence = $chunks-&gt;mapSpread(function ($even, $odd) {
+    return $even + $odd;
+});
+
+$sequence-&gt;all();
+
+// [1, 5, 9, 13, 17]
+</code></pre>
+<p><a name="method-maptogroups"></a></p>
+<h4 id="maptogroups-collection-method"><code>mapToGroups()</code> {#collection-method}</h4>
+<p>The <code>mapToGroups</code> method groups the collection's items by the given closure. The closure should return an associative array containing a single key / value pair, thus forming a new collection of grouped values:</p>
+<pre><code>$collection = collect([
+    [
+        'name' =&gt; 'John Doe',
+        'department' =&gt; 'Sales',
+    ],
+    [
+        'name' =&gt; 'Jane Doe',
+        'department' =&gt; 'Sales',
+    ],
+    [
+        'name' =&gt; 'Johnny Doe',
+        'department' =&gt; 'Marketing',
+    ]
+]);
+
+$grouped = $collection-&gt;mapToGroups(function ($item, $key) {
+    return [$item['department'] =&gt; $item['name']];
+});
+
+$grouped-&gt;all();
+
+/*
+    [
+        'Sales' =&gt; ['John Doe', 'Jane Doe'],
+        'Marketing' =&gt; ['Johnny Doe'],
+    ]
+*/
+
+$grouped-&gt;get('Sales')-&gt;all();
+
+// ['John Doe', 'Jane Doe']
+</code></pre>
+<p><a name="method-mapwithkeys"></a></p>
+<h4 id="mapwithkeys-collection-method"><code>mapWithKeys()</code> {#collection-method}</h4>
+<p>The <code>mapWithKeys</code> method iterates through the collection and passes each value to the given callback. The callback should return an associative array containing a single key / value pair:</p>
+<pre><code>$collection = collect([
+    [
+        'name' =&gt; 'John',
+        'department' =&gt; 'Sales',
+        'email' =&gt; 'john@example.com',
+    ],
+    [
+        'name' =&gt; 'Jane',
+        'department' =&gt; 'Marketing',
+        'email' =&gt; 'jane@example.com',
+    ]
+]);
+
+$keyed = $collection-&gt;mapWithKeys(function ($item) {
+    return [$item['email'] =&gt; $item['name']];
+});
+
+$keyed-&gt;all();
+
+/*
+    [
+        'john@example.com' =&gt; 'John',
+        'jane@example.com' =&gt; 'Jane',
+    ]
+*/
+</code></pre>
+<p><a name="method-max"></a></p>
+<h4 id="max-collection-method"><code>max()</code> {#collection-method}</h4>
+<p>The <code>max</code> method returns the maximum value of a given key:</p>
+<pre><code>$max = collect([
+    ['foo' =&gt; 10],
+    ['foo' =&gt; 20]
+])-&gt;max('foo');
+
+// 20
+
+$max = collect([1, 2, 3, 4, 5])-&gt;max();
+
+// 5
+</code></pre>
+<p><a name="method-median"></a></p>
+<h4 id="median-collection-method"><code>median()</code> {#collection-method}</h4>
+<p>The <code>median</code> method returns the <a href="https://en.wikipedia.org/wiki/Median">median value</a> of a given key:</p>
+<pre><code>$median = collect([
+    ['foo' =&gt; 10],
+    ['foo' =&gt; 10],
+    ['foo' =&gt; 20],
+    ['foo' =&gt; 40]
+])-&gt;median('foo');
+
+// 15
+
+$median = collect([1, 1, 2, 4])-&gt;median();
+
+// 1.5
+</code></pre>
+<p><a name="method-merge"></a></p>
+<h4 id="merge-collection-method"><code>merge()</code> {#collection-method}</h4>
+<p>The <code>merge</code> method merges the given array or collection with the original collection. If a string key in the given items matches a string key in the original collection, the given items's value will overwrite the value in the original collection:</p>
+<pre><code>$collection = collect(['product_id' =&gt; 1, 'price' =&gt; 100]);
+
+$merged = $collection-&gt;merge(['price' =&gt; 200, 'discount' =&gt; false]);
+
+$merged-&gt;all();
+
+// ['product_id' =&gt; 1, 'price' =&gt; 200, 'discount' =&gt; false]
+</code></pre>
+<p>If the given items's keys are numeric, the values will be appended to the end of the collection:</p>
+<pre><code>$collection = collect(['Desk', 'Chair']);
+
+$merged = $collection-&gt;merge(['Bookcase', 'Door']);
+
+$merged-&gt;all();
+
+// ['Desk', 'Chair', 'Bookcase', 'Door']
+</code></pre>
+<p><a name="method-mergerecursive"></a></p>
+<h4 id="mergerecursive-collection-method"><code>mergeRecursive()</code> {#collection-method}</h4>
+<p>The <code>mergeRecursive</code> method merges the given array or collection recursively with the original collection. If a string key in the given items matches a string key in the original collection, then the values for these keys are merged together into an array, and this is done recursively:</p>
+<pre><code>$collection = collect(['product_id' =&gt; 1, 'price' =&gt; 100]);
+
+$merged = $collection-&gt;mergeRecursive([
+    'product_id' =&gt; 2,
+    'price' =&gt; 200,
+    'discount' =&gt; false
+]);
+
+$merged-&gt;all();
+
+// ['product_id' =&gt; [1, 2], 'price' =&gt; [100, 200], 'discount' =&gt; false]
+</code></pre>
+<p><a name="method-min"></a></p>
+<h4 id="min-collection-method"><code>min()</code> {#collection-method}</h4>
+<p>The <code>min</code> method returns the minimum value of a given key:</p>
+<pre><code>$min = collect([['foo' =&gt; 10], ['foo' =&gt; 20]])-&gt;min('foo');
+
+// 10
+
+$min = collect([1, 2, 3, 4, 5])-&gt;min();
+
+// 1
+</code></pre>
+<p><a name="method-mode"></a></p>
+<h4 id="mode-collection-method"><code>mode()</code> {#collection-method}</h4>
+<p>The <code>mode</code> method returns the <a href="https://en.wikipedia.org/wiki/Mode_(statistics)">mode value</a> of a given key:</p>
+<pre><code>$mode = collect([
+    ['foo' =&gt; 10],
+    ['foo' =&gt; 10],
+    ['foo' =&gt; 20],
+    ['foo' =&gt; 40]
+])-&gt;mode('foo');
+
+// [10]
+
+$mode = collect([1, 1, 2, 4])-&gt;mode();
+
+// [1]
+
+$mode = collect([1, 1, 2, 2])-&gt;mode();
+
+// [1, 2]
+</code></pre>
+<p><a name="method-nth"></a></p>
+<h4 id="nth-collection-method"><code>nth()</code> {#collection-method}</h4>
+<p>The <code>nth</code> method creates a new collection consisting of every n-th element:</p>
+<pre><code>$collection = collect(['a', 'b', 'c', 'd', 'e', 'f']);
+
+$collection-&gt;nth(4);
+
+// ['a', 'e']
+</code></pre>
+<p>You may optionally pass a starting offset as the second argument:</p>
+<pre><code>$collection-&gt;nth(4, 1);
+
+// ['b', 'f']
+</code></pre>
+<p><a name="method-only"></a></p>
+<h4 id="only-collection-method"><code>only()</code> {#collection-method}</h4>
+<p>The <code>only</code> method returns the items in the collection with the specified keys:</p>
+<pre><code>$collection = collect([
+    'product_id' =&gt; 1,
+    'name' =&gt; 'Desk',
+    'price' =&gt; 100,
+    'discount' =&gt; false
+]);
+
+$filtered = $collection-&gt;only(['product_id', 'name']);
+
+$filtered-&gt;all();
+
+// ['product_id' =&gt; 1, 'name' =&gt; 'Desk']
+</code></pre>
+<p>For the inverse of <code>only</code>, see the <a href="#method-except">except</a> method.</p>
+<blockquote>
+<p>{tip} This method's behavior is modified when using <a href="/docs/{{version}}/eloquent-collections#method-only">Eloquent Collections</a>.</p>
+</blockquote>
+<p><a name="method-pad"></a></p>
+<h4 id="pad-collection-method"><code>pad()</code> {#collection-method}</h4>
+<p>The <code>pad</code> method will fill the array with the given value until the array reaches the specified size. This method behaves like the <a href="https://secure.php.net/manual/en/function.array-pad.php">array_pad</a> PHP function.</p>
+<p>To pad to the left, you should specify a negative size. No padding will take place if the absolute value of the given size is less than or equal to the length of the array:</p>
+<pre><code>$collection = collect(['A', 'B', 'C']);
+
+$filtered = $collection-&gt;pad(5, 0);
+
+$filtered-&gt;all();
+
+// ['A', 'B', 'C', 0, 0]
+
+$filtered = $collection-&gt;pad(-5, 0);
+
+$filtered-&gt;all();
+
+// [0, 0, 'A', 'B', 'C']
+</code></pre>
+<p><a name="method-partition"></a></p>
+<h4 id="partition-collection-method"><code>partition()</code> {#collection-method}</h4>
+<p>The <code>partition</code> method may be combined with PHP array destructuring to separate elements that pass a given truth test from those that do not:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5, 6]);
+
+[$underThree, $equalOrAboveThree] = $collection-&gt;partition(function ($i) {
+    return $i &lt; 3;
+});
+
+$underThree-&gt;all();
+
+// [1, 2]
+
+$equalOrAboveThree-&gt;all();
+
+// [3, 4, 5, 6]
+</code></pre>
+<p><a name="method-pipe"></a></p>
+<h4 id="pipe-collection-method"><code>pipe()</code> {#collection-method}</h4>
+<p>The <code>pipe</code> method passes the collection to the given closure and returns the result of the executed closure:</p>
+<pre><code>$collection = collect([1, 2, 3]);
+
+$piped = $collection-&gt;pipe(function ($collection) {
+    return $collection-&gt;sum();
+});
+
+// 6
+</code></pre>
+<p><a name="method-pipeinto"></a></p>
+<h4 id="pipeinto-collection-method"><code>pipeInto()</code> {#collection-method}</h4>
+<p>The <code>pipeInto</code> method creates a new instance of the given class and passes the collection into the constructor:</p>
+<pre><code>class ResourceCollection
+{
+    /**
+     * The Collection instance.
+     */
+    public $collection;
+
+    /**
+     * Create a new ResourceCollection instance.
+     *
+     * @param  Collection  $collection
+     * @return void
+     */
+    public function __construct(Collection $collection)
+    {
+        $this-&gt;collection = $collection;
+    }
+}
+
+$collection = collect([1, 2, 3]);
+
+$resource = $collection-&gt;pipeInto(ResourceCollection::class);
+
+$resource-&gt;collection-&gt;all();
+
+// [1, 2, 3]
+</code></pre>
+<p><a name="method-pluck"></a></p>
+<h4 id="pluck-collection-method"><code>pluck()</code> {#collection-method}</h4>
+<p>The <code>pluck</code> method retrieves all of the values for a given key:</p>
+<pre><code>$collection = collect([
+    ['product_id' =&gt; 'prod-100', 'name' =&gt; 'Desk'],
+    ['product_id' =&gt; 'prod-200', 'name' =&gt; 'Chair'],
+]);
+
+$plucked = $collection-&gt;pluck('name');
+
+$plucked-&gt;all();
+
+// ['Desk', 'Chair']
+</code></pre>
+<p>You may also specify how you wish the resulting collection to be keyed:</p>
+<pre><code>$plucked = $collection-&gt;pluck('name', 'product_id');
+
+$plucked-&gt;all();
+
+// ['prod-100' =&gt; 'Desk', 'prod-200' =&gt; 'Chair']
+</code></pre>
+<p>The <code>pluck</code> method also supports retrieving nested values using "dot" notation:</p>
+<pre><code>$collection = collect([
+    [
+        'speakers' =&gt; [
+            'first_day' =&gt; ['Rosa', 'Judith'],
+            'second_day' =&gt; ['Angela', 'Kathleen'],
+        ],
+    ],
+]);
+
+$plucked = $collection-&gt;pluck('speakers.first_day');
+
+$plucked-&gt;all();
+
+// ['Rosa', 'Judith']
+</code></pre>
+<p>If duplicate keys exist, the last matching element will be inserted into the plucked collection:</p>
+<pre><code>$collection = collect([
+    ['brand' =&gt; 'Tesla',  'color' =&gt; 'red'],
+    ['brand' =&gt; 'Pagani', 'color' =&gt; 'white'],
+    ['brand' =&gt; 'Tesla',  'color' =&gt; 'black'],
+    ['brand' =&gt; 'Pagani', 'color' =&gt; 'orange'],
+]);
+
+$plucked = $collection-&gt;pluck('color', 'brand');
+
+$plucked-&gt;all();
+
+// ['Tesla' =&gt; 'black', 'Pagani' =&gt; 'orange']
+</code></pre>
+<p><a name="method-pop"></a></p>
+<h4 id="pop-collection-method"><code>pop()</code> {#collection-method}</h4>
+<p>The <code>pop</code> method removes and returns the last item from the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$collection-&gt;pop();
+
+// 5
+
+$collection-&gt;all();
+
+// [1, 2, 3, 4]
+</code></pre>
+<p><a name="method-prepend"></a></p>
+<h4 id="prepend-collection-method"><code>prepend()</code> {#collection-method}</h4>
+<p>The <code>prepend</code> method adds an item to the beginning of the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$collection-&gt;prepend(0);
+
+$collection-&gt;all();
+
+// [0, 1, 2, 3, 4, 5]
+</code></pre>
+<p>You may also pass a second argument to specify the key of the prepended item:</p>
+<pre><code>$collection = collect(['one' =&gt; 1, 'two' =&gt; 2]);
+
+$collection-&gt;prepend(0, 'zero');
+
+$collection-&gt;all();
+
+// ['zero' =&gt; 0, 'one' =&gt; 1, 'two' =&gt; 2]
+</code></pre>
+<p><a name="method-pull"></a></p>
+<h4 id="pull-collection-method"><code>pull()</code> {#collection-method}</h4>
+<p>The <code>pull</code> method removes and returns an item from the collection by its key:</p>
+<pre><code>$collection = collect(['product_id' =&gt; 'prod-100', 'name' =&gt; 'Desk']);
+
+$collection-&gt;pull('name');
+
+// 'Desk'
+
+$collection-&gt;all();
+
+// ['product_id' =&gt; 'prod-100']
+</code></pre>
+<p><a name="method-push"></a></p>
+<h4 id="push-collection-method"><code>push()</code> {#collection-method}</h4>
+<p>The <code>push</code> method appends an item to the end of the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$collection-&gt;push(5);
+
+$collection-&gt;all();
+
+// [1, 2, 3, 4, 5]
+</code></pre>
+<p><a name="method-put"></a></p>
+<h4 id="put-collection-method"><code>put()</code> {#collection-method}</h4>
+<p>The <code>put</code> method sets the given key and value in the collection:</p>
+<pre><code>$collection = collect(['product_id' =&gt; 1, 'name' =&gt; 'Desk']);
+
+$collection-&gt;put('price', 100);
+
+$collection-&gt;all();
+
+// ['product_id' =&gt; 1, 'name' =&gt; 'Desk', 'price' =&gt; 100]
+</code></pre>
+<p><a name="method-random"></a></p>
+<h4 id="random-collection-method"><code>random()</code> {#collection-method}</h4>
+<p>The <code>random</code> method returns a random item from the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$collection-&gt;random();
+
+// 4 - (retrieved randomly)
+</code></pre>
+<p>You may pass an integer to <code>random</code> to specify how many items you would like to randomly retrieve. A collection of items is always returned when explicitly passing the number of items you wish to receive:</p>
+<pre><code>$random = $collection-&gt;random(3);
+
+$random-&gt;all();
+
+// [2, 4, 5] - (retrieved randomly)
+</code></pre>
+<p>If the collection instance has fewer items than requested, the <code>random</code> method will throw an <code>InvalidArgumentException</code>.</p>
+<p><a name="method-reduce"></a></p>
+<h4 id="reduce-collection-method"><code>reduce()</code> {#collection-method}</h4>
+<p>The <code>reduce</code> method reduces the collection to a single value, passing the result of each iteration into the subsequent iteration:</p>
+<pre><code>$collection = collect([1, 2, 3]);
+
+$total = $collection-&gt;reduce(function ($carry, $item) {
+    return $carry + $item;
+});
+
+// 6
+</code></pre>
+<p>The value for <code>$carry</code> on the first iteration is <code>null</code>; however, you may specify its initial value by passing a second argument to <code>reduce</code>:</p>
+<pre><code>$collection-&gt;reduce(function ($carry, $item) {
+    return $carry + $item;
+}, 4);
+
+// 10
+</code></pre>
+<p>The <code>reduce</code> method also passes array keys in associative collections to the given callback:</p>
+<pre><code>$collection = collect([
+    'usd' =&gt; 1400,
+    'gbp' =&gt; 1200,
+    'eur' =&gt; 1000,
+]);
+
+$ratio = [
+    'usd' =&gt; 1,
+    'gbp' =&gt; 1.37,
+    'eur' =&gt; 1.22,
+];
+
+$collection-&gt;reduce(function ($carry, $value, $key) use ($ratio) {
+    return $carry + ($value * $ratio[$key]);
+});
+
+// 4264
+</code></pre>
+<p><a name="method-reject"></a></p>
+<h4 id="reject-collection-method"><code>reject()</code> {#collection-method}</h4>
+<p>The <code>reject</code> method filters the collection using the given closure. The closure should return <code>true</code> if the item should be removed from the resulting collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$filtered = $collection-&gt;reject(function ($value, $key) {
+    return $value &gt; 2;
+});
+
+$filtered-&gt;all();
+
+// [1, 2]
+</code></pre>
+<p>For the inverse of the <code>reject</code> method, see the <a href="#method-filter"><code>filter</code></a> method.</p>
+<p><a name="method-replace"></a></p>
+<h4 id="replace-collection-method"><code>replace()</code> {#collection-method}</h4>
+<p>The <code>replace</code> method behaves similarly to <code>merge</code>; however, in addition to overwriting matching items that have string keys, the <code>replace</code> method will also overwrite items in the collection that have matching numeric keys:</p>
+<pre><code>$collection = collect(['Taylor', 'Abigail', 'James']);
+
+$replaced = $collection-&gt;replace([1 =&gt; 'Victoria', 3 =&gt; 'Finn']);
+
+$replaced-&gt;all();
+
+// ['Taylor', 'Victoria', 'James', 'Finn']
+</code></pre>
+<p><a name="method-replacerecursive"></a></p>
+<h4 id="replacerecursive-collection-method"><code>replaceRecursive()</code> {#collection-method}</h4>
+<p>This method works like <code>replace</code>, but it will recur into arrays and apply the same replacement process to the inner values:</p>
+<pre><code>$collection = collect([
+    'Taylor',
+    'Abigail',
+    [
+        'James',
+        'Victoria',
+        'Finn'
+    ]
+]);
+
+$replaced = $collection-&gt;replaceRecursive([
+    'Charlie',
+    2 =&gt; [1 =&gt; 'King']
+]);
+
+$replaced-&gt;all();
+
+// ['Charlie', 'Abigail', ['James', 'King', 'Finn']]
+</code></pre>
+<p><a name="method-reverse"></a></p>
+<h4 id="reverse-collection-method"><code>reverse()</code> {#collection-method}</h4>
+<p>The <code>reverse</code> method reverses the order of the collection's items, preserving the original keys:</p>
+<pre><code>$collection = collect(['a', 'b', 'c', 'd', 'e']);
+
+$reversed = $collection-&gt;reverse();
+
+$reversed-&gt;all();
+
+/*
+    [
+        4 =&gt; 'e',
+        3 =&gt; 'd',
+        2 =&gt; 'c',
+        1 =&gt; 'b',
+        0 =&gt; 'a',
+    ]
+*/
+</code></pre>
+<p><a name="method-search"></a></p>
+<h4 id="search-collection-method"><code>search()</code> {#collection-method}</h4>
+<p>The <code>search</code> method searches the collection for the given value and returns its key if found. If the item is not found, <code>false</code> is returned:</p>
+<pre><code>$collection = collect([2, 4, 6, 8]);
+
+$collection-&gt;search(4);
+
+// 1
+</code></pre>
+<p>The search is done using a "loose" comparison, meaning a string with an integer value will be considered equal to an integer of the same value. To use "strict" comparison, pass <code>true</code> as the second argument to the method:</p>
+<pre><code>collect([2, 4, 6, 8])-&gt;search('4', $strict = true);
+
+// false
+</code></pre>
+<p>Alternatively, you may provide your own closure to search for the first item that passes a given truth test:</p>
+<pre><code>collect([2, 4, 6, 8])-&gt;search(function ($item, $key) {
+    return $item &gt; 5;
+});
+
+// 2
+</code></pre>
+<p><a name="method-shift"></a></p>
+<h4 id="shift-collection-method"><code>shift()</code> {#collection-method}</h4>
+<p>The <code>shift</code> method removes and returns the first item from the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$collection-&gt;shift();
+
+// 1
+
+$collection-&gt;all();
+
+// [2, 3, 4, 5]
+</code></pre>
+<p><a name="method-shuffle"></a></p>
+<h4 id="shuffle-collection-method"><code>shuffle()</code> {#collection-method}</h4>
+<p>The <code>shuffle</code> method randomly shuffles the items in the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$shuffled = $collection-&gt;shuffle();
+
+$shuffled-&gt;all();
+
+// [3, 2, 5, 1, 4] - (generated randomly)
+</code></pre>
+<p><a name="method-skip"></a></p>
+<h4 id="skip-collection-method"><code>skip()</code> {#collection-method}</h4>
+<p>The <code>skip</code> method returns a new collection, with the given number of elements removed from the beginning of the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+$collection = $collection-&gt;skip(4);
+
+$collection-&gt;all();
+
+// [5, 6, 7, 8, 9, 10]
+</code></pre>
+<p><a name="method-skipuntil"></a></p>
+<h4 id="skipuntil-collection-method"><code>skipUntil()</code> {#collection-method}</h4>
+<p>The <code>skipUntil</code> method skips over items from the collection until the given callback returns <code>true</code> and then returns the remaining items in the collection as a new collection instance:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$subset = $collection-&gt;skipUntil(function ($item) {
+    return $item &gt;= 3;
+});
+
+$subset-&gt;all();
+
+// [3, 4]
+</code></pre>
+<p>You may also pass a simple value to the <code>skipUntil</code> method to skip all items until the given value is found:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$subset = $collection-&gt;skipUntil(3);
+
+$subset-&gt;all();
+
+// [3, 4]
+</code></pre>
+<blockquote>
+<p>{note} If the given value is not found or the callback never returns <code>true</code>, the <code>skipUntil</code> method will return an empty collection.</p>
+</blockquote>
+<p><a name="method-skipwhile"></a></p>
+<h4 id="skipwhile-collection-method"><code>skipWhile()</code> {#collection-method}</h4>
+<p>The <code>skipWhile</code> method skips over items from the collection while the given callback returns <code>true</code> and then returns the remaining items in the collection as a new collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$subset = $collection-&gt;skipWhile(function ($item) {
+    return $item &lt;= 3;
+});
+
+$subset-&gt;all();
+
+// [4]
+</code></pre>
+<blockquote>
+<p>{note} If the callback never returns <code>true</code>, the <code>skipWhile</code> method will return an empty collection.</p>
+</blockquote>
+<p><a name="method-slice"></a></p>
+<h4 id="slice-collection-method"><code>slice()</code> {#collection-method}</h4>
+<p>The <code>slice</code> method returns a slice of the collection starting at the given index:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+$slice = $collection-&gt;slice(4);
+
+$slice-&gt;all();
+
+// [5, 6, 7, 8, 9, 10]
+</code></pre>
+<p>If you would like to limit the size of the returned slice, pass the desired size as the second argument to the method:</p>
+<pre><code>$slice = $collection-&gt;slice(4, 2);
+
+$slice-&gt;all();
+
+// [5, 6]
+</code></pre>
+<p>The returned slice will preserve keys by default. If you do not wish to preserve the original keys, you can use the <a href="#method-values"><code>values</code></a> method to reindex them.</p>
+<p><a name="method-sole"></a></p>
+<h4 id="sole-collection-method"><code>sole()</code> {#collection-method}</h4>
+<p>The <code>sole</code> method returns the first element in the collection that passes a given truth test, but only if the truth test matches exactly one element:</p>
+<pre><code>collect([1, 2, 3, 4])-&gt;sole(function ($value, $key) {
+    return $value === 2;
+});
+
+// 2
+</code></pre>
+<p>You may also pass a key / value pair to the <code>sole</code> method, which will return the first element in the collection that matches the given pair, but only if it exactly one element matches:</p>
+<pre><code>$collection = collect([
+    ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    ['product' =&gt; 'Chair', 'price' =&gt; 100],
+]);
+
+$collection-&gt;sole('product', 'Chair');
+
+// ['product' =&gt; 'Chair', 'price' =&gt; 100]
+</code></pre>
+<p>Alternatively, you may also call the <code>sole</code> method with no argument to get the first element in the collection if there is only one element:</p>
+<pre><code>$collection = collect([
+    ['product' =&gt; 'Desk', 'price' =&gt; 200],
+]);
+
+$collection-&gt;sole();
+
+// ['product' =&gt; 'Desk', 'price' =&gt; 200]
+</code></pre>
+<p>If there are no elements in the collection that should be returned by the <code>sole</code> method, an <code>\Illuminate\Collections\ItemNotFoundException</code> exception will be thrown. If there is more than one element that should be returned, an <code>\Illuminate\Collections\MultipleItemsFoundException</code> will be thrown. </p>
+<p><a name="method-some"></a></p>
+<h4 id="some-collection-method"><code>some()</code> {#collection-method}</h4>
+<p>Alias for the <a href="#method-contains"><code>contains</code></a> method.</p>
+<p><a name="method-sort"></a></p>
+<h4 id="sort-collection-method"><code>sort()</code> {#collection-method}</h4>
+<p>The <code>sort</code> method sorts the collection. The sorted collection keeps the original array keys, so in the following example we will use the <a href="#method-values"><code>values</code></a> method to reset the keys to consecutively numbered indexes:</p>
+<pre><code>$collection = collect([5, 3, 1, 2, 4]);
+
+$sorted = $collection-&gt;sort();
+
+$sorted-&gt;values()-&gt;all();
+
+// [1, 2, 3, 4, 5]
+</code></pre>
+<p>If your sorting needs are more advanced, you may pass a callback to <code>sort</code> with your own algorithm. Refer to the PHP documentation on <a href="https://secure.php.net/manual/en/function.uasort.php#refsect1-function.uasort-parameters"><code>uasort</code></a>, which is what the collection's <code>sort</code> method calls utilizes internally.</p>
+<blockquote>
+<p>{tip} If you need to sort a collection of nested arrays or objects, see the <a href="#method-sortby"><code>sortBy</code></a> and <a href="#method-sortbydesc"><code>sortByDesc</code></a> methods.</p>
+</blockquote>
+<p><a name="method-sortby"></a></p>
+<h4 id="sortby-collection-method"><code>sortBy()</code> {#collection-method}</h4>
+<p>The <code>sortBy</code> method sorts the collection by the given key. The sorted collection keeps the original array keys, so in the following example we will use the <a href="#method-values"><code>values</code></a> method to reset the keys to consecutively numbered indexes:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Desk', 'price' =&gt; 200],
+    ['name' =&gt; 'Chair', 'price' =&gt; 100],
+    ['name' =&gt; 'Bookcase', 'price' =&gt; 150],
+]);
+
+$sorted = $collection-&gt;sortBy('price');
+
+$sorted-&gt;values()-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'Chair', 'price' =&gt; 100],
+        ['name' =&gt; 'Bookcase', 'price' =&gt; 150],
+        ['name' =&gt; 'Desk', 'price' =&gt; 200],
+    ]
+*/
+</code></pre>
+<p>The <code>sort</code> method accepts <a href="https://www.php.net/manual/en/function.sort.php">sort flags</a> as its second argument:</p>
+<pre><code>$collection = collect([
+    ['title' =&gt; 'Item 1'],
+    ['title' =&gt; 'Item 12'],
+    ['title' =&gt; 'Item 3'],
+]);
+
+$sorted = $collection-&gt;sortBy('title', SORT_NATURAL);
+
+$sorted-&gt;values()-&gt;all();
+
+/*
+    [
+        ['title' =&gt; 'Item 1'],
+        ['title' =&gt; 'Item 3'],
+        ['title' =&gt; 'Item 12'],
+    ]
+*/
+</code></pre>
+<p>Alternatively, you may pass your own closure to determine how to sort the collection's values:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Desk', 'colors' =&gt; ['Black', 'Mahogany']],
+    ['name' =&gt; 'Chair', 'colors' =&gt; ['Black']],
+    ['name' =&gt; 'Bookcase', 'colors' =&gt; ['Red', 'Beige', 'Brown']],
+]);
+
+$sorted = $collection-&gt;sortBy(function ($product, $key) {
+    return count($product['colors']);
+});
+
+$sorted-&gt;values()-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'Chair', 'colors' =&gt; ['Black']],
+        ['name' =&gt; 'Desk', 'colors' =&gt; ['Black', 'Mahogany']],
+        ['name' =&gt; 'Bookcase', 'colors' =&gt; ['Red', 'Beige', 'Brown']],
+    ]
+*/
+</code></pre>
+<p>If you would like to sort your collection by multiple attributes, you may pass an array of sort operations to the <code>sortBy</code> method. Each sort operation should be an array consisting of the attribute that you wish to sort by and the direction of the desired sort:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Taylor Otwell', 'age' =&gt; 34],
+    ['name' =&gt; 'Abigail Otwell', 'age' =&gt; 30],
+    ['name' =&gt; 'Taylor Otwell', 'age' =&gt; 36],
+    ['name' =&gt; 'Abigail Otwell', 'age' =&gt; 32],
+]);
+
+$sorted = $collection-&gt;sortBy([
+    ['name', 'asc'],
+    ['age', 'desc'],
+]);
+
+$sorted-&gt;values()-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'Abigail Otwell', 'age' =&gt; 32],
+        ['name' =&gt; 'Abigail Otwell', 'age' =&gt; 30],
+        ['name' =&gt; 'Taylor Otwell', 'age' =&gt; 36],
+        ['name' =&gt; 'Taylor Otwell', 'age' =&gt; 34],
+    ]
+*/
+</code></pre>
+<p>When sorting a collection by multiple attributes, you may also provide closures that define each sort operation:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Taylor Otwell', 'age' =&gt; 34],
+    ['name' =&gt; 'Abigail Otwell', 'age' =&gt; 30],
+    ['name' =&gt; 'Taylor Otwell', 'age' =&gt; 36],
+    ['name' =&gt; 'Abigail Otwell', 'age' =&gt; 32],
+]);
+
+$sorted = $collection-&gt;sortBy([
+    fn ($a, $b) =&gt; $a['name'] &lt;=&gt; $b['name'],
+    fn ($a, $b) =&gt; $b['age'] &lt;=&gt; $a['age'],
+]);
+
+$sorted-&gt;values()-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'Abigail Otwell', 'age' =&gt; 32],
+        ['name' =&gt; 'Abigail Otwell', 'age' =&gt; 30],
+        ['name' =&gt; 'Taylor Otwell', 'age' =&gt; 36],
+        ['name' =&gt; 'Taylor Otwell', 'age' =&gt; 34],
+    ]
+*/
+</code></pre>
+<p><a name="method-sortbydesc"></a></p>
+<h4 id="sortbydesc-collection-method"><code>sortByDesc()</code> {#collection-method}</h4>
+<p>This method has the same signature as the <a href="#method-sortby"><code>sortBy</code></a> method, but will sort the collection in the opposite order.</p>
+<p><a name="method-sortdesc"></a></p>
+<h4 id="sortdesc-collection-method"><code>sortDesc()</code> {#collection-method}</h4>
+<p>This method will sort the collection in the opposite order as the <a href="#method-sort"><code>sort</code></a> method:</p>
+<pre><code>$collection = collect([5, 3, 1, 2, 4]);
+
+$sorted = $collection-&gt;sortDesc();
+
+$sorted-&gt;values()-&gt;all();
+
+// [5, 4, 3, 2, 1]
+</code></pre>
+<p>Unlike <code>sort</code>, you may not pass a closure to <code>sortDesc</code>. Instead, you should use the <a href="#method-sort"><code>sort</code></a> method and invert your comparison.</p>
+<p><a name="method-sortkeys"></a></p>
+<h4 id="sortkeys-collection-method"><code>sortKeys()</code> {#collection-method}</h4>
+<p>The <code>sortKeys</code> method sorts the collection by the keys of the underlying associative array:</p>
+<pre><code>$collection = collect([
+    'id' =&gt; 22345,
+    'first' =&gt; 'John',
+    'last' =&gt; 'Doe',
+]);
+
+$sorted = $collection-&gt;sortKeys();
+
+$sorted-&gt;all();
+
+/*
+    [
+        'first' =&gt; 'John',
+        'id' =&gt; 22345,
+        'last' =&gt; 'Doe',
+    ]
+*/
+</code></pre>
+<p><a name="method-sortkeysdesc"></a></p>
+<h4 id="sortkeysdesc-collection-method"><code>sortKeysDesc()</code> {#collection-method}</h4>
+<p>This method has the same signature as the <a href="#method-sortkeys"><code>sortKeys</code></a> method, but will sort the collection in the opposite order.</p>
+<p><a name="method-splice"></a></p>
+<h4 id="splice-collection-method"><code>splice()</code> {#collection-method}</h4>
+<p>The <code>splice</code> method removes and returns a slice of items starting at the specified index:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$chunk = $collection-&gt;splice(2);
+
+$chunk-&gt;all();
+
+// [3, 4, 5]
+
+$collection-&gt;all();
+
+// [1, 2]
+</code></pre>
+<p>You may pass a second argument to limit the size of the resulting collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$chunk = $collection-&gt;splice(2, 1);
+
+$chunk-&gt;all();
+
+// [3]
+
+$collection-&gt;all();
+
+// [1, 2, 4, 5]
+</code></pre>
+<p>In addition, you may pass a third argument containing the new items to replace the items removed from the collection:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$chunk = $collection-&gt;splice(2, 1, [10, 11]);
+
+$chunk-&gt;all();
+
+// [3]
+
+$collection-&gt;all();
+
+// [1, 2, 10, 11, 4, 5]
+</code></pre>
+<p><a name="method-split"></a></p>
+<h4 id="split-collection-method"><code>split()</code> {#collection-method}</h4>
+<p>The <code>split</code> method breaks a collection into the given number of groups:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$groups = $collection-&gt;split(3);
+
+$groups-&gt;all();
+
+// [[1, 2], [3, 4], [5]]
+</code></pre>
+<p><a name="method-splitin"></a></p>
+<h4 id="splitin-collection-method"><code>splitIn()</code> {#collection-method}</h4>
+<p>The <code>splitIn</code> method breaks a collection into the given number of groups, filling non-terminal groups completely before allocating the remainder to the final group:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+$groups = $collection-&gt;splitIn(3);
+
+$groups-&gt;all();
+
+// [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10]]
+</code></pre>
+<p><a name="method-sum"></a></p>
+<h4 id="sum-collection-method"><code>sum()</code> {#collection-method}</h4>
+<p>The <code>sum</code> method returns the sum of all items in the collection:</p>
+<pre><code>collect([1, 2, 3, 4, 5])-&gt;sum();
+
+// 15
+</code></pre>
+<p>If the collection contains nested arrays or objects, you should pass a key that will be used to determine which values to sum:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'JavaScript: The Good Parts', 'pages' =&gt; 176],
+    ['name' =&gt; 'JavaScript: The Definitive Guide', 'pages' =&gt; 1096],
+]);
+
+$collection-&gt;sum('pages');
+
+// 1272
+</code></pre>
+<p>In addition, you may pass your own closure to determine which values of the collection to sum:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Chair', 'colors' =&gt; ['Black']],
+    ['name' =&gt; 'Desk', 'colors' =&gt; ['Black', 'Mahogany']],
+    ['name' =&gt; 'Bookcase', 'colors' =&gt; ['Red', 'Beige', 'Brown']],
+]);
+
+$collection-&gt;sum(function ($product) {
+    return count($product['colors']);
+});
+
+// 6
+</code></pre>
+<p><a name="method-take"></a></p>
+<h4 id="take-collection-method"><code>take()</code> {#collection-method}</h4>
+<p>The <code>take</code> method returns a new collection with the specified number of items:</p>
+<pre><code>$collection = collect([0, 1, 2, 3, 4, 5]);
+
+$chunk = $collection-&gt;take(3);
+
+$chunk-&gt;all();
+
+// [0, 1, 2]
+</code></pre>
+<p>You may also pass a negative integer to take the specified number of items from the end of the collection:</p>
+<pre><code>$collection = collect([0, 1, 2, 3, 4, 5]);
+
+$chunk = $collection-&gt;take(-2);
+
+$chunk-&gt;all();
+
+// [4, 5]
+</code></pre>
+<p><a name="method-takeuntil"></a></p>
+<h4 id="takeuntil-collection-method"><code>takeUntil()</code> {#collection-method}</h4>
+<p>The <code>takeUntil</code> method returns items in the collection until the given callback returns <code>true</code>:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$subset = $collection-&gt;takeUntil(function ($item) {
+    return $item &gt;= 3;
+});
+
+$subset-&gt;all();
+
+// [1, 2]
+</code></pre>
+<p>You may also pass a simple value to the <code>takeUntil</code> method to get the items until the given value is found:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$subset = $collection-&gt;takeUntil(3);
+
+$subset-&gt;all();
+
+// [1, 2]
+</code></pre>
+<blockquote>
+<p>{note} If the given value is not found or the callback never returns <code>true</code>, the <code>takeUntil</code> method will return all items in the collection.</p>
+</blockquote>
+<p><a name="method-takewhile"></a></p>
+<h4 id="takewhile-collection-method"><code>takeWhile()</code> {#collection-method}</h4>
+<p>The <code>takeWhile</code> method returns items in the collection until the given callback returns <code>false</code>:</p>
+<pre><code>$collection = collect([1, 2, 3, 4]);
+
+$subset = $collection-&gt;takeWhile(function ($item) {
+    return $item &lt; 3;
+});
+
+$subset-&gt;all();
+
+// [1, 2]
+</code></pre>
+<blockquote>
+<p>{note} If the callback never returns <code>false</code>, the <code>takeWhile</code> method will return all items in the collection.</p>
+</blockquote>
+<p><a name="method-tap"></a></p>
+<h4 id="tap-collection-method"><code>tap()</code> {#collection-method}</h4>
+<p>The <code>tap</code> method passes the collection to the given callback, allowing you to "tap" into the collection at a specific point and do something with the items while not affecting the collection itself. The collection is then returned by the <code>tap</code> method:</p>
+<pre><code>collect([2, 4, 3, 1, 5])
+    -&gt;sort()
+    -&gt;tap(function ($collection) {
+        Log::debug('Values after sorting', $collection-&gt;values()-&gt;all());
+    })
+    -&gt;shift();
+
+// 1
+</code></pre>
+<p><a name="method-times"></a></p>
+<h4 id="times-collection-method"><code>times()</code> {#collection-method}</h4>
+<p>The static <code>times</code> method creates a new collection by invoking the given closure a specified number of times:</p>
+<pre><code>$collection = Collection::times(10, function ($number) {
+    return $number * 9;
+});
+
+$collection-&gt;all();
+
+// [9, 18, 27, 36, 45, 54, 63, 72, 81, 90]
+</code></pre>
+<p><a name="method-toarray"></a></p>
+<h4 id="toarray-collection-method"><code>toArray()</code> {#collection-method}</h4>
+<p>The <code>toArray</code> method converts the collection into a plain PHP <code>array</code>. If the collection's values are <a href="/docs/{{version}}/eloquent">Eloquent</a> models, the models will also be converted to arrays:</p>
+<pre><code>$collection = collect(['name' =&gt; 'Desk', 'price' =&gt; 200]);
+
+$collection-&gt;toArray();
+
+/*
+    [
+        ['name' =&gt; 'Desk', 'price' =&gt; 200],
+    ]
+*/
+</code></pre>
+<blockquote>
+<p>{note} <code>toArray</code> also converts all of the collection's nested objects that are an instance of <code>Arrayable</code> to an array. If you want to get the raw array underlying the collection, use the <a href="#method-all"><code>all</code></a> method instead.</p>
+</blockquote>
+<p><a name="method-tojson"></a></p>
+<h4 id="tojson-collection-method"><code>toJson()</code> {#collection-method}</h4>
+<p>The <code>toJson</code> method converts the collection into a JSON serialized string:</p>
+<pre><code>$collection = collect(['name' =&gt; 'Desk', 'price' =&gt; 200]);
+
+$collection-&gt;toJson();
+
+// '{"name":"Desk", "price":200}'
+</code></pre>
+<p><a name="method-transform"></a></p>
+<h4 id="transform-collection-method"><code>transform()</code> {#collection-method}</h4>
+<p>The <code>transform</code> method iterates over the collection and calls the given callback with each item in the collection. The items in the collection will be replaced by the values returned by the callback:</p>
+<pre><code>$collection = collect([1, 2, 3, 4, 5]);
+
+$collection-&gt;transform(function ($item, $key) {
+    return $item * 2;
+});
+
+$collection-&gt;all();
+
+// [2, 4, 6, 8, 10]
+</code></pre>
+<blockquote>
+<p>{note} Unlike most other collection methods, <code>transform</code> modifies the collection itself. If you wish to create a new collection instead, use the <a href="#method-map"><code>map</code></a> method.</p>
+</blockquote>
+<p><a name="method-union"></a></p>
+<h4 id="union-collection-method"><code>union()</code> {#collection-method}</h4>
+<p>The <code>union</code> method adds the given array to the collection. If the given array contains keys that are already in the original collection, the original collection's values will be preferred:</p>
+<pre><code>$collection = collect([1 =&gt; ['a'], 2 =&gt; ['b']]);
+
+$union = $collection-&gt;union([3 =&gt; ['c'], 1 =&gt; ['d']]);
+
+$union-&gt;all();
+
+// [1 =&gt; ['a'], 2 =&gt; ['b'], 3 =&gt; ['c']]
+</code></pre>
+<p><a name="method-unique"></a></p>
+<h4 id="unique-collection-method"><code>unique()</code> {#collection-method}</h4>
+<p>The <code>unique</code> method returns all of the unique items in the collection. The returned collection keeps the original array keys, so in the following example we will use the <a href="#method-values"><code>values</code></a> method to reset the keys to consecutively numbered indexes:</p>
+<pre><code>$collection = collect([1, 1, 2, 2, 3, 4, 2]);
+
+$unique = $collection-&gt;unique();
+
+$unique-&gt;values()-&gt;all();
+
+// [1, 2, 3, 4]
+</code></pre>
+<p>When dealing with nested arrays or objects, you may specify the key used to determine uniqueness:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'iPhone 6', 'brand' =&gt; 'Apple', 'type' =&gt; 'phone'],
+    ['name' =&gt; 'iPhone 5', 'brand' =&gt; 'Apple', 'type' =&gt; 'phone'],
+    ['name' =&gt; 'Apple Watch', 'brand' =&gt; 'Apple', 'type' =&gt; 'watch'],
+    ['name' =&gt; 'Galaxy S6', 'brand' =&gt; 'Samsung', 'type' =&gt; 'phone'],
+    ['name' =&gt; 'Galaxy Gear', 'brand' =&gt; 'Samsung', 'type' =&gt; 'watch'],
+]);
+
+$unique = $collection-&gt;unique('brand');
+
+$unique-&gt;values()-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'iPhone 6', 'brand' =&gt; 'Apple', 'type' =&gt; 'phone'],
+        ['name' =&gt; 'Galaxy S6', 'brand' =&gt; 'Samsung', 'type' =&gt; 'phone'],
+    ]
+*/
+</code></pre>
+<p>Finally, you may also pass your own closure to the <code>unique</code> method to specify which value should determine an item's uniqueness:</p>
+<pre><code>$unique = $collection-&gt;unique(function ($item) {
+    return $item['brand'].$item['type'];
+});
+
+$unique-&gt;values()-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'iPhone 6', 'brand' =&gt; 'Apple', 'type' =&gt; 'phone'],
+        ['name' =&gt; 'Apple Watch', 'brand' =&gt; 'Apple', 'type' =&gt; 'watch'],
+        ['name' =&gt; 'Galaxy S6', 'brand' =&gt; 'Samsung', 'type' =&gt; 'phone'],
+        ['name' =&gt; 'Galaxy Gear', 'brand' =&gt; 'Samsung', 'type' =&gt; 'watch'],
+    ]
+*/
+</code></pre>
+<p>The <code>unique</code> method uses "loose" comparisons when checking item values, meaning a string with an integer value will be considered equal to an integer of the same value. Use the <a href="#method-uniquestrict"><code>uniqueStrict</code></a> method to filter using "strict" comparisons.</p>
+<blockquote>
+<p>{tip} This method's behavior is modified when using <a href="/docs/{{version}}/eloquent-collections#method-unique">Eloquent Collections</a>.</p>
+</blockquote>
+<p><a name="method-uniquestrict"></a></p>
+<h4 id="uniquestrict-collection-method"><code>uniqueStrict()</code> {#collection-method}</h4>
+<p>This method has the same signature as the <a href="#method-unique"><code>unique</code></a> method; however, all values are compared using "strict" comparisons.</p>
+<p><a name="method-unless"></a></p>
+<h4 id="unless-collection-method"><code>unless()</code> {#collection-method}</h4>
+<p>The <code>unless</code> method will execute the given callback unless the first argument given to the method evaluates to <code>true</code>:</p>
+<pre><code>$collection = collect([1, 2, 3]);
+
+$collection-&gt;unless(true, function ($collection) {
+    return $collection-&gt;push(4);
+});
+
+$collection-&gt;unless(false, function ($collection) {
+    return $collection-&gt;push(5);
+});
+
+$collection-&gt;all();
+
+// [1, 2, 3, 5]
+</code></pre>
+<p>For the inverse of <code>unless</code>, see the <a href="#method-when"><code>when</code></a> method.</p>
+<p><a name="method-unlessempty"></a></p>
+<h4 id="unlessempty-collection-method"><code>unlessEmpty()</code> {#collection-method}</h4>
+<p>Alias for the <a href="#method-whennotempty"><code>whenNotEmpty</code></a> method.</p>
+<p><a name="method-unlessnotempty"></a></p>
+<h4 id="unlessnotempty-collection-method"><code>unlessNotEmpty()</code> {#collection-method}</h4>
+<p>Alias for the <a href="#method-whenempty"><code>whenEmpty</code></a> method.</p>
+<p><a name="method-unwrap"></a></p>
+<h4 id="unwrap-collection-method"><code>unwrap()</code> {#collection-method}</h4>
+<p>The static <code>unwrap</code> method returns the collection's underlying items from the given value when applicable:</p>
+<pre><code>Collection::unwrap(collect('John Doe'));
+
+// ['John Doe']
+
+Collection::unwrap(['John Doe']);
+
+// ['John Doe']
+
+Collection::unwrap('John Doe');
+
+// 'John Doe'
+</code></pre>
+<p><a name="method-values"></a></p>
+<h4 id="values-collection-method"><code>values()</code> {#collection-method}</h4>
+<p>The <code>values</code> method returns a new collection with the keys reset to consecutive integers:</p>
+<pre><code>$collection = collect([
+    10 =&gt; ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    11 =&gt; ['product' =&gt; 'Desk', 'price' =&gt; 200],
+]);
+
+$values = $collection-&gt;values();
+
+$values-&gt;all();
+
+/*
+    [
+        0 =&gt; ['product' =&gt; 'Desk', 'price' =&gt; 200],
+        1 =&gt; ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    ]
+*/
+</code></pre>
+<p><a name="method-when"></a></p>
+<h4 id="when-collection-method"><code>when()</code> {#collection-method}</h4>
+<p>The <code>when</code> method will execute the given callback when the first argument given to the method evaluates to <code>true</code>:</p>
+<pre><code>$collection = collect([1, 2, 3]);
+
+$collection-&gt;when(true, function ($collection) {
+    return $collection-&gt;push(4);
+});
+
+$collection-&gt;when(false, function ($collection) {
+    return $collection-&gt;push(5);
+});
+
+$collection-&gt;all();
+
+// [1, 2, 3, 4]
+</code></pre>
+<p>For the inverse of <code>when</code>, see the <a href="#method-unless"><code>unless</code></a> method.</p>
+<p><a name="method-whenempty"></a></p>
+<h4 id="whenempty-collection-method"><code>whenEmpty()</code> {#collection-method}</h4>
+<p>The <code>whenEmpty</code> method will execute the given callback when the collection is empty:</p>
+<pre><code>$collection = collect(['Michael', 'Tom']);
+
+$collection-&gt;whenEmpty(function ($collection) {
+    return $collection-&gt;push('Adam');
+});
+
+$collection-&gt;all();
+
+// ['Michael', 'Tom']
+
+
+$collection = collect();
+
+$collection-&gt;whenEmpty(function ($collection) {
+    return $collection-&gt;push('Adam');
+});
+
+$collection-&gt;all();
+
+// ['Adam']
+</code></pre>
+<p>A second closure may be passed to the <code>whenEmpty</code> method that will be executed when the collection is not empty:</p>
+<pre><code>$collection = collect(['Michael', 'Tom']);
+
+$collection-&gt;whenEmpty(function ($collection) {
+    return $collection-&gt;push('Adam');
+}, function ($collection) {
+    return $collection-&gt;push('Taylor');
+});
+
+$collection-&gt;all();
+
+// ['Michael', 'Tom', 'Taylor']
+</code></pre>
+<p>For the inverse of <code>whenEmpty</code>, see the <a href="#method-whennotempty"><code>whenNotEmpty</code></a> method.</p>
+<p><a name="method-whennotempty"></a></p>
+<h4 id="whennotempty-collection-method"><code>whenNotEmpty()</code> {#collection-method}</h4>
+<p>The <code>whenNotEmpty</code> method will execute the given callback when the collection is not empty:</p>
+<pre><code>$collection = collect(['michael', 'tom']);
+
+$collection-&gt;whenNotEmpty(function ($collection) {
+    return $collection-&gt;push('adam');
+});
+
+$collection-&gt;all();
+
+// ['michael', 'tom', 'adam']
+
+
+$collection = collect();
+
+$collection-&gt;whenNotEmpty(function ($collection) {
+    return $collection-&gt;push('adam');
+});
+
+$collection-&gt;all();
+
+// []
+</code></pre>
+<p>A second closure may be passed to the <code>whenNotEmpty</code> method that will be executed when the collection is empty:</p>
+<pre><code>$collection = collect();
+
+$collection-&gt;whenNotEmpty(function ($collection) {
+    return $collection-&gt;push('adam');
+}, function ($collection) {
+    return $collection-&gt;push('taylor');
+});
+
+$collection-&gt;all();
+
+// ['taylor']
+</code></pre>
+<p>For the inverse of <code>whenNotEmpty</code>, see the <a href="#method-whenempty"><code>whenEmpty</code></a> method.</p>
+<p><a name="method-where"></a></p>
+<h4 id="where-collection-method"><code>where()</code> {#collection-method}</h4>
+<p>The <code>where</code> method filters the collection by a given key / value pair:</p>
+<pre><code>$collection = collect([
+    ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    ['product' =&gt; 'Chair', 'price' =&gt; 100],
+    ['product' =&gt; 'Bookcase', 'price' =&gt; 150],
+    ['product' =&gt; 'Door', 'price' =&gt; 100],
+]);
+
+$filtered = $collection-&gt;where('price', 100);
+
+$filtered-&gt;all();
+
+/*
+    [
+        ['product' =&gt; 'Chair', 'price' =&gt; 100],
+        ['product' =&gt; 'Door', 'price' =&gt; 100],
+    ]
+*/
+</code></pre>
+<p>The <code>where</code> method uses "loose" comparisons when checking item values, meaning a string with an integer value will be considered equal to an integer of the same value. Use the <a href="#method-wherestrict"><code>whereStrict</code></a> method to filter using "strict" comparisons.</p>
+<p>Optionally, you may pass a comparison operator as the second parameter.</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Jim', 'deleted_at' =&gt; '2019-01-01 00:00:00'],
+    ['name' =&gt; 'Sally', 'deleted_at' =&gt; '2019-01-02 00:00:00'],
+    ['name' =&gt; 'Sue', 'deleted_at' =&gt; null],
+]);
+
+$filtered = $collection-&gt;where('deleted_at', '!=', null);
+
+$filtered-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'Jim', 'deleted_at' =&gt; '2019-01-01 00:00:00'],
+        ['name' =&gt; 'Sally', 'deleted_at' =&gt; '2019-01-02 00:00:00'],
+    ]
+*/
+</code></pre>
+<p><a name="method-wherestrict"></a></p>
+<h4 id="wherestrict-collection-method"><code>whereStrict()</code> {#collection-method}</h4>
+<p>This method has the same signature as the <a href="#method-where"><code>where</code></a> method; however, all values are compared using "strict" comparisons.</p>
+<p><a name="method-wherebetween"></a></p>
+<h4 id="wherebetween-collection-method"><code>whereBetween()</code> {#collection-method}</h4>
+<p>The <code>whereBetween</code> method filters the collection by determining if a specified item value is within a given range:</p>
+<pre><code>$collection = collect([
+    ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    ['product' =&gt; 'Chair', 'price' =&gt; 80],
+    ['product' =&gt; 'Bookcase', 'price' =&gt; 150],
+    ['product' =&gt; 'Pencil', 'price' =&gt; 30],
+    ['product' =&gt; 'Door', 'price' =&gt; 100],
+]);
+
+$filtered = $collection-&gt;whereBetween('price', [100, 200]);
+
+$filtered-&gt;all();
+
+/*
+    [
+        ['product' =&gt; 'Desk', 'price' =&gt; 200],
+        ['product' =&gt; 'Bookcase', 'price' =&gt; 150],
+        ['product' =&gt; 'Door', 'price' =&gt; 100],
+    ]
+*/
+</code></pre>
+<p><a name="method-wherein"></a></p>
+<h4 id="wherein-collection-method"><code>whereIn()</code> {#collection-method}</h4>
+<p>The <code>whereIn</code> method removes elements from the collection that do not have a specified item value that is contained within the given array:</p>
+<pre><code>$collection = collect([
+    ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    ['product' =&gt; 'Chair', 'price' =&gt; 100],
+    ['product' =&gt; 'Bookcase', 'price' =&gt; 150],
+    ['product' =&gt; 'Door', 'price' =&gt; 100],
+]);
+
+$filtered = $collection-&gt;whereIn('price', [150, 200]);
+
+$filtered-&gt;all();
+
+/*
+    [
+        ['product' =&gt; 'Desk', 'price' =&gt; 200],
+        ['product' =&gt; 'Bookcase', 'price' =&gt; 150],
+    ]
+*/
+</code></pre>
+<p>The <code>whereIn</code> method uses "loose" comparisons when checking item values, meaning a string with an integer value will be considered equal to an integer of the same value. Use the <a href="#method-whereinstrict"><code>whereInStrict</code></a> method to filter using "strict" comparisons.</p>
+<p><a name="method-whereinstrict"></a></p>
+<h4 id="whereinstrict-collection-method"><code>whereInStrict()</code> {#collection-method}</h4>
+<p>This method has the same signature as the <a href="#method-wherein"><code>whereIn</code></a> method; however, all values are compared using "strict" comparisons.</p>
+<p><a name="method-whereinstanceof"></a></p>
+<h4 id="whereinstanceof-collection-method"><code>whereInstanceOf()</code> {#collection-method}</h4>
+<p>The <code>whereInstanceOf</code> method filters the collection by a given class type:</p>
+<pre><code>use App\Models\User;
+use App\Models\Post;
+
+$collection = collect([
+    new User,
+    new User,
+    new Post,
+]);
+
+$filtered = $collection-&gt;whereInstanceOf(User::class);
+
+$filtered-&gt;all();
+
+// [App\Models\User, App\Models\User]
+</code></pre>
+<p><a name="method-wherenotbetween"></a></p>
+<h4 id="wherenotbetween-collection-method"><code>whereNotBetween()</code> {#collection-method}</h4>
+<p>The <code>whereNotBetween</code> method filters the collection by determining if a specified item value is outside of a given range:</p>
+<pre><code>$collection = collect([
+    ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    ['product' =&gt; 'Chair', 'price' =&gt; 80],
+    ['product' =&gt; 'Bookcase', 'price' =&gt; 150],
+    ['product' =&gt; 'Pencil', 'price' =&gt; 30],
+    ['product' =&gt; 'Door', 'price' =&gt; 100],
+]);
+
+$filtered = $collection-&gt;whereNotBetween('price', [100, 200]);
+
+$filtered-&gt;all();
+
+/*
+    [
+        ['product' =&gt; 'Chair', 'price' =&gt; 80],
+        ['product' =&gt; 'Pencil', 'price' =&gt; 30],
+    ]
+*/
+</code></pre>
+<p><a name="method-wherenotin"></a></p>
+<h4 id="wherenotin-collection-method"><code>whereNotIn()</code> {#collection-method}</h4>
+<p>The <code>whereNotIn</code> method removes elements from the collection that have a specified item value that is not contained within the given array:</p>
+<pre><code>$collection = collect([
+    ['product' =&gt; 'Desk', 'price' =&gt; 200],
+    ['product' =&gt; 'Chair', 'price' =&gt; 100],
+    ['product' =&gt; 'Bookcase', 'price' =&gt; 150],
+    ['product' =&gt; 'Door', 'price' =&gt; 100],
+]);
+
+$filtered = $collection-&gt;whereNotIn('price', [150, 200]);
+
+$filtered-&gt;all();
+
+/*
+    [
+        ['product' =&gt; 'Chair', 'price' =&gt; 100],
+        ['product' =&gt; 'Door', 'price' =&gt; 100],
+    ]
+*/
+</code></pre>
+<p>The <code>whereNotIn</code> method uses "loose" comparisons when checking item values, meaning a string with an integer value will be considered equal to an integer of the same value. Use the <a href="#method-wherenotinstrict"><code>whereNotInStrict</code></a> method to filter using "strict" comparisons.</p>
+<p><a name="method-wherenotinstrict"></a></p>
+<h4 id="wherenotinstrict-collection-method"><code>whereNotInStrict()</code> {#collection-method}</h4>
+<p>This method has the same signature as the <a href="#method-wherenotin"><code>whereNotIn</code></a> method; however, all values are compared using "strict" comparisons.</p>
+<p><a name="method-wherenotnull"></a></p>
+<h4 id="wherenotnull-collection-method"><code>whereNotNull()</code> {#collection-method}</h4>
+<p>The <code>whereNotNull</code> method returns items from the collection where the given key is not <code>null</code>:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Desk'],
+    ['name' =&gt; null],
+    ['name' =&gt; 'Bookcase'],
+]);
+
+$filtered = $collection-&gt;whereNotNull('name');
+
+$filtered-&gt;all();
+
+/*
+    [
+        ['name' =&gt; 'Desk'],
+        ['name' =&gt; 'Bookcase'],
+    ]
+*/
+</code></pre>
+<p><a name="method-wherenull"></a></p>
+<h4 id="wherenull-collection-method"><code>whereNull()</code> {#collection-method}</h4>
+<p>The <code>whereNull</code> method returns items from the collection where the given key is <code>null</code>:</p>
+<pre><code>$collection = collect([
+    ['name' =&gt; 'Desk'],
+    ['name' =&gt; null],
+    ['name' =&gt; 'Bookcase'],
+]);
+
+$filtered = $collection-&gt;whereNull('name');
+
+$filtered-&gt;all();
+
+/*
+    [
+        ['name' =&gt; null],
+    ]
+*/
+</code></pre>
+<p><a name="method-wrap"></a></p>
+<h4 id="wrap-collection-method"><code>wrap()</code> {#collection-method}</h4>
+<p>The static <code>wrap</code> method wraps the given value in a collection when applicable:</p>
+<pre><code>use Illuminate\Support\Collection;
+
+$collection = Collection::wrap('John Doe');
+
+$collection-&gt;all();
+
+// ['John Doe']
+
+$collection = Collection::wrap(['John Doe']);
+
+$collection-&gt;all();
+
+// ['John Doe']
+
+$collection = Collection::wrap(collect('John Doe'));
+
+$collection-&gt;all();
+
+// ['John Doe']
+</code></pre>
+<p><a name="method-zip"></a></p>
+<h4 id="zip-collection-method"><code>zip()</code> {#collection-method}</h4>
+<p>The <code>zip</code> method merges together the values of the given array with the values of the original collection at their corresponding index:</p>
+<pre><code>$collection = collect(['Chair', 'Desk']);
+
+$zipped = $collection-&gt;zip([100, 200]);
+
+$zipped-&gt;all();
+
+// [['Chair', 100], ['Desk', 200]]
+</code></pre>
+<p><a name="higher-order-messages"></a></p>
+<h2 id="higher-order-messages">Higher Order Messages</h2>
+<p>Collections also provide support for "higher order messages", which are short-cuts for performing common actions on collections. The collection methods that provide higher order messages are: <a href="#method-average"><code>average</code></a>, <a href="#method-avg"><code>avg</code></a>, <a href="#method-contains"><code>contains</code></a>, <a href="#method-each"><code>each</code></a>, <a href="#method-every"><code>every</code></a>, <a href="#method-filter"><code>filter</code></a>, <a href="#method-first"><code>first</code></a>, <a href="#method-flatmap"><code>flatMap</code></a>, <a href="#method-groupby"><code>groupBy</code></a>, <a href="#method-keyby"><code>keyBy</code></a>, <a href="#method-map"><code>map</code></a>, <a href="#method-max"><code>max</code></a>, <a href="#method-min"><code>min</code></a>, <a href="#method-partition"><code>partition</code></a>, <a href="#method-reject"><code>reject</code></a>, <a href="#method-skipuntil"><code>skipUntil</code></a>, <a href="#method-skipwhile"><code>skipWhile</code></a>, <a href="#method-some"><code>some</code></a>, <a href="#method-sortby"><code>sortBy</code></a>, <a href="#method-sortbydesc"><code>sortByDesc</code></a>, <a href="#method-sum"><code>sum</code></a>, <a href="#method-takeuntil"><code>takeUntil</code></a>, <a href="#method-takewhile"><code>takeWhile</code></a>, and <a href="#method-unique"><code>unique</code></a>.</p>
+<p>Each higher order message can be accessed as a dynamic property on a collection instance. For instance, let's use the <code>each</code> higher order message to call a method on each object within a collection:</p>
+<pre><code>use App\Models\User;
+
+$users = User::where('votes', '&gt;', 500)-&gt;get();
+
+$users-&gt;each-&gt;markAsVip();
+</code></pre>
+<p>Likewise, we can use the <code>sum</code> higher order message to gather the total number of "votes" for a collection of users:</p>
+<pre><code>$users = User::where('group', 'Development')-&gt;get();
+
+return $users-&gt;sum-&gt;votes;
+</code></pre>
+<p><a name="lazy-collections"></a></p>
+<h2 id="lazy-collections">Lazy Collections</h2>
+<p><a name="lazy-collection-introduction"></a></p>
+<h3 id="introduction_1">Introduction</h3>
+<blockquote>
+<p>{note} Before learning more about Laravel's lazy collections, take some time to familiarize yourself with <a href="https://www.php.net/manual/en/language.generators.overview.php">PHP generators</a>.</p>
+</blockquote>
+<p>To supplement the already powerful <code>Collection</code> class, the <code>LazyCollection</code> class leverages PHP's <a href="https://www.php.net/manual/en/language.generators.overview.php">generators</a> to allow you to work with very large datasets while keeping memory usage low.</p>
+<p>For example, imagine your application needs to process a multi-gigabyte log file while taking advantage of Laravel's collection methods to parse the logs. Instead of reading the entire file into memory at once, lazy collections may be used to keep only a small part of the file in memory at a given time:</p>
+<pre><code>use App\Models\LogEntry;
+use Illuminate\Support\LazyCollection;
+
+LazyCollection::make(function () {
+    $handle = fopen('log.txt', 'r');
+
+    while (($line = fgets($handle)) !== false) {
+        yield $line;
+    }
+})-&gt;chunk(4)-&gt;map(function ($lines) {
+    return LogEntry::fromLines($lines);
+})-&gt;each(function (LogEntry $logEntry) {
+    // Process the log entry...
+});
+</code></pre>
+<p>Or, imagine you need to iterate through 10,000 Eloquent models. When using traditional Laravel collections, all 10,000 Eloquent models must be loaded into memory at the same time:</p>
+<pre><code>use App\Models\User;
+
+$users = User::all()-&gt;filter(function ($user) {
+    return $user-&gt;id &gt; 500;
+});
+</code></pre>
+<p>However, the query builder's <code>cursor</code> method returns a <code>LazyCollection</code> instance. This allows you to still only run a single query against the database but also only keep one Eloquent model loaded in memory at a time. In this example, the <code>filter</code> callback is not executed until we actually iterate over each user individually, allowing for a drastic reduction in memory usage:</p>
+<pre><code>use App\Models\User;
+
+$users = User::cursor()-&gt;filter(function ($user) {
+    return $user-&gt;id &gt; 500;
+});
+
+foreach ($users as $user) {
+    echo $user-&gt;id;
+}
+</code></pre>
+<p><a name="creating-lazy-collections"></a></p>
+<h3 id="creating-lazy-collections">Creating Lazy Collections</h3>
+<p>To create a lazy collection instance, you should pass a PHP generator function to the collection's <code>make</code> method:</p>
+<pre><code>use Illuminate\Support\LazyCollection;
+
+LazyCollection::make(function () {
+    $handle = fopen('log.txt', 'r');
+
+    while (($line = fgets($handle)) !== false) {
+        yield $line;
+    }
+});
+</code></pre>
+<p><a name="the-enumerable-contract"></a></p>
+<h3 id="the-enumerable-contract">The Enumerable Contract</h3>
+<p>Almost all methods available on the <code>Collection</code> class are also available on the <code>LazyCollection</code> class. Both of these classes implement the <code>Illuminate\Support\Enumerable</code> contract, which defines the following methods:</p>
+<div id="collection-method-list" markdown="1">
+
+[all](#method-all)
+[average](#method-average)
+[avg](#method-avg)
+[chunk](#method-chunk)
+[chunkWhile](#method-chunkwhile)
+[collapse](#method-collapse)
+[collect](#method-collect)
+[combine](#method-combine)
+[concat](#method-concat)
+[contains](#method-contains)
+[containsStrict](#method-containsstrict)
+[count](#method-count)
+[countBy](#method-countBy)
+[crossJoin](#method-crossjoin)
+[dd](#method-dd)
+[diff](#method-diff)
+[diffAssoc](#method-diffassoc)
+[diffKeys](#method-diffkeys)
+[dump](#method-dump)
+[duplicates](#method-duplicates)
+[duplicatesStrict](#method-duplicatesstrict)
+[each](#method-each)
+[eachSpread](#method-eachspread)
+[every](#method-every)
+[except](#method-except)
+[filter](#method-filter)
+[first](#method-first)
+[firstWhere](#method-first-where)
+[flatMap](#method-flatmap)
+[flatten](#method-flatten)
+[flip](#method-flip)
+[forPage](#method-forpage)
+[get](#method-get)
+[groupBy](#method-groupby)
+[has](#method-has)
+[implode](#method-implode)
+[intersect](#method-intersect)
+[intersectByKeys](#method-intersectbykeys)
+[isEmpty](#method-isempty)
+[isNotEmpty](#method-isnotempty)
+[join](#method-join)
+[keyBy](#method-keyby)
+[keys](#method-keys)
+[last](#method-last)
+[macro](#method-macro)
+[make](#method-make)
+[map](#method-map)
+[mapInto](#method-mapinto)
+[mapSpread](#method-mapspread)
+[mapToGroups](#method-maptogroups)
+[mapWithKeys](#method-mapwithkeys)
+[max](#method-max)
+[median](#method-median)
+[merge](#method-merge)
+[mergeRecursive](#method-mergerecursive)
+[min](#method-min)
+[mode](#method-mode)
+[nth](#method-nth)
+[only](#method-only)
+[pad](#method-pad)
+[partition](#method-partition)
+[pipe](#method-pipe)
+[pluck](#method-pluck)
+[random](#method-random)
+[reduce](#method-reduce)
+[reject](#method-reject)
+[replace](#method-replace)
+[replaceRecursive](#method-replacerecursive)
+[reverse](#method-reverse)
+[search](#method-search)
+[shuffle](#method-shuffle)
+[skip](#method-skip)
+[slice](#method-slice)
+[some](#method-some)
+[sort](#method-sort)
+[sortBy](#method-sortby)
+[sortByDesc](#method-sortbydesc)
+[sortKeys](#method-sortkeys)
+[sortKeysDesc](#method-sortkeysdesc)
+[split](#method-split)
+[sum](#method-sum)
+[take](#method-take)
+[tap](#method-tap)
+[times](#method-times)
+[toArray](#method-toarray)
+[toJson](#method-tojson)
+[union](#method-union)
+[unique](#method-unique)
+[uniqueStrict](#method-uniquestrict)
+[unless](#method-unless)
+[unlessEmpty](#method-unlessempty)
+[unlessNotEmpty](#method-unlessnotempty)
+[unwrap](#method-unwrap)
+[values](#method-values)
+[when](#method-when)
+[whenEmpty](#method-whenempty)
+[whenNotEmpty](#method-whennotempty)
+[where](#method-where)
+[whereStrict](#method-wherestrict)
+[whereBetween](#method-wherebetween)
+[whereIn](#method-wherein)
+[whereInStrict](#method-whereinstrict)
+[whereInstanceOf](#method-whereinstanceof)
+[whereNotBetween](#method-wherenotbetween)
+[whereNotIn](#method-wherenotin)
+[whereNotInStrict](#method-wherenotinstrict)
+[wrap](#method-wrap)
+[zip](#method-zip)
+
+</div>
+
+<blockquote>
+<p>{note} Methods that mutate the collection (such as <code>shift</code>, <code>pop</code>, <code>prepend</code> etc.) are <strong>not</strong> available on the <code>LazyCollection</code> class.</p>
+</blockquote>
+<p><a name="lazy-collection-methods"></a></p>
+<h3 id="lazy-collection-methods">Lazy Collection Methods</h3>
+<p>In addition to the methods defined in the <code>Enumerable</code> contract, the <code>LazyCollection</code> class contains the following methods:</p>
+<p><a name="method-takeUntilTimeout"></a></p>
+<h4 id="takeuntiltimeout-collection-method"><code>takeUntilTimeout()</code> {#collection-method}</h4>
+<p>The <code>takeUntilTimeout</code> method returns a new lazy collection that will enumerate values until the specified time. After that time, the collection will then stop enumerating:</p>
+<pre><code>$lazyCollection = LazyCollection::times(INF)
+    -&gt;takeUntilTimeout(now()-&gt;addMinute());
+
+$lazyCollection-&gt;each(function ($number) {
+    dump($number);
+
+    sleep(1);
+});
+
+// 1
+// 2
+// ...
+// 58
+// 59
+</code></pre>
+<p>To illustrate the usage of this method, imagine an application that submits invoices from the database using a cursor. You could define a <a href="/docs/{{version}}/scheduling">scheduled task</a> that runs every 15 minutes and only processes invoices for a maximum of 14 minutes:</p>
+<pre><code>use App\Models\Invoice;
+use Illuminate\Support\Carbon;
+
+Invoice::pending()-&gt;cursor()
+    -&gt;takeUntilTimeout(
+        Carbon::createFromTimestamp(LARAVEL_START)-&gt;add(14, 'minutes')
+    )
+    -&gt;each(fn ($invoice) =&gt; $invoice-&gt;submit());
+</code></pre>
+<p><a name="method-tapEach"></a></p>
+<h4 id="tapeach-collection-method"><code>tapEach()</code> {#collection-method}</h4>
+<p>While the <code>each</code> method calls the given callback for each item in the collection right away, the <code>tapEach</code> method only calls the given callback as the items are being pulled out of the list one by one:</p>
+<pre><code>// Nothing has been dumped so far...
+$lazyCollection = LazyCollection::times(INF)-&gt;tapEach(function ($value) {
+    dump($value);
+});
+
+// Three items are dumped...
+$array = $lazyCollection-&gt;take(3)-&gt;all();
+
+// 1
+// 2
+// 3
+</code></pre>
+<p><a name="method-remember"></a></p>
+<h4 id="remember-collection-method"><code>remember()</code> {#collection-method}</h4>
+<p>The <code>remember</code> method returns a new lazy collection that will remember any values that have already been enumerated and will not retrieve them again on subsequent collection enumerations:</p>
+<pre><code>// No query has been executed yet...
+$users = User::cursor()-&gt;remember();
+
+// The query is executed...
+// The first 5 users are hydrated from the database...
+$users-&gt;take(5)-&gt;all();
+
+// First 5 users come from the collection's cache...
+// The rest are hydrated from the database...
+$users-&gt;take(20)-&gt;all();
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../configuration/" class="btn btn-neutral float-right" title="Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../cashier-paddle/" class="btn btn-neutral" title="Laravel Cashier (Paddle)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../cashier-paddle/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../configuration/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
