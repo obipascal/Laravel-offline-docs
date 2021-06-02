@@ -1,2 +1,2 @@
-# Laravel-offline-docs
+# Laravel Offline Docs
 Laravel Offline Dev Documentation
